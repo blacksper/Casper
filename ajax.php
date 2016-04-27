@@ -6,7 +6,7 @@
  * Time: 2:15
  */
 
-include("Controller.class.php");
+include("./classes/Controller.class.php");
 $Controller= new Controller();
 
 //$action=$_POST['action'];

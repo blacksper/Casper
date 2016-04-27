@@ -7,7 +7,7 @@
  * Time: 22:45
  */
 
-include("config.php");
+include("../config.php");
 //include("Mysqli.class.php");
 include("Tabs.class.php");
 

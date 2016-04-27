@@ -48,191 +48,6 @@ class Tabs
         $this->allHtml.=$tmpHtml;
     }
 
-    function getSubInfoScans(int $tid){
-
-        $thead='<div class="row scan-row">
-                         <div class="col-sm-3">Тип</div>
-                         <div class="col-sm-3">Заголовок2</div>
-                         <div class="col-sm-3">Заголовок3</div>
-                     </div>';
-        $hashes="";
-
-        $scansArr = $this->Model->MysqliClass->getAssocArray("select * from scans where tid=$tid");//sqli
-
-        if(empty($scansArr)) {
-            $result = "<div class=\"alert alert-warning\">
-                            <strong>Пусто</strong>
-                       </div>";
-        }else {
-            $result = $thead;
-            foreach ($scansArr as $row) {
-                $result .= '
-                        <div class="row scan-row">
-                             <div class="col-sm-3">' . $row['type'] . '</div>
-                             <div class="col-sm-3">' . $row['sid'] . '</div>
-                             <div class="col-sm-3">' . $row['tid'] . '</div>
-                         </div>
-                    ';
-
-            }
-        }
-
-        return $result;
-    }
-
-    function getSubInfoHashes(int $tid){
-
-        $thead='<div class="row scan-row">
-                         <div class="col-sm-3">Тип</div>
-                         <div class="col-sm-3">Заголовок2</div>
-                         <div class="col-sm-3">Заголовок3</div>
-                     </div>';
-        $hashes="";
-
-        $scansArr = $this->Model->MysqliClass->getAssocArray("select * from hashes where tid=$tid");//sqli
-
-        if(empty($scansArr)) {
-            $result = "<div class=\"alert alert-warning\">
-                            <strong>Пусто</strong>
-                       </div>";
-        }else {
-            $result = $thead;
-            foreach ($scansArr as $row) {
-                $result .= '
-                        <div class="row scan-row">
-                             <div class="col-sm-3">' . $row['source'] . '</div>
-                             <div class="col-sm-3">' . $row['type'] . '</div>
-                             <div class="col-sm-3">' . $row['hash'] . '</div>
-                         </div>
-                    ';
-
-            }
-        }
-
-        return $result;
-    }
-
-    //функция генерирует строку, которая содержит сканирования и хэши
-
-    function getSubInfoTable($tid){
-
-        $scans=$this->getSubInfoScans($tid);
-        $hashes=$this->getSubInfoHashes($tid);
-
-
-            $result='
-                            <ul style="width: 300px" class="qwe nav nav-pills" >
-                                <li class="active"><a  href="#scan-' . $tid . '" data-toggle="tab">Сканирования</a></li>
-                                <li><a  href = "#logins-' . $tid . '" data-toggle = "tab" > Хеши</a ></li >
-                            </ul >
-                            <p>
-                                <div class="tab-content" >
-                                        <div class="tab-pane fade in active scanTable" id = "scan-' . $tid . '" >
-                                            '.
-                //((isset($wwsd[$row['tid']]))? $wwsd[$row['tid']]:"pusto")
-                                        $scans
-                                        .' </div>
-                                        <div class="tab-pane fade" id = "logins-' . $tid . '" >
-                                             '.$hashes.'
-                                        </div >
-                                </div >
-
-                            </p>
-                ';
-            //echo $result[$row['tid']];
-       //}
-        //echo (($wwsd[$row['tid']])? "beach":"treach");
-        //print_r($result);
-        return $result;
-    }
-
-    function getTargetTableRow($row){
-
-        $result="<tr class=targetRow data-tid='" . $row['tid'] . "'>
-                <td class=\"url\">
-                 <a href=\"#spoiler-" . $row['tid'] . "\" data-toggle=\"collapse\" class=\"btn btn-primary\">" . $row['url'] . "</a>
-                 <div id='spoiler-".$row['tid']."' class=\"fade collapse  wellm\" data-toggle=\"toggle\"></div>
-
-                 <div class='collapse wellm' data-toggle='toggle'>
-                 </div>
-                 </td>
-                    <td class='ip'> " . $row['ip'] . "</td>
-                    <td class='btns'>" .
-        '<form method=post>
-
-                        <button type="button" class="btn btn-danger deleteTgt">
-                            <span class="glyphicon glyphicon-remove" aria-hidden="true">
-                            </span>
-                        </button>
-                        <input type=hidden name=tid value=' . $row['tid'] . '>
-                    </form>
-                    ' . "</td>
-
-                    </tr>";
-
-       // echo $result;
-        return $result;
-    }
-
-    function getStatusByCode(int $code){
-        $result=array();
-
-        switch ($code) {
-                case 0:
-                    $result=array("status" => "danger", "stmsg" => "BAD");
-                    break;
-                case 1:
-                    //$status = "success";
-                    //$stmsg = "GOOD";
-                    $result=array("status" => "success", "stmsg" => "GOOD");
-                    break;
-                case -1:
-                    //$status = "info";
-                    //$stmsg = "UNKNOWN";
-                    $result=array("status" => "info", "stmsg" => "UNKNOWN");
-                    break;
-            }
-
-        return $result;
-
-    }
-
-
-    function getServerTableRow($row){
-        $result="";
-
-         $codeArr=$this->getStatusByCode((int)$row['status']);
-
-        $btns = '<div class="btn-group btns" value="' . $row['sid'] . '">
-
-
-                        <button type="button" class="btn btn-info refresh">
-                            <span  class="glyphicon glyphicon-refresh" aria-hidden="true">
-                            </span>
-                        </button>
-
-
-
-                        <button type="button" class="btn btn-danger deleteSrv">
-                            <span  class="glyphicon glyphicon-remove" aria-hidden="true">
-                            </span>
-                        </button>
-
-
-                        <input class="btn btn-danger" type="hidden" name="sid" value='.$row['sid'].'>
-
-                    </div>';
-
-            $result .= "<tr class='serverRow' value='{$row['sid']}' data-sid='{$row['sid']}'>
-                            <td class=url> " . $row['path'] . "</td>
-                            <td class='ip'>" . $row['ip'] . "</td>
-                            <td class='status {$codeArr['status']}'>{$codeArr['stmsg']}</td>
-                            <td class='btns'>$btns</td>
-                        </tr>";
-        return $result;
-    }
-// " . $row['ip'] . "
-
     function GetTargetTab(){
         //$qweqwe=$this->getSubInfo();
         $thead = '<thead>
@@ -286,7 +101,36 @@ class Tabs
                             </div>';
     }
 
+    function getTargetTableRow($row)
+    {
 
+        $result = "<tr class=targetRow data-tid='" . $row['tid'] . "'>
+                <td class=\"url\">
+                 <a href=\"#spoiler-" . $row['tid'] . "\" data-toggle=\"collapse\" class=\"btn btn-primary\">" . $row['url'] . "</a>
+                 <div id='spoiler-" . $row['tid'] . "' class=\"fade collapse  wellm\" data-toggle=\"toggle\"></div>
+
+                 <div class='collapse wellm' data-toggle='toggle'>
+                 </div>
+                 </td>
+                    <td class='ip'> " . $row['ip'] . "</td>
+                    <td class='btns'>" .
+            '<form method=post>
+
+                        <button type="button" class="btn btn-danger deleteTgt">
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true">
+                            </span>
+                        </button>
+                        <input type=hidden name=tid value=' . $row['tid'] . '>
+                    </form>
+                    ' . "</td>
+
+                    </tr>";
+
+        // echo $result;
+        return $result;
+    }
+
+    //функция генерирует строку, которая содержит сканирования и хэши
 
     function GetServerTab()//закладка серверы
     {
@@ -331,6 +175,64 @@ class Tabs
         return $tab;
     }
 
+    function getServerTableRow($row)
+    {
+        $result = "";
+
+        $codeArr = $this->getStatusByCode((int)$row['status']);
+
+        $btns = '<div class="btn-group btns" value="' . $row['sid'] . '">
+
+
+                        <button type="button" class="btn btn-info refresh">
+                            <span  class="glyphicon glyphicon-refresh" aria-hidden="true">
+                            </span>
+                        </button>
+
+
+
+                        <button type="button" class="btn btn-danger deleteSrv">
+                            <span  class="glyphicon glyphicon-remove" aria-hidden="true">
+                            </span>
+                        </button>
+
+
+                        <input class="btn btn-danger" type="hidden" name="sid" value=' . $row['sid'] . '>
+
+                    </div>';
+
+        $result .= "<tr class='serverRow' value='{$row['sid']}' data-sid='{$row['sid']}'>
+                            <td class=url> " . $row['path'] . "</td>
+                            <td class='ip'>" . $row['ip'] . "</td>
+                            <td class='status {$codeArr['status']}'>{$codeArr['stmsg']}</td>
+                            <td class='btns'>$btns</td>
+                        </tr>";
+        return $result;
+    }
+
+    function getStatusByCode(int $code)
+    {
+        $result = array();
+
+        switch ($code) {
+            case 0:
+                $result = array("status" => "danger", "stmsg" => "BAD");
+                break;
+            case 1:
+                //$status = "success";
+                //$stmsg = "GOOD";
+                $result = array("status" => "success", "stmsg" => "GOOD");
+                break;
+            case -1:
+                //$status = "info";
+                //$stmsg = "UNKNOWN";
+                $result = array("status" => "info", "stmsg" => "UNKNOWN");
+                break;
+        }
+
+        return $result;
+
+    }
 
     function GetToolsTab()//закладка инструменты
     {
@@ -383,13 +285,13 @@ class Tabs
                                 <div class="tab-pane fade" id="gg1">
                                     <h1>Wordpress</h1>
 
-                                    <form method="post" action="cp.php" id="fileselect" class="navbar-form navbar-left">
+                                    <form method="post" action="../cp.php" id="fileselect" class="navbar-form navbar-left">
                                         <div class="form-group">
 
 
                                            <select class="form-control" name="tid">
                                             <option selected="selected">Choose target</option>
-                                            '.$urls.'
+                                            ' . $urls . '
                                             </select>
 
                                             <select class="form-control" name="loginfile">
@@ -404,7 +306,7 @@ class Tabs
 
                                             <select class="form-control" name="sid">
                                             <option selected="selected">Choose server</option>
-                                            '.$servers.'
+                                            ' . $servers . '
                                             </select>
 
                                             <input type="submit" name="brute" class="btn btn-default">
@@ -415,13 +317,13 @@ class Tabs
 
 
                                 <div class="tab-pane fade in active" id="gl">
-                                    <form method="post" action="scan.php" id="fileselect" class="navbar-form navbar-left">
+                                    <form method="post" action="../scan.php" id="fileselect" class="navbar-form navbar-left">
                                         <div class="form-group">
 
 
                                             <select class="form-control" name="tid">
                                             <option selected="selected">Choose target</option>
-                                            '.$urls.'
+                                            ' . $urls . '
                                             </select>
 
                                             <select class="form-control" name="filename">
@@ -448,6 +350,107 @@ class Tabs
                             </div>
                         </div>
                        ';
+    }
+
+// " . $row['ip'] . "
+
+    function getSubInfoTable($tid)
+    {
+
+        $scans = $this->getSubInfoScans($tid);
+        $hashes = $this->getSubInfoHashes($tid);
+
+
+        $result = '
+                            <ul style="width: 300px" class="qwe nav nav-pills" >
+                                <li class="active"><a  href="#scan-' . $tid . '" data-toggle="tab">Сканирования</a></li>
+                                <li><a  href = "#logins-' . $tid . '" data-toggle = "tab" > Хеши</a ></li >
+                            </ul >
+                            <p>
+                                <div class="tab-content" >
+                                        <div class="tab-pane fade in active scanTable" id = "scan-' . $tid . '" >
+                                            ' .
+            //((isset($wwsd[$row['tid']]))? $wwsd[$row['tid']]:"pusto")
+            $scans
+            . ' </div>
+                                        <div class="tab-pane fade" id = "logins-' . $tid . '" >
+                                             ' . $hashes . '
+                                        </div >
+                                </div >
+
+                            </p>
+                ';
+        //echo $result[$row['tid']];
+        //}
+        //echo (($wwsd[$row['tid']])? "beach":"treach");
+        //print_r($result);
+        return $result;
+    }
+
+    function getSubInfoScans(int $tid)
+    {
+
+        $thead = '<div class="row scan-row">
+                         <div class="col-sm-3">Тип</div>
+                         <div class="col-sm-3">Заголовок2</div>
+                         <div class="col-sm-3">Заголовок3</div>
+                     </div>';
+        $hashes = "";
+
+        $scansArr = $this->Model->MysqliClass->getAssocArray("select * from scans where tid=$tid");//sqli
+
+        if (empty($scansArr)) {
+            $result = "<div class=\"alert alert-warning\">
+                            <strong>Пусто</strong>
+                       </div>";
+        } else {
+            $result = $thead;
+            foreach ($scansArr as $row) {
+                $result .= '
+                        <div class="row scan-row">
+                             <div class="col-sm-3">' . $row['type'] . '</div>
+                             <div class="col-sm-3">' . $row['sid'] . '</div>
+                             <div class="col-sm-3">' . $row['tid'] . '</div>
+                         </div>
+                    ';
+
+            }
+        }
+
+        return $result;
+    }
+
+    function getSubInfoHashes(int $tid)
+    {
+
+        $thead = '<div class="row scan-row">
+                         <div class="col-sm-3">Тип</div>
+                         <div class="col-sm-3">Заголовок2</div>
+                         <div class="col-sm-3">Заголовок3</div>
+                     </div>';
+        $hashes = "";
+
+        $scansArr = $this->Model->MysqliClass->getAssocArray("select * from hashes where tid=$tid");//sqli
+
+        if (empty($scansArr)) {
+            $result = "<div class=\"alert alert-warning\">
+                            <strong>Пусто</strong>
+                       </div>";
+        } else {
+            $result = $thead;
+            foreach ($scansArr as $row) {
+                $result .= '
+                        <div class="row scan-row">
+                             <div class="col-sm-3">' . $row['source'] . '</div>
+                             <div class="col-sm-3">' . $row['type'] . '</div>
+                             <div class="col-sm-3">' . $row['hash'] . '</div>
+                         </div>
+                    ';
+
+            }
+        }
+
+        return $result;
     }
 
 

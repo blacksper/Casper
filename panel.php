@@ -6,7 +6,7 @@
  * Time: 21:30
  */
 //session_start();
-include("Controller.class.php");
+include("./classes/Controller.class.php");
 if(!isset($_SESSION['auth']))
     die(" <script>window.location.replace('./')</script>");
 

@@ -6,7 +6,7 @@
  * Time: 2:27
  */
 //echo 123123123;
-include 'Mysqli.class.php';
+include './classes/Mysqli.class.php';
 $mysqliClass=new MysqliClass();
 
 $results=json_decode($_POST['result'],1);

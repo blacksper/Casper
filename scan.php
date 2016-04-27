@@ -6,7 +6,7 @@
  * Time: 15:34
  */
 session_start();
-include "Tools.class.php";
+include "./classes/Tools.class.php";
 isset($_POST['action'])?$action=$_POST['action']:$action="";
 
 
