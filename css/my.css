@@ -1,0 +1,153 @@
+body {
+
+    background-color: #fff;
+}
+/*
+.btn-primary{
+    background-color: #f78fa7;
+    border-color: #f78fa7;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #D71868;
+    border-color: #D71868;
+}
+.btn-primary:focus,.btn-primary:active {
+    color: #fff;
+    background-color: #D71868;
+    border-color: #D71868;
+}*/
+
+.form-signin{
+    max-width: 300px;
+    margin: 0 auto;
+}
+#asf{
+    /*margin-right: 10px;*/
+    padding-right: 10px;
+}
+.row{
+    padding: 10px;
+    max-width: 1920px;
+}
+.tab-content{
+    min-width: 100px;
+    max-width: 1200px;
+
+    word-break: break-all;
+}
+
+#search{
+    margin-right: 0px;
+}
+
+#main{
+    margin-top: 60px;
+}
+
+#targetContent,#serverContent {
+
+    background-color: #eee;
+}
+
+
+#servers,#targets{
+    border-bottom: 3px solid #DDD;
+    background-color: #eee;
+}
+
+
+.row {
+    margin-right: 10px;
+}
+
+.navbar-form select.form-control{
+    width: 150px;
+}
+
+.menu{
+    max-width: 300px;
+}
+#fileselect{
+    margin-left: -15px;
+}
+
+
+#errurl{
+    padding: 8px 35px 8px 14px;
+    margin-bottom:0px;
+    margin-top:10px;
+    opacity: 0.8;
+}
+
+.ip, .status{
+    width: 120px;
+}
+
+.btns{
+    width: 200px;
+}
+
+#tab-content{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: scroll;
+}
+
+.sign-inp{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    margin: 1px;
+    border:1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.table tbody>tr>td{
+    vertical-align: top;
+}
+.wellm{
+    border: 1px solid #e3e3e3;
+    background-color:#f5f5f5;
+    border-radius: 4px;
+    margin: 5px 0 0 0;
+    padding:5px;
+    font-size: 12px;
+}
+.qwe.nav > li > a{
+    padding: 5px 10px;
+
+}
+
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background-color: #d5d5d5;
+}
+
+.tabs{
+    outline: 1px solid orange;
+}
+.tab-pane>.row{
+    padding: 5px;
+    margin: 0px;
+}
+.scan-row:hover{
+
+
+}
+
+.row{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+}
+
+
+.url{
+    width: 300px;
+}
+.scanTable{
+    max-height: 200px;
+    overflow-y: scroll;
+}
