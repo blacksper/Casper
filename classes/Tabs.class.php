@@ -15,14 +15,15 @@ class Tabs
     function __construct($Model){
         $this->Model=$Model;
         $this->GetMainTab();
-        $this->GetTargetTab();
-        $this->GetServerTab();
-        $this->GetToolsTab();
+        $this->getTargetTab();
+        $this->getServerTab();
+        $this->getToolsTab();
+        $this->getScansTab();
         //$this->Tools=new Tools($this->Model->MysqliClass);
     }
 
 
-    public function GetMainTab()//закладка главное
+    function GetMainTab()//закладка главное
     {
         $tmpHtml="";
         if(isset($_GET['fsid'])) {
@@ -48,7 +49,8 @@ class Tabs
         $this->allHtml.=$tmpHtml;
     }
 
-    function GetTargetTab(){
+    function getTargetTab()
+    {
         //$qweqwe=$this->getSubInfo();
         $thead = '<thead>
                         <tr>
@@ -86,7 +88,7 @@ class Tabs
                         ' . $tbody . '
                         </table>';
 
-        $this->allHtml .= '<div class="tab-pane fade in active" id="add-targets">
+        $this->allHtml .= '<div class="tab-pane fade in active" id="targets-tab">
                                       <div class="nav pol" id="targets">
                                       <div  class="navbar-form navbar-left">
                                             <div class="form-group">
@@ -104,27 +106,24 @@ class Tabs
     function getTargetTableRow($row)
     {
 
-        $result = "<tr class=targetRow data-tid='" . $row['tid'] . "'>
-                <td class=\"url\">
-                 <a href=\"#spoiler-" . $row['tid'] . "\" data-toggle=\"collapse\" class=\"btn btn-primary\">" . $row['url'] . "</a>
-                 <div id='spoiler-" . $row['tid'] . "' class=\"fade collapse  wellm\" data-toggle=\"toggle\"></div>
+        $result = '<tr class="targetRow" data-tid="' . $row['tid'] . '">';
+        $result .= '
+                    <td class="url">
+                        <a href="#spoiler-' . $row['tid'] . '" data-toggle="collapse" class="btn btn-primary">' . $row['url'] . '</a>
 
-                 <div class='collapse wellm' data-toggle='toggle'>
-                 </div>
-                 </td>
-                    <td class='ip'> " . $row['ip'] . "</td>
-                    <td class='btns'>" .
-            '<form method=post>
-
+                    </td>
+                    <td class="ip"> ' . $row['ip'] . '</td>
+                    <td class="btns">
+                    <form method=post>
                         <button type="button" class="btn btn-danger deleteTgt">
                             <span class="glyphicon glyphicon-remove" aria-hidden="true">
                             </span>
                         </button>
                         <input type=hidden name=tid value=' . $row['tid'] . '>
                     </form>
-                    ' . "</td>
-
-                    </tr>";
+                    </td>
+                    ';
+        $result .= '</tr>';
 
         // echo $result;
         return $result;
@@ -132,7 +131,7 @@ class Tabs
 
     //функция генерирует строку, которая содержит сканирования и хэши
 
-    function GetServerTab()//закладка серверы
+    function getServerTab()//закладка серверы
     {
         $query = "SELECT * FROM servers where deleted=0";
         $arr = $this->Model->MysqliClass->getAssocArray($query);
@@ -158,7 +157,7 @@ class Tabs
                     ' . $tbody . '
                 </table>';
         //echo htmlspecialchars($table);
-        $tab = '<div class="tab-pane fade" id="add-servers">
+        $tab = '<div class="tab-pane fade" id="servers-tab">
                                      <div class="nav pol" id="servers">
                                      <div class="navbar-form navbar-left">
                                         <div class="form-group">
@@ -234,7 +233,7 @@ class Tabs
 
     }
 
-    function GetToolsTab()//закладка инструменты
+    function getToolsTab()//закладка инструменты
     {
         $handle=opendir(PATH_TXTP);
         $dirs='';//список директорий
@@ -265,7 +264,7 @@ class Tabs
 
 
         $this->allHtml .= '
-                        <div class="tab-pane fade" id="tools">
+                        <div class="tab-pane fade" id="tools-tab">
                             <ul class="nav nav-pills ">
                                     <li class="active"><a href="#gl" data-toggle="tab">Scanner</a></li>
                                     <li><a href="#gg" data-toggle="tab">BRUTEFORCE</a></li>
@@ -354,20 +353,49 @@ class Tabs
 
 // " . $row['ip'] . "
 
+    function getScansTab()
+    {
+
+        $this->allHtml .= '<div class="tab-pane fade in" id="scans-tab">
+                                      <div class="nav pol" id="targets">
+                                        <table>
+                                        <tr>
+                                            <td>sd</td>
+                                        </tr>
+                                        </table>
+
+
+                                      </div>
+
+
+                            </div>';
+
+
+    }
+
     function getSubInfoTable($tid)
     {
+        $res = $this->Model->MysqliClass->firstResult("select * from targets where tid=$tid");
 
         $scans = $this->getSubInfoScans($tid);
         $hashes = $this->getSubInfoHashes($tid);
 
 
-        $result = '
+        $result = '<div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="gridSystemModalLabel">' . $res['url'] . '</h4>
+                          </div>
+                          <div class="modal-body">
                             <ul style="width: 300px" class="qwe nav nav-pills" >
                                 <li class="active"><a  href="#scan-' . $tid . '" data-toggle="tab">Сканирования</a></li>
                                 <li><a  href = "#logins-' . $tid . '" data-toggle = "tab" > Хеши</a ></li >
                             </ul >
                             <p>
                                 <div class="tab-content" >
+
+
+
                                         <div class="tab-pane fade in active scanTable" id = "scan-' . $tid . '" >
                                             ' .
             //((isset($wwsd[$row['tid']]))? $wwsd[$row['tid']]:"pusto")
@@ -377,8 +405,9 @@ class Tabs
                                              ' . $hashes . '
                                         </div >
                                 </div >
-
                             </p>
+                            </div>
+                    </div>
                 ';
         //echo $result[$row['tid']];
         //}
@@ -452,8 +481,6 @@ class Tabs
 
         return $result;
     }
-
-
 
 
 }

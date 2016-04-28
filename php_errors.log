@@ -4160,3 +4160,257 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in D:\PhpstormProjects\Casper\scan.php on line 22
+[28-Apr-2016 13:26:00 UTC] PHP Warning:  include(../config.php): failed to open stream: No such file or directory in D:\PhpstormProjects\Casper\classes\Viewer.class.php on line 10
+[28-Apr-2016 13:26:00 UTC] PHP Stack trace:
+[28-Apr-2016 13:26:01 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 13:26:01 UTC] PHP   2. include() D:\PhpstormProjects\Casper\panel.php:9
+[28-Apr-2016 13:26:01 UTC] PHP   3. include() D:\PhpstormProjects\Casper\classes\Controller.class.php:10
+[28-Apr-2016 13:26:01 UTC] PHP Warning:  include(): Failed opening '../config.php' for inclusion (include_path='.;C:\php\pear') in D:\PhpstormProjects\Casper\classes\Viewer.class.php on line 10
+[28-Apr-2016 13:26:01 UTC] PHP Stack trace:
+[28-Apr-2016 13:26:01 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 13:26:01 UTC] PHP   2. include() D:\PhpstormProjects\Casper\panel.php:9
+[28-Apr-2016 13:26:01 UTC] PHP   3. include() D:\PhpstormProjects\Casper\classes\Controller.class.php:10
+[28-Apr-2016 13:26:01 UTC] PHP Notice:  Use of undefined constant PATH_TXTP - assumed 'PATH_TXTP' in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 239
+[28-Apr-2016 13:26:01 UTC] PHP Stack trace:
+[28-Apr-2016 13:26:01 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 13:26:01 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 13:26:01 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 13:26:01 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 13:26:01 UTC] PHP   5. Tabs->GetToolsTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:20
+[28-Apr-2016 13:26:01 UTC] PHP Warning:  opendir(PATH_TXTP,PATH_TXTP): �� ������ ����� �������� ����. (code: 2) in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 239
+[28-Apr-2016 13:26:01 UTC] PHP Stack trace:
+[28-Apr-2016 13:26:01 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 13:26:01 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 13:26:01 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 13:26:01 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 13:26:01 UTC] PHP   5. Tabs->GetToolsTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:20
+[28-Apr-2016 13:26:01 UTC] PHP   6. opendir() D:\PhpstormProjects\Casper\classes\Tabs.class.php:239
+[28-Apr-2016 13:26:01 UTC] PHP Warning:  opendir(PATH_TXTP): failed to open dir: No such file or directory in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 239
+[28-Apr-2016 13:26:01 UTC] PHP Stack trace:
+[28-Apr-2016 13:26:01 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 13:26:01 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 13:26:01 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 13:26:01 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 13:26:01 UTC] PHP   5. Tabs->GetToolsTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:20
+[28-Apr-2016 13:26:01 UTC] PHP   6. opendir() D:\PhpstormProjects\Casper\classes\Tabs.class.php:239
+[28-Apr-2016 13:26:01 UTC] PHP Warning:  readdir() expects parameter 1 to be resource, boolean given in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 244
+[28-Apr-2016 13:26:01 UTC] PHP Stack trace:
+[28-Apr-2016 13:26:01 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 13:26:01 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 13:26:01 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 13:26:01 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 13:26:01 UTC] PHP   5. Tabs->GetToolsTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:20
+[28-Apr-2016 13:26:01 UTC] PHP   6. readdir() D:\PhpstormProjects\Casper\classes\Tabs.class.php:244
+[28-Apr-2016 13:28:03 UTC] PHP Warning:  require_once(../config.php): failed to open stream: No such file or directory in D:\PhpstormProjects\Casper\classes\Viewer.class.php on line 10
+[28-Apr-2016 13:28:03 UTC] PHP Stack trace:
+[28-Apr-2016 13:28:03 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 13:28:03 UTC] PHP   2. include() D:\PhpstormProjects\Casper\panel.php:9
+[28-Apr-2016 13:28:03 UTC] PHP   3. include() D:\PhpstormProjects\Casper\classes\Controller.class.php:10
+[28-Apr-2016 13:28:03 UTC] PHP Fatal error:  require_once(): Failed opening required '../config.php' (include_path='.;C:\php\pear') in D:\PhpstormProjects\Casper\classes\Viewer.class.php on line 10
+[28-Apr-2016 13:28:03 UTC] PHP Stack trace:
+[28-Apr-2016 13:28:03 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 13:28:03 UTC] PHP   2. include() D:\PhpstormProjects\Casper\panel.php:9
+[28-Apr-2016 13:28:03 UTC] PHP   3. include() D:\PhpstormProjects\Casper\classes\Controller.class.php:10
+[28-Apr-2016 13:31:01 UTC] PHP Warning:  include(../config.php): failed to open stream: No such file or directory in D:\PhpstormProjects\Casper\classes\Viewer.class.php on line 10
+[28-Apr-2016 13:31:01 UTC] PHP Stack trace:
+[28-Apr-2016 13:31:01 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 13:31:01 UTC] PHP   2. include() D:\PhpstormProjects\Casper\panel.php:9
+[28-Apr-2016 13:31:01 UTC] PHP   3. include() D:\PhpstormProjects\Casper\classes\Controller.class.php:10
+[28-Apr-2016 13:31:01 UTC] PHP Warning:  include(): Failed opening '../config.php' for inclusion (include_path='.;C:\php\pear') in D:\PhpstormProjects\Casper\classes\Viewer.class.php on line 10
+[28-Apr-2016 13:31:01 UTC] PHP Stack trace:
+[28-Apr-2016 13:31:01 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 13:31:01 UTC] PHP   2. include() D:\PhpstormProjects\Casper\panel.php:9
+[28-Apr-2016 13:31:01 UTC] PHP   3. include() D:\PhpstormProjects\Casper\classes\Controller.class.php:10
+[28-Apr-2016 13:31:01 UTC] PHP Notice:  Use of undefined constant PATH_TXTP - assumed 'PATH_TXTP' in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 239
+[28-Apr-2016 13:31:01 UTC] PHP Stack trace:
+[28-Apr-2016 13:31:01 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 13:31:01 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 13:31:01 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 13:31:01 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 13:31:01 UTC] PHP   5. Tabs->GetToolsTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:20
+[28-Apr-2016 13:31:01 UTC] PHP Warning:  opendir(PATH_TXTP,PATH_TXTP): �� ������ ����� �������� ����. (code: 2) in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 239
+[28-Apr-2016 13:31:01 UTC] PHP Stack trace:
+[28-Apr-2016 13:31:01 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 13:31:01 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 13:31:01 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 13:31:01 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 13:31:01 UTC] PHP   5. Tabs->GetToolsTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:20
+[28-Apr-2016 13:31:01 UTC] PHP   6. opendir() D:\PhpstormProjects\Casper\classes\Tabs.class.php:239
+[28-Apr-2016 13:31:01 UTC] PHP Warning:  opendir(PATH_TXTP): failed to open dir: No such file or directory in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 239
+[28-Apr-2016 13:31:01 UTC] PHP Stack trace:
+[28-Apr-2016 13:31:01 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 13:31:01 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 13:31:01 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 13:31:01 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 13:31:01 UTC] PHP   5. Tabs->GetToolsTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:20
+[28-Apr-2016 13:31:01 UTC] PHP   6. opendir() D:\PhpstormProjects\Casper\classes\Tabs.class.php:239
+[28-Apr-2016 13:31:01 UTC] PHP Warning:  readdir() expects parameter 1 to be resource, boolean given in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 244
+[28-Apr-2016 13:31:01 UTC] PHP Stack trace:
+[28-Apr-2016 13:31:01 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 13:31:01 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 13:31:01 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 13:31:01 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 13:31:01 UTC] PHP   5. Tabs->GetToolsTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:20
+[28-Apr-2016 13:31:01 UTC] PHP   6. readdir() D:\PhpstormProjects\Casper\classes\Tabs.class.php:244
+[28-Apr-2016 13:31:15 UTC] PHP Warning:  include(../../config.php): failed to open stream: No such file or directory in D:\PhpstormProjects\Casper\classes\Viewer.class.php on line 10
+[28-Apr-2016 13:31:15 UTC] PHP Stack trace:
+[28-Apr-2016 13:31:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 13:31:15 UTC] PHP   2. include() D:\PhpstormProjects\Casper\panel.php:9
+[28-Apr-2016 13:31:15 UTC] PHP   3. include() D:\PhpstormProjects\Casper\classes\Controller.class.php:10
+[28-Apr-2016 13:31:15 UTC] PHP Warning:  include(): Failed opening '../../config.php' for inclusion (include_path='.;C:\php\pear') in D:\PhpstormProjects\Casper\classes\Viewer.class.php on line 10
+[28-Apr-2016 13:31:15 UTC] PHP Stack trace:
+[28-Apr-2016 13:31:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 13:31:15 UTC] PHP   2. include() D:\PhpstormProjects\Casper\panel.php:9
+[28-Apr-2016 13:31:15 UTC] PHP   3. include() D:\PhpstormProjects\Casper\classes\Controller.class.php:10
+[28-Apr-2016 13:31:15 UTC] PHP Notice:  Use of undefined constant PATH_TXTP - assumed 'PATH_TXTP' in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 239
+[28-Apr-2016 13:31:15 UTC] PHP Stack trace:
+[28-Apr-2016 13:31:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 13:31:15 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 13:31:15 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 13:31:15 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 13:31:15 UTC] PHP   5. Tabs->GetToolsTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:20
+[28-Apr-2016 13:31:15 UTC] PHP Warning:  opendir(PATH_TXTP,PATH_TXTP): �� ������ ����� �������� ����. (code: 2) in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 239
+[28-Apr-2016 13:31:15 UTC] PHP Stack trace:
+[28-Apr-2016 13:31:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 13:31:15 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 13:31:15 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 13:31:15 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 13:31:15 UTC] PHP   5. Tabs->GetToolsTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:20
+[28-Apr-2016 13:31:15 UTC] PHP   6. opendir() D:\PhpstormProjects\Casper\classes\Tabs.class.php:239
+[28-Apr-2016 13:31:15 UTC] PHP Warning:  opendir(PATH_TXTP): failed to open dir: No such file or directory in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 239
+[28-Apr-2016 13:31:15 UTC] PHP Stack trace:
+[28-Apr-2016 13:31:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 13:31:15 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 13:31:15 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 13:31:15 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 13:31:15 UTC] PHP   5. Tabs->GetToolsTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:20
+[28-Apr-2016 13:31:15 UTC] PHP   6. opendir() D:\PhpstormProjects\Casper\classes\Tabs.class.php:239
+[28-Apr-2016 13:31:15 UTC] PHP Warning:  readdir() expects parameter 1 to be resource, boolean given in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 244
+[28-Apr-2016 13:31:15 UTC] PHP Stack trace:
+[28-Apr-2016 13:31:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 13:31:15 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 13:31:15 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 13:31:15 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 13:31:15 UTC] PHP   5. Tabs->GetToolsTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:20
+[28-Apr-2016 13:31:15 UTC] PHP   6. readdir() D:\PhpstormProjects\Casper\classes\Tabs.class.php:244
+[28-Apr-2016 13:31:19 UTC] PHP Warning:  include(../config.php): failed to open stream: No such file or directory in D:\PhpstormProjects\Casper\classes\Viewer.class.php on line 10
+[28-Apr-2016 13:31:19 UTC] PHP Stack trace:
+[28-Apr-2016 13:31:19 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 13:31:19 UTC] PHP   2. include() D:\PhpstormProjects\Casper\panel.php:9
+[28-Apr-2016 13:31:19 UTC] PHP   3. include() D:\PhpstormProjects\Casper\classes\Controller.class.php:10
+[28-Apr-2016 13:31:19 UTC] PHP Warning:  include(): Failed opening '../config.php' for inclusion (include_path='.;C:\php\pear') in D:\PhpstormProjects\Casper\classes\Viewer.class.php on line 10
+[28-Apr-2016 13:31:19 UTC] PHP Stack trace:
+[28-Apr-2016 13:31:19 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 13:31:19 UTC] PHP   2. include() D:\PhpstormProjects\Casper\panel.php:9
+[28-Apr-2016 13:31:19 UTC] PHP   3. include() D:\PhpstormProjects\Casper\classes\Controller.class.php:10
+[28-Apr-2016 13:31:19 UTC] PHP Notice:  Use of undefined constant PATH_TXTP - assumed 'PATH_TXTP' in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 239
+[28-Apr-2016 13:31:19 UTC] PHP Stack trace:
+[28-Apr-2016 13:31:19 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 13:31:19 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 13:31:19 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 13:31:19 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 13:31:19 UTC] PHP   5. Tabs->GetToolsTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:20
+[28-Apr-2016 13:31:19 UTC] PHP Warning:  opendir(PATH_TXTP,PATH_TXTP): �� ������ ����� �������� ����. (code: 2) in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 239
+[28-Apr-2016 13:31:19 UTC] PHP Stack trace:
+[28-Apr-2016 13:31:19 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 13:31:19 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 13:31:19 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 13:31:19 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 13:31:19 UTC] PHP   5. Tabs->GetToolsTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:20
+[28-Apr-2016 13:31:19 UTC] PHP   6. opendir() D:\PhpstormProjects\Casper\classes\Tabs.class.php:239
+[28-Apr-2016 13:31:19 UTC] PHP Warning:  opendir(PATH_TXTP): failed to open dir: No such file or directory in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 239
+[28-Apr-2016 13:31:19 UTC] PHP Stack trace:
+[28-Apr-2016 13:31:19 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 13:31:19 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 13:31:19 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 13:31:19 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 13:31:19 UTC] PHP   5. Tabs->GetToolsTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:20
+[28-Apr-2016 13:31:19 UTC] PHP   6. opendir() D:\PhpstormProjects\Casper\classes\Tabs.class.php:239
+[28-Apr-2016 13:31:19 UTC] PHP Warning:  readdir() expects parameter 1 to be resource, boolean given in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 244
+[28-Apr-2016 13:31:19 UTC] PHP Stack trace:
+[28-Apr-2016 13:31:19 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 13:31:19 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 13:31:19 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 13:31:19 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 13:31:19 UTC] PHP   5. Tabs->GetToolsTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:20
+[28-Apr-2016 13:31:19 UTC] PHP   6. readdir() D:\PhpstormProjects\Casper\classes\Tabs.class.php:244
+[28-Apr-2016 13:36:48 UTC] PHP Warning:  require(D:\PhpstormProjects\Casper\classes/config.php): failed to open stream: No such file or directory in D:\PhpstormProjects\Casper\classes\Viewer.class.php on line 10
+[28-Apr-2016 13:36:48 UTC] PHP Stack trace:
+[28-Apr-2016 13:36:48 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 13:36:48 UTC] PHP   2. include() D:\PhpstormProjects\Casper\panel.php:9
+[28-Apr-2016 13:36:48 UTC] PHP   3. include() D:\PhpstormProjects\Casper\classes\Controller.class.php:10
+[28-Apr-2016 13:36:48 UTC] PHP Fatal error:  require(): Failed opening required 'D:\PhpstormProjects\Casper\classes/config.php' (include_path='.;C:\php\pear') in D:\PhpstormProjects\Casper\classes\Viewer.class.php on line 10
+[28-Apr-2016 13:36:48 UTC] PHP Stack trace:
+[28-Apr-2016 13:36:48 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 13:36:48 UTC] PHP   2. include() D:\PhpstormProjects\Casper\panel.php:9
+[28-Apr-2016 13:36:48 UTC] PHP   3. include() D:\PhpstormProjects\Casper\classes\Controller.class.php:10
+[28-Apr-2016 13:37:02 UTC] PHP Warning:  require(D:\PhpstormProjects\Casper\classes..\config.php): failed to open stream: No such file or directory in D:\PhpstormProjects\Casper\classes\Viewer.class.php on line 10
+[28-Apr-2016 13:37:02 UTC] PHP Stack trace:
+[28-Apr-2016 13:37:02 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 13:37:02 UTC] PHP   2. include() D:\PhpstormProjects\Casper\panel.php:9
+[28-Apr-2016 13:37:02 UTC] PHP   3. include() D:\PhpstormProjects\Casper\classes\Controller.class.php:10
+[28-Apr-2016 13:37:02 UTC] PHP Fatal error:  require(): Failed opening required 'D:\PhpstormProjects\Casper\classes..\config.php' (include_path='.;C:\php\pear') in D:\PhpstormProjects\Casper\classes\Viewer.class.php on line 10
+[28-Apr-2016 13:37:02 UTC] PHP Stack trace:
+[28-Apr-2016 13:37:02 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 13:37:02 UTC] PHP   2. include() D:\PhpstormProjects\Casper\panel.php:9
+[28-Apr-2016 13:37:02 UTC] PHP   3. include() D:\PhpstormProjects\Casper\classes\Controller.class.php:10
+[28-Apr-2016 13:38:36 UTC] PHP Warning:  require(D:\PhpstormProjects\Casper\classes../config.php): failed to open stream: No such file or directory in D:\PhpstormProjects\Casper\classes\Viewer.class.php on line 10
+[28-Apr-2016 13:38:36 UTC] PHP Stack trace:
+[28-Apr-2016 13:38:36 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 13:38:36 UTC] PHP   2. include() D:\PhpstormProjects\Casper\panel.php:9
+[28-Apr-2016 13:38:36 UTC] PHP   3. include() D:\PhpstormProjects\Casper\classes\Controller.class.php:10
+[28-Apr-2016 13:38:36 UTC] PHP Fatal error:  require(): Failed opening required 'D:\PhpstormProjects\Casper\classes../config.php' (include_path='.;C:\php\pear') in D:\PhpstormProjects\Casper\classes\Viewer.class.php on line 10
+[28-Apr-2016 13:38:36 UTC] PHP Stack trace:
+[28-Apr-2016 13:38:36 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 13:38:36 UTC] PHP   2. include() D:\PhpstormProjects\Casper\panel.php:9
+[28-Apr-2016 13:38:36 UTC] PHP   3. include() D:\PhpstormProjects\Casper\classes\Controller.class.php:10
+[28-Apr-2016 13:38:42 UTC] PHP Warning:  require(D:\PhpstormProjects\Casper\classes/config.php): failed to open stream: No such file or directory in D:\PhpstormProjects\Casper\classes\Viewer.class.php on line 10
+[28-Apr-2016 13:38:42 UTC] PHP Stack trace:
+[28-Apr-2016 13:38:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 13:38:42 UTC] PHP   2. include() D:\PhpstormProjects\Casper\panel.php:9
+[28-Apr-2016 13:38:42 UTC] PHP   3. include() D:\PhpstormProjects\Casper\classes\Controller.class.php:10
+[28-Apr-2016 13:38:42 UTC] PHP Fatal error:  require(): Failed opening required 'D:\PhpstormProjects\Casper\classes/config.php' (include_path='.;C:\php\pear') in D:\PhpstormProjects\Casper\classes\Viewer.class.php on line 10
+[28-Apr-2016 13:38:42 UTC] PHP Stack trace:
+[28-Apr-2016 13:38:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 13:38:42 UTC] PHP   2. include() D:\PhpstormProjects\Casper\panel.php:9
+[28-Apr-2016 13:38:42 UTC] PHP   3. include() D:\PhpstormProjects\Casper\classes\Controller.class.php:10
+[28-Apr-2016 13:40:15 UTC] PHP Warning:  require(D:\PhpstormProjects\Casper\classes/config.php): failed to open stream: No such file or directory in D:\PhpstormProjects\Casper\classes\Viewer.class.php on line 10
+[28-Apr-2016 13:40:15 UTC] PHP Stack trace:
+[28-Apr-2016 13:40:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 13:40:15 UTC] PHP   2. include() D:\PhpstormProjects\Casper\panel.php:9
+[28-Apr-2016 13:40:15 UTC] PHP   3. include() D:\PhpstormProjects\Casper\classes\Controller.class.php:10
+[28-Apr-2016 13:40:15 UTC] PHP Fatal error:  require(): Failed opening required 'D:\PhpstormProjects\Casper\classes/config.php' (include_path='.;C:\php\pear') in D:\PhpstormProjects\Casper\classes\Viewer.class.php on line 10
+[28-Apr-2016 13:40:15 UTC] PHP Stack trace:
+[28-Apr-2016 13:40:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 13:40:15 UTC] PHP   2. include() D:\PhpstormProjects\Casper\panel.php:9
+[28-Apr-2016 13:40:15 UTC] PHP   3. include() D:\PhpstormProjects\Casper\classes\Controller.class.php:10
+[28-Apr-2016 13:55:47 UTC] PHP Notice:  Undefined variable: table in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 469
+[28-Apr-2016 13:55:47 UTC] PHP Stack trace:
+[28-Apr-2016 13:55:47 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 13:55:47 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 13:55:47 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 13:55:47 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 13:55:47 UTC] PHP   5. Tabs->getScansTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:21
+[28-Apr-2016 13:57:49 UTC] PHP Notice:  Undefined variable: table in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 469
+[28-Apr-2016 13:57:49 UTC] PHP Stack trace:
+[28-Apr-2016 13:57:49 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 13:57:49 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 13:57:49 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 13:57:49 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 13:57:49 UTC] PHP   5. Tabs->getScansTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:21
+[28-Apr-2016 13:58:12 UTC] PHP Notice:  Undefined variable: table in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 469
+[28-Apr-2016 13:58:12 UTC] PHP Stack trace:
+[28-Apr-2016 13:58:12 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 13:58:12 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 13:58:12 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 13:58:12 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 13:58:12 UTC] PHP   5. Tabs->getScansTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:21
+[28-Apr-2016 15:58:15 UTC] PHP Notice:  Undefined property: Model::$Mysqli in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 359
+[28-Apr-2016 15:58:15 UTC] PHP Stack trace:
+[28-Apr-2016 15:58:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[28-Apr-2016 15:58:15 UTC] PHP   2. Tabs->getSubInfoTable() D:\PhpstormProjects\Casper\ajax.php:50
+[28-Apr-2016 15:58:15 UTC] PHP Fatal error:  Uncaught Error: Call to a member function firstResult() on null in D:\PhpstormProjects\Casper\classes\Tabs.class.php:359
+Stack trace:
+#0 D:\PhpstormProjects\Casper\ajax.php(50): Tabs->getSubInfoTable('1')
+#1 {main}
+  thrown in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 359

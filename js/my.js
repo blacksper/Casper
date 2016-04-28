@@ -144,7 +144,7 @@ $(document).ready(function(){
                 }
         });
 
-
+    $('#servers-tab').modal('backdrop');
 
 
     function showAlert(){
@@ -158,11 +158,29 @@ $(document).ready(function(){
 
     //$('tr>td.url a').click(function(){
         $("body").on('click','tr>td.url a',function(){
+            if ($('#myModal').html() == undefined) {
+                $('body').append("<div id='myModal' class='modal fade' tabindex='-1' role='dialog' aria-labelledby='myLargeModalLabel'>" +
+                    "<div class='modal-dialog modal-lg'>" +
 
-        var tid=($(this).parents('tr.targetRow').data("tid"));
+                    "</div>" +
+                    "</div>");
+            }
+            var tid = ($(this).parents('tr.targetRow').data("tid"));
+            $.ajax({
+                url: "ajax.php",
+                type: "POST",
+                data: "action=getsubinfo&tid=" + tid,
+                success: function (data) {
+                    $('.modal-dialog').html(data);
+                    $('#myModal').modal();
+                }
+            });
+
+
+
         console.log($('#spoiler-'+tid).text().length);
 
-        if($('#spoiler-'+tid).text().length==0) {
+            if (0) {
 
             $.ajax({
                 url: "ajax.php",

@@ -7,7 +7,7 @@
  * Time: 22:45
  */
 
-include("../config.php");
+require($_SERVER['DOCUMENT_ROOT'] . "/config.php");
 //include("Mysqli.class.php");
 include("Tabs.class.php");
 
@@ -17,7 +17,7 @@ class Viewer
     var $Head;
     var $Body;
     var $Footer;
-    var $menu;
+
     var $Tabs;
     var $Model;
 
@@ -55,9 +55,10 @@ class Viewer
                             <div class="tabs menu col-xs-3 col-md-2">
                                 <ul class="nav nav-pills nav-stacked ">
                                     <li ><a href="#tab-1" data-toggle="tab">Главная</a></li>
-                                    <li "><a href="#add-targets" data-toggle="tab">Цели</a></li>
-                                    <li><a href="#add-servers" data-toggle="tab">Сервера</a></li>
-                                    <li  ><a href="#tools" data-toggle="tab">Инструменты</a></li>
+                                    <li><a href="#targets-tab" data-toggle="tab">Цели</a></li>
+                                    <li><a href="#servers-tab" data-toggle="tab">Сервера</a></li>
+                                    <li><a href="#tools-tab" data-toggle="tab">Инструменты</a></li>
+                                    <li><a href="#scans-tab" data-toggle="tab">Сканирования</a></li>
 
                                     <li><a href="'.$_SERVER['PHP_SELF'].'?logout=1">Выход</a></li>
                                 </ul>
@@ -75,13 +76,6 @@ class Viewer
         //$this->GetServerTab();
         //$this->GetToolsTab();
     }
-
-
-
-
-
-
-
 
 
 
