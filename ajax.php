@@ -16,9 +16,9 @@ if(isset($_POST['action'])){
     $action=$_POST['action'];
     switch($action){
         case "add":
-            if(isset($_POST['targetUrl'])) {
-                $url=$_POST['targetUrl'];
-                echo json_encode($Controller->addTarget($url));
+            if (isset($_POST['campaignName'])) {
+                $name = $_POST['campaignName'];
+                echo json_encode($Controller->addCampaign($name));
             }
             elseif(isset($_POST['serverUrl'])) {
                 echo json_encode($Controller->addServer($url));
@@ -33,9 +33,9 @@ if(isset($_POST['action'])){
             break;
         case "delete":
             $result=0;
-            if(isset($_POST['targetId'])) {
-                $tid=$_POST['targetId'];
-                $result=$Controller->setDelete($tid,"target");
+            if (isset($_POST['campaignId'])) {
+                $cid = $_POST['campaignId'];
+                $result = $Controller->setDelete($cid, "campaign");
             }
             elseif(isset($_POST['serverId'])) {
                 $sid=$_POST['serverId'];
@@ -45,9 +45,9 @@ if(isset($_POST['action'])){
             //var_dump($result);
             break;
         case "getsubinfo":
-            if(isset($_POST['tid'])) {
-                $tid=$_POST['tid'];
-                echo $Controller->Viewer->Tabs->getSubInfoTable($tid);
+            if (isset($_POST['cid'])) {
+                $cid = $_POST['cid'];
+                //echo $Controller->Viewer->Tabs->getSubInfoTable($tid);
             }
             break;
 

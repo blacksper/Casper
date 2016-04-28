@@ -39,19 +39,19 @@ $(document).ready(function(){
     });
 
 
-        $("#addTarget").click(function(){
-            var targetUrl=$("#targetUrl").val();
-            console.log(targetUrl);
+    $("#addCampaign").click(function () {
+        var campaignName = $("#campaignName").val();
+        console.log(campaignName);
 
-            if(targetUrl!==undefined) {
+        if (campaignName !== undefined) {
                 $.ajax({
                     url: "./ajax.php",
                     type: "POST",
-                    data: "targetUrl=" + targetUrl + "&action=add",
+                    data: "campaignName=" + campaignName + "&action=add",
                     success: function (data) {
                         console.log("viz");
                         if(data!==undefined)
-                            $("#targetContent tbody").append(JSON.parse(data));
+                            $("#campaignContent tbody").append(JSON.parse(data));
 
                     }
                 });
@@ -125,15 +125,15 @@ $(document).ready(function(){
             }
         });
 
-        $("body").on('click','.deleteTgt',function(){
-                var row=$(this).parents('.targetRow');
-                var targetId=row.data('tid');
-                console.log(targetId);
-                if(targetId!==undefined) {
+    $("body").on('click', '.deleteCmp', function () {
+        var row = $(this).parents('.campaignRow');
+        var campaignId = row.data('cid');
+        console.log(campaignId);
+        if (campaignId !== undefined) {
                     $.ajax({
                         url: "./ajax.php",
                         type: "POST",
-                        data: "targetId=" + targetId + "&action=delete",
+                        data: "campaignId=" + campaignId + "&action=delete",
                         success: function (data) {
                             console.log(data);
                             if(data==1) {
@@ -144,7 +144,7 @@ $(document).ready(function(){
                 }
         });
 
-    $('#servers-tab').modal('backdrop');
+
 
 
     function showAlert(){
@@ -157,7 +157,7 @@ $(document).ready(function(){
     });*/
 
     //$('tr>td.url a').click(function(){
-        $("body").on('click','tr>td.url a',function(){
+    $("boddy").on('click', 'tr>td.url a', function () {
             if ($('#myModal').html() == undefined) {
                 $('body').append("<div id='myModal' class='modal fade' tabindex='-1' role='dialog' aria-labelledby='myLargeModalLabel'>" +
                     "<div class='modal-dialog modal-lg'>" +

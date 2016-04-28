@@ -45,7 +45,7 @@ body {
     margin-top: 60px;
 }
 
-#targetContent,#serverContent {
+#campaignContent, #serverContent {
 
     background-color: #eee;
 }
@@ -150,4 +150,12 @@ body {
 .scanTable{
     max-height: 200px;
     overflow-y: scroll;
+}
+
+.childUrl {
+    overflow: hidden;
+}
+
+.child-row {
+    max-width: 600px;
 }

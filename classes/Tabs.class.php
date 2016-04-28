@@ -15,7 +15,7 @@ class Tabs
     function __construct($Model){
         $this->Model=$Model;
         $this->GetMainTab();
-        $this->getTargetTab();
+        $this->getCampaignTab();
         $this->getServerTab();
         $this->getToolsTab();
         $this->getScansTab();
@@ -49,52 +49,52 @@ class Tabs
         $this->allHtml.=$tmpHtml;
     }
 
-    function getTargetTab()
+    function getCampaignTab()
     {
         //$qweqwe=$this->getSubInfo();
         $thead = '<thead>
                         <tr>
-                            <th>url</th>
+                            <th>name</th>
                             <th>ip</th>
                             <th></th>
                         </tr>
                       </thead>';
         $tbody = "<tbody>";
 
-        $query="select * from targets where deleted=0";
+        $query = "select * from campaigns where deleted=0";
         $urlsArr = $this->Model->MysqliClass->getAssocArray($query);
 
         #################### Формирование таблицы
         $i = 0;
         foreach ($urlsArr as $row) {
-            if (!isset($row['pid'])) {
-                $tbody .= $this->getTargetTableRow($row);
-                foreach ($urlsArr as $row2) {
-                    if ($row['tid'] == $row2['pid']) {
-                        $tbody .= "<tr class=\"serverRow\" value='" . $row2['tid'] . "'>
-                        <td class=url> $i" . $row2['url'] . "</td>
-                        <td class='ip'> " . $row2['ip'] . "</td>
-                        </tr>";
-                    }
-                }
-            }
+            //if (!isset($row['pid'])) {
+            $tbody .= $this->getCampaignTableRow($row);
+//                foreach ($urlsArr as $row2) {
+//
+//                        $tbody .= "<tr class=\"campaignRow\" value='" . $row2['cid'] . "'>
+//                        <td class=url> $i" . $row2['name'] . "</td>
+//                        <td class='ip'> </td>
+//                        </tr>";
+//
+//                }
+//           // }
             $i++;
         }
         $tbody .= "</tbody>";
         ####################
 
-        $table = '<table id="targetContent" class="table table-hover">
+        $table = '<table id="campaignContent" class="table table-hover">
                         ' . $thead . '
                         ' . $tbody . '
                         </table>';
 
-        $this->allHtml .= '<div class="tab-pane fade in active" id="targets-tab">
-                                      <div class="nav pol" id="targets">
+        $this->allHtml .= '<div class="tab-pane fade in active" id="campaigns-tab">
+                                      <div class="nav pol" id="campaigns">
                                       <div  class="navbar-form navbar-left">
                                             <div class="form-group">
-                                                <button id="addTarget" class="btn btn-success">Добавить цель</button>
+                                                <button id="addCampaign" class="btn btn-success">Добавить цель</button>
                                             </div>
-                                            <input class="form-control" id="targetUrl" type="text">
+                                            <input class="form-control" id="campaignName" type="text">
 
                                       </div>
                                       </div>
@@ -103,29 +103,29 @@ class Tabs
                             </div>';
     }
 
-    function getTargetTableRow($row)
+    function getCampaignTableRow($row)
     {
-
-        $result = '<tr class="targetRow" data-tid="' . $row['tid'] . '">';
+        //echo 123;
+        $result = '<tr class="campaignRow" data-cid="' . $row['cid'] . '">';
         $result .= '
                     <td class="url">
-                        <a href="#spoiler-' . $row['tid'] . '" data-toggle="collapse" class="btn btn-primary">' . $row['url'] . '</a>
+                        <a href="#spoiler-' . $row['cid'] . '" data-toggle="collapse" class="btn btn-primary">' . $row['name'] . '</a>
 
                     </td>
-                    <td class="ip"> ' . $row['ip'] . '</td>
+                    <td class="ip"> ----</td>
                     <td class="btns">
                     <form method=post>
-                        <button type="button" class="btn btn-danger deleteTgt">
+                        <button type="button" class="btn btn-danger deleteCmp">
                             <span class="glyphicon glyphicon-remove" aria-hidden="true">
                             </span>
                         </button>
-                        <input type=hidden name=tid value=' . $row['tid'] . '>
+
                     </form>
                     </td>
                     ';
         $result .= '</tr>';
 
-        // echo $result;
+        //echo $result;
         return $result;
     }
 
@@ -357,7 +357,7 @@ class Tabs
     {
 
         $this->allHtml .= '<div class="tab-pane fade in" id="scans-tab">
-                                      <div class="nav pol" id="targets">
+                                      <div class="nav pol" id="campaigns">
                                         <table>
                                         <tr>
                                             <td>sd</td>
@@ -379,6 +379,7 @@ class Tabs
 
         $scans = $this->getSubInfoScans($tid);
         $hashes = $this->getSubInfoHashes($tid);
+        $childs = "";//$this->getSubInfoChilds($tid);
 
 
         $result = '<div class="modal-content">
@@ -389,7 +390,8 @@ class Tabs
                           <div class="modal-body">
                             <ul style="width: 300px" class="qwe nav nav-pills" >
                                 <li class="active"><a  href="#scan-' . $tid . '" data-toggle="tab">Сканирования</a></li>
-                                <li><a  href = "#logins-' . $tid . '" data-toggle = "tab" > Хеши</a ></li >
+                                <li><a  href = "#logins-' . $tid . '" data-toggle = "tab" > Хеши </a></li >
+                                <li><a  href = "#childs-' . $tid . '" data-toggle = "tab" > Дочерние цели </a></li >
                             </ul >
                             <p>
                                 <div class="tab-content" >
@@ -397,12 +399,14 @@ class Tabs
 
 
                                         <div class="tab-pane fade in active scanTable" id = "scan-' . $tid . '" >
-                                            ' .
-            //((isset($wwsd[$row['tid']]))? $wwsd[$row['tid']]:"pusto")
+                                        ' .
             $scans
             . ' </div>
                                         <div class="tab-pane fade" id = "logins-' . $tid . '" >
                                              ' . $hashes . '
+                                        </div >
+                                        <div class="tab-pane fade" id = "childs-' . $tid . '" >
+                                             ' . $childs . '
                                         </div >
                                 </div >
                             </p>
@@ -416,7 +420,7 @@ class Tabs
         return $result;
     }
 
-    function getSubInfoScans(int $tid)
+    function getSubInfoScans(int $cid)
     {
 
         $thead = '<div class="row scan-row">
@@ -426,7 +430,7 @@ class Tabs
                      </div>';
         $hashes = "";
 
-        $scansArr = $this->Model->MysqliClass->getAssocArray("select * from scans where tid=$tid");//sqli
+        $scansArr = $this->Model->MysqliClass->getAssocArray("select * from scans where tid=$cid");//sqli
 
         if (empty($scansArr)) {
             $result = "<div class=\"alert alert-warning\">
@@ -478,6 +482,52 @@ class Tabs
 
             }
         }
+
+        return $result;
+    }
+
+    function getSubInfoChilds(int $tid)
+    {
+
+        $thead = '          <ul style="width: 300px" class="qwe nav nav-pills" >
+                                <li class="active"><a  href="#existChilds" data-toggle="tab">Существующие</a></li>
+                                <li><a  href = "#" data-toggle = "tab" > Добавить </a></li >
+                            </ul >
+                     ';
+
+
+        $scansArr = $this->Model->MysqliClass->getAssocArray("select * from targets where pid=$tid");//sqli
+
+        if (empty($scansArr)) {
+            $result = "<div class=\"alert alert-warning\">
+                            <strong>Пусто</strong>
+                       </div>";
+        } else {
+            $result = $thead;
+            $cont = "";
+            foreach ($scansArr as $row) {
+                $cont .= '
+                        <div class="row child-row childUrl">
+                             <div class="col-sm-2">' . $row['tid'] . '</div>
+                             <div class="col-sm-6 ">' . $row['url'] . '</div>
+                         </div>
+                    ';
+            }
+
+            $result .= '   <div class="tab-content" >
+                                <div class="tab-pane fade in active scanTable" id = "existChilds" >
+                                    <div class="row child-row">
+                                         <div class="col-sm-2">ид</div>
+                                         <div class="col-sm-4">url</div>
+
+                                    </div>
+                                    ' . $cont . '
+                                </div>
+                            </div>';
+
+
+        }
+
 
         return $result;
     }

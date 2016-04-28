@@ -55,7 +55,7 @@ class Viewer
                             <div class="tabs menu col-xs-3 col-md-2">
                                 <ul class="nav nav-pills nav-stacked ">
                                     <li ><a href="#tab-1" data-toggle="tab">Главная</a></li>
-                                    <li><a href="#targets-tab" data-toggle="tab">Цели</a></li>
+                                    <li><a href="#campaigns-tab" data-toggle="tab">Campaigns</a></li>
                                     <li><a href="#servers-tab" data-toggle="tab">Сервера</a></li>
                                     <li><a href="#tools-tab" data-toggle="tab">Инструменты</a></li>
                                     <li><a href="#scans-tab" data-toggle="tab">Сканирования</a></li>

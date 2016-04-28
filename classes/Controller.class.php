@@ -47,39 +47,80 @@ class Controller {
         return $tbl;
     }
 
-    public function addTarget($url){    //добавление сервера
-        preg_match("#^(http[s]?:\/\/)?([A-z0-9.-_]*)\/+#",$url,$clurl);
-
+    public function addTarget($name)
+    {    //добавление сервера
+        preg_match("#^(http[s]?:\/\/)?([A-z0-9.-_]*)\/+#", $name, $clurl);
+        //echo 123;
         $result="";
 
         if(isset($clurl[2])) {
-             $url=$clurl[2];
+            $name = $clurl[2];
 
             ####проверка есть ли уже в бд этот сервер
-            $query="SELECT tid from targets where url = '$url'";//тут инъекция
-            $sid=$this->Model->MysqliClass->firstResult($query)['tid'];
+            $query = "SELECT cid from campaigns where name = '$name'";//тут инъекция
+            $cid = $this->Model->MysqliClass->firstResult($query)['tid'];
 
-            if($sid!="")
+            if ($cid != "")
                 exit;
 
             $uid=$this->Model->getUserId($_SESSION['username']);
             //var_dump($uid);
             if($uid) {
-                $query = "INSERT INTO targets(uid,url,dateAdd) values($uid,'$url',now())";
+                $query = "INSERT INTO campaigns(uid,url,dateAdd) values($uid,'$name',now())";
                 $result = $this->Model->MysqliClass->query($query);
                 //echo $query;
-                $query = "SELECT * from targets where url='$url'";
+                $query = "SELECT * from campaigns where url='$name'";
                 $resultArr = $this->Model->MysqliClass->firstResult($query);
                 //echo $query;
                 //var_dump($resultArr);
+                echo 123;
+                $result = $this->Viewer->Tabs->getCampaignTableRow($resultArr);
 
-                $result = $this->Viewer->Tabs->getTargetTableRow($resultArr);
             }else{
                 $result="";
             }
 
         }
 
+        return $result;
+    }
+
+    public function addCampaign($name)
+    {    //добавление сервера
+        preg_match("#^([A-z0-9.-_]+)#", $name, $clname);
+        //echo 123;
+        $result = "";
+        //print_r($clname);
+        if (isset($clname[1])) {
+            $name = $clname[1];
+
+            ####проверка есть ли уже в бд эта кампания
+            $query = "SELECT cid from campaigns where name = '$name'";//тут инъекция
+            $cid = $this->Model->MysqliClass->firstResult($query)['cid'];
+
+            if ($cid != "")
+                exit;
+
+            $uid = $this->Model->getUserId($_SESSION['username']);
+            //var_dump($uid);
+            if ($uid) {
+                $query = "INSERT INTO campaigns(uid,name,dateCreate) values($uid,'$name',now())";
+                $result = $this->Model->MysqliClass->query($query);
+                //echo $query;
+                $query = "SELECT * from campaigns where name='$name'";
+                $resultArr = $this->Model->MysqliClass->firstResult($query);
+                //echo $query;
+                //var_dump($resultArr);
+//echo 123;
+                if (!empty($resultArr))
+                    $result = $this->Viewer->Tabs->getCampaignTableRow($resultArr);
+
+            } else {
+                $result = "";
+            }
+
+        }
+        //echo $result;
         return $result;
     }
 
@@ -197,9 +238,9 @@ class Controller {
                 //$sid=(int)$id;
                 $query = "UPDATE servers set deleted=1 WHERE sid=$id";
                 $result = $this->Model->MysqliClass->query($query);
-            } elseif ($type == "target") {
+            } elseif ($type == "campaign") {
                 //$tid=(int)$id;
-                $query = "UPDATE targets set deleted=1 WHERE tid=$id";
+                $query = "UPDATE campaigns set deleted=1 WHERE cid=$id";
                 $result = $this->Model->MysqliClass->query($query);
             }
             //echo $query;

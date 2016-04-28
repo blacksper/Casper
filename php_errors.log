@@ -4414,3 +4414,628 @@ Stack trace:
 #0 D:\PhpstormProjects\Casper\ajax.php(50): Tabs->getSubInfoTable('1')
 #1 {main}
   thrown in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 359
+[28-Apr-2016 20:25:03 UTC] PHP Notice:  Undefined index: source in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 509
+[28-Apr-2016 20:25:03 UTC] PHP Stack trace:
+[28-Apr-2016 20:25:03 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[28-Apr-2016 20:25:03 UTC] PHP   2. Tabs->getSubInfoTable() D:\PhpstormProjects\Casper\ajax.php:50
+[28-Apr-2016 20:25:03 UTC] PHP   3. Tabs->getSubInfoChilds() D:\PhpstormProjects\Casper\classes\Tabs.class.php:381
+[28-Apr-2016 20:25:03 UTC] PHP Notice:  Undefined index: type in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 510
+[28-Apr-2016 20:25:03 UTC] PHP Stack trace:
+[28-Apr-2016 20:25:03 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[28-Apr-2016 20:25:03 UTC] PHP   2. Tabs->getSubInfoTable() D:\PhpstormProjects\Casper\ajax.php:50
+[28-Apr-2016 20:25:03 UTC] PHP   3. Tabs->getSubInfoChilds() D:\PhpstormProjects\Casper\classes\Tabs.class.php:381
+[28-Apr-2016 20:25:03 UTC] PHP Notice:  Undefined index: hash in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 511
+[28-Apr-2016 20:25:03 UTC] PHP Stack trace:
+[28-Apr-2016 20:25:03 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[28-Apr-2016 20:25:03 UTC] PHP   2. Tabs->getSubInfoTable() D:\PhpstormProjects\Casper\ajax.php:50
+[28-Apr-2016 20:25:03 UTC] PHP   3. Tabs->getSubInfoChilds() D:\PhpstormProjects\Casper\classes\Tabs.class.php:381
+[28-Apr-2016 21:52:15 UTC] PHP Notice:  Undefined index: tid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 108
+[28-Apr-2016 21:52:15 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:15 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:15 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:15 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:15 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:15 UTC] PHP   6. Tabs->getCampaignTableRow() D:\PhpstormProjects\Casper\classes\Tabs.class.php:70
+[28-Apr-2016 21:52:15 UTC] PHP Notice:  Undefined index: tid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 111
+[28-Apr-2016 21:52:15 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:15 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:15 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:15 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:15 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:15 UTC] PHP   6. Tabs->getCampaignTableRow() D:\PhpstormProjects\Casper\classes\Tabs.class.php:70
+[28-Apr-2016 21:52:15 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 111
+[28-Apr-2016 21:52:15 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:15 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:15 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:15 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:15 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:15 UTC] PHP   6. Tabs->getCampaignTableRow() D:\PhpstormProjects\Casper\classes\Tabs.class.php:70
+[28-Apr-2016 21:52:15 UTC] PHP Notice:  Undefined index: ip in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 114
+[28-Apr-2016 21:52:15 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:15 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:15 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:15 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:15 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:15 UTC] PHP   6. Tabs->getCampaignTableRow() D:\PhpstormProjects\Casper\classes\Tabs.class.php:70
+[28-Apr-2016 21:52:15 UTC] PHP Notice:  Undefined index: tid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 121
+[28-Apr-2016 21:52:15 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:15 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:15 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:15 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:15 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:15 UTC] PHP   6. Tabs->getCampaignTableRow() D:\PhpstormProjects\Casper\classes\Tabs.class.php:70
+[28-Apr-2016 21:52:15 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:15 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:15 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:15 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:15 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:15 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:15 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:15 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:15 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:15 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:15 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:15 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:15 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:15 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:15 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:15 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:15 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:15 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:15 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:15 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:15 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:15 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:15 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:15 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:15 UTC] PHP Notice:  Undefined index: tid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 108
+[28-Apr-2016 21:52:15 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:15 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:15 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:15 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:15 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:15 UTC] PHP   6. Tabs->getCampaignTableRow() D:\PhpstormProjects\Casper\classes\Tabs.class.php:70
+[28-Apr-2016 21:52:15 UTC] PHP Notice:  Undefined index: tid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 111
+[28-Apr-2016 21:52:15 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:15 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:15 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:15 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:15 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:15 UTC] PHP   6. Tabs->getCampaignTableRow() D:\PhpstormProjects\Casper\classes\Tabs.class.php:70
+[28-Apr-2016 21:52:15 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 111
+[28-Apr-2016 21:52:15 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:15 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:15 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:15 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:15 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:15 UTC] PHP   6. Tabs->getCampaignTableRow() D:\PhpstormProjects\Casper\classes\Tabs.class.php:70
+[28-Apr-2016 21:52:15 UTC] PHP Notice:  Undefined index: ip in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 114
+[28-Apr-2016 21:52:15 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:15 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:15 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:15 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:15 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:15 UTC] PHP   6. Tabs->getCampaignTableRow() D:\PhpstormProjects\Casper\classes\Tabs.class.php:70
+[28-Apr-2016 21:52:15 UTC] PHP Notice:  Undefined index: tid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 121
+[28-Apr-2016 21:52:15 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:15 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:15 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:15 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:15 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:15 UTC] PHP   6. Tabs->getCampaignTableRow() D:\PhpstormProjects\Casper\classes\Tabs.class.php:70
+[28-Apr-2016 21:52:15 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:15 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:15 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:15 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:15 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:15 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:15 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:15 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:15 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:15 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:15 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:15 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:15 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:15 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:15 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:15 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:15 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:15 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:15 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:15 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:15 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:15 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:15 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:15 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:15 UTC] PHP Notice:  Undefined index: tid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 108
+[28-Apr-2016 21:52:15 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:15 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:15 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:15 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:15 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:15 UTC] PHP   6. Tabs->getCampaignTableRow() D:\PhpstormProjects\Casper\classes\Tabs.class.php:70
+[28-Apr-2016 21:52:15 UTC] PHP Notice:  Undefined index: tid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 111
+[28-Apr-2016 21:52:15 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:15 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:15 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:15 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:15 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:15 UTC] PHP   6. Tabs->getCampaignTableRow() D:\PhpstormProjects\Casper\classes\Tabs.class.php:70
+[28-Apr-2016 21:52:15 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 111
+[28-Apr-2016 21:52:15 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:15 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:15 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:15 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:15 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:15 UTC] PHP   6. Tabs->getCampaignTableRow() D:\PhpstormProjects\Casper\classes\Tabs.class.php:70
+[28-Apr-2016 21:52:15 UTC] PHP Notice:  Undefined index: ip in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 114
+[28-Apr-2016 21:52:15 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:15 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:15 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:15 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:15 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:15 UTC] PHP   6. Tabs->getCampaignTableRow() D:\PhpstormProjects\Casper\classes\Tabs.class.php:70
+[28-Apr-2016 21:52:15 UTC] PHP Notice:  Undefined index: tid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 121
+[28-Apr-2016 21:52:15 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:15 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:15 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:15 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:15 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:15 UTC] PHP   6. Tabs->getCampaignTableRow() D:\PhpstormProjects\Casper\classes\Tabs.class.php:70
+[28-Apr-2016 21:52:15 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:15 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:15 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:15 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:15 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:15 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:15 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:15 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:15 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:15 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:15 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:15 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:15 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:15 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:15 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:15 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:15 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:15 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:15 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:15 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:15 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:15 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:15 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:15 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:15 UTC] PHP Notice:  Undefined index: tid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 108
+[28-Apr-2016 21:52:15 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:15 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:15 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:15 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:15 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:15 UTC] PHP   6. Tabs->getCampaignTableRow() D:\PhpstormProjects\Casper\classes\Tabs.class.php:70
+[28-Apr-2016 21:52:15 UTC] PHP Notice:  Undefined index: tid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 111
+[28-Apr-2016 21:52:15 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:15 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:15 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:15 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:15 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:15 UTC] PHP   6. Tabs->getCampaignTableRow() D:\PhpstormProjects\Casper\classes\Tabs.class.php:70
+[28-Apr-2016 21:52:15 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 111
+[28-Apr-2016 21:52:15 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:15 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:15 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:15 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:15 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:15 UTC] PHP   6. Tabs->getCampaignTableRow() D:\PhpstormProjects\Casper\classes\Tabs.class.php:70
+[28-Apr-2016 21:52:15 UTC] PHP Notice:  Undefined index: ip in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 114
+[28-Apr-2016 21:52:15 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:15 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:15 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:15 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:15 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:15 UTC] PHP   6. Tabs->getCampaignTableRow() D:\PhpstormProjects\Casper\classes\Tabs.class.php:70
+[28-Apr-2016 21:52:15 UTC] PHP Notice:  Undefined index: tid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 121
+[28-Apr-2016 21:52:15 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:15 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:15 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:15 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:15 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:15 UTC] PHP   6. Tabs->getCampaignTableRow() D:\PhpstormProjects\Casper\classes\Tabs.class.php:70
+[28-Apr-2016 21:52:15 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:15 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:15 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:15 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:15 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:15 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:15 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:15 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:15 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:15 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:15 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:15 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:15 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:15 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:15 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:15 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:15 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:15 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:15 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:15 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:15 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:15 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:15 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:15 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:41 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 111
+[28-Apr-2016 21:52:41 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:41 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:41 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:41 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:41 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:41 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:41 UTC] PHP   6. Tabs->getCampaignTableRow() D:\PhpstormProjects\Casper\classes\Tabs.class.php:70
+[28-Apr-2016 21:52:41 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:41 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:41 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:41 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:41 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:41 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:41 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:41 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:41 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:41 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:41 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:41 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:41 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:41 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:41 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:41 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:41 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:41 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:41 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:41 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:41 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:41 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:41 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:41 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:41 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:41 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:41 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:41 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:41 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 111
+[28-Apr-2016 21:52:41 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:41 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:41 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:41 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:41 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:41 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:41 UTC] PHP   6. Tabs->getCampaignTableRow() D:\PhpstormProjects\Casper\classes\Tabs.class.php:70
+[28-Apr-2016 21:52:41 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:41 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:41 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:41 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:41 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:41 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:41 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:41 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:41 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:41 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:41 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:41 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:41 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:41 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:41 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:41 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:41 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:41 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:41 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:41 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:41 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:41 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:41 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:41 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:41 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:41 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:41 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:41 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:41 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 111
+[28-Apr-2016 21:52:41 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:41 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:41 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:41 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:41 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:41 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:41 UTC] PHP   6. Tabs->getCampaignTableRow() D:\PhpstormProjects\Casper\classes\Tabs.class.php:70
+[28-Apr-2016 21:52:41 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:41 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:41 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:41 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:41 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:41 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:41 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:41 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:41 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:41 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:41 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:41 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:41 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:41 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:41 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:41 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:41 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:41 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:41 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:41 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:41 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:41 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:41 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:41 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:41 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:41 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:41 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:41 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:41 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 111
+[28-Apr-2016 21:52:41 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:41 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:41 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:41 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:41 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:41 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:41 UTC] PHP   6. Tabs->getCampaignTableRow() D:\PhpstormProjects\Casper\classes\Tabs.class.php:70
+[28-Apr-2016 21:52:41 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:41 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:41 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:41 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:41 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:41 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:41 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:41 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:41 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:41 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:41 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:41 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:41 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:41 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:41 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:41 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:41 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:41 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:41 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:41 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:41 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:41 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:41 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:41 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:41 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:41 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:41 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:41 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:52 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:52 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:52 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:52 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:52 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:52 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:52 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:52 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:52 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:52 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:52 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:52 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:52 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:52 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:52 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:52 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:52 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:52 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:52 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:52 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:52 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:52 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:52 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:52 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:52 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:52 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:52 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:52 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:52 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:52 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:52 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:52 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:52 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:52 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:52 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:52 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:52 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:52 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:52 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:52 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:52 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:52 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:52 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:52 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:52 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:52 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:52 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:52 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:52 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:52 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:52 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:52 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:52 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:52 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:52 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:52 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:52 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:52 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:52 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:52 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:52 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:52 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:52 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:52 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:52 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:52 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:52 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:52 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:52 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:52 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:52 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:52 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:52 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:52 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:52 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:52 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:52 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:52 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:52 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:52 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:52 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:52 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:52 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:52 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:52 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:52 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:52 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:52 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:52 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:52 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:52 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:52 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:52 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:52 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:52 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:52 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:52 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:52 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:52 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:52 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:52 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:52 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:52 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:52 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:52 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:52:52 UTC] PHP Notice:  Undefined index: pid in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 72
+[28-Apr-2016 21:52:52 UTC] PHP Stack trace:
+[28-Apr-2016 21:52:52 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\panel.php:0
+[28-Apr-2016 21:52:52 UTC] PHP   2. Controller->__construct() D:\PhpstormProjects\Casper\panel.php:17
+[28-Apr-2016 21:52:52 UTC] PHP   3. Viewer->__construct() D:\PhpstormProjects\Casper\classes\Controller.class.php:28
+[28-Apr-2016 21:52:52 UTC] PHP   4. Tabs->__construct() D:\PhpstormProjects\Casper\classes\Viewer.class.php:35
+[28-Apr-2016 21:52:52 UTC] PHP   5. Tabs->getCampaignTab() D:\PhpstormProjects\Casper\classes\Tabs.class.php:18
+[28-Apr-2016 21:53:42 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Tabs::getSubInfoScans() must be of the type integer, string given, called in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 379 and defined in D:\PhpstormProjects\Casper\classes\Tabs.class.php:422
+Stack trace:
+#0 D:\PhpstormProjects\Casper\classes\Tabs.class.php(379): Tabs->getSubInfoScans('undefined')
+#1 D:\PhpstormProjects\Casper\ajax.php(50): Tabs->getSubInfoTable('undefined')
+#2 {main}
+  thrown in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 422
+[28-Apr-2016 21:58:48 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Tabs::getSubInfoScans() must be of the type integer, string given, called in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 379 and defined in D:\PhpstormProjects\Casper\classes\Tabs.class.php:422
+Stack trace:
+#0 D:\PhpstormProjects\Casper\classes\Tabs.class.php(379): Tabs->getSubInfoScans('undefined')
+#1 D:\PhpstormProjects\Casper\ajax.php(50): Tabs->getSubInfoTable('undefined')
+#2 {main}
+  thrown in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 422
+[28-Apr-2016 21:59:55 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Tabs::getSubInfoScans() must be of the type integer, string given, called in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 379 and defined in D:\PhpstormProjects\Casper\classes\Tabs.class.php:422
+Stack trace:
+#0 D:\PhpstormProjects\Casper\classes\Tabs.class.php(379): Tabs->getSubInfoScans('undefined')
+#1 D:\PhpstormProjects\Casper\ajax.php(50): Tabs->getSubInfoTable('undefined')
+#2 {main}
+  thrown in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 422
+[28-Apr-2016 22:14:28 UTC] PHP Warning:  Illegal string offset 'cid' in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 108
+[28-Apr-2016 22:14:28 UTC] PHP Stack trace:
+[28-Apr-2016 22:14:28 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[28-Apr-2016 22:14:28 UTC] PHP   2. Controller->addCampaign() D:\PhpstormProjects\Casper\ajax.php:21
+[28-Apr-2016 22:14:28 UTC] PHP   3. Tabs->getCampaignTableRow() D:\PhpstormProjects\Casper\classes\Controller.class.php:113
+[28-Apr-2016 22:14:28 UTC] PHP Notice:  Uninitialized string offset: 0 in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 108
+[28-Apr-2016 22:14:28 UTC] PHP Stack trace:
+[28-Apr-2016 22:14:28 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[28-Apr-2016 22:14:28 UTC] PHP   2. Controller->addCampaign() D:\PhpstormProjects\Casper\ajax.php:21
+[28-Apr-2016 22:14:28 UTC] PHP   3. Tabs->getCampaignTableRow() D:\PhpstormProjects\Casper\classes\Controller.class.php:113
+[28-Apr-2016 22:14:28 UTC] PHP Warning:  Illegal string offset 'cid' in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 111
+[28-Apr-2016 22:14:28 UTC] PHP Stack trace:
+[28-Apr-2016 22:14:28 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[28-Apr-2016 22:14:28 UTC] PHP   2. Controller->addCampaign() D:\PhpstormProjects\Casper\ajax.php:21
+[28-Apr-2016 22:14:28 UTC] PHP   3. Tabs->getCampaignTableRow() D:\PhpstormProjects\Casper\classes\Controller.class.php:113
+[28-Apr-2016 22:14:28 UTC] PHP Notice:  Uninitialized string offset: 0 in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 111
+[28-Apr-2016 22:14:28 UTC] PHP Stack trace:
+[28-Apr-2016 22:14:28 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[28-Apr-2016 22:14:28 UTC] PHP   2. Controller->addCampaign() D:\PhpstormProjects\Casper\ajax.php:21
+[28-Apr-2016 22:14:28 UTC] PHP   3. Tabs->getCampaignTableRow() D:\PhpstormProjects\Casper\classes\Controller.class.php:113
+[28-Apr-2016 22:14:28 UTC] PHP Warning:  Illegal string offset 'name' in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 111
+[28-Apr-2016 22:14:28 UTC] PHP Stack trace:
+[28-Apr-2016 22:14:28 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[28-Apr-2016 22:14:28 UTC] PHP   2. Controller->addCampaign() D:\PhpstormProjects\Casper\ajax.php:21
+[28-Apr-2016 22:14:28 UTC] PHP   3. Tabs->getCampaignTableRow() D:\PhpstormProjects\Casper\classes\Controller.class.php:113
+[28-Apr-2016 22:14:28 UTC] PHP Notice:  Uninitialized string offset: 0 in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 111
+[28-Apr-2016 22:14:28 UTC] PHP Stack trace:
+[28-Apr-2016 22:14:28 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[28-Apr-2016 22:14:28 UTC] PHP   2. Controller->addCampaign() D:\PhpstormProjects\Casper\ajax.php:21
+[28-Apr-2016 22:14:28 UTC] PHP   3. Tabs->getCampaignTableRow() D:\PhpstormProjects\Casper\classes\Controller.class.php:113
+[28-Apr-2016 22:15:00 UTC] PHP Warning:  Illegal string offset 'cid' in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 108
+[28-Apr-2016 22:15:00 UTC] PHP Stack trace:
+[28-Apr-2016 22:15:00 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[28-Apr-2016 22:15:00 UTC] PHP   2. Controller->addCampaign() D:\PhpstormProjects\Casper\ajax.php:21
+[28-Apr-2016 22:15:00 UTC] PHP   3. Tabs->getCampaignTableRow() D:\PhpstormProjects\Casper\classes\Controller.class.php:113
+[28-Apr-2016 22:15:00 UTC] PHP Notice:  Uninitialized string offset: 0 in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 108
+[28-Apr-2016 22:15:00 UTC] PHP Stack trace:
+[28-Apr-2016 22:15:00 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[28-Apr-2016 22:15:00 UTC] PHP   2. Controller->addCampaign() D:\PhpstormProjects\Casper\ajax.php:21
+[28-Apr-2016 22:15:00 UTC] PHP   3. Tabs->getCampaignTableRow() D:\PhpstormProjects\Casper\classes\Controller.class.php:113
+[28-Apr-2016 22:15:00 UTC] PHP Warning:  Illegal string offset 'cid' in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 111
+[28-Apr-2016 22:15:00 UTC] PHP Stack trace:
+[28-Apr-2016 22:15:00 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[28-Apr-2016 22:15:00 UTC] PHP   2. Controller->addCampaign() D:\PhpstormProjects\Casper\ajax.php:21
+[28-Apr-2016 22:15:00 UTC] PHP   3. Tabs->getCampaignTableRow() D:\PhpstormProjects\Casper\classes\Controller.class.php:113
+[28-Apr-2016 22:15:00 UTC] PHP Notice:  Uninitialized string offset: 0 in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 111
+[28-Apr-2016 22:15:00 UTC] PHP Stack trace:
+[28-Apr-2016 22:15:00 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[28-Apr-2016 22:15:00 UTC] PHP   2. Controller->addCampaign() D:\PhpstormProjects\Casper\ajax.php:21
+[28-Apr-2016 22:15:00 UTC] PHP   3. Tabs->getCampaignTableRow() D:\PhpstormProjects\Casper\classes\Controller.class.php:113
+[28-Apr-2016 22:15:00 UTC] PHP Warning:  Illegal string offset 'name' in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 111
+[28-Apr-2016 22:15:00 UTC] PHP Stack trace:
+[28-Apr-2016 22:15:00 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[28-Apr-2016 22:15:00 UTC] PHP   2. Controller->addCampaign() D:\PhpstormProjects\Casper\ajax.php:21
+[28-Apr-2016 22:15:00 UTC] PHP   3. Tabs->getCampaignTableRow() D:\PhpstormProjects\Casper\classes\Controller.class.php:113
+[28-Apr-2016 22:15:00 UTC] PHP Notice:  Uninitialized string offset: 0 in D:\PhpstormProjects\Casper\classes\Tabs.class.php on line 111
+[28-Apr-2016 22:15:00 UTC] PHP Stack trace:
+[28-Apr-2016 22:15:00 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[28-Apr-2016 22:15:00 UTC] PHP   2. Controller->addCampaign() D:\PhpstormProjects\Casper\ajax.php:21
+[28-Apr-2016 22:15:00 UTC] PHP   3. Tabs->getCampaignTableRow() D:\PhpstormProjects\Casper\classes\Controller.class.php:113
+[28-Apr-2016 22:19:31 UTC] PHP Notice:  Undefined index: tid in D:\PhpstormProjects\Casper\classes\Controller.class.php on line 97
+[28-Apr-2016 22:19:31 UTC] PHP Stack trace:
+[28-Apr-2016 22:19:31 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[28-Apr-2016 22:19:31 UTC] PHP   2. Controller->addCampaign() D:\PhpstormProjects\Casper\ajax.php:21
