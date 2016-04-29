@@ -3,17 +3,12 @@
 /**
  * Created by PhpStorm.
  * User: Lalka
- * Date: 29.09.2015
- * Time: 22:45
+ * Date: 29.04.2016
+ * Time: 17:22
  */
-
-require($_SERVER['DOCUMENT_ROOT'] . "/config.php");
-//include("Mysqli.class.php");
-include("Tabs.class.php");
-
-
-class Viewer
+class Campaigns
 {
+
     var $Head;
     var $Body;
     var $Footer;
@@ -25,11 +20,12 @@ class Viewer
     //var $tabsClass;
 
 
-    function __construct($Model){
+    function __construct($Model)
+    {
 
-        $this->Model=$Model;
+        $this->Model = $Model;
         $this->Head = '';
-        $this->Tabs=new Tabs($this->Model);
+        $this->Tabs = new Tabs($this->Model);
         //<script src="my.js"></script>
         $this->Head .= "</head>";
         $this->Body = "<body>";
@@ -37,14 +33,16 @@ class Viewer
 
     }
 
-    public function ShowPage(){
+    public function ShowPage()
+    {
 
         $outstr = $this->Head . $this->Body . "</body>" . $this->Footer;
         echo $outstr; //iconv("CP1252","UTF-8", $outstr);
     }
 
 
-    public function ShowMain(){
+    public function ShowMain()
+    {
 
         if (isset($getArr['cid']))
             $this->Tabs->getCampaignTab($getArr['cid']);
@@ -60,11 +58,8 @@ class Viewer
                                 <ul class="nav nav-pills nav-stacked ">
                                     <li><a href="#tab-1" data-toggle="tab">Главная</a></li>
                                     <li><a href="#campaigns-tab" data-toggle="tab">Campaigns</a></li>
-                                    <li><a href="#servers-tab" data-toggle="tab">Сервера</a></li>
-                                    <li><a href="#tools-tab" data-toggle="tab">Инструменты</a></li>
-                                    <li><a href="#scans-tab" data-toggle="tab">Сканирования</a></li>
 
-                                    <li><a href="'.$_SERVER['PHP_SELF'].'?logout=1">Выход</a></li>
+
                                 </ul>
                             </div>';
         $this->Body .= $menu . '
@@ -77,20 +72,18 @@ class Viewer
     public function GetTabs()//подгрузка всех закладок
     {
         //$this->GetMainTab();
-       // $this->tabs.=$this->tabsClass->allHtml;
+        // $this->tabs.=$this->tabsClass->allHtml;
         //$this->GetServerTab();
         //$this->GetToolsTab();
     }
 
 
-
-
-    public function ShowLoginForm($message = "", $alert = 0){ //alert=1- red;
+    public function ShowLoginForm($message = "", $alert = 0)
+    { //alert=1- red;
 
         $this->Body .= "
                 ";
     }
 
-}
 
-?>
+}

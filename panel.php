@@ -15,8 +15,18 @@ include("header.php");
 
 if($_SESSION['auth']==true) {
     $Controller = new Controller();
-    $Controller->Viewer->ShowMain();
+    //var_dump($_GET);
+    //if(empty($_GET))
+    $Controller->Viewer->ShowMain($_GET);
     //$Viewer->ShowMain();
+
+
+    //if(isset($_GET['cid'])){
+    //    $Controller->Viewer->ShowMain($_GET);
+    //}
+
+
+
     $Controller->Viewer->ShowPage();
 
 }

@@ -21,10 +21,6 @@ class Controller {
 
         //$this->MysqliClass=new MysqliClass();
         $this->Model=new Model();
-        //$qwe="";
-        //echo $qwe;
-        //$this->uid=;
-
         $this->Viewer=new Viewer($this->Model);
         //var_dump($this->uid);
 
@@ -33,12 +29,12 @@ class Controller {
     }
 
 
-    public function ShowMain(){
-       // $servers=$this->model->GetNumericArray("select * from servers");
-
-        $this->view->ShowMain();
-
-    }
+//    public function ShowMain(){
+//       // $servers=$this->model->GetNumericArray("select * from servers");
+//
+//        $this->view->ShowMain();
+//
+//    }
 
 
 

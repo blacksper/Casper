@@ -42,7 +42,7 @@ class Tools
         $serverUrl = $this->Model->MysqliClass->firstResult($query)['path'];
 
         $scid = rand(1000000, 90000000);
-        $query = "insert into scans(scid,type,uid,sid,tid,status) VALUES($scid,'$action',$this->uid,$sid,$tid,1) ";
+        $query = "insert into scans(scid,type,uid,sid,tid,status,$filename) VALUES($scid,'$action',$this->uid,$sid,$tid,1,'$filename') ";
         $this->Model->MysqliClass->query($query);
         $arrTask = array();
 

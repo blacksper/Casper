@@ -3,17 +3,18 @@
 /**
  * Created by PhpStorm.
  * User: Lalka
- * Date: 08.04.2016
- * Time: 12:30
+ * Date: 29.04.2016
+ * Time: 17:56
  */
-//include("Tools.class.php");
-class Tabs
+class CampaignTabs
 {
     //var $MysqliClass;
     var $allHtml;
+
     //var $Tools;
-    function __construct($Model){
-        $this->Model=$Model;
+    function __construct($Model)
+    {
+        $this->Model = $Model;
         //$this->GetMainTab();
         //$this->getCampaignTab();
         //$this->getServerTab();
@@ -25,28 +26,21 @@ class Tabs
 
     function GetMainTab()//закладка главное
     {
-        $tmpHtml="";
-        if(isset($_GET['fsid'])) {
+        $tmpHtml = '<div class="tab-pane fade" id="mainCampaign-tab">
+                                     <div class="nav pol" id="servers">
+                                     <div class="navbar-form navbar-left">
+                                        <div class="form-group">
+                                            <button id="addServer" class="btn btn-success"  >Добавить сервер</button>
+                                        </div>
+                                        <input class="form-control" id="serverUrl" type="text">
 
-            $fsid=$_GET['fsid'];
-            $query="select * from found where fsid=$fsid";
-            $arr=$this->Model->MysqliClass->getAssocArray($query);
-            $stack="<table class=table>";
-            foreach ($arr as $row) {
-                $stack.="<tr><td>".$row['data']."</td><td>".$row['httpcode']."</td></tr>";
-            }
-            $stack.="</table>";
-            $tmpHtml .= '<div style="max-height: 300px;max-width: 500px;overflow-y: auto;" class="tab-pane fade in active" id="tab-1">';
-            $tmpHtml .= "$stack";
-            $tmpHtml .= "</div>";
+                                    </div>
+                                     </div>
 
-        }else {
-            $tmpHtml .= '<div class="tab-pane fade " id="tab-1">
-                             <p>HELLO</p>
-                        ';
-            $tmpHtml .="</div>";
-        }
-        $this->allHtml.=$tmpHtml;
+                                </div>';
+
+
+        $this->allHtml .= $tmpHtml;
     }
 
     function getCampaignTab($cid = null)
@@ -136,136 +130,34 @@ class Tabs
         return $result;
     }
 
-    function getServerTab()//закладка серверы
-    {
-        $query = "SELECT * FROM servers where deleted=0";
-        $arr = $this->Model->MysqliClass->getAssocArray($query);
-        $thead = '<thead>
-                    <tr>
-                        <th>host</th>
-                        <th>ip</th>
-                        <th>status</th>
-                        <th id="content"></th>
-                    </tr>
-                  </thead>';
-        $tbody = "<tbody>";
-
-        ########## Формирование таблицы
-        foreach ($arr as $row) {
-            $tbody.=$this->getServerTableRow($row);
-        }
-
-        $tbody .= "</tbody>";
-
-        $table = '<table id="serverContent" class="table table-hover">
-                    ' . $thead . '
-                    ' . $tbody . '
-                </table>';
-        //echo htmlspecialchars($table);
-        $tab = '<div class="tab-pane fade" id="servers-tab">
-                                     <div class="nav pol" id="servers">
-                                     <div class="navbar-form navbar-left">
-                                        <div class="form-group">
-                                            <button id="addServer" class="btn btn-success"  >Добавить сервер</button>
-                                        </div>
-                                        <input class="form-control" id="serverUrl" type="text">
-
-                                    </div>
-                                     </div>
-        ' . $table . '
-                                </div>';
-        $this->allHtml .= $tab;
-
-        return $tab;
-    }
-
-    function getServerTableRow($row)
-    {
-        $result = "";
-
-        $codeArr = $this->getStatusByCode((int)$row['status']);
-
-        $btns = '<div class="btn-group btns" value="' . $row['sid'] . '">
-
-
-                        <button type="button" class="btn btn-info refresh">
-                            <span  class="glyphicon glyphicon-refresh" aria-hidden="true">
-                            </span>
-                        </button>
-
-
-
-                        <button type="button" class="btn btn-danger deleteSrv">
-                            <span  class="glyphicon glyphicon-remove" aria-hidden="true">
-                            </span>
-                        </button>
-
-
-                        <input class="btn btn-danger" type="hidden" name="sid" value=' . $row['sid'] . '>
-
-                    </div>';
-
-        $result .= "<tr class='serverRow' value='{$row['sid']}' data-sid='{$row['sid']}'>
-                            <td class=url> " . $row['path'] . "</td>
-                            <td class='ip'>" . $row['ip'] . "</td>
-                            <td class='status {$codeArr['status']}'>{$codeArr['stmsg']}</td>
-                            <td class='btns'>$btns</td>
-                        </tr>";
-        return $result;
-    }
-
-    function getStatusByCode(int $code)
-    {
-        $result = array();
-
-        switch ($code) {
-            case 0:
-                $result = array("status" => "danger", "stmsg" => "BAD");
-                break;
-            case 1:
-                //$status = "success";
-                //$stmsg = "GOOD";
-                $result = array("status" => "success", "stmsg" => "GOOD");
-                break;
-            case -1:
-                //$status = "info";
-                //$stmsg = "UNKNOWN";
-                $result = array("status" => "info", "stmsg" => "UNKNOWN");
-                break;
-        }
-
-        return $result;
-
-    }
-
 // " . $row['ip'] . "
 
     function getToolsTab()//закладка инструменты
     {
-        $handle=opendir(PATH_TXTP);
-        $dirs='';//список директорий
-        $urls='';//список целей
-        $servers='';//
-        $i=0;
-        while($dir=readdir($handle)){
-            if($i<2){
+        $handle = opendir(PATH_TXTP);
+        $dirs = '';//список директорий
+        $urls = '';//список целей
+        $servers = '';//
+        $i = 0;
+        while ($dir = readdir($handle)) {
+            if ($i < 2) {
                 $i++;
                 continue;
             }
-            $dirs.='<option>'.$dir."</option>";
+            $dirs .= '<option>' . $dir . "</option>";
         }
 
-        $urlsArr=$this->Model->MysqliClass->getAssocArray("select tid,url from targets where deleted=0");
-        if($urlsArr) {
+        $urlsArr = $this->Model->MysqliClass->getAssocArray("select tid,url from targets where deleted=0");
+        if ($urlsArr) {
             foreach ($urlsArr as $url) {
                 $urls .= '<option value="' . $url['tid'] . '">' . $url['url'] . '</option>';
             }
         }
 
-        $urlsArr=$this->Model->MysqliClass->getAssocArray("select sid,path from servers where deleted=0");
-        if($urlsArr){
-            foreach($urlsArr as $url){
-                $servers.='<option value="'.$url['sid'].'">'.$url['path'].'</option>';
+        $urlsArr = $this->Model->MysqliClass->getAssocArray("select sid,path from servers where deleted=0");
+        if ($urlsArr) {
+            foreach ($urlsArr as $url) {
+                $servers .= '<option value="' . $url['sid'] . '">' . $url['path'] . '</option>';
             }
         }
 
@@ -302,12 +194,12 @@ class Tabs
 
                                             <select class="form-control" name="loginfile">
                                             <option selected="selected">loginfile</option>
-                                            '.$dirs.'
+                                            ' . $dirs . '
                                             </select>
 
                                             <select class="form-control" name="passwordfile">
                                             <option selected="selected">passwordfile</option>
-                                            '.$dirs.'
+                                            ' . $dirs . '
                                             </select>
 
                                             <select class="form-control" name="sid">
@@ -334,7 +226,7 @@ class Tabs
 
                                             <select class="form-control" name="filename">
                                             <option selected="selected">Choose your file</option>
-                                            '.$dirs.'
+                                            ' . $dirs . '
                                             </select>
                                             <select class="form-control" name="action" >
                                                 <option selected="selected">Option</option>
@@ -345,7 +237,7 @@ class Tabs
 
                                             <select class="form-control" name="sid">
                                             <option selected="selected">Choose server</option>
-                                            '.$servers.'
+                                            ' . $servers . '
                                             </select>
 
                                             <input type="submit" class="btn btn-default">
@@ -361,20 +253,66 @@ class Tabs
     function getScansTab()
     {
 
-        $this->allHtml .= '<div class="tab-pane fade in" id="scans-tab">
-                                      <div class="nav pol" id="campaigns">
-                                        <table>
-                                        <tr>
-                                            <td>sd</td>
-                                        </tr>
-                                        </table>
+        $query = "SELECT * from scans where deleted=0";
+        $result = $this->Model->MysqliClass->getAssocArray($query);
+        if (empty($result))
+            exit;
+
+        $tbody = "<tbody>";
 
 
-                                      </div>
+        foreach ($result as $row) {
+            $tbody .= $this->getScansTableRow($row);
+
+        }
+
+        $tbody .= "</tbody>";
+
+        $this->allHtml .= '<div class="tab-pane fade in active" id="scansCampaign-tab">
+                                      <div class="nav pol" id="scansCampaign">
+                                          <table id="scansCampaignContent" class="table table-hover">
+                                              <thead>
+                                              <tr>
+                                                  <td>type</td>
+                                                  <td>filename</td>
+                                                  <td>Status</td>
+                                              </tr>
+                                              </thead>
+
+
+
+                                          ' . $tbody . '
+
+                                          </table>
+
+
+                                       <button class="btn btn-default" data-toggle="collapse" data-target="#demo">Collapsible</button>
+
+                                        <div id="demo" class="collapse">
+                                        Some text..
+                                        </div>
 
 
                             </div>';
 
+
+    }
+
+    function getScansTableRow(array $row)
+    {
+        $result = "";
+        $finished = "<span style='color: #5cb85c;font-size: 16px;' class='glyphicon glyphicon-thumbs-up' aria-hidden='true'></span>";
+        $proccessed = "<span style='color: goldenrod;font-size: 16px;' class='glyphicon glyphicon-hourglass' aria-hidden='true'></span>";
+        //$proccesed="";
+
+        //$status=
+        $result .= "<tr class='scansTableRow'>
+                    <td>{$row['type']}</td>
+                    <td>{$row['filename']}</td>
+                    <td>" . (($row['status'] == 1) ? $finished : $proccessed) . "</td>
+                  </tr>";
+
+        return $result;
 
     }
 

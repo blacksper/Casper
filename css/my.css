@@ -45,7 +45,7 @@ body {
     margin-top: 60px;
 }
 
-#campaignContent, #serverContent {
+#campaignContent, #serverContent, #scansCampaignContent {
 
     background-color: #eee;
 }
