@@ -50,8 +50,7 @@ body {
     background-color: #eee;
 }
 
-
-#servers,#targets{
+#servers, #campaigns {
     border-bottom: 3px solid #DDD;
     background-color: #eee;
 }

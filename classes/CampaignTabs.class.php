@@ -24,7 +24,7 @@ class CampaignTabs
     }
 
 
-    function GetMainTab()//закладка главное
+    function getMainTab($cid)//закладка главное
     {
         $tmpHtml = '<div class="tab-pane fade" id="mainCampaign-tab">
                                      <div class="nav pol" id="servers">
@@ -83,7 +83,7 @@ class CampaignTabs
         $tbody .= "</tbody>";
         ####################
 
-        $table = '<table id="campaignContent" class="table table-hover">
+        $table = '<table id="campaignContent" class="table table-hover">123123123
                         ' . $thead . '
                         ' . $tbody . '
                         </table>';
@@ -250,10 +250,10 @@ class CampaignTabs
                        ';
     }
 
-    function getScansTab()
+    function getScansTab($cid)
     {
-
-        $query = "SELECT * from scans where deleted=0";
+        //var_dump( $cid);
+        $query = "select * from scans where tid in (select tid from targets where cid=$cid)";
         $result = $this->Model->MysqliClass->getAssocArray($query);
         if (empty($result))
             exit;
@@ -273,9 +273,9 @@ class CampaignTabs
                                           <table id="scansCampaignContent" class="table table-hover">
                                               <thead>
                                               <tr>
-                                                  <td>type</td>
-                                                  <td>filename</td>
-                                                  <td>Status</td>
+                                                  <th>type</th>
+                                                  <th>filename</th>
+                                                  <th>Status</th>
                                               </tr>
                                               </thead>
 
@@ -303,11 +303,11 @@ class CampaignTabs
         $result = "";
         $finished = "<span style='color: #5cb85c;font-size: 16px;' class='glyphicon glyphicon-thumbs-up' aria-hidden='true'></span>";
         $proccessed = "<span style='color: goldenrod;font-size: 16px;' class='glyphicon glyphicon-hourglass' aria-hidden='true'></span>";
-        //$proccesed="";
 
-        //$status=
-        $result .= "<tr class='scansTableRow'>
-                    <td>{$row['type']}</td>
+        $result .= "<tr class='scanRow' data-scid='{$row['scid']}'>
+                    <td class='dateScan'>
+                    <a href='#' class='btn btn-primary'>{$row['dateScan']}</a>
+                    </td>
                     <td>{$row['filename']}</td>
                     <td>" . (($row['status'] == 1) ? $finished : $proccessed) . "</td>
                   </tr>";
@@ -316,39 +316,48 @@ class CampaignTabs
 
     }
 
-    function getSubInfoTable($tid)
+    function getDirScanDetails($scid)
     {
-        $res = $this->Model->MysqliClass->firstResult("select * from targets where tid=$tid");
+        $foundPaths = $this->Model->MysqliClass->getAssocArray("select * from pathfound where scid=$scid and httpcode=200");
+        +
+            //var_dump($foundPaths);
+        $goodPaths = "";
+        if (empty($foundPaths)) {
+            $goodPaths = '<div class="alert alert-warning">
+                            <strong>Пусто</strong>
+                       </div>';
+        } else {
+            $goodPaths = $this->getTable200($foundPaths);
+        }
 
-        $scans = $this->getSubInfoScans($tid);
-        $hashes = $this->getSubInfoHashes($tid);
+        //$res = $this->Model->MysqliClass->firstResult("select * from pathfound where scid=$scid where httpcode=404");
+        //$res = $this->Model->MysqliClass->firstResult("select * from pathfound where scid=$scid where httpcode=200");
+
         $childs = "";//$this->getSubInfoChilds($tid);
 
 
         $result = '<div class="modal-content">
                           <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="gridSystemModalLabel">' . $res['url'] . '</h4>
+                            <h4 class="modal-title" id="gridSystemModalLabel">123456</h4>
                           </div>
                           <div class="modal-body">
                             <ul style="width: 300px" class="qwe nav nav-pills" >
-                                <li class="active"><a  href="#scan-' . $tid . '" data-toggle="tab">Сканирования</a></li>
-                                <li><a  href = "#logins-' . $tid . '" data-toggle = "tab" > Хеши </a></li >
-                                <li><a  href = "#childs-' . $tid . '" data-toggle = "tab" > Дочерние цели </a></li >
+                                <li class="active"><a  href="" data-toggle="tab">Found</a></li>
+                                <li><a  href = "" data-toggle = "tab" > Not Found </a></li >
+                                <li><a  href = "" data-toggle = "tab" > Forbidden </a></li >
                             </ul >
                             <p>
                                 <div class="tab-content" >
 
 
 
-                                        <div class="tab-pane fade in active scanTable" id = "scan-' . $tid . '" >
-                                        ' .
-            $scans
-            . ' </div>
-                                        <div class="tab-pane fade" id = "logins-' . $tid . '" >
-                                             ' . $hashes . '
+                                        <div class="tab-pane fade in active scanTable"  >
+                                        ' . $goodPaths . ' </div>
+                                        <div class="tab-pane fade"  >
+                                             321
                                         </div >
-                                        <div class="tab-pane fade" id = "childs-' . $tid . '" >
+                                        <div class="tab-pane fade"  >
                                              ' . $childs . '
                                         </div >
                                 </div >
@@ -361,6 +370,23 @@ class CampaignTabs
         //echo (($wwsd[$row['tid']])? "beach":"treach");
         //print_r($result);
         return $result;
+    }
+
+    function getTable200($foundPaths)
+    {
+
+        $table = '<table>';
+        $thead = '<thead><tr><th></th></tr></thead>';
+        //var_dump( $foundPaths);
+        $tbody = '';
+
+        foreach ($foundPaths as $path) {
+            $tbody .= '<tr><td>' . $path['url'] . '</td></tr>';
+
+        }
+        $table .= $thead . $tbody . "</table>";
+
+        return $table;
     }
 
     function getSubInfoScans(int $cid)

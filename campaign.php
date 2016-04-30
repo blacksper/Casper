@@ -7,7 +7,10 @@
  */
 include "header.php";
 include "./classes/CampaignsController.class.php";
-$v = new CampaignsController();
 
-$v->CampaignViewer->ShowMain();
-$v->CampaignViewer->ShowPage();
+if (isset($_GET['cid'])) {
+    $cid = $_GET['cid'];
+    $v = new CampaignsController($cid);
+    $v->CampaignViewer->ShowMain();
+    $v->CampaignViewer->ShowPage();
+}

@@ -5064,3 +5064,88 @@ Stack trace:
 #1 D:\PhpstormProjects\Casper\campaign.php(10): CampaignsController->__construct()
 #2 {main}
   thrown in D:\PhpstormProjects\Casper\classes\CampaignViewer.class.php on line 27
+[29-Apr-2016 20:22:32 UTC] PHP Notice:  A session had already been started - ignoring session_start() in D:\PhpstormProjects\Casper\classes\CampaignsController.class.php on line 9
+[29-Apr-2016 20:22:32 UTC] PHP Stack trace:
+[29-Apr-2016 20:22:32 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[29-Apr-2016 20:22:32 UTC] PHP   2. include() D:\PhpstormProjects\Casper\ajax.php:10
+[29-Apr-2016 20:22:32 UTC] PHP   3. session_start() D:\PhpstormProjects\Casper\classes\CampaignsController.class.php:9
+[29-Apr-2016 20:22:32 UTC] PHP Fatal error:  Cannot declare class MysqliClass, because the name is already in use in D:\PhpstormProjects\Casper\classes\Mysqli.class.php on line 9
+[29-Apr-2016 20:22:32 UTC] PHP Stack trace:
+[29-Apr-2016 20:22:32 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[29-Apr-2016 20:22:32 UTC] PHP   2. include() D:\PhpstormProjects\Casper\ajax.php:10
+[29-Apr-2016 20:22:32 UTC] PHP   3. include() D:\PhpstormProjects\Casper\classes\CampaignsController.class.php:12
+[29-Apr-2016 20:22:32 UTC] PHP   4. include() D:\PhpstormProjects\Casper\classes\Model.class.php:11
+[29-Apr-2016 20:23:13 UTC] PHP Fatal error:  Cannot declare class MysqliClass, because the name is already in use in D:\PhpstormProjects\Casper\classes\Mysqli.class.php on line 9
+[29-Apr-2016 20:23:13 UTC] PHP Stack trace:
+[29-Apr-2016 20:23:13 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[29-Apr-2016 20:23:13 UTC] PHP   2. include() D:\PhpstormProjects\Casper\ajax.php:10
+[29-Apr-2016 20:23:13 UTC] PHP   3. include() D:\PhpstormProjects\Casper\classes\CampaignsController.class.php:12
+[29-Apr-2016 20:23:13 UTC] PHP   4. include() D:\PhpstormProjects\Casper\classes\Model.class.php:11
+[29-Apr-2016 20:49:44 UTC] PHP Notice:  Trying to get property of non-object in D:\PhpstormProjects\Casper\ajax.php on line 73
+[29-Apr-2016 20:49:44 UTC] PHP Stack trace:
+[29-Apr-2016 20:49:44 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[29-Apr-2016 20:49:44 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getScanDetails() on null in D:\PhpstormProjects\Casper\ajax.php:73
+Stack trace:
+#0 {main}
+  thrown in D:\PhpstormProjects\Casper\ajax.php on line 73
+[29-Apr-2016 20:50:24 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 331
+[29-Apr-2016 20:50:24 UTC] PHP Stack trace:
+[29-Apr-2016 20:50:24 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[29-Apr-2016 20:50:24 UTC] PHP   2. CampaignTabs->getScanDetails() D:\PhpstormProjects\Casper\ajax.php:73
+[29-Apr-2016 23:55:52 UTC] PHP Fatal error:  Cannot redeclare CampaignTabs::getMainTab() in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 63
+[29-Apr-2016 23:55:52 UTC] PHP Stack trace:
+[29-Apr-2016 23:55:52 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\campaign.php:0
+[29-Apr-2016 23:55:52 UTC] PHP   2. include() D:\PhpstormProjects\Casper\campaign.php:9
+[29-Apr-2016 23:55:52 UTC] PHP   3. include() D:\PhpstormProjects\Casper\classes\CampaignsController.class.php:11
+[30-Apr-2016 00:23:49 UTC] PHP Warning:  Missing argument 1 for CampaignsController::__construct(), called in D:\PhpstormProjects\Casper\ajax.php on line 74 and defined in D:\PhpstormProjects\Casper\classes\CampaignsController.class.php on line 23
+[30-Apr-2016 00:23:49 UTC] PHP Stack trace:
+[30-Apr-2016 00:23:49 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 00:23:49 UTC] PHP   2. CampaignsController->__construct() D:\PhpstormProjects\Casper\ajax.php:74
+[30-Apr-2016 00:23:49 UTC] PHP Notice:  Undefined variable: cid in D:\PhpstormProjects\Casper\classes\CampaignsController.class.php on line 28
+[30-Apr-2016 00:23:49 UTC] PHP Stack trace:
+[30-Apr-2016 00:23:49 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 00:23:49 UTC] PHP   2. CampaignsController->__construct() D:\PhpstormProjects\Casper\ajax.php:74
+[30-Apr-2016 00:26:15 UTC] PHP Warning:  Missing argument 1 for CampaignsController::__construct(), called in D:\PhpstormProjects\Casper\ajax.php on line 74 and defined in D:\PhpstormProjects\Casper\classes\CampaignsController.class.php on line 23
+[30-Apr-2016 00:26:15 UTC] PHP Stack trace:
+[30-Apr-2016 00:26:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 00:26:15 UTC] PHP   2. CampaignsController->__construct() D:\PhpstormProjects\Casper\ajax.php:74
+[30-Apr-2016 00:26:15 UTC] PHP Notice:  Undefined variable: cid in D:\PhpstormProjects\Casper\classes\CampaignsController.class.php on line 28
+[30-Apr-2016 00:26:15 UTC] PHP Stack trace:
+[30-Apr-2016 00:26:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 00:26:15 UTC] PHP   2. CampaignsController->__construct() D:\PhpstormProjects\Casper\ajax.php:74
+[30-Apr-2016 00:44:08 UTC] PHP Warning:  Invalid argument supplied for foreach() in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 372
+[30-Apr-2016 00:44:08 UTC] PHP Stack trace:
+[30-Apr-2016 00:44:08 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 00:44:08 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:119
+[30-Apr-2016 00:44:08 UTC] PHP   3. CampaignTabs->getTable200() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:322
+[30-Apr-2016 00:44:32 UTC] PHP Warning:  Invalid argument supplied for foreach() in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 372
+[30-Apr-2016 00:44:32 UTC] PHP Stack trace:
+[30-Apr-2016 00:44:32 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 00:44:32 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:119
+[30-Apr-2016 00:44:32 UTC] PHP   3. CampaignTabs->getTable200() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:322
+[30-Apr-2016 00:47:22 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 374
+[30-Apr-2016 00:47:22 UTC] PHP Stack trace:
+[30-Apr-2016 00:47:22 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 00:47:22 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:119
+[30-Apr-2016 00:47:22 UTC] PHP   3. CampaignTabs->getTable200() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:323
+[30-Apr-2016 00:47:22 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 374
+[30-Apr-2016 00:47:22 UTC] PHP Stack trace:
+[30-Apr-2016 00:47:22 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 00:47:22 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:119
+[30-Apr-2016 00:47:22 UTC] PHP   3. CampaignTabs->getTable200() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:323
+[30-Apr-2016 00:47:22 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 374
+[30-Apr-2016 00:47:22 UTC] PHP Stack trace:
+[30-Apr-2016 00:47:22 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 00:47:22 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:119
+[30-Apr-2016 00:47:22 UTC] PHP   3. CampaignTabs->getTable200() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:323
+[30-Apr-2016 00:47:22 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 374
+[30-Apr-2016 00:47:22 UTC] PHP Stack trace:
+[30-Apr-2016 00:47:22 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 00:47:22 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:119
+[30-Apr-2016 00:47:22 UTC] PHP   3. CampaignTabs->getTable200() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:323
+[30-Apr-2016 00:47:22 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 374
+[30-Apr-2016 00:47:22 UTC] PHP Stack trace:
+[30-Apr-2016 00:47:22 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 00:47:22 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:119
+[30-Apr-2016 00:47:22 UTC] PHP   3. CampaignTabs->getTable200() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:323
+[30-Apr-2016 00:49:24 UTC] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 323

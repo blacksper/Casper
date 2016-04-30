@@ -116,7 +116,7 @@ class Tabs
         $result = '<tr class="campaignRow" data-cid="' . $row['cid'] . '">';
         $result .= '
                     <td class="url">
-                        <a href="?cid=' . $row['cid'] . '" class="btn btn-primary">' . $row['name'] . '</a>
+                        <a href="campaign.php?cid=' . $row['cid'] . '" class="btn btn-primary">' . $row['name'] . '</a>
 
                     </td>
                     <td class="ip"> ----</td>

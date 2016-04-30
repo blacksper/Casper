@@ -157,7 +157,9 @@ $(document).ready(function(){
     });*/
 
     //$('tr>td.url a').click(function(){
-    $("boddy").on('click', 'tr>td.url a', function () {
+
+    $("body").on('click', 'tr>td.dateScan a', function () {
+        //alert(123);
             if ($('#myModal').html() == undefined) {
                 $('body').append("<div id='myModal' class='modal fade' tabindex='-1' role='dialog' aria-labelledby='myLargeModalLabel'>" +
                     "<div class='modal-dialog modal-lg'>" +
@@ -165,7 +167,30 @@ $(document).ready(function(){
                     "</div>" +
                     "</div>");
             }
-            var tid = ($(this).parents('tr.targetRow').data("tid"));
+        var scid = ($(this).parents('tr.scanRow').data("scid"));
+        console.log(scid);
+            $.ajax({
+                url: "ajax.php",
+                type: "POST",
+                data: "page=campaigns&action=getScanDetails&scid=" + scid,
+                success: function (data) {
+                    $('.modal-dialog').html(data);
+                    $('#myModal').modal();
+                }
+            });
+        console.log($('#spoiler-' + scid).text().length);
+    });
+
+    $("boddy").on('click', 'tr>td.dateScan a', function () {
+        //alert(123);
+        if ($('#myModal').html() == undefined) {
+            $('body').append("<div id='myModal' class='modal fade' tabindex='-1' role='dialog' aria-labelledby='myLargeModalLabel'>" +
+                "<div class='modal-dialog modal-lg'>" +
+
+                "</div>" +
+                "</div>");
+        }
+        var tid = ($(this).parents('tr.targetRow').data("tid"));
             $.ajax({
                 url: "ajax.php",
                 type: "POST",
@@ -175,25 +200,7 @@ $(document).ready(function(){
                     $('#myModal').modal();
                 }
             });
-
-
-
-        console.log($('#spoiler-'+tid).text().length);
-
-            if (0) {
-
-            $.ajax({
-                url: "ajax.php",
-                type: "POST",
-                data: "action=getsubinfo&tid="+tid,
-                success: function (data) {
-                    $('#spoiler-'+tid).html(data);
-
-                }
-            });
-        }
-
+        console.log($('#spoiler-' + tid).text().length);
     });
-
 
 });
