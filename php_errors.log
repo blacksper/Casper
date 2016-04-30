@@ -5149,3 +5149,366 @@ Stack trace:
 [30-Apr-2016 00:47:22 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:119
 [30-Apr-2016 00:47:22 UTC] PHP   3. CampaignTabs->getTable200() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:323
 [30-Apr-2016 00:49:24 UTC] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 323
+[30-Apr-2016 11:32:27 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:32:27 UTC] PHP Stack trace:
+[30-Apr-2016 11:32:27 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:32:27 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:32:27 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:32:27 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:32:27 UTC] PHP Stack trace:
+[30-Apr-2016 11:32:27 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:32:27 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:32:27 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:32:27 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:32:27 UTC] PHP Stack trace:
+[30-Apr-2016 11:32:27 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:32:27 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:32:27 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:32:27 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:32:27 UTC] PHP Stack trace:
+[30-Apr-2016 11:32:27 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:32:27 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:32:27 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:32:27 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:32:27 UTC] PHP Stack trace:
+[30-Apr-2016 11:32:27 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:32:27 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:32:27 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:32:27 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:32:27 UTC] PHP Stack trace:
+[30-Apr-2016 11:32:27 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:32:27 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:32:27 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:32:27 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:32:27 UTC] PHP Stack trace:
+[30-Apr-2016 11:32:27 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:32:27 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:32:27 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:32:27 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:32:27 UTC] PHP Stack trace:
+[30-Apr-2016 11:32:27 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:32:27 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:32:27 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:32:27 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:32:27 UTC] PHP Stack trace:
+[30-Apr-2016 11:32:27 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:32:27 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:32:27 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:32:27 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:32:27 UTC] PHP Stack trace:
+[30-Apr-2016 11:32:27 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:32:27 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:32:27 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:32:27 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:32:27 UTC] PHP Stack trace:
+[30-Apr-2016 11:32:27 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:32:27 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:32:27 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:32:27 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:32:27 UTC] PHP Stack trace:
+[30-Apr-2016 11:32:27 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:32:27 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:32:27 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:32:27 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:32:27 UTC] PHP Stack trace:
+[30-Apr-2016 11:32:27 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:32:27 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:32:27 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:32:27 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:32:27 UTC] PHP Stack trace:
+[30-Apr-2016 11:32:27 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:32:27 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:32:27 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:32:27 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:32:27 UTC] PHP Stack trace:
+[30-Apr-2016 11:32:27 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:32:27 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:32:27 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:32:27 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:32:27 UTC] PHP Stack trace:
+[30-Apr-2016 11:32:27 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:32:27 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:32:27 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:32:27 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:32:27 UTC] PHP Stack trace:
+[30-Apr-2016 11:32:27 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:32:27 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:32:27 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:32:27 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:32:27 UTC] PHP Stack trace:
+[30-Apr-2016 11:32:27 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:32:27 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:32:27 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:32:27 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:32:27 UTC] PHP Stack trace:
+[30-Apr-2016 11:32:27 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:32:27 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:32:27 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:32:27 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:32:27 UTC] PHP Stack trace:
+[30-Apr-2016 11:32:27 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:32:27 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:32:27 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:39:30 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:39:30 UTC] PHP Stack trace:
+[30-Apr-2016 11:39:30 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:39:30 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:39:30 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:39:30 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:39:30 UTC] PHP Stack trace:
+[30-Apr-2016 11:39:30 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:39:30 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:39:30 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:39:30 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:39:30 UTC] PHP Stack trace:
+[30-Apr-2016 11:39:30 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:39:30 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:39:30 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:39:30 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:39:30 UTC] PHP Stack trace:
+[30-Apr-2016 11:39:30 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:39:30 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:39:30 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:39:30 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:39:30 UTC] PHP Stack trace:
+[30-Apr-2016 11:39:30 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:39:30 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:39:30 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:39:30 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:39:30 UTC] PHP Stack trace:
+[30-Apr-2016 11:39:30 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:39:30 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:39:30 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:39:30 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:39:30 UTC] PHP Stack trace:
+[30-Apr-2016 11:39:30 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:39:30 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:39:30 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:39:30 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:39:30 UTC] PHP Stack trace:
+[30-Apr-2016 11:39:30 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:39:30 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:39:30 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:39:30 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:39:30 UTC] PHP Stack trace:
+[30-Apr-2016 11:39:30 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:39:30 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:39:30 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:39:30 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:39:30 UTC] PHP Stack trace:
+[30-Apr-2016 11:39:30 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:39:30 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:39:30 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:39:30 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:39:30 UTC] PHP Stack trace:
+[30-Apr-2016 11:39:30 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:39:30 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:39:30 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:39:30 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:39:30 UTC] PHP Stack trace:
+[30-Apr-2016 11:39:30 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:39:30 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:39:30 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:39:30 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:39:30 UTC] PHP Stack trace:
+[30-Apr-2016 11:39:30 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:39:30 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:39:30 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:39:30 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:39:30 UTC] PHP Stack trace:
+[30-Apr-2016 11:39:30 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:39:30 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:39:30 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:39:30 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:39:30 UTC] PHP Stack trace:
+[30-Apr-2016 11:39:30 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:39:30 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:39:30 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:39:30 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:39:30 UTC] PHP Stack trace:
+[30-Apr-2016 11:39:30 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:39:30 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:39:30 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:39:30 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:39:30 UTC] PHP Stack trace:
+[30-Apr-2016 11:39:30 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:39:30 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:39:30 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:39:30 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:39:30 UTC] PHP Stack trace:
+[30-Apr-2016 11:39:30 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:39:30 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:39:30 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:39:30 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:39:30 UTC] PHP Stack trace:
+[30-Apr-2016 11:39:30 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:39:30 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:39:30 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:39:30 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:39:30 UTC] PHP Stack trace:
+[30-Apr-2016 11:39:30 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:39:30 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:39:30 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:39:35 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:39:35 UTC] PHP Stack trace:
+[30-Apr-2016 11:39:35 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:39:35 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:39:35 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:39:35 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:39:35 UTC] PHP Stack trace:
+[30-Apr-2016 11:39:35 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:39:35 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:39:35 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:39:35 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:39:35 UTC] PHP Stack trace:
+[30-Apr-2016 11:39:35 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:39:35 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:39:35 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:39:35 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:39:35 UTC] PHP Stack trace:
+[30-Apr-2016 11:39:35 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:39:35 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:39:35 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:39:35 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:39:35 UTC] PHP Stack trace:
+[30-Apr-2016 11:39:35 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:39:35 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:39:35 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:39:35 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:39:35 UTC] PHP Stack trace:
+[30-Apr-2016 11:39:35 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:39:35 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:39:35 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:39:35 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:39:35 UTC] PHP Stack trace:
+[30-Apr-2016 11:39:35 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:39:35 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:39:35 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:39:35 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:39:35 UTC] PHP Stack trace:
+[30-Apr-2016 11:39:35 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:39:35 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:39:35 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:39:35 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:39:35 UTC] PHP Stack trace:
+[30-Apr-2016 11:39:35 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:39:35 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:39:35 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:39:35 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:39:35 UTC] PHP Stack trace:
+[30-Apr-2016 11:39:35 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:39:35 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:39:35 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:39:35 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:39:35 UTC] PHP Stack trace:
+[30-Apr-2016 11:39:35 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:39:35 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:39:35 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:39:35 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:39:35 UTC] PHP Stack trace:
+[30-Apr-2016 11:39:35 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:39:35 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:39:35 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:39:35 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:39:35 UTC] PHP Stack trace:
+[30-Apr-2016 11:39:35 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:39:35 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:39:35 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:39:35 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:39:35 UTC] PHP Stack trace:
+[30-Apr-2016 11:39:35 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:39:35 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:39:35 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:39:35 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:39:35 UTC] PHP Stack trace:
+[30-Apr-2016 11:39:35 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:39:35 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:39:35 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:39:35 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:39:35 UTC] PHP Stack trace:
+[30-Apr-2016 11:39:35 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:39:35 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:39:35 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:39:35 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:39:35 UTC] PHP Stack trace:
+[30-Apr-2016 11:39:35 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:39:35 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:39:35 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:39:35 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:39:35 UTC] PHP Stack trace:
+[30-Apr-2016 11:39:35 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:39:35 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:39:35 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:39:35 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:39:35 UTC] PHP Stack trace:
+[30-Apr-2016 11:39:35 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:39:35 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:39:35 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 11:39:35 UTC] PHP Notice:  Undefined index: size in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 387
+[30-Apr-2016 11:39:35 UTC] PHP Stack trace:
+[30-Apr-2016 11:39:35 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 11:39:35 UTC] PHP   2. CampaignTabs->getDirScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[30-Apr-2016 11:39:35 UTC] PHP   3. CampaignTabs->getTableScanResults() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:330
+[30-Apr-2016 16:12:49 UTC] PHP Notice:  Undefined property: CampaignsController::$cid in D:\PhpstormProjects\Casper\classes\CampaignsController.class.php on line 27
+[30-Apr-2016 16:12:49 UTC] PHP Stack trace:
+[30-Apr-2016 16:12:49 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\campaign.php:0
+[30-Apr-2016 16:12:49 UTC] PHP   2. CampaignsController->__construct() D:\PhpstormProjects\Casper\campaign.php:13
+[30-Apr-2016 16:12:49 UTC] PHP Notice:  Trying to get property of non-object in D:\PhpstormProjects\Casper\classes\CampaignsController.class.php on line 28
+[30-Apr-2016 16:12:49 UTC] PHP Stack trace:
+[30-Apr-2016 16:12:49 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\campaign.php:0
+[30-Apr-2016 16:12:49 UTC] PHP   2. CampaignsController->__construct() D:\PhpstormProjects\Casper\campaign.php:13
+[30-Apr-2016 16:12:49 UTC] PHP Fatal error:  Uncaught Error: Call to a member function firstResult() on null in D:\PhpstormProjects\Casper\classes\CampaignsController.class.php:28
+Stack trace:
+#0 D:\PhpstormProjects\Casper\campaign.php(13): CampaignsController->__construct('1')
+#1 {main}
+  thrown in D:\PhpstormProjects\Casper\classes\CampaignsController.class.php on line 28
+[30-Apr-2016 16:13:10 UTC] PHP Notice:  Trying to get property of non-object in D:\PhpstormProjects\Casper\classes\CampaignsController.class.php on line 28
+[30-Apr-2016 16:13:10 UTC] PHP Stack trace:
+[30-Apr-2016 16:13:10 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\campaign.php:0
+[30-Apr-2016 16:13:10 UTC] PHP   2. CampaignsController->__construct() D:\PhpstormProjects\Casper\campaign.php:13
+[30-Apr-2016 16:13:10 UTC] PHP Fatal error:  Uncaught Error: Call to a member function firstResult() on null in D:\PhpstormProjects\Casper\classes\CampaignsController.class.php:28
+Stack trace:
+#0 D:\PhpstormProjects\Casper\campaign.php(13): CampaignsController->__construct('1')
+#1 {main}
+  thrown in D:\PhpstormProjects\Casper\classes\CampaignsController.class.php on line 28
+[30-Apr-2016 16:17:07 UTC] PHP Warning:  include(../header.php): failed to open stream: No such file or directory in D:\PhpstormProjects\Casper\classes\CampaignsController.class.php on line 13
+[30-Apr-2016 16:17:07 UTC] PHP Stack trace:
+[30-Apr-2016 16:17:07 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\campaign.php:0
+[30-Apr-2016 16:17:07 UTC] PHP   2. include() D:\PhpstormProjects\Casper\campaign.php:9
+[30-Apr-2016 16:17:07 UTC] PHP Warning:  include(): Failed opening '../header.php' for inclusion (include_path='.;C:\php\pear') in D:\PhpstormProjects\Casper\classes\CampaignsController.class.php on line 13
+[30-Apr-2016 16:17:07 UTC] PHP Stack trace:
+[30-Apr-2016 16:17:07 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\campaign.php:0
+[30-Apr-2016 16:17:07 UTC] PHP   2. include() D:\PhpstormProjects\Casper\campaign.php:9
+[30-Apr-2016 16:30:54 UTC] PHP Notice:  Use of undefined constant PATH_TXTP - assumed 'PATH_TXTP' in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 147
+[30-Apr-2016 16:30:54 UTC] PHP Stack trace:
+[30-Apr-2016 16:30:54 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\campaign.php:0
+[30-Apr-2016 16:30:54 UTC] PHP   2. CampaignViewer->ShowMain() D:\PhpstormProjects\Casper\campaign.php:15
+[30-Apr-2016 16:30:54 UTC] PHP   3. CampaignTabs->getToolsTab() D:\PhpstormProjects\Casper\classes\CampaignViewer.class.php:53
+[30-Apr-2016 16:30:54 UTC] PHP Warning:  opendir(PATH_TXTP,PATH_TXTP): �� ������ ����� �������� ����. (code: 2) in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 147
+[30-Apr-2016 16:30:54 UTC] PHP Stack trace:
+[30-Apr-2016 16:30:54 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\campaign.php:0
+[30-Apr-2016 16:30:54 UTC] PHP   2. CampaignViewer->ShowMain() D:\PhpstormProjects\Casper\campaign.php:15
+[30-Apr-2016 16:30:54 UTC] PHP   3. CampaignTabs->getToolsTab() D:\PhpstormProjects\Casper\classes\CampaignViewer.class.php:53
+[30-Apr-2016 16:30:54 UTC] PHP   4. opendir() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:147
+[30-Apr-2016 16:30:54 UTC] PHP Warning:  opendir(PATH_TXTP): failed to open dir: No such file or directory in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 147
+[30-Apr-2016 16:30:54 UTC] PHP Stack trace:
+[30-Apr-2016 16:30:54 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\campaign.php:0
+[30-Apr-2016 16:30:54 UTC] PHP   2. CampaignViewer->ShowMain() D:\PhpstormProjects\Casper\campaign.php:15
+[30-Apr-2016 16:30:54 UTC] PHP   3. CampaignTabs->getToolsTab() D:\PhpstormProjects\Casper\classes\CampaignViewer.class.php:53
+[30-Apr-2016 16:30:54 UTC] PHP   4. opendir() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:147
+[30-Apr-2016 16:30:54 UTC] PHP Warning:  readdir() expects parameter 1 to be resource, boolean given in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 152
+[30-Apr-2016 16:30:54 UTC] PHP Stack trace:
+[30-Apr-2016 16:30:54 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\campaign.php:0
+[30-Apr-2016 16:30:54 UTC] PHP   2. CampaignViewer->ShowMain() D:\PhpstormProjects\Casper\campaign.php:15
+[30-Apr-2016 16:30:54 UTC] PHP   3. CampaignTabs->getToolsTab() D:\PhpstormProjects\Casper\classes\CampaignViewer.class.php:53
+[30-Apr-2016 16:30:54 UTC] PHP   4. readdir() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:152
+[30-Apr-2016 16:37:48 UTC] PHP Warning:  Missing argument 1 for CampaignTabs::getToolsTab(), called in D:\PhpstormProjects\Casper\classes\CampaignViewer.class.php on line 53 and defined in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 145
+[30-Apr-2016 16:37:48 UTC] PHP Stack trace:
+[30-Apr-2016 16:37:48 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\campaign.php:0
+[30-Apr-2016 16:37:48 UTC] PHP   2. CampaignViewer->ShowMain() D:\PhpstormProjects\Casper\campaign.php:15
+[30-Apr-2016 16:37:48 UTC] PHP   3. CampaignTabs->getToolsTab() D:\PhpstormProjects\Casper\classes\CampaignViewer.class.php:53
+[30-Apr-2016 16:37:48 UTC] PHP Notice:  Undefined variable: cid in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 160
+[30-Apr-2016 16:37:48 UTC] PHP Stack trace:
+[30-Apr-2016 16:37:48 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\campaign.php:0
+[30-Apr-2016 16:37:48 UTC] PHP   2. CampaignViewer->ShowMain() D:\PhpstormProjects\Casper\campaign.php:15
+[30-Apr-2016 16:37:48 UTC] PHP   3. CampaignTabs->getToolsTab() D:\PhpstormProjects\Casper\classes\CampaignViewer.class.php:53

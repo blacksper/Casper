@@ -45,12 +45,12 @@ body {
     margin-top: 60px;
 }
 
-#campaignContent, #serverContent, #scansCampaignContent {
+#campaignContent, #serverContent, #scansCampaignContent, #targetsContent {
 
     background-color: #eee;
 }
 
-#servers, #campaigns {
+#servers, #campaigns, #targets {
     border-bottom: 3px solid #DDD;
     background-color: #eee;
 }
@@ -126,14 +126,16 @@ body {
 }
 
 .tabs{
-    outline: 1px solid orange;
+    outline: 1px solid #0f0f0f;
 }
 .tab-pane>.row{
     padding: 5px;
     margin: 0px;
 }
-.scan-row:hover{
 
+.campTitle {
+    border: none;
+    border-bottom: 4px solid rgba(0, 0, 0, 1);
 
 }
 

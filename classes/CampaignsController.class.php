@@ -26,9 +26,24 @@ class CampaignsController
 
 
         $this->Model = new Model();
+
+        $query = "select * from campaigns where cid=$cid and deleted=0";
+        $result = $this->Model->MysqliClass->firstResult($query);
+        if (empty($result)) {
+            $this->doRedirect();
+            exit();
+        }
+
+
         $this->CampaignViewer = new CampaignViewer($this->Model, $cid);
 
 
+    }
+
+    function doRedirect()
+    {
+        echo 123123;
+        header("Location: ./index.php");
     }
 
 

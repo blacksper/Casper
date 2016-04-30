@@ -26,16 +26,26 @@ class CampaignTabs
 
     function getMainTab($cid)//закладка главное
     {
-        $tmpHtml = '<div class="tab-pane fade" id="mainCampaign-tab">
-                                     <div class="nav pol" id="servers">
-                                     <div class="navbar-form navbar-left">
-                                        <div class="form-group">
-                                            <button id="addServer" class="btn btn-success"  >Добавить сервер</button>
-                                        </div>
-                                        <input class="form-control" id="serverUrl" type="text">
+        $query = "select * from targets where cid=$cid and deleted=0";
+        $targetsArr = $this->Model->MysqliClass->getAssocArray($query);
+        $f = "<table id='targetsContent' class='table table-hover'>
+            <thead>
+            <tr>
+            <th>Url</th>
+            <th>ip</th>
+            </tr>
+            </thead>";
+        $f .= "<tbody>";
+        foreach ($targetsArr as $target) {
+            $f .= "<tr><td>{$target['url']}</td><td>{$target['ip']}</td></tr>";
+        }
+        $f .= "</tbody>";
+        $f .= "</table>";
 
-                                    </div>
-                                     </div>
+        $tmpHtml = '<div class="tab-pane fade" id="mainCampaign-tab">
+
+                                    ' . $f . '
+
 
                                 </div>';
 
@@ -132,7 +142,7 @@ class CampaignTabs
 
 // " . $row['ip'] . "
 
-    function getToolsTab()//закладка инструменты
+    function getToolsTab($cid)//закладка инструменты
     {
         $handle = opendir(PATH_TXTP);
         $dirs = '';//список директорий
@@ -147,7 +157,7 @@ class CampaignTabs
             $dirs .= '<option>' . $dir . "</option>";
         }
 
-        $urlsArr = $this->Model->MysqliClass->getAssocArray("select tid,url from targets where deleted=0");
+        $urlsArr = $this->Model->MysqliClass->getAssocArray("select tid,url from targets where cid=$cid and deleted=0");
         if ($urlsArr) {
             foreach ($urlsArr as $url) {
                 $urls .= '<option value="' . $url['tid'] . '">' . $url['url'] . '</option>';
@@ -253,10 +263,10 @@ class CampaignTabs
     function getScansTab($cid)
     {
         //var_dump( $cid);
-        $query = "select * from scans where tid in (select tid from targets where cid=$cid)";
+        $query = "select * from targets RIGHT JOIN scans on targets.tid=scans.tid where cid=$cid";
         $result = $this->Model->MysqliClass->getAssocArray($query);
-        if (empty($result))
-            exit;
+        //if (empty($result))
+        //    exit;
 
         $tbody = "<tbody>";
 
@@ -266,6 +276,7 @@ class CampaignTabs
 
         }
 
+
         $tbody .= "</tbody>";
 
         $this->allHtml .= '<div class="tab-pane fade in active" id="scansCampaign-tab">
@@ -274,27 +285,25 @@ class CampaignTabs
                                               <thead>
                                               <tr>
                                                   <th>type</th>
+                                                  <th>url</th>
                                                   <th>filename</th>
                                                   <th>Status</th>
                                               </tr>
                                               </thead>
 
-
-
                                           ' . $tbody . '
 
                                           </table>
-
-
-                                       <button class="btn btn-default" data-toggle="collapse" data-target="#demo">Collapsible</button>
-
+                                        <button class="btn btn-default" data-toggle="collapse" data-target="#demo">Collapsible</button>
                                         <div id="demo" class="collapse">
                                         Some text..
                                         </div>
 
 
-                            </div>';
-
+                                         </div>
+                            </div>
+                            ';
+        //var_dump($this->allHtml);
 
     }
 
@@ -308,6 +317,9 @@ class CampaignTabs
                     <td class='dateScan'>
                     <a href='#' class='btn btn-primary'>{$row['dateScan']}</a>
                     </td>
+                    <td class='scanUrl'>
+                    {$row['url']}
+                    </td>
                     <td>{$row['filename']}</td>
                     <td>" . (($row['status'] == 1) ? $finished : $proccessed) . "</td>
                   </tr>";
@@ -318,7 +330,7 @@ class CampaignTabs
 
     function getDirScanDetails($scid)
     {
-        $foundPaths = $this->Model->MysqliClass->getAssocArray("select * from pathfound where scid=$scid and httpcode=200");
+        $foundPaths = $this->Model->MysqliClass->getAssocArray("select * from pathfound where scid=$scid");
         +
             //var_dump($foundPaths);
         $goodPaths = "";
@@ -327,7 +339,7 @@ class CampaignTabs
                             <strong>Пусто</strong>
                        </div>';
         } else {
-            $goodPaths = $this->getTable200($foundPaths);
+            $goodPaths = $this->getTableScanResults($foundPaths);
         }
 
         //$res = $this->Model->MysqliClass->firstResult("select * from pathfound where scid=$scid where httpcode=404");
@@ -343,21 +355,21 @@ class CampaignTabs
                           </div>
                           <div class="modal-body">
                             <ul style="width: 300px" class="qwe nav nav-pills" >
-                                <li class="active"><a  href="" data-toggle="tab">Found</a></li>
-                                <li><a  href = "" data-toggle = "tab" > Not Found </a></li >
-                                <li><a  href = "" data-toggle = "tab" > Forbidden </a></li >
+                                <li class="active"><a  href="#found" data-toggle="tab">Found</a></li>
+                                <li><a  href = "#notFound" data-toggle = "tab" > Not Found </a></li >
+                                <li><a  href = "#forbidden" data-toggle = "tab" > Forbidden </a></li >
                             </ul >
                             <p>
                                 <div class="tab-content" >
 
 
 
-                                        <div class="tab-pane fade in active scanTable"  >
+                                        <div class="tab-pane fade in active" id="found"  >
                                         ' . $goodPaths . ' </div>
-                                        <div class="tab-pane fade"  >
+                                        <div class="tab-pane fade" id="notFound"  >
                                              321
                                         </div >
-                                        <div class="tab-pane fade"  >
+                                        <div class="tab-pane fade" id="forbidden"  >
                                              ' . $childs . '
                                         </div >
                                 </div >
@@ -372,22 +384,27 @@ class CampaignTabs
         return $result;
     }
 
-    function getTable200($foundPaths)
+    function getTableScanResults($foundPaths)
     {
 
-        $table = '<table>';
-        $thead = '<thead><tr><th></th></tr></thead>';
+        $table = '<table class="table table-hover">';
+        $thead = '<thead><tr><th>path</th><th>httpcode</th></tr></thead>';
         //var_dump( $foundPaths);
         $tbody = '';
-
+        //$httpcode=$path['httpcode'];
         foreach ($foundPaths as $path) {
-            $tbody .= '<tr><td>' . $path['url'] . '</td></tr>';
+            $tbody .= '<tr style="background-color:' . (($path['httpcode'] == 200) ? 'yellowgreen' : (($path['httpcode'] == 302) ? 'yellow' : "#BE7D77")) . ';">
+            <td>' . $path['url'] . '</td>
+            <td class="httpcode"><span >' . $path['httpcode'] . '</span></td>
+
+            </tr>';
 
         }
         $table .= $thead . $tbody . "</table>";
 
         return $table;
     }
+
 
     function getSubInfoScans(int $cid)
     {
