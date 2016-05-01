@@ -16,26 +16,26 @@ class CampaignsController
 {
 
     public $Viewer;
-    public $servers;
     public $Model;
 
     //public $uid;
 
-    function __construct($cid)
+    function __construct($cid = null)
     {
 
 
         $this->Model = new Model();
+        if ($cid != null) {
+            $query = "select * from campaigns where cid=$cid and deleted=0";
+            $result = $this->Model->MysqliClass->firstResult($query);
+            if (empty($result)) {
+                //$this->doRedirect();
+                echo "tut dolzen bit redirect";
+                exit();
+            }
 
-        $query = "select * from campaigns where cid=$cid and deleted=0";
-        $result = $this->Model->MysqliClass->firstResult($query);
-        if (empty($result)) {
-            $this->doRedirect();
-            exit();
         }
-
-
-        $this->CampaignViewer = new CampaignViewer($this->Model, $cid);
+        $this->CampaignViewer = new CampaignViewer($this->Model);
 
 
     }

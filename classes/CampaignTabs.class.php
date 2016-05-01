@@ -28,11 +28,11 @@ class CampaignTabs
     {
         $query = "select * from targets where cid=$cid and deleted=0";
         $targetsArr = $this->Model->MysqliClass->getAssocArray($query);
-        $f = "<table id='targetsContent' class='table table-hover'>
+        $f = "<div class='row'><div class='col-md-6'><table id='targetsContent' class='table table-hover'>
             <thead>
             <tr>
             <th>Url</th>
-            <th>ip</th>
+            <th>info</th>
             </tr>
             </thead>";
         $f .= "<tbody>";
@@ -40,9 +40,11 @@ class CampaignTabs
             $f .= "<tr><td>{$target['url']}</td><td>{$target['ip']}</td></tr>";
         }
         $f .= "</tbody>";
-        $f .= "</table>";
+        $f .= "</table></div>";
 
-        $tmpHtml = '<div class="tab-pane fade" id="mainCampaign-tab">
+        $f .= "<div class='col-md-6'> <textarea class='form-control custom-control'></textarea><button style='float: right;margin-top: 10px;' class='btn btn-success'>Добавить цели</button></div></div>";
+
+        $tmpHtml = '<div class="tab-pane fade in active" id="mainCampaign-tab">
 
                                     ' . $f . '
 
@@ -279,7 +281,7 @@ class CampaignTabs
 
         $tbody .= "</tbody>";
 
-        $this->allHtml .= '<div class="tab-pane fade in active" id="scansCampaign-tab">
+        $this->allHtml .= '<div class="tab-pane fade" id="scansCampaign-tab">
                                       <div class="nav pol" id="scansCampaign">
                                           <table id="scansCampaignContent" class="table table-hover">
                                               <thead>
@@ -331,8 +333,8 @@ class CampaignTabs
     function getDirScanDetails($scid)
     {
         $foundPaths = $this->Model->MysqliClass->getAssocArray("select * from pathfound where scid=$scid");
-        +
-            //var_dump($foundPaths);
+
+        //var_dump($foundPaths);
         $goodPaths = "";
         if (empty($foundPaths)) {
             $goodPaths = '<div class="alert alert-warning">

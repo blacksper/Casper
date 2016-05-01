@@ -20,7 +20,7 @@ switch($action){
             $tid=(int)$_POST['tid'];
             $sid=(int)$_POST['sid'];
             $filename=$_POST['filename'];
-            $Tools->startScan($tid,$sid,"./txt/paths/$filename",$action);
+            $Tools->startScan($tid, $sid, $filename, $action);
         }
         break;
 

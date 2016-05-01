@@ -67,7 +67,7 @@ switch ($_POST['page']) {
         include("./classes/CampaignsController.class.php");
         if (isset($_POST['scid'])) {
             $scid = $_POST['scid'];
-            $CampaignsController = new CampaignsController($scid);
+            $CampaignsController = new CampaignsController();
 
 
             if (isset($_POST['action'])) {

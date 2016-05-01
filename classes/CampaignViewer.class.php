@@ -22,9 +22,9 @@ class CampaignViewer
     //var $tabsClass;
 
 
-    function __construct($Model, $cid)
+    function __construct($Model)
     {
-        $this->cid = $cid;
+        //$this->cid = $cid;
         $this->Model = $Model;
         $this->Head = '';
         $this->Tabs = new CampaignTabs($this->Model);
@@ -43,8 +43,9 @@ class CampaignViewer
     }
 
 
-    public function ShowMain()
+    public function buildPage($cid)
     {
+        $this->cid = $cid;
         //var_dump(123);
 
         $this->Tabs->getMainTab($this->cid);
@@ -56,16 +57,22 @@ class CampaignViewer
 
 
         $menu = '<div class="tabs menu col-xs-3 col-md-2">
-                                <ul class="nav nav-pills nav-stacked list-group">
-                                    <li  class="list-group-item campTitle">Кампания ' . $this->cid . '</li>
+                                <div class="panel panel-default">
+                                    <ul class="nav nav-pills nav-stacked list-group">
+                                          <div class="panel-heading">
+                                            <h3 class="panel-title ">Кампания ' . $this->cid . '</h3>
+                                          </div>
+                                        <!--<li  class="list-group-item campTitle"> ' . $this->cid . '</li>-->
 
-                                    <li><a href="#mainCampaign-tab" data-toggle="tab">Главная</a></li>
-                                    <li class="active"><a href="#scansCampaign-tab" data-toggle="tab">Сканирования</a></li>
-                                    <li><a href="#tools-tab" data-toggle="tab">Инструменты</a></li>
-                                    <li><a href="#servers-tab" data-toggle="tab">Дочерные цели</a></li>
-                                     <li><a href="panel.php">В панель</a></li>
+                                        <li class="active"><a href="#mainCampaign-tab" data-toggle="tab">Главная</a></li>
+                                        <li ><a href="#scansCampaign-tab" data-toggle="tab">Сканирования</a></li>
+                                        <li><a href="#tools-tab" data-toggle="tab">Инструменты</a></li>
+                                        <li><a href="#servers-tab" data-toggle="tab">Дочерные цели</a></li>
 
-                                </ul>
+                                        <li><a href="panel.php"><span class="glyphicon glyphicon-menu-left"></span> В панель</a></li>
+
+                                    </ul>
+                                </div>
                             </div>';
         $this->Body .= $menu . '
                             <div class="tab-content col-xs-10 col-md-6" >

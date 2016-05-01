@@ -47,7 +47,7 @@ $(document).ready(function(){
                 $.ajax({
                     url: "./ajax.php",
                     type: "POST",
-                    data: "campaignName=" + campaignName + "&action=add",
+                    data: "page=main&campaignName=" + campaignName + "&action=add",
                     success: function (data) {
                         console.log("viz");
                         if(data!==undefined)
@@ -67,7 +67,7 @@ $(document).ready(function(){
                 $.ajax({
                     url: "./ajax.php",
                     type: "POST",
-                    data: "serverUrl=" + serverUrl + "&action=add",
+                    data: "page=main&serverUrl=" + serverUrl + "&action=add",
                     success: function (data) {
                         console.log(data);
                         if(data!==undefined)
@@ -91,7 +91,7 @@ $(document).ready(function(){
                 $.ajax({
                     url: "./ajax.php",
                     type: "POST",
-                    data: "serverId=" + serverId + "&action=refresh",
+                    data: "page=main&serverId=" + serverId + "&action=refresh",
                     success: function (data) {
                         console.log(data);
                         if(data!==undefined) {
@@ -114,7 +114,7 @@ $(document).ready(function(){
                 $.ajax({
                     url: "./ajax.php",
                     type: "POST",
-                    data: "serverId=" + serverId + "&action=delete",
+                    data: "page=main&serverId=" + serverId + "&action=delete",
                     success: function (data) {
                         console.log(data);
                         if(data==1) {
@@ -133,7 +133,7 @@ $(document).ready(function(){
                     $.ajax({
                         url: "./ajax.php",
                         type: "POST",
-                        data: "campaignId=" + campaignId + "&action=delete",
+                        data: "page=main&campaignId=" + campaignId + "&action=delete",
                         success: function (data) {
                             console.log(data);
                             if(data==1) {

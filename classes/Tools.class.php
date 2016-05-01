@@ -42,11 +42,12 @@ class Tools
         $serverUrl = $this->Model->MysqliClass->firstResult($query)['path'];
 
         $scid = rand(1000000, 90000000);
-        $query = "insert into scans(scid,type,uid,sid,tid,status,$filename) VALUES($scid,'$action',$this->uid,$sid,$tid,1,'$filename') ";
+        $query = "insert into scans(scid,type,uid,sid,tid,status,filename) VALUES($scid,'$action',$this->uid,$sid,$tid,1,'$filename') ";
+        echo $query;
         $this->Model->MysqliClass->query($query);
         $arrTask = array();
 
-        $urls = explode("\r\n", file_get_contents($filename));
+        $urls = explode("\r\n", file_get_contents("./txt/paths/" . $filename));
 
         $arrTask[$scid] = array("url" => $targetUrl, "action" => $action, "data" => $urls);
 

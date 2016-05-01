@@ -8,22 +8,25 @@ set_time_limit(100);
  */
 
 
-/*
+
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, "http://casper.localhost/clientside/execute.php");
+curl_setopt($ch, CURLOPT_URL, "http://casper.localhost:80/");
     //echo $serverUrl;
-    curl_setopt($ch, CURLOPT_TIMEOUT, 20);
-    curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_TIMEOUT, 3);
+//curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLINFO_HEADER_OUT, true);
     //echo $enc;
-    curl_setopt($ch, CURLOPT_POSTFIELDS, "execute=qwe");
+//curl_setopt($ch, CURLOPT_POSTFIELDS, "execute=qwe");
     echo curl_exec($ch);
-    $qwe=curl_getinfo($ch,CURLINFO_HEADER_OUT);
-    echo $qwe;
+$qwe = curl_getinfo($ch);
+print_r($qwe);
+echo curl_error($ch);
+curl_close($ch);
 
-*/
 
-$subs=file("txt/paths/subdomain.txt");
+
+
+//$subs=file("txt/paths/subdomain.txt");
 
 //$result1 = dns_get_record("qwe.wildo.ru");
 

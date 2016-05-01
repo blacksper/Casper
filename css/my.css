@@ -125,8 +125,12 @@ body {
     background-color: #d5d5d5;
 }
 
+#targetsContent {
+
+}
+
 .tabs{
-    outline: 1px solid #0f0f0f;
+
 }
 .tab-pane>.row{
     padding: 5px;

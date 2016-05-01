@@ -5512,3 +5512,12 @@ Stack trace:
 [30-Apr-2016 16:37:48 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\campaign.php:0
 [30-Apr-2016 16:37:48 UTC] PHP   2. CampaignViewer->ShowMain() D:\PhpstormProjects\Casper\campaign.php:15
 [30-Apr-2016 16:37:48 UTC] PHP   3. CampaignTabs->getToolsTab() D:\PhpstormProjects\Casper\classes\CampaignViewer.class.php:53
+[30-Apr-2016 16:41:58 UTC] PHP Notice:  Undefined index: page in D:\PhpstormProjects\Casper\ajax.php on line 11
+[30-Apr-2016 16:41:58 UTC] PHP Stack trace:
+[30-Apr-2016 16:41:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 16:42:11 UTC] PHP Notice:  Undefined index: page in D:\PhpstormProjects\Casper\ajax.php on line 11
+[30-Apr-2016 16:42:11 UTC] PHP Stack trace:
+[30-Apr-2016 16:42:11 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[30-Apr-2016 16:42:19 UTC] PHP Notice:  Undefined index: page in D:\PhpstormProjects\Casper\ajax.php on line 11
+[30-Apr-2016 16:42:19 UTC] PHP Stack trace:
+[30-Apr-2016 16:42:19 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
