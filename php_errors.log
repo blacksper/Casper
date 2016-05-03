@@ -5521,3 +5521,1319 @@ Stack trace:
 [30-Apr-2016 16:42:19 UTC] PHP Notice:  Undefined index: page in D:\PhpstormProjects\Casper\ajax.php on line 11
 [30-Apr-2016 16:42:19 UTC] PHP Stack trace:
 [30-Apr-2016 16:42:19 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[01-May-2016 17:24:00 UTC] PHP Notice:  Undefined variable: urls in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 54
+[01-May-2016 17:24:00 UTC] PHP Stack trace:
+[01-May-2016 17:24:00 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[01-May-2016 17:24:00 UTC] PHP   2. Tools->startScan() D:\PhpstormProjects\Casper\scan.php:23
+[02-May-2016 13:50:15 UTC] PHP Notice:  Undefined variable: addres in D:\PhpstormProjects\Casper\tt.php on line 21
+[02-May-2016 13:50:15 UTC] PHP Stack trace:
+[02-May-2016 13:50:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 13:50:15 UTC] PHP Notice:  Undefined variable: addres in D:\PhpstormProjects\Casper\tt.php on line 23
+[02-May-2016 13:50:15 UTC] PHP Stack trace:
+[02-May-2016 13:50:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 13:50:15 UTC] PHP Notice:  Undefined variable: port in D:\PhpstormProjects\Casper\tt.php on line 23
+[02-May-2016 13:50:15 UTC] PHP Stack trace:
+[02-May-2016 13:50:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 13:50:15 UTC] PHP Warning:  socket_connect(): unable to connect [10049]: Требуемый адрес для своего контекста неверен.
+ in D:\PhpstormProjects\Casper\tt.php on line 23
+[02-May-2016 13:50:15 UTC] PHP Stack trace:
+[02-May-2016 13:50:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 13:50:15 UTC] PHP   2. socket_connect() D:\PhpstormProjects\Casper\tt.php:23
+[02-May-2016 13:50:15 UTC] PHP Warning:  socket_write(): unable to write to socket [10057]: Запрос на отправку или получение данных  (when sending on a datagram socket using a sendto call) no address was supplied.
+ in D:\PhpstormProjects\Casper\tt.php on line 36
+[02-May-2016 13:50:15 UTC] PHP Stack trace:
+[02-May-2016 13:50:15 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 13:50:15 UTC] PHP   2. socket_write() D:\PhpstormProjects\Casper\tt.php:36
+[02-May-2016 13:50:55 UTC] PHP Notice:  Undefined variable: port in D:\PhpstormProjects\Casper\tt.php on line 23
+[02-May-2016 13:50:55 UTC] PHP Stack trace:
+[02-May-2016 13:50:55 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 13:50:55 UTC] PHP Warning:  socket_connect(): unable to connect [10049]: Требуемый адрес для своего контекста неверен.
+ in D:\PhpstormProjects\Casper\tt.php on line 23
+[02-May-2016 13:50:55 UTC] PHP Stack trace:
+[02-May-2016 13:50:55 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 13:50:55 UTC] PHP   2. socket_connect() D:\PhpstormProjects\Casper\tt.php:23
+[02-May-2016 13:50:55 UTC] PHP Warning:  socket_write(): unable to write to socket [10057]: Запрос на отправку или получение данных  (when sending on a datagram socket using a sendto call) no address was supplied.
+ in D:\PhpstormProjects\Casper\tt.php on line 36
+[02-May-2016 13:50:55 UTC] PHP Stack trace:
+[02-May-2016 13:50:55 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 13:50:55 UTC] PHP   2. socket_write() D:\PhpstormProjects\Casper\tt.php:36
+[02-May-2016 13:52:19 UTC] PHP Notice:  Undefined variable: socketm in D:\PhpstormProjects\Casper\tt.php on line 42
+[02-May-2016 13:52:19 UTC] PHP Stack trace:
+[02-May-2016 13:52:19 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 13:52:19 UTC] PHP Warning:  socket_recv() expects exactly 4 parameters, 3 given in D:\PhpstormProjects\Casper\tt.php on line 42
+[02-May-2016 13:52:19 UTC] PHP Stack trace:
+[02-May-2016 13:52:19 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 13:52:19 UTC] PHP   2. socket_recv() D:\PhpstormProjects\Casper\tt.php:42
+[02-May-2016 13:52:30 UTC] PHP Warning:  socket_recv() expects exactly 4 parameters, 3 given in D:\PhpstormProjects\Casper\tt.php on line 42
+[02-May-2016 13:52:30 UTC] PHP Stack trace:
+[02-May-2016 13:52:30 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 13:52:30 UTC] PHP   2. socket_recv() D:\PhpstormProjects\Casper\tt.php:42
+[02-May-2016 13:57:37 UTC] PHP Notice:  Use of undefined constant MSG_DONTWAIT - assumed 'MSG_DONTWAIT' in D:\PhpstormProjects\Casper\tt.php on line 42
+[02-May-2016 13:57:37 UTC] PHP Stack trace:
+[02-May-2016 13:57:37 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 13:57:37 UTC] PHP Warning:  socket_recv() expects parameter 4 to be integer, string given in D:\PhpstormProjects\Casper\tt.php on line 42
+[02-May-2016 13:57:37 UTC] PHP Stack trace:
+[02-May-2016 13:57:37 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 13:57:37 UTC] PHP   2. socket_recv() D:\PhpstormProjects\Casper\tt.php:42
+[02-May-2016 13:58:21 UTC] PHP Warning:  socket_recv() expects exactly 4 parameters, 3 given in D:\PhpstormProjects\Casper\tt.php on line 42
+[02-May-2016 13:58:21 UTC] PHP Stack trace:
+[02-May-2016 13:58:21 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 13:58:21 UTC] PHP   2. socket_recv() D:\PhpstormProjects\Casper\tt.php:42
+[02-May-2016 13:58:37 UTC] PHP Warning:  socket_recv() expects exactly 4 parameters, 3 given in D:\PhpstormProjects\Casper\tt.php on line 42
+[02-May-2016 13:58:37 UTC] PHP Stack trace:
+[02-May-2016 13:58:37 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 13:58:37 UTC] PHP   2. socket_recv() D:\PhpstormProjects\Casper\tt.php:42
+[02-May-2016 13:59:46 UTC] PHP Notice:  Use of undefined constant MSG_DONTWAIT - assumed 'MSG_DONTWAIT' in D:\PhpstormProjects\Casper\tt.php on line 42
+[02-May-2016 13:59:46 UTC] PHP Stack trace:
+[02-May-2016 13:59:46 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 13:59:46 UTC] PHP Warning:  socket_recv() expects parameter 4 to be integer, string given in D:\PhpstormProjects\Casper\tt.php on line 42
+[02-May-2016 13:59:46 UTC] PHP Stack trace:
+[02-May-2016 13:59:46 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 13:59:46 UTC] PHP   2. socket_recv() D:\PhpstormProjects\Casper\tt.php:42
+[02-May-2016 14:01:23 UTC] PHP Notice:  Use of undefined constant MSG_DONTWAIT - assumed 'MSG_DONTWAIT' in D:\PhpstormProjects\Casper\tt.php on line 43
+[02-May-2016 14:01:23 UTC] PHP Stack trace:
+[02-May-2016 14:01:23 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 14:01:23 UTC] PHP Warning:  socket_recv() expects parameter 4 to be integer, string given in D:\PhpstormProjects\Casper\tt.php on line 43
+[02-May-2016 14:01:23 UTC] PHP Stack trace:
+[02-May-2016 14:01:23 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 14:01:23 UTC] PHP   2. socket_recv() D:\PhpstormProjects\Casper\tt.php:43
+[02-May-2016 14:03:28 UTC] PHP Notice:  Use of undefined constant MSG_EOF - assumed 'MSG_EOF' in D:\PhpstormProjects\Casper\tt.php on line 38
+[02-May-2016 14:03:28 UTC] PHP Stack trace:
+[02-May-2016 14:03:28 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 14:03:28 UTC] PHP Warning:  socket_send() expects parameter 4 to be integer, string given in D:\PhpstormProjects\Casper\tt.php on line 38
+[02-May-2016 14:03:28 UTC] PHP Stack trace:
+[02-May-2016 14:03:28 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 14:03:28 UTC] PHP   2. socket_send() D:\PhpstormProjects\Casper\tt.php:38
+[02-May-2016 14:06:18 UTC] PHP Notice:  Use of undefined constant MSG_EOF - assumed 'MSG_EOF' in D:\PhpstormProjects\Casper\tt.php on line 38
+[02-May-2016 14:06:18 UTC] PHP Stack trace:
+[02-May-2016 14:06:18 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 14:06:18 UTC] PHP Warning:  socket_send() expects parameter 4 to be integer, string given in D:\PhpstormProjects\Casper\tt.php on line 38
+[02-May-2016 14:06:18 UTC] PHP Stack trace:
+[02-May-2016 14:06:18 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 14:06:18 UTC] PHP   2. socket_send() D:\PhpstormProjects\Casper\tt.php:38
+[02-May-2016 14:06:44 UTC] PHP Notice:  Use of undefined constant MSG_EOF - assumed 'MSG_EOF' in D:\PhpstormProjects\Casper\tt.php on line 38
+[02-May-2016 14:06:44 UTC] PHP Stack trace:
+[02-May-2016 14:06:44 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 14:06:44 UTC] PHP Warning:  socket_send() expects parameter 4 to be integer, string given in D:\PhpstormProjects\Casper\tt.php on line 38
+[02-May-2016 14:06:44 UTC] PHP Stack trace:
+[02-May-2016 14:06:44 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 14:06:44 UTC] PHP   2. socket_send() D:\PhpstormProjects\Casper\tt.php:38
+[02-May-2016 14:06:44 UTC] PHP Notice:  Use of undefined constant MSG_DONTWAIT - assumed 'MSG_DONTWAIT' in D:\PhpstormProjects\Casper\tt.php on line 43
+[02-May-2016 14:06:44 UTC] PHP Stack trace:
+[02-May-2016 14:06:44 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 14:06:44 UTC] PHP Warning:  socket_recv() expects parameter 4 to be integer, string given in D:\PhpstormProjects\Casper\tt.php on line 43
+[02-May-2016 14:06:44 UTC] PHP Stack trace:
+[02-May-2016 14:06:44 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 14:06:44 UTC] PHP   2. socket_recv() D:\PhpstormProjects\Casper\tt.php:43
+[02-May-2016 14:07:04 UTC] PHP Notice:  Use of undefined constant MSG_DONTWAIT - assumed 'MSG_DONTWAIT' in D:\PhpstormProjects\Casper\tt.php on line 43
+[02-May-2016 14:07:04 UTC] PHP Stack trace:
+[02-May-2016 14:07:04 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 14:07:04 UTC] PHP Warning:  socket_recv() expects parameter 4 to be integer, string given in D:\PhpstormProjects\Casper\tt.php on line 43
+[02-May-2016 14:07:04 UTC] PHP Stack trace:
+[02-May-2016 14:07:04 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 14:07:04 UTC] PHP   2. socket_recv() D:\PhpstormProjects\Casper\tt.php:43
+[02-May-2016 14:17:32 UTC] PHP Warning:  fread(): supplied resource is not a valid stream resource in D:\PhpstormProjects\Casper\tt.php on line 31
+[02-May-2016 14:17:32 UTC] PHP Stack trace:
+[02-May-2016 14:17:32 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 14:17:32 UTC] PHP   2. backgroundPost() D:\PhpstormProjects\Casper\tt.php:38
+[02-May-2016 14:17:32 UTC] PHP   3. fread() D:\PhpstormProjects\Casper\tt.php:31
+[02-May-2016 15:02:58 UTC] PHP Notice:  Use of undefined constant MSG_EOF - assumed 'MSG_EOF' in D:\PhpstormProjects\Casper\tt.php on line 69
+[02-May-2016 15:02:58 UTC] PHP Stack trace:
+[02-May-2016 15:02:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 15:02:58 UTC] PHP Warning:  socket_send() expects parameter 4 to be integer, string given in D:\PhpstormProjects\Casper\tt.php on line 69
+[02-May-2016 15:02:59 UTC] PHP Stack trace:
+[02-May-2016 15:02:59 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 15:02:59 UTC] PHP   2. socket_send() D:\PhpstormProjects\Casper\tt.php:69
+[02-May-2016 15:06:42 UTC] PHP Notice:  Use of undefined constant MSG_EOF - assumed 'MSG_EOF' in D:\PhpstormProjects\Casper\tt.php on line 69
+[02-May-2016 15:06:42 UTC] PHP Stack trace:
+[02-May-2016 15:06:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 15:06:42 UTC] PHP Warning:  socket_send() expects parameter 4 to be integer, string given in D:\PhpstormProjects\Casper\tt.php on line 69
+[02-May-2016 15:06:42 UTC] PHP Stack trace:
+[02-May-2016 15:06:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 15:06:42 UTC] PHP   2. socket_send(*uninitialized*, *uninitialized*, *uninitialized*, *uninitialized*) D:\PhpstormProjects\Casper\tt.php:69
+[02-May-2016 15:07:02 UTC] PHP Notice:  Use of undefined constant MSG_EOR - assumed 'MSG_EOR' in D:\PhpstormProjects\Casper\tt.php on line 69
+[02-May-2016 15:07:02 UTC] PHP Stack trace:
+[02-May-2016 15:07:02 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 15:07:02 UTC] PHP Warning:  socket_send() expects parameter 4 to be integer, string given in D:\PhpstormProjects\Casper\tt.php on line 69
+[02-May-2016 15:07:02 UTC] PHP Stack trace:
+[02-May-2016 15:07:02 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 15:07:02 UTC] PHP   2. socket_send(*uninitialized*, *uninitialized*, *uninitialized*, *uninitialized*) D:\PhpstormProjects\Casper\tt.php:69
+[02-May-2016 15:07:46 UTC] PHP Notice:  Use of undefined constant MSG_DONTWAIT - assumed 'MSG_DONTWAIT' in D:\PhpstormProjects\Casper\tt.php on line 74
+[02-May-2016 15:07:46 UTC] PHP Stack trace:
+[02-May-2016 15:07:46 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 15:07:46 UTC] PHP Warning:  socket_recv() expects parameter 4 to be integer, string given in D:\PhpstormProjects\Casper\tt.php on line 74
+[02-May-2016 15:07:46 UTC] PHP Stack trace:
+[02-May-2016 15:07:46 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 15:07:46 UTC] PHP   2. socket_recv(*uninitialized*, *uninitialized*, *uninitialized*, *uninitialized*) D:\PhpstormProjects\Casper\tt.php:74
+[02-May-2016 15:09:02 UTC] PHP Notice:  Use of undefined constant MSG_DONTWAIT - assumed 'MSG_DONTWAIT' in D:\PhpstormProjects\Casper\tt.php on line 75
+[02-May-2016 15:09:02 UTC] PHP Stack trace:
+[02-May-2016 15:09:02 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 15:09:02 UTC] PHP Warning:  socket_recv() expects parameter 4 to be integer, string given in D:\PhpstormProjects\Casper\tt.php on line 75
+[02-May-2016 15:09:02 UTC] PHP Stack trace:
+[02-May-2016 15:09:02 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 15:09:02 UTC] PHP   2. socket_recv() D:\PhpstormProjects\Casper\tt.php:75
+[02-May-2016 15:09:02 UTC] PHP Warning:  socket_last_error(): supplied resource is not a valid Socket resource in D:\PhpstormProjects\Casper\tt.php on line 76
+[02-May-2016 15:09:02 UTC] PHP Stack trace:
+[02-May-2016 15:09:02 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 15:09:02 UTC] PHP   2. socket_last_error() D:\PhpstormProjects\Casper\tt.php:76
+[02-May-2016 15:09:20 UTC] PHP Warning:  socket_last_error(): supplied resource is not a valid Socket resource in D:\PhpstormProjects\Casper\tt.php on line 76
+[02-May-2016 15:09:20 UTC] PHP Stack trace:
+[02-May-2016 15:09:20 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 15:09:20 UTC] PHP   2. socket_last_error() D:\PhpstormProjects\Casper\tt.php:76
+[02-May-2016 15:35:58 UTC] PHP Notice:  Use of undefined constant udp - assumed 'udp' in D:\PhpstormProjects\Casper\tt.php on line 51
+[02-May-2016 15:35:58 UTC] PHP Stack trace:
+[02-May-2016 15:35:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 15:35:58 UTC] PHP Warning:  socket_create() expects parameter 3 to be integer, string given in D:\PhpstormProjects\Casper\tt.php on line 51
+[02-May-2016 15:35:58 UTC] PHP Stack trace:
+[02-May-2016 15:35:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 15:35:58 UTC] PHP   2. socket_create() D:\PhpstormProjects\Casper\tt.php:51
+[02-May-2016 15:35:58 UTC] PHP Warning:  socket_connect() expects parameter 1 to be resource, null given in D:\PhpstormProjects\Casper\tt.php on line 55
+[02-May-2016 15:35:58 UTC] PHP Stack trace:
+[02-May-2016 15:35:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 15:35:58 UTC] PHP   2. socket_connect() D:\PhpstormProjects\Casper\tt.php:55
+[02-May-2016 15:35:58 UTC] PHP Warning:  socket_set_option() expects parameter 1 to be resource, null given in D:\PhpstormProjects\Casper\tt.php on line 69
+[02-May-2016 15:35:58 UTC] PHP Stack trace:
+[02-May-2016 15:35:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 15:35:58 UTC] PHP   2. socket_set_option() D:\PhpstormProjects\Casper\tt.php:69
+[02-May-2016 15:35:58 UTC] PHP Warning:  socket_write() expects parameter 1 to be resource, null given in D:\PhpstormProjects\Casper\tt.php on line 70
+[02-May-2016 15:35:58 UTC] PHP Stack trace:
+[02-May-2016 15:35:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 15:35:58 UTC] PHP   2. socket_write() D:\PhpstormProjects\Casper\tt.php:70
+[02-May-2016 15:35:58 UTC] PHP Warning:  socket_shutdown() expects parameter 1 to be resource, null given in D:\PhpstormProjects\Casper\tt.php on line 73
+[02-May-2016 15:35:58 UTC] PHP Stack trace:
+[02-May-2016 15:35:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 15:35:58 UTC] PHP   2. socket_shutdown() D:\PhpstormProjects\Casper\tt.php:73
+[02-May-2016 15:35:58 UTC] PHP Warning:  socket_close() expects parameter 1 to be resource, null given in D:\PhpstormProjects\Casper\tt.php on line 74
+[02-May-2016 15:35:58 UTC] PHP Stack trace:
+[02-May-2016 15:35:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 15:35:58 UTC] PHP   2. socket_close() D:\PhpstormProjects\Casper\tt.php:74
+[02-May-2016 15:36:21 UTC] PHP Warning:  socket_set_option(): unable to set socket option [10042]: Для вызова getsockopt или setsockopt был указан неизвестный, недопустимый или неподдерживаемый параметр или уровень.
+ in D:\PhpstormProjects\Casper\tt.php on line 69
+[02-May-2016 15:36:21 UTC] PHP Stack trace:
+[02-May-2016 15:36:21 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 15:36:21 UTC] PHP   2. socket_set_option() D:\PhpstormProjects\Casper\tt.php:69
+[02-May-2016 15:37:02 UTC] PHP Warning:  socket_create(): Unable to create socket [10043]: Требуемый протокол не настроен в данной системе, или не существует его реализации.
+ in D:\PhpstormProjects\Casper\tt.php on line 51
+[02-May-2016 15:37:02 UTC] PHP Stack trace:
+[02-May-2016 15:37:02 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 15:37:02 UTC] PHP   2. socket_create() D:\PhpstormProjects\Casper\tt.php:51
+[02-May-2016 15:37:02 UTC] PHP Warning:  socket_connect() expects parameter 1 to be resource, boolean given in D:\PhpstormProjects\Casper\tt.php on line 55
+[02-May-2016 15:37:02 UTC] PHP Stack trace:
+[02-May-2016 15:37:02 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 15:37:02 UTC] PHP   2. socket_connect() D:\PhpstormProjects\Casper\tt.php:55
+[02-May-2016 15:37:02 UTC] PHP Warning:  socket_write() expects parameter 1 to be resource, boolean given in D:\PhpstormProjects\Casper\tt.php on line 70
+[02-May-2016 15:37:02 UTC] PHP Stack trace:
+[02-May-2016 15:37:02 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 15:37:02 UTC] PHP   2. socket_write() D:\PhpstormProjects\Casper\tt.php:70
+[02-May-2016 15:37:02 UTC] PHP Warning:  socket_close() expects parameter 1 to be resource, boolean given in D:\PhpstormProjects\Casper\tt.php on line 74
+[02-May-2016 15:37:02 UTC] PHP Stack trace:
+[02-May-2016 15:37:02 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 15:37:02 UTC] PHP   2. socket_close() D:\PhpstormProjects\Casper\tt.php:74
+[02-May-2016 15:37:12 UTC] PHP Warning:  socket_create(): Unable to create socket [10043]: Требуемый протокол не настроен в данной системе, или не существует его реализации.
+ in D:\PhpstormProjects\Casper\tt.php on line 51
+[02-May-2016 15:37:12 UTC] PHP Stack trace:
+[02-May-2016 15:37:12 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 15:37:12 UTC] PHP   2. socket_create() D:\PhpstormProjects\Casper\tt.php:51
+[02-May-2016 15:37:12 UTC] PHP Warning:  socket_connect() expects parameter 1 to be resource, boolean given in D:\PhpstormProjects\Casper\tt.php on line 55
+[02-May-2016 15:37:12 UTC] PHP Stack trace:
+[02-May-2016 15:37:12 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 15:37:12 UTC] PHP   2. socket_connect() D:\PhpstormProjects\Casper\tt.php:55
+[02-May-2016 15:37:12 UTC] PHP Warning:  socket_write() expects parameter 1 to be resource, boolean given in D:\PhpstormProjects\Casper\tt.php on line 70
+[02-May-2016 15:37:12 UTC] PHP Stack trace:
+[02-May-2016 15:37:12 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 15:37:12 UTC] PHP   2. socket_write() D:\PhpstormProjects\Casper\tt.php:70
+[02-May-2016 15:37:12 UTC] PHP Warning:  socket_close() expects parameter 1 to be resource, boolean given in D:\PhpstormProjects\Casper\tt.php on line 74
+[02-May-2016 15:37:12 UTC] PHP Stack trace:
+[02-May-2016 15:37:12 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 15:37:12 UTC] PHP   2. socket_close() D:\PhpstormProjects\Casper\tt.php:74
+[02-May-2016 16:16:45 UTC] PHP Notice:  Undefined variable: enc in D:\PhpstormProjects\Casper\tt.php on line 20
+[02-May-2016 16:16:45 UTC] PHP Stack trace:
+[02-May-2016 16:16:45 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 16:16:45 UTC] PHP Notice:  Undefined variable: enc in D:\PhpstormProjects\Casper\tt.php on line 21
+[02-May-2016 16:16:45 UTC] PHP Stack trace:
+[02-May-2016 16:16:45 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 16:16:53 UTC] PHP Notice:  Undefined variable: enc in D:\PhpstormProjects\Casper\tt.php on line 20
+[02-May-2016 16:16:53 UTC] PHP Stack trace:
+[02-May-2016 16:16:53 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\tt.php:0
+[02-May-2016 17:43:43 UTC] PHP Notice:  Undefined index: result in D:\PhpstormProjects\Casper\listener.php on line 14
+[02-May-2016 17:43:43 UTC] PHP Stack trace:
+[02-May-2016 17:43:43 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[02-May-2016 17:43:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in D:\PhpstormProjects\Casper\listener.php on line 22
+[02-May-2016 17:43:43 UTC] PHP Stack trace:
+[02-May-2016 17:43:43 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[02-May-2016 17:45:59 UTC] PHP Notice:  Undefined variable: query in D:\PhpstormProjects\Casper\listener.php on line 25
+[02-May-2016 17:45:59 UTC] PHP Stack trace:
+[02-May-2016 17:45:59 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[02-May-2016 19:53:44 UTC] PHP Warning:  Invalid argument supplied for foreach() in D:\PhpstormProjects\Casper\listener.php on line 64
+[02-May-2016 19:53:44 UTC] PHP Stack trace:
+[02-May-2016 19:53:44 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[02-May-2016 19:54:21 UTC] PHP Warning:  Invalid argument supplied for foreach() in D:\PhpstormProjects\Casper\listener.php on line 64
+[02-May-2016 19:54:21 UTC] PHP Stack trace:
+[02-May-2016 19:54:21 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[02-May-2016 20:00:17 UTC] PHP Notice:  Undefined index: action in D:\PhpstormProjects\Casper\listener.php on line 15
+[02-May-2016 20:00:17 UTC] PHP Stack trace:
+[02-May-2016 20:00:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:27:05 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅ.пїЅ. пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.
+ in D:\PhpstormProjects\Casper\classes\Mysqli.class.php on line 15
+[03-May-2016 10:27:05 UTC] PHP Stack trace:
+[03-May-2016 10:27:05 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\auth.php:0
+[03-May-2016 10:27:05 UTC] PHP   2. MysqliClass->__construct() D:\PhpstormProjects\Casper\auth.php:8
+[03-May-2016 10:27:05 UTC] PHP   3. mysqli_connect() D:\PhpstormProjects\Casper\classes\Mysqli.class.php:15
+[03-May-2016 10:27:19 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅ.пїЅ. пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.
+ in D:\PhpstormProjects\Casper\classes\Mysqli.class.php on line 15
+[03-May-2016 10:27:19 UTC] PHP Stack trace:
+[03-May-2016 10:27:19 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\auth.php:0
+[03-May-2016 10:27:19 UTC] PHP   2. MysqliClass->__construct() D:\PhpstormProjects\Casper\auth.php:8
+[03-May-2016 10:27:19 UTC] PHP   3. mysqli_connect() D:\PhpstormProjects\Casper\classes\Mysqli.class.php:15
+[03-May-2016 10:27:30 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅ.пїЅ. пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.
+ in D:\PhpstormProjects\Casper\classes\Mysqli.class.php on line 15
+[03-May-2016 10:27:30 UTC] PHP Stack trace:
+[03-May-2016 10:27:30 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\auth.php:0
+[03-May-2016 10:27:30 UTC] PHP   2. MysqliClass->__construct() D:\PhpstormProjects\Casper\auth.php:8
+[03-May-2016 10:27:30 UTC] PHP   3. mysqli_connect() D:\PhpstormProjects\Casper\classes\Mysqli.class.php:15
+[03-May-2016 10:27:37 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅ.пїЅ. пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.
+ in D:\PhpstormProjects\Casper\classes\Mysqli.class.php on line 15
+[03-May-2016 10:27:37 UTC] PHP Stack trace:
+[03-May-2016 10:27:37 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\auth.php:0
+[03-May-2016 10:27:37 UTC] PHP   2. MysqliClass->__construct() D:\PhpstormProjects\Casper\auth.php:8
+[03-May-2016 10:27:37 UTC] PHP   3. mysqli_connect() D:\PhpstormProjects\Casper\classes\Mysqli.class.php:15
+[03-May-2016 10:32:25 UTC] PHP Notice:  Undefined index: action in D:\PhpstormProjects\Casper\listener.php on line 15
+[03-May-2016 10:32:25 UTC] PHP Stack trace:
+[03-May-2016 10:32:25 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:32:36 UTC] PHP Notice:  Undefined index: result in D:\PhpstormProjects\Casper\listener.php on line 14
+[03-May-2016 10:32:36 UTC] PHP Stack trace:
+[03-May-2016 10:32:36 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:32:44 UTC] PHP Notice:  Undefined index: action in D:\PhpstormProjects\Casper\listener.php on line 15
+[03-May-2016 10:32:44 UTC] PHP Stack trace:
+[03-May-2016 10:32:44 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:33:22 UTC] PHP Notice:  Undefined offset: 0 in D:\PhpstormProjects\Casper\listener.php on line 15
+[03-May-2016 10:33:22 UTC] PHP Stack trace:
+[03-May-2016 10:33:22 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: scanType in D:\PhpstormProjects\Casper\listener.php on line 15
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Warning:  Illegal string offset 'url' in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:49:17 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 66
+[03-May-2016 10:49:17 UTC] PHP Stack trace:
+[03-May-2016 10:49:17 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:52:36 UTC] PHP Notice:  Undefined index: scanType in D:\PhpstormProjects\Casper\listener.php on line 35
+[03-May-2016 10:52:36 UTC] PHP Stack trace:
+[03-May-2016 10:52:36 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:47 UTC] PHP Notice:  Undefined index: scanType in D:\PhpstormProjects\Casper\listener.php on line 35
+[03-May-2016 10:53:47 UTC] PHP Stack trace:
+[03-May-2016 10:53:47 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Warning:  Illegal string offset 'url' in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:58 UTC] PHP Stack trace:
+[03-May-2016 10:53:58 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:58 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:59 UTC] PHP Stack trace:
+[03-May-2016 10:53:59 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:59 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:59 UTC] PHP Stack trace:
+[03-May-2016 10:53:59 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:59 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:59 UTC] PHP Stack trace:
+[03-May-2016 10:53:59 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:59 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:59 UTC] PHP Stack trace:
+[03-May-2016 10:53:59 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:59 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:59 UTC] PHP Stack trace:
+[03-May-2016 10:53:59 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:59 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:59 UTC] PHP Stack trace:
+[03-May-2016 10:53:59 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:59 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:59 UTC] PHP Stack trace:
+[03-May-2016 10:53:59 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:59 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:59 UTC] PHP Stack trace:
+[03-May-2016 10:53:59 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:59 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:59 UTC] PHP Stack trace:
+[03-May-2016 10:53:59 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:59 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:59 UTC] PHP Stack trace:
+[03-May-2016 10:53:59 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:59 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:59 UTC] PHP Stack trace:
+[03-May-2016 10:53:59 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:59 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:59 UTC] PHP Stack trace:
+[03-May-2016 10:53:59 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:59 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:59 UTC] PHP Stack trace:
+[03-May-2016 10:53:59 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:59 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:59 UTC] PHP Stack trace:
+[03-May-2016 10:53:59 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:59 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:59 UTC] PHP Stack trace:
+[03-May-2016 10:53:59 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:59 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:59 UTC] PHP Stack trace:
+[03-May-2016 10:53:59 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:59 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:59 UTC] PHP Stack trace:
+[03-May-2016 10:53:59 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:59 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:59 UTC] PHP Stack trace:
+[03-May-2016 10:53:59 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:59 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:59 UTC] PHP Stack trace:
+[03-May-2016 10:53:59 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:59 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:59 UTC] PHP Stack trace:
+[03-May-2016 10:53:59 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:59 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:59 UTC] PHP Stack trace:
+[03-May-2016 10:53:59 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:59 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:59 UTC] PHP Stack trace:
+[03-May-2016 10:53:59 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:59 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:59 UTC] PHP Stack trace:
+[03-May-2016 10:53:59 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:59 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:59 UTC] PHP Stack trace:
+[03-May-2016 10:53:59 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:59 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:59 UTC] PHP Stack trace:
+[03-May-2016 10:53:59 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:59 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:59 UTC] PHP Stack trace:
+[03-May-2016 10:53:59 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:59 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:59 UTC] PHP Stack trace:
+[03-May-2016 10:53:59 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:59 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:59 UTC] PHP Stack trace:
+[03-May-2016 10:53:59 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:59 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:59 UTC] PHP Stack trace:
+[03-May-2016 10:53:59 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:59 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:59 UTC] PHP Stack trace:
+[03-May-2016 10:53:59 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:59 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:59 UTC] PHP Stack trace:
+[03-May-2016 10:53:59 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:59 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:59 UTC] PHP Stack trace:
+[03-May-2016 10:53:59 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:59 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:59 UTC] PHP Stack trace:
+[03-May-2016 10:53:59 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:59 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:59 UTC] PHP Stack trace:
+[03-May-2016 10:53:59 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:53:59 UTC] PHP Notice:  Undefined index: url in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:53:59 UTC] PHP Stack trace:
+[03-May-2016 10:53:59 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:54:34 UTC] PHP Warning:  Illegal string offset 'subdomain' in D:\PhpstormProjects\Casper\listener.php on line 68
+[03-May-2016 10:54:34 UTC] PHP Stack trace:
+[03-May-2016 10:54:34 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  Illegal string offset 'subdomain' in D:\PhpstormProjects\Casper\listener.php on line 70
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 10:55:42 UTC] PHP Warning:  dir() expects at least 1 parameter, 0 given in D:\PhpstormProjects\Casper\listener.php on line 69
+[03-May-2016 10:55:42 UTC] PHP Stack trace:
+[03-May-2016 10:55:42 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 10:55:42 UTC] PHP   2. dir() D:\PhpstormProjects\Casper\listener.php:69
+[03-May-2016 11:01:51 UTC] PHP Notice:  Undefined variable: infoArr in D:\PhpstormProjects\Casper\listener.php on line 36
+[03-May-2016 11:01:51 UTC] PHP Stack trace:
+[03-May-2016 11:01:51 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0

@@ -8,33 +8,27 @@ set_time_limit(100);
  */
 
 
-
-    $ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, "http://casper.localhost:80/");
-    //echo $serverUrl;
-curl_setopt($ch, CURLOPT_TIMEOUT, 3);
-//curl_setopt($ch, CURLOPT_POST, true);
-    curl_setopt($ch, CURLINFO_HEADER_OUT, true);
-    //echo $enc;
-//curl_setopt($ch, CURLOPT_POSTFIELDS, "execute=qwe");
-    echo curl_exec($ch);
-$qwe = curl_getinfo($ch);
-print_r($qwe);
-echo curl_error($ch);
-curl_close($ch);
-
+$ch = curl_init();
+//var_dump($serverUrl);
+curl_setopt($ch, CURLOPT_URL, "http://casper.localhost/clientside/execute.php");
+//echo $serverUrl;
+curl_setopt($ch, CURLOPT_TIMEOUT_MS, 1);
+//curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+curl_setopt($ch, CURLOPT_NOBODY, 1);
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_TIMEOUT_MS, 100);
+//echo $enc;
+curl_setopt($ch, CURLOPT_POSTFIELDS, "123");
+curl_exec($ch);
+//curl_close($ch);
 
 
+die();
 
-//$subs=file("txt/paths/subdomain.txt");
 
-//$result1 = dns_get_record("qwe.wildo.ru");
-
-//print_r($result);
-//print_r($result1);
-/*
 $socket = socket_create(AF_INET, SOCK_STREAM, 0);
-echo $addres;
+$addres = "casper.localhost";
+$port = 80;
 
 $result = socket_connect($socket, $addres, $port);
 if ($result === false) {
@@ -43,21 +37,26 @@ if ($result === false) {
     echo "OK.\n";
 }
 
-$in = "HEAD / HTTP/1.1\r\n";
+$in = "POST /clientside/execute.php HTTP/1.1\r\n";
 $in .= "Host: casper.localhost\r\n";
 $in .= "Connection: Close\r\n\r\n";
 $out = '';
 
 echo "Отправка запроса HTTP HEAD...";
+$arrOpt = array('l_onoff' => 1, 'l_linger' => 1);
+socket_set_option($socket, SOL_SOCKET, SO_LINGER, $arrOpt);
 socket_write($socket, $in, strlen($in));
+//socket_send($socket, $in, strlen($in),MSG_OOB);
+//usleep(10000);
+//socket_shutdown($socket,2);
+socket_close($socket);
 echo "OK.\n";
 
 echo "Получение ответа:\n\n";
 $buf = 'Это мой буфер.';
+//socket_recv($socket,$buf,2000,MSG_DONTWAIT);
+//    echo "Не получилось выполнить socket_recv(); причина: " . (socket_last_error($socket)) . "\n";
 
-    echo "Не получилось выполнить socket_recv(); причина: " . socket_strerror(socket_last_error($socket)) . "\n";
 
-socket_close($socket);
 
 echo $buf . "\n";
-*/

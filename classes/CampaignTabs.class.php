@@ -244,7 +244,7 @@ class CampaignTabs
                                                 <option selected="selected">Option</option>
                                                 <option value="dirScan" >path</option>
                                                 <option>url param</option>
-                                                <option>subdomain</option>
+                                                <option value="subdomainScan">subdomain</option>
                                             </select>
 
                                             <select class="form-control" name="sid">
@@ -265,7 +265,7 @@ class CampaignTabs
     function getScansTab($cid)
     {
         //var_dump( $cid);
-        $query = "select * from targets RIGHT JOIN scans on targets.tid=scans.tid where cid=$cid";
+        $query = "select * from targets RIGHT JOIN scans on targets.tid=scans.tid where cid=$cid order by dateScan desc";
         $result = $this->Model->MysqliClass->getAssocArray($query);
         //if (empty($result))
         //    exit;
