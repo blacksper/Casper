@@ -17,6 +17,7 @@ class Tools
     function __construct()
     {
         $this->Model = new Model();
+        $this->uid = $this->Model->getUserId($_SESSION['username']);
     }
 
     function startScan(int $tid,int $sid, $filename, $type = null)
@@ -34,17 +35,15 @@ class Tools
         if(!$action)
             return 0;
 
-        $this->uid = $this->Model->getUserId($_SESSION['username']);
+
         $query = "select * from targets where tid=$tid";
         $targetUrl = $this->Model->MysqliClass->firstResult($query)['url'];
 
         $query = "select * from servers where sid=$sid";
         $serverUrl = $this->Model->MysqliClass->firstResult($query)['path'];
 
-        $scid = rand(1000000, 90000000);
-        $query = "insert into scans(scid,type,uid,sid,tid,status,filename) VALUES($scid,'$action',$this->uid,$sid,$tid,0,'$filename') ";
-        //echo $query;
-        $this->Model->MysqliClass->query($query);
+        $scid = $this->addScan($tid, $sid, $filename);
+
         $arrTask = array();
 
         //echo "./txt/paths/" . $filename;
@@ -93,6 +92,91 @@ class Tools
         curl_close($ch);
 
     }
+
+    function addScan($tid, $sid, $action, $filename = "")
+    {
+
+        $scid = rand(1000000, 90000000);
+        $query = "insert into scans(scid,type,uid,sid,tid,status,filename) VALUES($scid,'$action',$this->uid,$sid,$tid,0,'$filename') ";
+        echo $query;
+        $this->Model->MysqliClass->query($query);
+        return $scid;
+    }
+
+    function startNmap(int $tid, int $sid, $option = null)
+    {
+
+
+        $query = "select * from targets where tid=$tid";
+        $targeturl = $this->Model->MysqliClass->firstResult($query)['url'];
+        preg_match("/http[s]?:\/\/([\w\d.-]+)\//", $targeturl, $m);
+        var_dump($m);
+        //die();
+        if (!isset($m[1]))
+            return 0;
+        echo 1234;
+        $targeturl = $m[1];
+        $scid = $this->addScan($tid, $sid, "nmap $option");
+
+
+        ob_start();
+        $result = array();
+        //$option="quickplus";
+        //$targeturl="wildo.ru";
+        switch ($option) {
+            case "quick":
+                $param = "-T4 -F";
+                break;
+            case "quickplus":
+                $param = "sV -T4 -O -F --version-light";
+                break;
+        }
+
+
+        if (!isset($param))
+            return 0;
+
+
+        system('"D:\Program Files (x86)\Nmap\nmap" ' . $param . ' ' . $targeturl);
+        $content = ob_get_clean();
+        echo $content;
+        //die();
+        preg_replace("/\s+/", "", $content);
+        preg_match_all("/(\d+)\/tcp\s+(\w+)\s+([\w\d-.]+)/", $content, $m);
+
+
+        $queryStart = "INSERT INTO nmap(scid,port,status,service) VALUES";
+        $query = $queryStart;
+        $i = 0;
+
+
+        foreach ($m[0] as $d) {
+            preg_match("/(\d+)\/tcp\s+(\w+)\s+([\w\d-.]+)/", $d, $mf);
+
+            //echo "port:".$mf[1]." status: ".$mf[2]." service: ".$mf[3]."\n";
+
+            $query .= "($scid,'{$mf[1]}','{$mf[2]}','{$mf[3]}'),";
+            $i++;
+            if ($i == 100) {
+                $i = 0;
+                $query = substr($query, 0, -1);
+                $query .= " ON DUPLICATE KEY UPDATE status=values(status)";
+                echo $query . "\n";
+                $this->Model->MysqliClass->query($query);
+                $query = $queryStart;
+            }
+        }
+        $query = substr($query, 0, -1);
+        $query .= " ON DUPLICATE KEY UPDATE status=values(status)";
+        $this->Model->MysqliClass->query($query);
+        echo $query;
+        $query = "update scans set status=1 where scid=$scid";
+        $this->Model->MysqliClass->query($query);
+
+
+    }
+
+
 
 
 }

@@ -6837,3 +6837,156 @@ Stack trace:
 [03-May-2016 11:01:51 UTC] PHP Notice:  Undefined variable: infoArr in D:\PhpstormProjects\Casper\listener.php on line 36
 [03-May-2016 11:01:51 UTC] PHP Stack trace:
 [03-May-2016 11:01:51 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\listener.php:0
+[03-May-2016 16:10:27 UTC] PHP Warning:  preg_match(): Unknown modifier 'g' in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 104
+[03-May-2016 16:10:27 UTC] PHP Stack trace:
+[03-May-2016 16:10:27 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[03-May-2016 16:10:27 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:40
+[03-May-2016 16:10:27 UTC] PHP   3. preg_match() D:\PhpstormProjects\Casper\classes\Tools.class.php:104
+[03-May-2016 16:32:05 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 112
+[03-May-2016 16:32:05 UTC] PHP Stack trace:
+[03-May-2016 16:32:05 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[03-May-2016 16:32:05 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:40
+[03-May-2016 16:32:05 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 112
+[03-May-2016 16:32:05 UTC] PHP Stack trace:
+[03-May-2016 16:32:05 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[03-May-2016 16:32:05 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:40
+[03-May-2016 16:32:05 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 112
+[03-May-2016 16:32:05 UTC] PHP Stack trace:
+[03-May-2016 16:32:05 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[03-May-2016 16:32:05 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:40
+[03-May-2016 16:32:05 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 112
+[03-May-2016 16:32:05 UTC] PHP Stack trace:
+[03-May-2016 16:32:05 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[03-May-2016 16:32:05 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:40
+[03-May-2016 16:32:05 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 112
+[03-May-2016 16:32:05 UTC] PHP Stack trace:
+[03-May-2016 16:32:05 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[03-May-2016 16:32:05 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:40
+[03-May-2016 16:32:05 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 112
+[03-May-2016 16:32:05 UTC] PHP Stack trace:
+[03-May-2016 16:32:05 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[03-May-2016 16:32:05 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:40
+[03-May-2016 16:32:05 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 112
+[03-May-2016 16:32:05 UTC] PHP Stack trace:
+[03-May-2016 16:32:05 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[03-May-2016 16:32:05 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:40
+[03-May-2016 16:32:05 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 112
+[03-May-2016 16:32:05 UTC] PHP Stack trace:
+[03-May-2016 16:32:05 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[03-May-2016 16:32:05 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:40
+[03-May-2016 16:32:05 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 112
+[03-May-2016 16:32:05 UTC] PHP Stack trace:
+[03-May-2016 16:32:05 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[03-May-2016 16:32:05 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:40
+[03-May-2016 16:32:05 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 112
+[03-May-2016 16:32:05 UTC] PHP Stack trace:
+[03-May-2016 16:32:05 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[03-May-2016 16:32:05 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:40
+[03-May-2016 16:32:05 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 112
+[03-May-2016 16:32:05 UTC] PHP Stack trace:
+[03-May-2016 16:32:05 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[03-May-2016 16:32:05 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:40
+[03-May-2016 16:32:05 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 112
+[03-May-2016 16:32:05 UTC] PHP Stack trace:
+[03-May-2016 16:32:05 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[03-May-2016 16:32:05 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:40
+[03-May-2016 16:32:05 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 112
+[03-May-2016 16:32:05 UTC] PHP Stack trace:
+[03-May-2016 16:32:05 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[03-May-2016 16:32:05 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:40
+[03-May-2016 16:32:05 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 112
+[03-May-2016 16:32:05 UTC] PHP Stack trace:
+[03-May-2016 16:32:05 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[03-May-2016 16:32:05 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:40
+[03-May-2016 16:32:05 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 112
+[03-May-2016 16:32:05 UTC] PHP Stack trace:
+[03-May-2016 16:32:05 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[03-May-2016 16:32:05 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:40
+[03-May-2016 16:32:41 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 112
+[03-May-2016 16:32:41 UTC] PHP Stack trace:
+[03-May-2016 16:32:41 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[03-May-2016 16:32:41 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:40
+[03-May-2016 16:32:41 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 112
+[03-May-2016 16:32:41 UTC] PHP Stack trace:
+[03-May-2016 16:32:41 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[03-May-2016 16:32:41 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:40
+[03-May-2016 16:32:41 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 112
+[03-May-2016 16:32:41 UTC] PHP Stack trace:
+[03-May-2016 16:32:41 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[03-May-2016 16:32:41 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:40
+[03-May-2016 16:32:41 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 112
+[03-May-2016 16:32:41 UTC] PHP Stack trace:
+[03-May-2016 16:32:41 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[03-May-2016 16:32:41 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:40
+[03-May-2016 16:32:41 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 112
+[03-May-2016 16:32:41 UTC] PHP Stack trace:
+[03-May-2016 16:32:41 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[03-May-2016 16:32:41 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:40
+[03-May-2016 16:32:41 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 112
+[03-May-2016 16:32:41 UTC] PHP Stack trace:
+[03-May-2016 16:32:41 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[03-May-2016 16:32:41 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:40
+[03-May-2016 16:32:41 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 112
+[03-May-2016 16:32:41 UTC] PHP Stack trace:
+[03-May-2016 16:32:41 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[03-May-2016 16:32:41 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:40
+[03-May-2016 16:32:41 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 112
+[03-May-2016 16:32:41 UTC] PHP Stack trace:
+[03-May-2016 16:32:41 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[03-May-2016 16:32:41 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:40
+[03-May-2016 16:32:41 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 112
+[03-May-2016 16:32:41 UTC] PHP Stack trace:
+[03-May-2016 16:32:41 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[03-May-2016 16:32:41 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:40
+[03-May-2016 16:32:41 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 112
+[03-May-2016 16:32:41 UTC] PHP Stack trace:
+[03-May-2016 16:32:41 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[03-May-2016 16:32:41 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:40
+[03-May-2016 16:32:41 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 112
+[03-May-2016 16:32:41 UTC] PHP Stack trace:
+[03-May-2016 16:32:41 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[03-May-2016 16:32:41 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:40
+[03-May-2016 16:32:41 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 112
+[03-May-2016 16:32:41 UTC] PHP Stack trace:
+[03-May-2016 16:32:41 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[03-May-2016 16:32:41 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:40
+[03-May-2016 16:32:41 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 112
+[03-May-2016 16:32:41 UTC] PHP Stack trace:
+[03-May-2016 16:32:41 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[03-May-2016 16:32:41 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:40
+[03-May-2016 16:32:41 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 112
+[03-May-2016 16:32:41 UTC] PHP Stack trace:
+[03-May-2016 16:32:41 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[03-May-2016 16:32:41 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:40
+[03-May-2016 16:32:41 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 112
+[03-May-2016 16:32:41 UTC] PHP Stack trace:
+[03-May-2016 16:32:41 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[03-May-2016 16:32:41 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:40
+[03-May-2016 16:42:52 UTC] PHP Parse error:  syntax error, unexpected ';' in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 107
+[03-May-2016 23:18:20 UTC] PHP Warning:  Missing argument 3 for Tools::addScan(), called in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 106 and defined in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 22
+[03-May-2016 23:18:20 UTC] PHP Stack trace:
+[03-May-2016 23:18:20 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[03-May-2016 23:18:20 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:41
+[03-May-2016 23:18:20 UTC] PHP   3. Tools->addScan() D:\PhpstormProjects\Casper\classes\Tools.class.php:106
+[03-May-2016 23:18:20 UTC] PHP Notice:  Undefined variable: action in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 25
+[03-May-2016 23:18:20 UTC] PHP Stack trace:
+[03-May-2016 23:18:20 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[03-May-2016 23:18:20 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:41
+[03-May-2016 23:18:20 UTC] PHP   3. Tools->addScan() D:\PhpstormProjects\Casper\classes\Tools.class.php:106
+[03-May-2016 23:18:44 UTC] PHP Warning:  Missing argument 3 for Tools::addScan(), called in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 106 and defined in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 22
+[03-May-2016 23:18:44 UTC] PHP Stack trace:
+[03-May-2016 23:18:44 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[03-May-2016 23:18:44 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:41
+[03-May-2016 23:18:44 UTC] PHP   3. Tools->addScan() D:\PhpstormProjects\Casper\classes\Tools.class.php:106
+[03-May-2016 23:18:44 UTC] PHP Notice:  Undefined variable: action in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 25
+[03-May-2016 23:18:44 UTC] PHP Stack trace:
+[03-May-2016 23:18:44 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[03-May-2016 23:18:44 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:41
+[03-May-2016 23:18:44 UTC] PHP   3. Tools->addScan() D:\PhpstormProjects\Casper\classes\Tools.class.php:106
+[03-May-2016 23:29:52 UTC] PHP Notice:  Undefined index: sid in D:\PhpstormProjects\Casper\scan.php on line 17
+[03-May-2016 23:29:52 UTC] PHP Stack trace:
+[03-May-2016 23:29:52 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[03-May-2016 23:58:51 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 142
+[03-May-2016 23:58:51 UTC] PHP Stack trace:
+[03-May-2016 23:58:51 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[03-May-2016 23:58:51 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46

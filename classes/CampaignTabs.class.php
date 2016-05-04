@@ -286,10 +286,11 @@ class CampaignTabs
                                           <table id="scansCampaignContent" class="table table-hover">
                                               <thead>
                                               <tr>
-                                                  <th>type</th>
+                                                  <th>date</th>
                                                   <th>url</th>
                                                   <th>filename</th>
                                                   <th>Status</th>
+                                                  <th>type</th>
                                               </tr>
                                               </thead>
 
@@ -322,8 +323,10 @@ class CampaignTabs
                     <td class='scanUrl'>
                     {$row['url']}
                     </td>
+
                     <td>{$row['filename']}</td>
                     <td>" . (($row['status'] == 1) ? $finished : $proccessed) . "</td>
+                    <td> </td>
                   </tr>";
 
         return $result;

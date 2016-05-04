@@ -53,6 +53,21 @@ if(!empty($ar)) {
 
                 break;
 
+            case "brute":
+                include("Bruteforce.class.php");
+                // echo 12;
+                $target = $b['url'];
+                $passwords = $b['passwords'];
+                $logins = $b['logins'];
+                //var_dump($passwords);
+                //var_dump($logins);
+                //die();
+
+                $subdomainC = new Bruteforce($target, $scid);
+                $subdomainC->startBruteforce($logins, $passwords);
+
+                break;
+
 
         }
     }
