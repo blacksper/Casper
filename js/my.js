@@ -57,6 +57,34 @@ $(document).ready(function(){
                 });
             }
 
+    });
+
+    function $_GET(key) {
+        var s = window.location.search;
+        s = s.match(new RegExp(key + '=([^&=]+)'));
+        return s ? s[1] : false;
+    }
+
+    //alert( $_GET('cid') );
+
+    $("#addTargets").click(function () {
+        var targetUrls = $("#targetsArea").val();
+        console.log(targetUrls);
+        console.log("CID IS " + $_GET('cid'));
+        if (targetUrls !== undefined) {
+            $.ajax({
+                url: "./ajax.php",
+                type: "POST",
+                data: "page=campaigns&targetUrls=" + targetUrls + "&action=add&cid=" + $_GET('cid'),
+                success: function (data) {
+                    console.log("viz");
+                    if (data !== undefined)
+                        $("#targetsContent tbody").append(data);
+
+                }
+            });
+        }
+
         });
 
         $("#addServer").click(function(){
@@ -159,16 +187,18 @@ $(document).ready(function(){
     //$('tr>td.url a').click(function(){
 
     $("body").on('click', 'tr>td.dateScan a', function () {
-        //alert(123);
-            if ($('#myModal').html() == undefined) {
+        var status = $(this).parents('tr.scanRow').find('span').attr("value");
+        console.log(status);
+        if (status == 1) {
+            if (($('#myModal').html() == undefined)) {
                 $('body').append("<div id='myModal' class='modal fade' tabindex='-1' role='dialog' aria-labelledby='myLargeModalLabel'>" +
                     "<div class='modal-dialog modal-lg'>" +
 
                     "</div>" +
                     "</div>");
             }
-        var scid = ($(this).parents('tr.scanRow').data("scid"));
-        console.log(scid);
+            var scid = ($(this).parents('tr.scanRow').data("scid"));
+            console.log(scid);
             $.ajax({
                 url: "ajax.php",
                 type: "POST",
@@ -178,7 +208,8 @@ $(document).ready(function(){
                     $('#myModal').modal();
                 }
             });
-        console.log($('#spoiler-' + scid).text().length);
+            console.log($('#spoiler-' + scid).text().length);
+        }
     });
 
     $("boddy").on('click', 'tr>td.dateScan a', function () {

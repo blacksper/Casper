@@ -14,40 +14,9 @@ class Tabs
     //var $Tools;
     function __construct($Model){
         $this->Model=$Model;
-        //$this->GetMainTab();
-        //$this->getCampaignTab();
-        //$this->getServerTab();
-        //$this->getToolsTab();
-        //$this->getScansTab();
-        //$this->Tools=new Tools($this->Model->MysqliClass);
+
     }
 
-
-    function GetMainTab()//закладка главное
-    {
-        $tmpHtml="";
-        if(isset($_GET['fsid'])) {
-
-            $fsid=$_GET['fsid'];
-            $query="select * from found where fsid=$fsid";
-            $arr=$this->Model->MysqliClass->getAssocArray($query);
-            $stack="<table class=table>";
-            foreach ($arr as $row) {
-                $stack.="<tr><td>".$row['data']."</td><td>".$row['httpcode']."</td></tr>";
-            }
-            $stack.="</table>";
-            $tmpHtml .= '<div style="max-height: 300px;max-width: 500px;overflow-y: auto;" class="tab-pane fade in active" id="tab-1">';
-            $tmpHtml .= "$stack";
-            $tmpHtml .= "</div>";
-
-        }else {
-            $tmpHtml .= '<div class="tab-pane fade " id="tab-1">
-                             <p>HELLO</p>
-                        ';
-            $tmpHtml .="</div>";
-        }
-        $this->allHtml.=$tmpHtml;
-    }
 
     function getCampaignTab($cid = null)
     {

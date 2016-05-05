@@ -67,6 +67,7 @@ switch ($_POST['page']) {
         include("./classes/CampaignsController.class.php");
         if (isset($_POST['scid'])) {
             $scid = $_POST['scid'];
+        }
             $CampaignsController = new CampaignsController();
 
 
@@ -74,50 +75,30 @@ switch ($_POST['page']) {
                 $action = $_POST['action'];
                 switch ($action) {
                     case "add":
-                        if (isset($_POST['campaignName'])) {
-                            $name = $_POST['campaignName'];
-                            echo json_encode($Controller->addCampaign($name));
-                        } elseif (isset($_POST['serverUrl'])) {
-                            echo json_encode($Controller->addServer($url));
+                        if (isset($_POST['targetUrls'])) {
+                            $targetUrls = $_POST['targetUrls'];
+                            $cid = $_POST['cid'];
+                            echo($CampaignsController->addTargets($targetUrls, $cid));
                         }
 
                         break;
                     case "refresh":
-                        if (isset($_POST['serverId'])) {
-                            $sid = $_POST['serverId'];
-                            echo json_encode($Controller->refreshStatus($sid));
-                        }
-                        break;
+
                     case "delete":
-                        $result = 0;
-                        if (isset($_POST['campaignId'])) {
-                            $cid = $_POST['campaignId'];
-                            $result = $Controller->setDelete($cid, "campaign");
-                        } elseif (isset($_POST['serverId'])) {
-                            $sid = $_POST['serverId'];
-                            $result = $Controller->setDelete($sid, "server");
-                        }
-                        echo intval($result);
-                        //var_dump($result);
-                        break;
+
                     case "getsubinfo":
-                        if (isset($_POST['cid'])) {
-                            $cid = $_POST['cid'];
-                            //echo $Controller->Viewer->Tabs->getSubInfoTable($tid);
-                        }
-                        break;
+
                     case "getScanDetails":
                         if (isset($_POST['scid'])) {
                             $scid = $_POST['scid'];
-                            //echo $Controller->Viewer->Tabs->getSubInfoTable($scid);
-                            echo $CampaignsController->CampaignViewer->Tabs->getDirScanDetails($scid);
+
+                            echo $CampaignsController->CampaignViewer->Tabs->getMainTable($scid);
                         }
                         break;
 
                 }
 
             }
-        }
 
 
         break;

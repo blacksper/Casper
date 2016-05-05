@@ -45,7 +45,7 @@ body {
     margin-top: 60px;
 }
 
-#campaignContent, #serverContent, #scansCampaignContent, #targetsContent {
+#campaignContent, #serverContent, #scansCampaignContent, #targetsContent, .nmaptable {
 
     background-color: #eee;
 }
@@ -163,4 +163,24 @@ body {
 
 .child-row {
     max-width: 600px;
+}
+
+#found .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+
+}
+
+#found .table-hover tbody td, .table-hover tbody th {
+
+}
+
+.found {
+    background-color: yellowgreen;
+}
+
+.notFound {
+    background-color: #D6D40B;
+}
+
+.other {
+    background-color: #C6414D;
 }

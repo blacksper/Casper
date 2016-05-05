@@ -28,32 +28,56 @@ class CampaignTabs
     {
         $query = "select * from targets where cid=$cid and deleted=0";
         $targetsArr = $this->Model->MysqliClass->getAssocArray($query);
-        $f = "<div class='row'><div class='col-md-6'><table id='targetsContent' class='table table-hover'>
+        //var_dump($targetsArr);
+        if (!isset($targetsArr))
+            exit;
+
+        $f = "<div class='row'><div class='col-md-8'>";
+        $f .= "";
+        $f .= $this->getMainTable($targetsArr);
+
+        $f .= "</div>";
+
+        $f .= "<div class='col-md-4'> <textarea id='targetsArea' class='form-control custom-control'></textarea><button id='addTargets' style='float: right;margin-top: 10px;' class='btn btn-success'>Добавить цели</button></div></div>";
+
+        $tmpHtml = '<div class="tab-pane fade in active" id="mainCampaign-tab">
+                                    ' . $f . '
+                                </div>';
+
+        //var_dump($tmpHtml);
+        $this->allHtml .= $tmpHtml;
+    }
+
+    function getMainTable($targetsArr)
+    {
+        $result = "<table id='targetsContent' class='table table-hover'>
             <thead>
             <tr>
             <th>Url</th>
             <th>info</th>
+            <th>btns</th>
             </tr>
-            </thead>";
-        $f .= "<tbody>";
+            </thead>
+            <tbody>";
         foreach ($targetsArr as $target) {
-            $f .= "<tr><td>{$target['url']}</td><td>{$target['ip']}</td></tr>";
+            $result .= $this->getMainTableRow($target);
         }
-        $f .= "</tbody>";
-        $f .= "</table></div>";
-
-        $f .= "<div class='col-md-6'> <textarea class='form-control custom-control'></textarea><button style='float: right;margin-top: 10px;' class='btn btn-success'>Добавить цели</button></div></div>";
-
-        $tmpHtml = '<div class="tab-pane fade in active" id="mainCampaign-tab">
-
-                                    ' . $f . '
-
-
-                                </div>';
-
-
-        $this->allHtml .= $tmpHtml;
+        $result .= "</tbody></table>";
+        //var_dump($result);
+        return $result;
     }
+
+    function getMainTableRow($row)
+    {
+        $btns = '<button type="button" class="btn btn-danger btn-xs">
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true">
+                            </span>
+                        </button>';
+
+        $result = "<tr><td>{$row['url']}</td><td>{$row['ip']}</td><td>$btns</td></tr>";
+        return $result;
+    }
+
 
     function getCampaignTab($cid = null)
     {
@@ -179,6 +203,7 @@ class CampaignTabs
                             <ul class="nav nav-pills ">
                                     <li class="active"><a href="#gl" data-toggle="tab">Scanner</a></li>
                                     <li><a href="#gg" data-toggle="tab">BRUTEFORCE</a></li>
+                                    <li><a href="#nmap" data-toggle="tab">Nmap</a></li>
 
                             </ul>
                             <br>
@@ -257,6 +282,30 @@ class CampaignTabs
                                     </form>
                                 </div>
 
+                                <div class="tab-pane fade" id="nmap">
+                                    <form method="post" action="../scan.php" id="fileselect" class="navbar-form navbar-left">
+                                        <div class="form-group">
+
+
+                                            <select class="form-control" name="tid">
+                                            <option selected="selected">Choose target</option>
+                                            ' . $urls . '
+                                            </select>
+
+
+                                            <select class="form-control" name="option" >
+                                                <option value="quick" selected="quick">quick scan</option>
+                                                <option value="quickplus" >quick scan plus versions</option>
+
+                                            </select>
+
+
+                                            <input type="hidden" name="action" value="nmap">
+                                            <input type="submit" class="btn btn-default">
+                                        </div>
+                                    </form>
+                                </div>
+
                             </div>
                         </div>
                        ';
@@ -287,10 +336,11 @@ class CampaignTabs
                                               <thead>
                                               <tr>
                                                   <th>date</th>
+                                                  <th>type</th>
                                                   <th>url</th>
                                                   <th>filename</th>
                                                   <th>Status</th>
-                                                  <th>type</th>
+
                                               </tr>
                                               </thead>
 
@@ -313,29 +363,60 @@ class CampaignTabs
     function getScansTableRow(array $row)
     {
         $result = "";
-        $finished = "<span style='color: #5cb85c;font-size: 16px;' class='glyphicon glyphicon-thumbs-up' aria-hidden='true'></span>";
-        $proccessed = "<span style='color: goldenrod;font-size: 16px;' class='glyphicon glyphicon-hourglass' aria-hidden='true'></span>";
+        $finished = "<span value='1' style='color: #5cb85c;font-size: 16px;' class='glyphicon glyphicon-thumbs-up' aria-hidden='true'></span>";
+        $proccessed = "<span value='0' style='color: goldenrod;font-size: 16px;' class='glyphicon glyphicon-hourglass' aria-hidden='true'></span>";
 
         $result .= "<tr class='scanRow' data-scid='{$row['scid']}'>
                     <td class='dateScan'>
-                    <a href='#' class='btn btn-primary'>{$row['dateScan']}</a>
+                    <a class='btn btn-primary'>{$row['dateScan']}</a>
                     </td>
+                     <td>{$row['type']}</td>
                     <td class='scanUrl'>
                     {$row['url']}
                     </td>
 
                     <td>{$row['filename']}</td>
                     <td>" . (($row['status'] == 1) ? $finished : $proccessed) . "</td>
-                    <td> </td>
+
                   </tr>";
 
         return $result;
 
     }
 
-    function getDirScanDetails($scid)
+    function getScanDetails($scid)
     {
-        $foundPaths = $this->Model->MysqliClass->getAssocArray("select * from pathfound where scid=$scid");
+        $query = "select type from scans where scid=$scid";
+        $type = $this->Model->MysqliClass->firstResult($query)['type'];
+
+        $result = "";
+        if (!isset($type))
+            return 0;
+        if (strstr($type, "nmap")) {
+
+            $type = "nmap";
+        }
+
+        switch ($type) {
+            case "subdomainScan":
+                $result = $this->getSubdomainScanDetails($scid);
+                break;
+            case "dirScan":
+                $result = $this->getDirScanDetails($scid);
+                break;
+            case "nmap":
+
+                $result = $this->getNmapDetails($scid);
+                break;
+        }
+
+        return $result;
+
+    }
+
+    function getSubdomainScanDetails($scid)
+    {
+        $foundPaths = $this->Model->MysqliClass->getAssocArray("select * from subdomain where scid=$scid ORDER BY resolve");
 
         //var_dump($foundPaths);
         $goodPaths = "";
@@ -344,7 +425,71 @@ class CampaignTabs
                             <strong>Пусто</strong>
                        </div>';
         } else {
-            $goodPaths = $this->getTableScanResults($foundPaths);
+            $goodPaths = $this->getSubdomainScanTable($foundPaths);
+        }
+
+        $result = '<div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="gridSystemModalLabel">123456</h4>
+                          </div>
+                          <div class="modal-body">
+                            <ul style="width: 300px" class="qwe nav nav-pills" >
+                                <li class="active"><a  href="#found" data-toggle="tab">Found</a></li>
+                                <li><a  href = "#notFound" data-toggle = "tab" > Not Found </a></li >
+                                <li><a  href = "#forbidden" data-toggle = "tab" > Forbidden </a></li >
+                            </ul >
+                            <p>
+                                <div class="tab-content" >
+                                        <div class="tab-pane fade in active" id="found"  >
+                                        ' . $goodPaths . ' </div>
+
+
+                                </div >
+                            </p>
+                            </div>
+                    </div>
+                ';
+        //echo $result[$row['tid']];
+        //}
+        //echo (($wwsd[$row['tid']])? "beach":"treach");
+        //print_r($result);
+        return $result;
+    }
+
+    function getSubdomainScanTable($foundPaths)
+    {
+
+        $table = '<table class="table table-hover">';
+        $thead = '<thead><tr><th>path</th><th>httpcode</th></tr></thead>';
+        //var_dump( $foundPaths);
+        $tbody = '';
+        //$httpcode=$path['httpcode'];
+        foreach ($foundPaths as $path) {
+            $tbody .= '<tr class="' . (($path['resolve'] == 1) ? 'success' : 'danger') . '">
+            <td>' . $path['subdomain'] . '</td>
+            <td class="httpcode"><span >' . $path['resolve'] . '</span></td>
+
+            </tr>';
+
+        }
+        $table .= $thead . $tbody . "</table>";
+
+        return $table;
+    }
+
+    function getDirScanDetails($scid)
+    {
+        $foundPaths = $this->Model->MysqliClass->getAssocArray("select * from pathfound where scid=$scid order by httpcode asc");
+
+        //var_dump($foundPaths);
+        $goodPaths = "";
+        if (empty($foundPaths)) {
+            $goodPaths = '<div class="alert alert-warning">
+                            <strong>Пусто</strong>
+                       </div>';
+        } else {
+            $goodPaths = $this->getDirScanTable($foundPaths);
         }
 
         //$res = $this->Model->MysqliClass->firstResult("select * from pathfound where scid=$scid where httpcode=404");
@@ -389,7 +534,7 @@ class CampaignTabs
         return $result;
     }
 
-    function getTableScanResults($foundPaths)
+    function getDirScanTable($foundPaths)
     {
 
         $table = '<table class="table table-hover">';
@@ -398,7 +543,7 @@ class CampaignTabs
         $tbody = '';
         //$httpcode=$path['httpcode'];
         foreach ($foundPaths as $path) {
-            $tbody .= '<tr style="background-color:' . (($path['httpcode'] == 200) ? 'yellowgreen' : (($path['httpcode'] == 302) ? 'yellow' : "#BE7D77")) . ';">
+            $tbody .= '<tr class="' . (($path['httpcode'] == 200) ? 'success' : (($path['httpcode'] == 404) ? 'danger' : 'warning')) . '">
             <td>' . $path['url'] . '</td>
             <td class="httpcode"><span >' . $path['httpcode'] . '</span></td>
 
@@ -410,6 +555,74 @@ class CampaignTabs
         return $table;
     }
 
+    function getNmapDetails($scid)
+    {
+        $query = "select * from nmap where scid=$scid";
+        $foundHosts = $this->Model->MysqliClass->getAssocArray($query);
+        //var_dump($foundHosts);
+
+        if (empty($foundHosts)) {
+            //var_dump("watafuck");
+            $goodPaths = '<div class="alert alert-warning">
+                            <strong>Пусто</strong>
+                       </div>';
+        } else {
+            $goodPaths = $this->getNmapScanTable($foundHosts);
+        }
+
+
+        $result = '<div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="gridSystemModalLabel">123456</h4>
+                          </div>
+                          <div class="modal-body">
+                            <ul style="width: 300px" class="qwe nav nav-pills" >
+                                <li class="active"><a  href="#found" data-toggle="tab">Found</a></li>
+
+                            </ul >
+                            <p>
+                                <div class="tab-content" >
+
+                                        <div class="tab-pane fade in active" id="found"  >
+                                        ' . $goodPaths . ' </div>
+
+                                </div >
+                            </p>
+                            </div>
+                    </div>
+                ';
+        //echo $result[$row['tid']];
+        //}
+        //echo (($wwsd[$row['tid']])? "beach":"treach");
+        //print_r($result);
+        return $result;
+
+    }
+
+    function getNmapScanTable($foundPaths)
+    {
+
+        $table = '<table class="table nmaptable table-hover">';
+        $thead = '<thead><tr><th>port</th><th>status</th><th>service</th><th>version</th></tr></thead>';
+        //var_dump( $foundPaths);
+        $tbody = '';
+        //$httpcode=$path['httpcode'];
+        foreach ($foundPaths as $path) {
+            $tbody .= '<tr class="' . (($path['status'] == "open") ? 'success' : (($path['status'] == "filtered") ? 'warning' : "danger")) . '">
+            <td class="nmapport">' . $path['port'] . '</td>
+            <td class="nmapstatus">' . $path['status'] . '</td>
+            <td class="nmapservice"><span >' . $path['service'] . '</span></td>
+            <td class="nmapversion"><span >' . $path['version'] . '</span></td>
+
+
+            </tr>';
+
+        }
+        $table .= $thead . $tbody . "</table>";
+
+        return $table;
+    }
 
     function getSubInfoScans(int $cid)
     {
@@ -522,6 +735,5 @@ class CampaignTabs
 
         return $result;
     }
-
 
 }

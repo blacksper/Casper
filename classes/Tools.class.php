@@ -106,6 +106,18 @@ class Tools
     function startNmap(int $tid, int $sid, $option = null)
     {
 
+        switch ($option) {
+            case "quick":
+                $param = "-T4 -F";
+                break;
+            case "quickplus":
+                $param = "-sV -T4 -O -sS";
+                break;
+
+            default:
+                return 0;
+                break;
+        }
 
         $query = "select * from targets where tid=$tid";
         $targeturl = $this->Model->MysqliClass->firstResult($query)['url'];
@@ -121,41 +133,35 @@ class Tools
 
         ob_start();
         $result = array();
-        //$option="quickplus";
-        //$targeturl="wildo.ru";
-        switch ($option) {
-            case "quick":
-                $param = "-T4 -F";
-                break;
-            case "quickplus":
-                $param = "sV -T4 -O -F --version-light";
-                break;
-        }
 
 
         if (!isset($param))
             return 0;
 
-
-        system('"D:\Program Files (x86)\Nmap\nmap" ' . $param . ' ' . $targeturl);
+        $cmd = '"D:\Program Files (x86)\Nmap\nmap" ' . $param . ' ' . $targeturl;
+        echo $cmd . "\n";
+        system($cmd);
         $content = ob_get_clean();
         echo $content;
         //die();
         preg_replace("/\s+/", "", $content);
-        preg_match_all("/(\d+)\/tcp\s+(\w+)\s+([\w\d-.]+)/", $content, $m);
+        preg_match_all("/(\d+)\/tcp\s+(\w+)\s+([^\s]+)([\r\n]+|[\s]+([^\r\n]+))?[\r\n]?/", $content, $m);
+        //var_dump($m);
+        //die();
 
-
-        $queryStart = "INSERT INTO nmap(scid,port,status,service) VALUES";
+        $queryStart = "INSERT INTO nmap(scid,port,status,service,version) VALUES";
         $query = $queryStart;
         $i = 0;
 
 
         foreach ($m[0] as $d) {
-            preg_match("/(\d+)\/tcp\s+(\w+)\s+([\w\d-.]+)/", $d, $mf);
+            preg_match("/(\d+)\/tcp\s+(\w+)\s+([^\s]+)([\r\n]+|[\s]+([^\r\n]+))?[\r\n]?/", trim($d, "\r\n"), $mf);
 
-            //echo "port:".$mf[1]." status: ".$mf[2]." service: ".$mf[3]."\n";
-
-            $query .= "($scid,'{$mf[1]}','{$mf[2]}','{$mf[3]}'),";
+            (isset($mf[5])) ? $version = $mf[5] : $version = "";
+            echo "port:" . $mf[1] . " status: " . $mf[2] . " service: " . $mf[3] . " version:" . $version . "\n";
+            //var_dump($mf);
+            //continue;
+            $query .= "($scid,'{$mf[1]}','{$mf[2]}','{$mf[3]}','{$version}'),";
             $i++;
             if ($i == 100) {
                 $i = 0;
@@ -166,6 +172,7 @@ class Tools
                 $query = $queryStart;
             }
         }
+        //die();
         $query = substr($query, 0, -1);
         $query .= " ON DUPLICATE KEY UPDATE status=values(status)";
         $this->Model->MysqliClass->query($query);

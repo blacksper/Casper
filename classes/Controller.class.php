@@ -43,43 +43,7 @@ class Controller {
         return $tbl;
     }
 
-    public function addTarget($name)
-    {    //добавление сервера
-        preg_match("#^(http[s]?:\/\/)?([A-z0-9.-_]*)\/+#", $name, $clurl);
-        //echo 123;
-        $result="";
 
-        if(isset($clurl[2])) {
-            $name = $clurl[2];
-
-            ####проверка есть ли уже в бд этот сервер
-            $query = "SELECT cid from campaigns where name = '$name'";//тут инъекция
-            $cid = $this->Model->MysqliClass->firstResult($query)['tid'];
-
-            if ($cid != "")
-                exit;
-
-            $uid=$this->Model->getUserId($_SESSION['username']);
-            //var_dump($uid);
-            if($uid) {
-                $query = "INSERT INTO campaigns(uid,url,dateAdd) values($uid,'$name',now())";
-                $result = $this->Model->MysqliClass->query($query);
-                //echo $query;
-                $query = "SELECT * from campaigns where url='$name'";
-                $resultArr = $this->Model->MysqliClass->firstResult($query);
-                //echo $query;
-                //var_dump($resultArr);
-                echo 123;
-                $result = $this->Viewer->Tabs->getCampaignTableRow($resultArr);
-
-            }else{
-                $result="";
-            }
-
-        }
-
-        return $result;
-    }
 
     public function addCampaign($name)
     {    //добавление сервера

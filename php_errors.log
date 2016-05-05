@@ -6990,3 +6990,505 @@ Stack trace:
 [03-May-2016 23:58:51 UTC] PHP Stack trace:
 [03-May-2016 23:58:51 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
 [03-May-2016 23:58:51 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:48:11 UTC] PHP Notice:  Undefined offset: 1 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 13:48:11 UTC] PHP Stack trace:
+[04-May-2016 13:48:11 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:48:11 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:48:11 UTC] PHP Notice:  Undefined offset: 2 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 13:48:11 UTC] PHP Stack trace:
+[04-May-2016 13:48:11 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:48:11 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:48:11 UTC] PHP Notice:  Undefined offset: 3 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 13:48:11 UTC] PHP Stack trace:
+[04-May-2016 13:48:11 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:48:11 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:48:11 UTC] PHP Notice:  Undefined offset: 4 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 13:48:11 UTC] PHP Stack trace:
+[04-May-2016 13:48:11 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:48:11 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:48:11 UTC] PHP Notice:  Undefined offset: 1 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 13:48:11 UTC] PHP Stack trace:
+[04-May-2016 13:48:11 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:48:11 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:48:11 UTC] PHP Notice:  Undefined offset: 2 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 13:48:11 UTC] PHP Stack trace:
+[04-May-2016 13:48:11 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:48:11 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:48:11 UTC] PHP Notice:  Undefined offset: 3 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 13:48:11 UTC] PHP Stack trace:
+[04-May-2016 13:48:11 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:48:11 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:48:11 UTC] PHP Notice:  Undefined offset: 4 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 13:48:11 UTC] PHP Stack trace:
+[04-May-2016 13:48:11 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:48:11 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:48:11 UTC] PHP Notice:  Undefined offset: 1 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 13:48:11 UTC] PHP Stack trace:
+[04-May-2016 13:48:11 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:48:11 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:48:11 UTC] PHP Notice:  Undefined offset: 2 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 13:48:11 UTC] PHP Stack trace:
+[04-May-2016 13:48:11 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:48:11 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:48:11 UTC] PHP Notice:  Undefined offset: 3 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 13:48:11 UTC] PHP Stack trace:
+[04-May-2016 13:48:11 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:48:11 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:48:11 UTC] PHP Notice:  Undefined offset: 4 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 13:48:11 UTC] PHP Stack trace:
+[04-May-2016 13:48:11 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:48:11 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:48:11 UTC] PHP Notice:  Undefined offset: 1 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 13:48:11 UTC] PHP Stack trace:
+[04-May-2016 13:48:11 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:48:11 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:48:11 UTC] PHP Notice:  Undefined offset: 2 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 13:48:11 UTC] PHP Stack trace:
+[04-May-2016 13:48:11 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:48:11 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:48:11 UTC] PHP Notice:  Undefined offset: 3 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 13:48:11 UTC] PHP Stack trace:
+[04-May-2016 13:48:11 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:48:11 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:48:11 UTC] PHP Notice:  Undefined offset: 4 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 13:48:11 UTC] PHP Stack trace:
+[04-May-2016 13:48:11 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:48:11 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:48:11 UTC] PHP Notice:  Undefined offset: 1 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 13:48:11 UTC] PHP Stack trace:
+[04-May-2016 13:48:11 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:48:11 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:48:11 UTC] PHP Notice:  Undefined offset: 2 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 13:48:11 UTC] PHP Stack trace:
+[04-May-2016 13:48:11 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:48:11 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:48:11 UTC] PHP Notice:  Undefined offset: 3 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 13:48:11 UTC] PHP Stack trace:
+[04-May-2016 13:48:11 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:48:11 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:48:11 UTC] PHP Notice:  Undefined offset: 4 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 13:48:11 UTC] PHP Stack trace:
+[04-May-2016 13:48:11 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:48:11 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:48:11 UTC] PHP Notice:  Undefined offset: 1 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 13:48:11 UTC] PHP Stack trace:
+[04-May-2016 13:48:11 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:48:11 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:48:11 UTC] PHP Notice:  Undefined offset: 2 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 13:48:11 UTC] PHP Stack trace:
+[04-May-2016 13:48:11 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:48:11 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:48:11 UTC] PHP Notice:  Undefined offset: 3 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 13:48:11 UTC] PHP Stack trace:
+[04-May-2016 13:48:11 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:48:11 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:48:11 UTC] PHP Notice:  Undefined offset: 4 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 13:48:11 UTC] PHP Stack trace:
+[04-May-2016 13:48:11 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:48:11 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:48:11 UTC] PHP Notice:  Undefined offset: 1 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 13:48:11 UTC] PHP Stack trace:
+[04-May-2016 13:48:11 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:48:11 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:48:11 UTC] PHP Notice:  Undefined offset: 2 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 13:48:11 UTC] PHP Stack trace:
+[04-May-2016 13:48:11 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:48:11 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:48:11 UTC] PHP Notice:  Undefined offset: 3 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 13:48:11 UTC] PHP Stack trace:
+[04-May-2016 13:48:11 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:48:11 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:48:11 UTC] PHP Notice:  Undefined offset: 4 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 13:48:11 UTC] PHP Stack trace:
+[04-May-2016 13:48:11 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:48:11 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:48:11 UTC] PHP Notice:  Undefined offset: 1 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 13:48:11 UTC] PHP Stack trace:
+[04-May-2016 13:48:11 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:48:11 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:48:11 UTC] PHP Notice:  Undefined offset: 2 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 13:48:11 UTC] PHP Stack trace:
+[04-May-2016 13:48:11 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:48:11 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:48:11 UTC] PHP Notice:  Undefined offset: 3 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 13:48:11 UTC] PHP Stack trace:
+[04-May-2016 13:48:11 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:48:11 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:48:11 UTC] PHP Notice:  Undefined offset: 4 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 13:48:11 UTC] PHP Stack trace:
+[04-May-2016 13:48:11 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:48:11 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:48:11 UTC] PHP Notice:  Undefined offset: 1 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 13:48:11 UTC] PHP Stack trace:
+[04-May-2016 13:48:11 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:48:11 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:48:11 UTC] PHP Notice:  Undefined offset: 2 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 13:48:11 UTC] PHP Stack trace:
+[04-May-2016 13:48:11 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:48:11 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:48:11 UTC] PHP Notice:  Undefined offset: 3 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 13:48:11 UTC] PHP Stack trace:
+[04-May-2016 13:48:11 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:48:11 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:48:11 UTC] PHP Notice:  Undefined offset: 4 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 13:48:11 UTC] PHP Stack trace:
+[04-May-2016 13:48:11 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:48:11 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:19 UTC] PHP Notice:  Undefined offset: 1 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:19 UTC] PHP Stack trace:
+[04-May-2016 13:49:19 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:19 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:19 UTC] PHP Notice:  Undefined offset: 2 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:19 UTC] PHP Stack trace:
+[04-May-2016 13:49:19 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:19 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:19 UTC] PHP Notice:  Undefined offset: 3 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:19 UTC] PHP Stack trace:
+[04-May-2016 13:49:19 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:19 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:19 UTC] PHP Notice:  Undefined offset: 1 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:19 UTC] PHP Stack trace:
+[04-May-2016 13:49:19 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:19 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:19 UTC] PHP Notice:  Undefined offset: 2 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:19 UTC] PHP Stack trace:
+[04-May-2016 13:49:19 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:19 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:19 UTC] PHP Notice:  Undefined offset: 3 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:19 UTC] PHP Stack trace:
+[04-May-2016 13:49:19 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:19 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:19 UTC] PHP Notice:  Undefined offset: 1 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:19 UTC] PHP Stack trace:
+[04-May-2016 13:49:19 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:19 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:19 UTC] PHP Notice:  Undefined offset: 2 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:19 UTC] PHP Stack trace:
+[04-May-2016 13:49:19 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:19 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:19 UTC] PHP Notice:  Undefined offset: 3 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:19 UTC] PHP Stack trace:
+[04-May-2016 13:49:19 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:19 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:19 UTC] PHP Notice:  Undefined offset: 1 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:19 UTC] PHP Stack trace:
+[04-May-2016 13:49:19 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:19 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:19 UTC] PHP Notice:  Undefined offset: 2 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:19 UTC] PHP Stack trace:
+[04-May-2016 13:49:19 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:19 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:19 UTC] PHP Notice:  Undefined offset: 3 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:19 UTC] PHP Stack trace:
+[04-May-2016 13:49:19 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:19 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:19 UTC] PHP Notice:  Undefined offset: 1 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:19 UTC] PHP Stack trace:
+[04-May-2016 13:49:19 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:19 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:19 UTC] PHP Notice:  Undefined offset: 2 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:19 UTC] PHP Stack trace:
+[04-May-2016 13:49:19 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:19 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:39 UTC] PHP Notice:  Undefined offset: 1 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:39 UTC] PHP Stack trace:
+[04-May-2016 13:49:39 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:39 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:39 UTC] PHP Notice:  Undefined offset: 2 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:39 UTC] PHP Stack trace:
+[04-May-2016 13:49:39 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:39 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:39 UTC] PHP Notice:  Undefined offset: 3 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:39 UTC] PHP Stack trace:
+[04-May-2016 13:49:39 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:39 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:39 UTC] PHP Notice:  Undefined offset: 3 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:39 UTC] PHP Stack trace:
+[04-May-2016 13:49:39 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:39 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:39 UTC] PHP Notice:  Undefined offset: 1 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:39 UTC] PHP Stack trace:
+[04-May-2016 13:49:39 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:39 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:39 UTC] PHP Notice:  Undefined offset: 2 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:39 UTC] PHP Stack trace:
+[04-May-2016 13:49:39 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:39 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:39 UTC] PHP Notice:  Undefined offset: 3 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:39 UTC] PHP Stack trace:
+[04-May-2016 13:49:39 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:39 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:39 UTC] PHP Notice:  Undefined offset: 3 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:39 UTC] PHP Stack trace:
+[04-May-2016 13:49:39 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:39 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:39 UTC] PHP Notice:  Undefined offset: 1 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:39 UTC] PHP Stack trace:
+[04-May-2016 13:49:39 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:39 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:39 UTC] PHP Notice:  Undefined offset: 2 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:39 UTC] PHP Stack trace:
+[04-May-2016 13:49:39 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:39 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:39 UTC] PHP Notice:  Undefined offset: 3 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:39 UTC] PHP Stack trace:
+[04-May-2016 13:49:39 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:39 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:39 UTC] PHP Notice:  Undefined offset: 3 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:39 UTC] PHP Stack trace:
+[04-May-2016 13:49:39 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:39 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:39 UTC] PHP Notice:  Undefined offset: 1 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:39 UTC] PHP Stack trace:
+[04-May-2016 13:49:39 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:39 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:39 UTC] PHP Notice:  Undefined offset: 2 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:39 UTC] PHP Stack trace:
+[04-May-2016 13:49:39 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:39 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:39 UTC] PHP Notice:  Undefined offset: 3 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:39 UTC] PHP Stack trace:
+[04-May-2016 13:49:39 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:39 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:39 UTC] PHP Notice:  Undefined offset: 3 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:39 UTC] PHP Stack trace:
+[04-May-2016 13:49:39 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:39 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:39 UTC] PHP Notice:  Undefined offset: 1 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:39 UTC] PHP Stack trace:
+[04-May-2016 13:49:39 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:39 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:39 UTC] PHP Notice:  Undefined offset: 2 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:39 UTC] PHP Stack trace:
+[04-May-2016 13:49:39 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:39 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:39 UTC] PHP Notice:  Undefined offset: 3 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:39 UTC] PHP Stack trace:
+[04-May-2016 13:49:39 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:39 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:39 UTC] PHP Notice:  Undefined offset: 3 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:39 UTC] PHP Stack trace:
+[04-May-2016 13:49:39 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:39 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:39 UTC] PHP Notice:  Undefined offset: 1 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:39 UTC] PHP Stack trace:
+[04-May-2016 13:49:39 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:39 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:39 UTC] PHP Notice:  Undefined offset: 2 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:39 UTC] PHP Stack trace:
+[04-May-2016 13:49:39 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:39 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:39 UTC] PHP Notice:  Undefined offset: 3 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:39 UTC] PHP Stack trace:
+[04-May-2016 13:49:39 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:39 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:39 UTC] PHP Notice:  Undefined offset: 3 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:39 UTC] PHP Stack trace:
+[04-May-2016 13:49:39 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:39 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:39 UTC] PHP Notice:  Undefined offset: 1 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:39 UTC] PHP Stack trace:
+[04-May-2016 13:49:39 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:39 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:39 UTC] PHP Notice:  Undefined offset: 2 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:39 UTC] PHP Stack trace:
+[04-May-2016 13:49:39 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:39 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:39 UTC] PHP Notice:  Undefined offset: 3 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:39 UTC] PHP Stack trace:
+[04-May-2016 13:49:39 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:39 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:39 UTC] PHP Notice:  Undefined offset: 3 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:39 UTC] PHP Stack trace:
+[04-May-2016 13:49:39 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:39 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:39 UTC] PHP Notice:  Undefined offset: 1 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:39 UTC] PHP Stack trace:
+[04-May-2016 13:49:39 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:39 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:39 UTC] PHP Notice:  Undefined offset: 2 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:39 UTC] PHP Stack trace:
+[04-May-2016 13:49:39 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:39 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:39 UTC] PHP Notice:  Undefined offset: 3 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:39 UTC] PHP Stack trace:
+[04-May-2016 13:49:39 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:39 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:39 UTC] PHP Notice:  Undefined offset: 3 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:39 UTC] PHP Stack trace:
+[04-May-2016 13:49:39 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:39 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:39 UTC] PHP Notice:  Undefined offset: 1 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:39 UTC] PHP Stack trace:
+[04-May-2016 13:49:39 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:39 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:39 UTC] PHP Notice:  Undefined offset: 2 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:39 UTC] PHP Stack trace:
+[04-May-2016 13:49:39 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:39 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:39 UTC] PHP Notice:  Undefined offset: 3 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:39 UTC] PHP Stack trace:
+[04-May-2016 13:49:39 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:39 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 13:49:39 UTC] PHP Notice:  Undefined offset: 3 in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 159
+[04-May-2016 13:49:39 UTC] PHP Stack trace:
+[04-May-2016 13:49:39 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 13:49:39 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 14:46:32 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 14:46:32 UTC] PHP Stack trace:
+[04-May-2016 14:46:32 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 14:46:32 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 14:46:32 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 14:46:32 UTC] PHP Stack trace:
+[04-May-2016 14:46:32 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 14:46:32 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 14:46:32 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 14:46:32 UTC] PHP Stack trace:
+[04-May-2016 14:46:32 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 14:46:32 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 14:46:32 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 14:46:32 UTC] PHP Stack trace:
+[04-May-2016 14:46:32 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 14:46:32 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 14:46:32 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 14:46:32 UTC] PHP Stack trace:
+[04-May-2016 14:46:32 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 14:46:32 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 14:46:32 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 14:46:32 UTC] PHP Stack trace:
+[04-May-2016 14:46:32 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 14:46:32 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 14:46:32 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 14:46:32 UTC] PHP Stack trace:
+[04-May-2016 14:46:32 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 14:46:32 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 14:46:32 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 14:46:32 UTC] PHP Stack trace:
+[04-May-2016 14:46:32 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 14:46:32 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[04-May-2016 14:46:32 UTC] PHP Notice:  Array to string conversion in D:\PhpstormProjects\Casper\classes\Tools.class.php on line 161
+[04-May-2016 14:46:32 UTC] PHP Stack trace:
+[04-May-2016 14:46:32 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\scan.php:0
+[04-May-2016 14:46:32 UTC] PHP   2. Tools->startNmap() D:\PhpstormProjects\Casper\scan.php:46
+[05-May-2016 00:44:07 UTC] PHP Notice:  Undefined index: httpcode in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 474
+[05-May-2016 00:44:07 UTC] PHP Stack trace:
+[05-May-2016 00:44:07 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[05-May-2016 00:44:07 UTC] PHP   2. CampaignTabs->getScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[05-May-2016 00:44:07 UTC] PHP   3. CampaignTabs->getNmapDetails() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:381
+[05-May-2016 00:44:07 UTC] PHP   4. CampaignTabs->getNmapScanTable() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:613
+[05-May-2016 00:44:07 UTC] PHP Notice:  Undefined index: httpcode in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 474
+[05-May-2016 00:44:07 UTC] PHP Stack trace:
+[05-May-2016 00:44:07 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[05-May-2016 00:44:07 UTC] PHP   2. CampaignTabs->getScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[05-May-2016 00:44:07 UTC] PHP   3. CampaignTabs->getNmapDetails() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:381
+[05-May-2016 00:44:07 UTC] PHP   4. CampaignTabs->getNmapScanTable() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:613
+[05-May-2016 00:44:07 UTC] PHP Notice:  Undefined index: httpcode in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 474
+[05-May-2016 00:44:07 UTC] PHP Stack trace:
+[05-May-2016 00:44:07 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[05-May-2016 00:44:07 UTC] PHP   2. CampaignTabs->getScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[05-May-2016 00:44:07 UTC] PHP   3. CampaignTabs->getNmapDetails() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:381
+[05-May-2016 00:44:07 UTC] PHP   4. CampaignTabs->getNmapScanTable() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:613
+[05-May-2016 00:44:07 UTC] PHP Notice:  Undefined index: httpcode in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 474
+[05-May-2016 00:44:07 UTC] PHP Stack trace:
+[05-May-2016 00:44:07 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[05-May-2016 00:44:07 UTC] PHP   2. CampaignTabs->getScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[05-May-2016 00:44:07 UTC] PHP   3. CampaignTabs->getNmapDetails() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:381
+[05-May-2016 00:44:07 UTC] PHP   4. CampaignTabs->getNmapScanTable() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:613
+[05-May-2016 00:44:07 UTC] PHP Notice:  Undefined index: httpcode in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 474
+[05-May-2016 00:44:07 UTC] PHP Stack trace:
+[05-May-2016 00:44:07 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[05-May-2016 00:44:07 UTC] PHP   2. CampaignTabs->getScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[05-May-2016 00:44:07 UTC] PHP   3. CampaignTabs->getNmapDetails() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:381
+[05-May-2016 00:44:07 UTC] PHP   4. CampaignTabs->getNmapScanTable() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:613
+[05-May-2016 00:44:07 UTC] PHP Notice:  Undefined index: httpcode in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 474
+[05-May-2016 00:44:07 UTC] PHP Stack trace:
+[05-May-2016 00:44:07 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[05-May-2016 00:44:07 UTC] PHP   2. CampaignTabs->getScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[05-May-2016 00:44:07 UTC] PHP   3. CampaignTabs->getNmapDetails() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:381
+[05-May-2016 00:44:07 UTC] PHP   4. CampaignTabs->getNmapScanTable() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:613
+[05-May-2016 00:44:07 UTC] PHP Notice:  Undefined index: httpcode in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 474
+[05-May-2016 00:44:07 UTC] PHP Stack trace:
+[05-May-2016 00:44:07 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[05-May-2016 00:44:07 UTC] PHP   2. CampaignTabs->getScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[05-May-2016 00:44:07 UTC] PHP   3. CampaignTabs->getNmapDetails() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:381
+[05-May-2016 00:44:07 UTC] PHP   4. CampaignTabs->getNmapScanTable() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:613
+[05-May-2016 00:44:07 UTC] PHP Notice:  Undefined index: httpcode in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 474
+[05-May-2016 00:44:07 UTC] PHP Stack trace:
+[05-May-2016 00:44:07 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[05-May-2016 00:44:07 UTC] PHP   2. CampaignTabs->getScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[05-May-2016 00:44:07 UTC] PHP   3. CampaignTabs->getNmapDetails() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:381
+[05-May-2016 00:44:07 UTC] PHP   4. CampaignTabs->getNmapScanTable() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:613
+[05-May-2016 00:44:07 UTC] PHP Notice:  Undefined index: httpcode in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 474
+[05-May-2016 00:44:07 UTC] PHP Stack trace:
+[05-May-2016 00:44:07 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[05-May-2016 00:44:07 UTC] PHP   2. CampaignTabs->getScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[05-May-2016 00:44:07 UTC] PHP   3. CampaignTabs->getNmapDetails() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:381
+[05-May-2016 00:44:07 UTC] PHP   4. CampaignTabs->getNmapScanTable() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:613
+[05-May-2016 00:44:07 UTC] PHP Notice:  Undefined index: httpcode in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 474
+[05-May-2016 00:44:07 UTC] PHP Stack trace:
+[05-May-2016 00:44:07 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[05-May-2016 00:44:07 UTC] PHP   2. CampaignTabs->getScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[05-May-2016 00:44:07 UTC] PHP   3. CampaignTabs->getNmapDetails() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:381
+[05-May-2016 00:44:07 UTC] PHP   4. CampaignTabs->getNmapScanTable() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:613
+[05-May-2016 00:44:07 UTC] PHP Notice:  Undefined index: httpcode in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 474
+[05-May-2016 00:44:07 UTC] PHP Stack trace:
+[05-May-2016 00:44:07 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[05-May-2016 00:44:07 UTC] PHP   2. CampaignTabs->getScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[05-May-2016 00:44:07 UTC] PHP   3. CampaignTabs->getNmapDetails() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:381
+[05-May-2016 00:44:07 UTC] PHP   4. CampaignTabs->getNmapScanTable() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:613
+[05-May-2016 00:44:07 UTC] PHP Notice:  Undefined index: httpcode in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 474
+[05-May-2016 00:44:07 UTC] PHP Stack trace:
+[05-May-2016 00:44:07 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[05-May-2016 00:44:07 UTC] PHP   2. CampaignTabs->getScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[05-May-2016 00:44:07 UTC] PHP   3. CampaignTabs->getNmapDetails() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:381
+[05-May-2016 00:44:07 UTC] PHP   4. CampaignTabs->getNmapScanTable() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:613
+[05-May-2016 00:44:07 UTC] PHP Notice:  Undefined index: httpcode in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 474
+[05-May-2016 00:44:07 UTC] PHP Stack trace:
+[05-May-2016 00:44:07 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[05-May-2016 00:44:07 UTC] PHP   2. CampaignTabs->getScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[05-May-2016 00:44:07 UTC] PHP   3. CampaignTabs->getNmapDetails() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:381
+[05-May-2016 00:44:07 UTC] PHP   4. CampaignTabs->getNmapScanTable() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:613
+[05-May-2016 00:44:07 UTC] PHP Notice:  Undefined index: httpcode in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 474
+[05-May-2016 00:44:07 UTC] PHP Stack trace:
+[05-May-2016 00:44:07 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[05-May-2016 00:44:07 UTC] PHP   2. CampaignTabs->getScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[05-May-2016 00:44:07 UTC] PHP   3. CampaignTabs->getNmapDetails() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:381
+[05-May-2016 00:44:07 UTC] PHP   4. CampaignTabs->getNmapScanTable() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:613
+[05-May-2016 00:44:07 UTC] PHP Notice:  Undefined index: httpcode in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 474
+[05-May-2016 00:44:07 UTC] PHP Stack trace:
+[05-May-2016 00:44:07 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[05-May-2016 00:44:07 UTC] PHP   2. CampaignTabs->getScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[05-May-2016 00:44:07 UTC] PHP   3. CampaignTabs->getNmapDetails() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:381
+[05-May-2016 00:44:07 UTC] PHP   4. CampaignTabs->getNmapScanTable() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:613
+[05-May-2016 00:44:07 UTC] PHP Notice:  Undefined index: httpcode in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 474
+[05-May-2016 00:44:07 UTC] PHP Stack trace:
+[05-May-2016 00:44:07 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[05-May-2016 00:44:07 UTC] PHP   2. CampaignTabs->getScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[05-May-2016 00:44:07 UTC] PHP   3. CampaignTabs->getNmapDetails() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:381
+[05-May-2016 00:44:07 UTC] PHP   4. CampaignTabs->getNmapScanTable() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:613
+[05-May-2016 00:44:07 UTC] PHP Notice:  Undefined index: httpcode in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 474
+[05-May-2016 00:44:07 UTC] PHP Stack trace:
+[05-May-2016 00:44:07 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[05-May-2016 00:44:07 UTC] PHP   2. CampaignTabs->getScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[05-May-2016 00:44:07 UTC] PHP   3. CampaignTabs->getNmapDetails() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:381
+[05-May-2016 00:44:07 UTC] PHP   4. CampaignTabs->getNmapScanTable() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:613
+[05-May-2016 00:44:07 UTC] PHP Notice:  Undefined index: httpcode in D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php on line 474
+[05-May-2016 00:44:07 UTC] PHP Stack trace:
+[05-May-2016 00:44:07 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[05-May-2016 00:44:07 UTC] PHP   2. CampaignTabs->getScanDetails() D:\PhpstormProjects\Casper\ajax.php:113
+[05-May-2016 00:44:07 UTC] PHP   3. CampaignTabs->getNmapDetails() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:381
+[05-May-2016 00:44:07 UTC] PHP   4. CampaignTabs->getNmapScanTable() D:\PhpstormProjects\Casper\classes\CampaignTabs.class.php:613
+[05-May-2016 15:10:36 UTC] PHP Notice:  Undefined variable: _SESSION in D:\PhpstormProjects\Casper\classes\CampaignsController.class.php on line 65
+[05-May-2016 15:10:36 UTC] PHP Stack trace:
+[05-May-2016 15:10:36 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[05-May-2016 15:10:36 UTC] PHP   2. CampaignsController->addTargets() D:\PhpstormProjects\Casper\ajax.php:81
+[05-May-2016 15:10:36 UTC] PHP   3. CampaignsController->addTarget() D:\PhpstormProjects\Casper\classes\CampaignsController.class.php:90
+[05-May-2016 15:10:36 UTC] PHP Notice:  Undefined variable: _SESSION in D:\PhpstormProjects\Casper\classes\CampaignsController.class.php on line 65
+[05-May-2016 15:10:36 UTC] PHP Stack trace:
+[05-May-2016 15:10:36 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[05-May-2016 15:10:36 UTC] PHP   2. CampaignsController->addTargets() D:\PhpstormProjects\Casper\ajax.php:81
+[05-May-2016 15:10:36 UTC] PHP   3. CampaignsController->addTarget() D:\PhpstormProjects\Casper\classes\CampaignsController.class.php:91
+[05-May-2016 15:19:25 UTC] PHP Notice:  Undefined variable: res in D:\PhpstormProjects\Casper\classes\CampaignsController.class.php on line 92
+[05-May-2016 15:19:25 UTC] PHP Stack trace:
+[05-May-2016 15:19:25 UTC] PHP   1. {main}() D:\PhpstormProjects\Casper\ajax.php:0
+[05-May-2016 15:19:25 UTC] PHP   2. CampaignsController->addTargets() D:\PhpstormProjects\Casper\ajax.php:81
