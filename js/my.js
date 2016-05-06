@@ -170,6 +170,24 @@ $(document).ready(function(){
                         }
                     });
                 }
+    });
+    $("body").on('click', '.deleteTgt', function () {
+        var row = $(this).parents('.targetRow');
+        var targetId = row.data('tid');
+        console.log(targetId);
+        if (targetId !== undefined) {
+            $.ajax({
+                url: "./ajax.php",
+                type: "POST",
+                data: "page=main&targetId=" + targetId + "&action=delete",
+                success: function (data) {
+                    console.log(data);
+                    if (data == 1) {
+                        row.fadeOut(500);
+                    }
+                }
+            });
+        }
         });
 
 

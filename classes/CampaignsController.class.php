@@ -76,7 +76,7 @@ class CampaignsController
             $targeturl = $clurl[2];
 
             ####проверка есть ли уже в бд этот сервер
-            $query = "SELECT tid from targets where url = '$targeturl'";//тут инъекция
+            $query = "SELECT tid from targets where url = '$targeturl' and deleted=0";//тут инъекция
             $tid = $this->Model->MysqliClass->firstResult($query)['tid'];
 
             if (isset($tid))

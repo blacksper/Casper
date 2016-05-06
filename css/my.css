@@ -165,8 +165,8 @@ body {
     max-width: 600px;
 }
 
-#found .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
-
+.deleteCmp, .deleteTgt, .deleteScn {
+    font-size: 10px;
 }
 
 #found .table-hover tbody td, .table-hover tbody th {

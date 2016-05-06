@@ -69,12 +69,12 @@ class CampaignTabs
 
     function getMainTableRow($row)
     {
-        $btns = '<button type="button" class="btn btn-danger btn-xs">
-                            <span class="glyphicon glyphicon-remove" aria-hidden="true">
+        $btns = '<button type="button" class="btn btn-danger btn-sm deleteTgt">
+                            <span  class="glyphicon glyphicon-remove" aria-hidden="true">
                             </span>
                         </button>';
 
-        $result = "<tr><td>{$row['url']}</td><td>{$row['ip']}</td><td>$btns</td></tr>";
+        $result = "<tr class='targetRow' data-tid='{$row['tid']}'><td>{$row['url']}</td><td>{$row['ip']}</td><td>$btns</td></tr>";
         return $result;
     }
 
@@ -340,6 +340,7 @@ class CampaignTabs
                                                   <th>url</th>
                                                   <th>filename</th>
                                                   <th>Status</th>
+                                                  <th></th>
 
                                               </tr>
                                               </thead>
@@ -377,7 +378,10 @@ class CampaignTabs
 
                     <td>{$row['filename']}</td>
                     <td>" . (($row['status'] == 1) ? $finished : $proccessed) . "</td>
-
+                    <td><button type='button' class='btn btn-danger btn-sm deleteScn'>
+                            <span  class='glyphicon glyphicon-remove' aria-hidden='true'>
+                            </span>
+                        </button></td>
                   </tr>";
 
         return $result;

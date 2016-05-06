@@ -202,6 +202,10 @@ class Controller {
                 //$tid=(int)$id;
                 $query = "UPDATE campaigns set deleted=1 WHERE cid=$id";
                 $result = $this->Model->MysqliClass->query($query);
+            } elseif ($type == "target") {
+                //$tid=(int)$id;
+                $query = "UPDATE targets set deleted=1 WHERE tid=$id";
+                $result = $this->Model->MysqliClass->query($query);
             }
             //echo $query;
         }

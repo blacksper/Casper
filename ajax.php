@@ -40,6 +40,9 @@ switch ($_POST['page']) {
                     } elseif (isset($_POST['serverId'])) {
                         $sid = $_POST['serverId'];
                         $result = $Controller->setDelete($sid, "server");
+                    } elseif (isset($_POST['targetId'])) {
+                        $sid = $_POST['targetId'];
+                        $result = $Controller->setDelete($sid, "target");
                     }
                     echo intval($result);
                     //var_dump($result);
@@ -85,6 +88,7 @@ switch ($_POST['page']) {
                     case "refresh":
 
                     case "delete":
+                        break;
 
                     case "getsubinfo":
 
@@ -92,7 +96,7 @@ switch ($_POST['page']) {
                         if (isset($_POST['scid'])) {
                             $scid = $_POST['scid'];
 
-                            echo $CampaignsController->CampaignViewer->Tabs->getMainTable($scid);
+                            echo $CampaignsController->CampaignViewer->Tabs->getScanDetails($scid);
                         }
                         break;
 
