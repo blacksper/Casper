@@ -52,6 +52,7 @@ class CampaignViewer
 
         $this->Tabs->getScansTab($this->cid);
         $this->Tabs->getToolsTab($this->cid);
+        //$this->Tabs->getInfoTab($this->cid);
         //echo 123;
         //$this->Tabs->getToolsTab();
 
@@ -67,6 +68,7 @@ class CampaignViewer
                                         <li class="active"><a href="#mainCampaign-tab" data-toggle="tab">Главная</a></li>
                                         <li ><a href="#scansCampaign-tab" data-toggle="tab">Сканирования</a></li>
                                         <li><a href="#tools-tab" data-toggle="tab">Инструменты</a></li>
+
                                         <li><a href="#servers-tab" data-toggle="tab">Дочерные цели</a></li>
 
                                         <li><a href="panel.php"><span class="glyphicon glyphicon-menu-left"></span> В панель</a></li>

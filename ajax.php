@@ -41,8 +41,11 @@ switch ($_POST['page']) {
                         $sid = $_POST['serverId'];
                         $result = $Controller->setDelete($sid, "server");
                     } elseif (isset($_POST['targetId'])) {
-                        $sid = $_POST['targetId'];
-                        $result = $Controller->setDelete($sid, "target");
+                        $tid = $_POST['targetId'];
+                        $result = $Controller->setDelete($tid, "target");
+                    } elseif (isset($_POST['scanId'])) {
+                        $scid = $_POST['scanId'];
+                        $result = $Controller->setDelete($scid, "scan");
                     }
                     echo intval($result);
                     //var_dump($result);
@@ -88,6 +91,7 @@ switch ($_POST['page']) {
                     case "refresh":
 
                     case "delete":
+
                         break;
 
                     case "getsubinfo":
@@ -97,6 +101,13 @@ switch ($_POST['page']) {
                             $scid = $_POST['scid'];
 
                             echo $CampaignsController->CampaignViewer->Tabs->getScanDetails($scid);
+                        }
+                        break;
+                    case "getHash":
+                        if (isset($_POST['cid'], $_POST['strForHash'], $_POST['type'])) {
+                            $cid = $_POST['cid'];
+
+                            echo $CampaignsController->getHash($_POST['strForHash'], $_POST['type']);
                         }
                         break;
 

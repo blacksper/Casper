@@ -12,6 +12,7 @@ include("CampaignViewer.class.php");
 include("Model.class.php");
 
 
+
 class CampaignsController
 {
 
@@ -101,6 +102,35 @@ class CampaignsController
         }
 
         return $result;
+    }
+
+
+    function getHash($str, $type)
+    {
+        if (!isset($str, $type))
+            return 0;
+        include "Hasher.class.php";
+        $hasher = new Hasher();
+        $hash = "";
+
+        switch ($type) {
+            case "md5":
+            case "sha1":
+                $hash = $hasher->getDefHash($str, $type);
+                break;
+            case "wordpress3":
+                $hash = $hasher->wordpress3Hash($str);
+                break;
+            case "mysql":
+                $hash = $hasher->mysqlHash($str);
+                break;
+            case "mysqlOld":
+                $hash = $hasher->mysqlOldHash($str);
+                break;
+        }
+
+        return $hash;
+
     }
 
 

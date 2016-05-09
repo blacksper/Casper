@@ -206,6 +206,10 @@ class Controller {
                 //$tid=(int)$id;
                 $query = "UPDATE targets set deleted=1 WHERE tid=$id";
                 $result = $this->Model->MysqliClass->query($query);
+            } elseif ($type == "scan") {
+                //$tid=(int)$id;
+                $query = "UPDATE scans set deleted=1 WHERE scid=$id";
+                $result = $this->Model->MysqliClass->query($query);
             }
             //echo $query;
         }

@@ -32,7 +32,7 @@ $(document).ready(function(){
                 $("body").append( script );
 
                 console.log(data);
-                $("body").append(123);
+                //$("body").append(123);
             }
         });
 
@@ -85,7 +85,26 @@ $(document).ready(function(){
             });
         }
 
-        });
+    });
+
+    $("#getHash").click(function () {
+        var strForHash = $("#strForHash").val();
+        var hashType = $("#hashType").val();
+        var cid = $_GET('cid');
+        if (strForHash !== undefined) {
+            $.ajax({
+                url: "./ajax.php",
+                type: "POST",
+                data: "page=campaigns&type=" + hashType + "&action=getHash&strForHash=" + strForHash + "&cid=" + cid,
+                success: function (data) {
+                    if (data !== undefined)
+                        $("body").append(data);
+
+                }
+            });
+        }
+
+    });
 
         $("#addServer").click(function(){
             var serverUrl=$("#serverUrl").val();
@@ -180,6 +199,24 @@ $(document).ready(function(){
                 url: "./ajax.php",
                 type: "POST",
                 data: "page=main&targetId=" + targetId + "&action=delete",
+                success: function (data) {
+                    console.log(data);
+                    if (data == 1) {
+                        row.fadeOut(500);
+                    }
+                }
+            });
+        }
+    });
+    $("body").on('click', '.deleteScn', function () {
+        var row = $(this).parents('.scanRow');
+        var scanId = row.data('scid');
+        console.log(scanId);
+        if (scanId !== undefined) {
+            $.ajax({
+                url: "./ajax.php",
+                type: "POST",
+                data: "page=main&scanId=" + scanId + "&action=delete",
                 success: function (data) {
                     console.log(data);
                     if (data == 1) {

@@ -204,6 +204,7 @@ class CampaignTabs
                                     <li class="active"><a href="#gl" data-toggle="tab">Scanner</a></li>
                                     <li><a href="#gg" data-toggle="tab">BRUTEFORCE</a></li>
                                     <li><a href="#nmap" data-toggle="tab">Nmap</a></li>
+                                    <li><a href="#hashMaker" data-toggle="tab">hashmaker</a></li>
 
                             </ul>
                             <br>
@@ -212,7 +213,6 @@ class CampaignTabs
                                 <div class="tab-pane fade" id="gg">
                                     <ul style="width: 300px" class="nav nav-pils nav-stacked">
                                             <li><a href="#gg1" data-toggle="tab">Wordpress</a></li>
-
                                     </ul>
                                 </div>
 
@@ -285,8 +285,6 @@ class CampaignTabs
                                 <div class="tab-pane fade" id="nmap">
                                     <form method="post" action="../scan.php" id="fileselect" class="navbar-form navbar-left">
                                         <div class="form-group">
-
-
                                             <select class="form-control" name="tid">
                                             <option selected="selected">Choose target</option>
                                             ' . $urls . '
@@ -306,6 +304,25 @@ class CampaignTabs
                                     </form>
                                 </div>
 
+                                <div class="tab-pane fade" id="hashMaker">
+
+                                        <div class="form-inline">
+
+                                            <select class="form-control" id="hashType" >
+                                                <option selected="quick">select hash type</option>
+                                                <option value="md5" >MD5</option>
+                                                <option value="sha1" >SHA-1</option>
+                                                <option value="wordpress3" >WordPress v3+</option>
+                                                <option value="mysqlOld" >Mysql old</option>
+                                                <option value="mysql" >Mysql</option>
+
+                                            </select>
+                                            <input id="strForHash" type="text" class="form-control" >
+                                            <button id="getHash" class="btn btn-default">getHash</button>
+                                        </div>
+
+                                </div>
+
                             </div>
                         </div>
                        ';
@@ -314,22 +331,14 @@ class CampaignTabs
     function getScansTab($cid)
     {
         //var_dump( $cid);
-        $query = "select * from targets RIGHT JOIN scans on targets.tid=scans.tid where cid=$cid order by dateScan desc";
+        $query = "select * from targets RIGHT JOIN scans on targets.tid=scans.tid where cid=$cid and scans.deleted=0 and targets.deleted=0 order by dateScan desc";
         $result = $this->Model->MysqliClass->getAssocArray($query);
-        //if (empty($result))
-        //    exit;
-
         $tbody = "<tbody>";
-
-
-        foreach ($result as $row) {
+        foreach ($result as $row)
             $tbody .= $this->getScansTableRow($row);
-
-        }
 
 
         $tbody .= "</tbody>";
-
         $this->allHtml .= '<div class="tab-pane fade" id="scansCampaign-tab">
                                       <div class="nav pol" id="scansCampaign">
                                           <table id="scansCampaignContent" class="table table-hover">
@@ -341,25 +350,20 @@ class CampaignTabs
                                                   <th>filename</th>
                                                   <th>Status</th>
                                                   <th></th>
-
                                               </tr>
                                               </thead>
-
                                           ' . $tbody . '
-
                                           </table>
                                         <button class="btn btn-default" data-toggle="collapse" data-target="#demo">Collapsible</button>
                                         <div id="demo" class="collapse">
                                         Some text..
                                         </div>
-
-
-                                         </div>
+                                        </div>
                             </div>
                             ';
-        //var_dump($this->allHtml);
 
     }
+
 
     function getScansTableRow(array $row)
     {
@@ -420,7 +424,7 @@ class CampaignTabs
 
     function getSubdomainScanDetails($scid)
     {
-        $foundPaths = $this->Model->MysqliClass->getAssocArray("select * from subdomain where scid=$scid ORDER BY resolve");
+        $foundPaths = $this->Model->MysqliClass->getAssocArray("select * from subdomain where scid=$scid ORDER BY resolve DESC");
 
         //var_dump($foundPaths);
         $goodPaths = "";
@@ -465,7 +469,7 @@ class CampaignTabs
     {
 
         $table = '<table class="table table-hover">';
-        $thead = '<thead><tr><th>path</th><th>httpcode</th></tr></thead>';
+        $thead = '<thead><tr><th>path</th><th>resolve</th></tr></thead>';
         //var_dump( $foundPaths);
         $tbody = '';
         //$httpcode=$path['httpcode'];
