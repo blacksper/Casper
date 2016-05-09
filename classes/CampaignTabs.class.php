@@ -197,6 +197,11 @@ class CampaignTabs
             }
         }
 
+        $hashesArr = $this->Model->MysqliClass->getAssocArray("SELECT * FROM hashes WHERE deleted=0");
+        if (!empty($hashesArr))
+            $hashContent = $this->getHashContentTable($hashesArr);
+        else
+            $hashContent = "pusto";
 
         $this->allHtml .= '
                         <div class="tab-pane fade" id="tools-tab">
@@ -304,28 +309,75 @@ class CampaignTabs
                                     </form>
                                 </div>
 
+
                                 <div class="tab-pane fade" id="hashMaker">
 
-                                        <div class="form-inline">
 
-                                            <select class="form-control" id="hashType" >
-                                                <option selected="quick">select hash type</option>
-                                                <option value="md5" >MD5</option>
-                                                <option value="sha1" >SHA-1</option>
-                                                <option value="wordpress3" >WordPress v3+</option>
-                                                <option value="mysqlOld" >Mysql old</option>
-                                                <option value="mysql" >Mysql</option>
+                                        <ul class="nav nav-pills ">
+                                            <li class="active"><a href="#hashesContent" data-toggle="tab">Hashes</a></li>
+                                            <li><a href="#hashesAdd" data-toggle="tab">add</a></li>
+                                        </ul>
+                                        <br>
 
-                                            </select>
-                                            <input id="strForHash" type="text" class="form-control" >
-                                            <button id="getHash" class="btn btn-default">getHash</button>
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade in active" id="hashesContent">
+                                            ' . $hashContent . '
                                         </div>
+                                        <div class="tab-pane fade" id="hashesAdd">
+                                            <div class="form-inline">
+                                                <select class="form-control" id="hashType" >
+                                                    <option selected="quick">select hash type</option>
+                                                    <option value="md5" >MD5</option>
+                                                    <option value="sha1" >SHA-1</option>
+                                                    <option value="wordpress3" >WordPress v3+</option>
+                                                    <option value="mysqlOld" >Mysql old</option>
+                                                    <option value="mysql" >Mysql</option>
+                                                </select>
+                                                <input id="strForHash" type="text" class="form-control" >
+                                                <button id="getHash" class="btn btn-default">getHash</button>
 
+                                            </div>
+
+                                        </div>
+                                    </div>
                                 </div>
 
                             </div>
                         </div>
                        ';
+    }
+
+    function getHashContentTable($hashesArr)
+    {
+        $table = '<table class="table table-hover">';
+        $thead = '<thead>
+                    <th>hash</th>
+                    <th>source</th>
+                    <th>type</th>
+                    <th></th>
+                </thead>';
+        $tbody = '<tbody>';
+
+        foreach ($hashesArr as $hash) {
+            $tbody .= $this->getHashContentTableRow($hash);
+        }
+        $tbody .= "</tbody>";
+        $table .= $thead . $tbody;
+        $table .= "</table>";
+        return $table;
+    }
+
+    function getHashContentTableRow($row)
+    {
+        $result = "";
+        $result .= "<tr>
+            <td>{$row['hash']}</td>
+            <td>{$row['source']}</td>
+            <td>{$row['type']}</td>
+            <td><button type='button' class='btn btn-danger btn-sm deleteScn'>
+                <span  class='glyphicon glyphicon-remove' aria-hidden='true'></span>
+            </button></td></tr>";
+        return $result;
     }
 
     function getScansTab($cid)

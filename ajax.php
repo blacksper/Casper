@@ -22,6 +22,7 @@ switch ($_POST['page']) {
                         $name = $_POST['campaignName'];
                         echo json_encode($Controller->addCampaign($name));
                     } elseif (isset($_POST['serverUrl'])) {
+                        $url = $_POST['serverUrl'];
                         echo json_encode($Controller->addServer($url));
                     }
 
@@ -107,7 +108,7 @@ switch ($_POST['page']) {
                         if (isset($_POST['cid'], $_POST['strForHash'], $_POST['type'])) {
                             $cid = $_POST['cid'];
 
-                            echo $CampaignsController->getHash($_POST['strForHash'], $_POST['type']);
+                            echo $CampaignsController->addHash($_POST['strForHash'], $_POST['type'], $cid);
                         }
                         break;
 

@@ -19,11 +19,10 @@ class CampaignsController
     public $CampaignViewer;
     public $Model;
 
-    //public $uid;
+    //public $cid;
 
     function __construct($cid = null)
     {
-
 
         $this->Model = new Model();
         if ($cid != null) {
@@ -36,6 +35,7 @@ class CampaignsController
             }
 
         }
+        // $this->cid=$cid;
         $this->CampaignViewer = new CampaignViewer($this->Model);
 
 
@@ -43,7 +43,7 @@ class CampaignsController
 
     function doRedirect()
     {
-        echo 123123;
+        //echo 123123;
         header("Location: ./index.php");
     }
 
@@ -105,9 +105,9 @@ class CampaignsController
     }
 
 
-    function getHash($str, $type)
+    function addHash($str, $type, $cid)
     {
-        if (!isset($str, $type))
+        if (!isset($str, $type, $cid))
             return 0;
         include "Hasher.class.php";
         $hasher = new Hasher();
@@ -127,10 +127,15 @@ class CampaignsController
             case "mysqlOld":
                 $hash = $hasher->mysqlOldHash($str);
                 break;
+            default:
+                exit;
         }
 
+        $uid = $this->Model->getUserId($_SESSION['username']);
+        $query = "INSERT INTO hashes(source,hash,type,uid,cid,deleted) VALUES('$str','$hash','$type',$uid,$cid,0) ";
+        //echo $query."\n";
+        $this->Model->MysqliClass->query($query);
         return $hash;
-
     }
 
 
