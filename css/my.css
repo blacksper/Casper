@@ -45,7 +45,7 @@ body {
     margin-top: 60px;
 }
 
-#campaignContent, #serverContent, #scansCampaignContent, #targetsContent, .nmaptable {
+#campaignContent, #serverContent, #scansCampaignContent, #targetsContent, .nmaptable, #hashesContent {
 
     background-color: #eee;
 }

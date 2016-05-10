@@ -87,19 +87,23 @@ $(document).ready(function(){
 
     });
 
-    $("#getHash").click(function () {
+    $("#addHash").click(function () {
         var strForHash = $("#strForHash").val();
         var hashType = $("#hashType").val();
         var cid = $_GET('cid');
-        if (strForHash !== undefined) {
+        if ((strForHash !== undefined) && (hashType !== undefined) && (cid !== undefined)) {
             $.ajax({
                 url: "./ajax.php",
                 type: "POST",
-                data: "page=campaigns&type=" + hashType + "&action=getHash&strForHash=" + strForHash + "&cid=" + cid,
+                data: "page=campaigns&type=" + hashType + "&action=addHash&strForHash=" + strForHash + "&cid=" + cid,
                 success: function (data) {
-                    if (data !== undefined)
-                        $("body").append(data);
-
+                    if (data !== undefined) {
+                        qwe = JSON.parse(data);
+                        htmll = $.parseHTML(qwe);
+                        //htmll.addClass("success");
+                        //$("#hashesContent tbody").append(htmll);
+                        $(htmll).addClass('success').prependTo('#hashesContent tbody');
+                    }
                 }
             });
         }

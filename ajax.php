@@ -104,8 +104,9 @@ switch ($_POST['page']) {
                             echo $CampaignsController->CampaignViewer->Tabs->getScanDetails($scid);
                         }
                         break;
-                    case "getHash":
+                    case "addHash":
                         if (isset($_POST['cid'], $_POST['strForHash'], $_POST['type'])) {
+                            //echo 123;
                             $cid = $_POST['cid'];
 
                             echo $CampaignsController->addHash($_POST['strForHash'], $_POST['type'], $cid);

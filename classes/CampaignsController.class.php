@@ -135,7 +135,9 @@ class CampaignsController
         $query = "INSERT INTO hashes(source,hash,type,uid,cid,deleted) VALUES('$str','$hash','$type',$uid,$cid,0) ";
         //echo $query."\n";
         $this->Model->MysqliClass->query($query);
-        return $hash;
+        $result = $this->CampaignViewer->Tabs->getHashContentTableRow(array("hash" => $hash, "source" => $str, "type" => $type));
+
+        return json_encode($result);
     }
 
 

@@ -197,7 +197,7 @@ class CampaignTabs
             }
         }
 
-        $hashesArr = $this->Model->MysqliClass->getAssocArray("SELECT * FROM hashes WHERE deleted=0");
+        $hashesArr = $this->Model->MysqliClass->getAssocArray("SELECT * FROM hashes WHERE deleted=0 ORDER BY dateAdd DESC");
         if (!empty($hashesArr))
             $hashContent = $this->getHashContentTable($hashesArr);
         else
@@ -314,13 +314,13 @@ class CampaignTabs
 
 
                                         <ul class="nav nav-pills ">
-                                            <li class="active"><a href="#hashesContent" data-toggle="tab">Hashes</a></li>
+                                            <li class="active"><a href="#hashesTab" data-toggle="tab">Hashes</a></li>
                                             <li><a href="#hashesAdd" data-toggle="tab">add</a></li>
                                         </ul>
                                         <br>
 
                                     <div class="tab-content">
-                                        <div class="tab-pane fade in active" id="hashesContent">
+                                        <div class="tab-pane fade in active" id="hashesTab">
                                             ' . $hashContent . '
                                         </div>
                                         <div class="tab-pane fade" id="hashesAdd">
@@ -334,7 +334,7 @@ class CampaignTabs
                                                     <option value="mysql" >Mysql</option>
                                                 </select>
                                                 <input id="strForHash" type="text" class="form-control" >
-                                                <button id="getHash" class="btn btn-default">getHash</button>
+                                                <button id="addHash" class="btn btn-default">getHash</button>
 
                                             </div>
 
@@ -349,7 +349,7 @@ class CampaignTabs
 
     function getHashContentTable($hashesArr)
     {
-        $table = '<table class="table table-hover">';
+        $table = '<table class="table table-hover" id="hashesContent">';
         $thead = '<thead>
                     <th>hash</th>
                     <th>source</th>
@@ -370,7 +370,7 @@ class CampaignTabs
     function getHashContentTableRow($row)
     {
         $result = "";
-        $result .= "<tr>
+        $result .= "<tr class='hashRow'>
             <td>{$row['hash']}</td>
             <td>{$row['source']}</td>
             <td>{$row['type']}</td>
