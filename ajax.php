@@ -95,8 +95,13 @@ switch ($_POST['page']) {
 
                         break;
 
-                    case "getsubinfo":
+                    case "getNote":
+                        if (isset($_POST['tid'])) {
+                            $tid = (int)$_POST['tid'];
+                            echo $CampaignsController->CampaignViewer->Tabs->getNote($tid);
+                        }
 
+                        break;
                     case "getScanDetails":
                         if (isset($_POST['scid'])) {
                             $scid = $_POST['scid'];
@@ -113,6 +118,16 @@ switch ($_POST['page']) {
                         }
                         break;
 
+                    case "saveNote":
+                        if (isset($_POST['tid'], $_POST['note'])) {
+                            //echo 123;
+                            $tid = $_POST['tid'];
+                            $note = htmlspecialchars($_POST['note']);
+
+                            echo $CampaignsController->saveNote($tid, $note);
+                        }
+                        break;
+
                 }
 
             }
@@ -121,56 +136,3 @@ switch ($_POST['page']) {
         break;
 
 }
-
-
-
-
-
-/*
-if(isset($_POST['targetUrl'])&&isset($_POST['add'])){
-    $url=$_POST['targetUrl'];
-    //$type=$_POST['sname'];
-    echo json_encode($Controller->addTarget($url));
-}
-
-if(isset($_POST['serverUrl'])&&isset($_POST['add'])){
-    $url=$_POST['serverUrl'];
-    echo json_encode($Controller->addServer($url));
-}
-
-if(isset($_POST['serverId'])&&isset($_POST['refresh'])){
-    $sid=$_POST['serverId'];
-    echo json_encode($Controller->refreshStatus($sid));
-}
-*/
-
-
-
-
-
-
-/*
-
-if(isset($_POST['cid'])&&$_POST['action']=='ref'){
-    $cid=$_POST['cid'];
-
-    $result=$serverC->CheckClient($cid);
-    echo $result;
-    die();
-}
-
-if(isset($_POST['cid'])&&$_POST['action']=='del'){
-    $cid=$_POST['cid'];
-    $result=$serverC->DeleteClient($cid);
-    echo $result;
-}
-
-
-
-if(isset($_POST['sname'])&&$_POST['action']=='add'){
-    $url=$_POST['sname'];
-    $type=$_POST['sname'];
-    $result=$serverC->AddServer($url,$type);
-    echo $result;
-}
-*/

@@ -149,8 +149,8 @@ $(document).ready(function(){
                             decodeData=JSON.parse(data);
                             row.find('.ip').text(decodeData['ip']);
                             row.find('.status').text(decodeData['statusArr']['stmsg']);
-                            row.find('.status').removeClassWild("btn-*");
-                            row.find('.status').addClass(decodeData['statusArr']['status']);
+                            row.find('.status').removeClassWild(" *");
+                            row.find('.status').addClass(decodeData['statusArr']['status'] + " 1");
                         }
                     }
                 });
@@ -229,7 +229,36 @@ $(document).ready(function(){
                 }
             });
         }
-        });
+    });
+
+    $("body").on('click', '#saveNote', function () {
+        var note = $("#noteText").val();
+        var targetId = $(this).data('tid');
+        //var targetId = row.data('tid');
+        console.log(targetId);
+        if (targetId !== undefined) {
+            $.ajax({
+                url: "./ajax.php",
+                type: "POST",
+                data: "page=campaigns&tid=" + targetId + "&action=saveNote&note=" + note,
+                success: function (data) {
+                    if (data == 1) {
+                        if ($("#sohr").html() !== undefined) {
+                            $('#sohr').fadeOut(500);
+                            $('#sohr').fadeIn(500);
+                        } else {
+
+                            $('.modal-footer').append("<div id='sohr'><p style='font-size: 18px' class='text-success text-left'>Сохранено</p></div>");
+                        }
+
+                        console.log(data);
+                    }
+
+                }
+            });
+        }
+    });
+
 
 
 
@@ -238,12 +267,7 @@ $(document).ready(function(){
         $("#myAlert").addClass("in");
     }
 
-    /*$(".url a").click(function(){
-        alert("work");
-        showAlert();
-    });*/
 
-    //$('tr>td.url a').click(function(){
 
     $("body").on('click', 'tr>td.dateScan a', function () {
         var status = $(this).parents('tr.scanRow').find('span').attr("value");
@@ -271,22 +295,25 @@ $(document).ready(function(){
         }
     });
 
-    $("boddy").on('click', 'tr>td.dateScan a', function () {
-        //alert(123);
+    $("body").on('click', '.editNote', function () {
+        var tid = ($(this).parents('tr.targetRow').data("tid"));
+        //var status = $(this).parents('tr.scanRow').find('span').attr("value");
+        console.log(tid);
+
         if ($('#myModal').html() == undefined) {
             $('body').append("<div id='myModal' class='modal fade' tabindex='-1' role='dialog' aria-labelledby='myLargeModalLabel'>" +
-                "<div class='modal-dialog modal-lg'>" +
+                "<div class='modal-dialog modal-md'>" +
 
                 "</div>" +
                 "</div>");
         }
-        var tid = ($(this).parents('tr.targetRow').data("tid"));
+
             $.ajax({
                 url: "ajax.php",
                 type: "POST",
-                data: "action=getsubinfo&tid=" + tid,
+                data: "page=campaigns&action=getNote&tid=" + tid,
                 success: function (data) {
-                    $('.modal-dialog').html(data);
+                    $('.modal-dialog').html(JSON.parse(data));
                     $('#myModal').modal();
                 }
             });

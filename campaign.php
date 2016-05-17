@@ -9,7 +9,7 @@
 include "./classes/CampaignsController.class.php";
 
 if (isset($_GET['cid'])) {
-    $cid = $_GET['cid'];
+    $cid = (int)$_GET['cid'];
     $v = new CampaignsController();
     include "header.php";
     $v->CampaignViewer->buildPage($cid);

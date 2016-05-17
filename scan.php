@@ -6,6 +6,7 @@
  * Time: 15:34
  */
 session_start();
+require($_SERVER['DOCUMENT_ROOT'] . "/config.php");
 include "./classes/Tools.class.php";
 isset($_POST['action'])?$action=$_POST['action']:$action="";
 
@@ -22,28 +23,33 @@ if (isset($_POST['tid'], $_POST['action'])) {
         case "dirScan":
         case "subdomainScan":
             if (isset($_POST['filename'])) {
-
+                //echo 123;
                 //$sid = (int)$_POST['sid'];
                 $filename = $_POST['filename'];
-                $Tools->startScan($tid, $sid, $filename, $action);
+                $Tools->startScanPath($action, $filename, $tid, $sid);
             }
 
             break;
         case "brute":
-            $str = array();
-            $str[12]['url'] = "http://pavvvka.tw1.su/wp-login.php";
-            $str[12]['logins'] = file("logins.txt");
-            $str[12]['passwords'] = file("passwords.txt");
-            $str[12]['action'] = "brute";
+            if (($sid == 0) || ($tid == 0))
+                return 0;
+            $loginfile = $_POST['loginfile'];
+            $passwordfile = $_POST['passwordfile'];
 
-            echo json_encode($str);
+            if (!isset($loginfile, $passwordfile))
+                return 0;
 
+            $Tools->startBruteforce($loginfile, $passwordfile, $tid, $sid);
 
             break;
 
         case "nmap":
             if (isset($_POST['option']))
                 $Tools->startNmap($tid, $sid, $_POST['option']);
+            break;
+
+        case "gitdump":
+            $Tools->gitDump($tid, $sid, $action);
             break;
 
 

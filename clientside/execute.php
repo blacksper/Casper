@@ -21,6 +21,7 @@ fclose($fp);
 //die();
 
 
+include("Main.class.php");
 include("dirScan.class.php");
 include("subdomainScan.class.php");
 
@@ -34,14 +35,14 @@ if(!empty($ar)) {
         $action = $b['action'];
         switch ($action) {
             case "dirScan":
+                //echo 123123;
                 if (isset($b['url'])) {
                     //echo "here";
                     $target = $b['url'];
-                    //$scid = $b['scid'];
                     $urls = $b['data'];
                     // echo "start scan";
                     $dirscanC = new DirScan($target, $scid);
-                    $dirscanC->scan($urls);
+                    $dirscanC->startScan($urls);
                 }
                 break;
             case "subdomainScan":
@@ -49,7 +50,7 @@ if(!empty($ar)) {
                 $target = $b['url'];
                 $subdomains = $b['data'];
                 $subdomainC=new SubdomainScanClass($target,$scid);
-                $subdomainC->scan($subdomains);
+                $subdomainC->startScan($subdomains);
 
                 break;
 
@@ -57,14 +58,14 @@ if(!empty($ar)) {
                 include("Bruteforce.class.php");
                 // echo 12;
                 $target = $b['url'];
-                $passwords = $b['passwords'];
-                $logins = $b['logins'];
+                $source = $b['data'];
+                //$logins = $b['logins'];
                 //var_dump($passwords);
                 //var_dump($logins);
                 //die();
 
                 $subdomainC = new Bruteforce($target, $scid);
-                $subdomainC->startBruteforce($logins, $passwords);
+                $subdomainC->startScan($source);
 
                 break;
 

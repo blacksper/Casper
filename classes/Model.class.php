@@ -9,6 +9,8 @@
 //include("ViewerServer.class.php");
 //include("Mysql.class.php");
 include("Mysqli.class.php");
+
+//include("config.php");
 class Model{
 
    // var $Model;

@@ -165,7 +165,7 @@ body {
     max-width: 600px;
 }
 
-.deleteCmp, .deleteTgt, .deleteScn {
+.deleteCmp, .deleteTgt, .deleteScn, .editNote {
     font-size: 10px;
 }
 
@@ -183,4 +183,20 @@ body {
 
 .other {
     background-color: #C6414D;
+}
+
+table#scansCampaignContent {
+
+}
+
+.navbar-form select.form-control.options {
+
+    width: 100px;
+
+}
+
+.navbar-form select.form-control.servers {
+
+    width: 400px;
+
 }

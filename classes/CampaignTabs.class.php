@@ -38,7 +38,7 @@ class CampaignTabs
 
         $f .= "</div>";
 
-        $f .= "<div class='col-md-4'> <textarea id='targetsArea' class='form-control custom-control'></textarea><button id='addTargets' style='float: right;margin-top: 10px;' class='btn btn-success'>Добавить цели</button></div></div>";
+        $f .= "<div class='col-md-4'> <textarea placeholder='target list...' id='targetsArea' class='form-control custom-control'></textarea><button id='addTargets' style='float: right;margin-top: 10px;' class='btn btn-success'>Добавить цели</button></div></div>";
 
         $tmpHtml = '<div class="tab-pane fade in active" id="mainCampaign-tab">
                                     ' . $f . '
@@ -54,8 +54,8 @@ class CampaignTabs
             <thead>
             <tr>
             <th>Url</th>
-            <th>info</th>
-            <th>btns</th>
+
+            <th></th>
             </tr>
             </thead>
             <tbody>";
@@ -69,12 +69,16 @@ class CampaignTabs
 
     function getMainTableRow($row)
     {
-        $btns = '<button type="button" class="btn btn-danger btn-sm deleteTgt">
+        $btns = '<div class="btn-group btns">
+                            <button type="button" class="btn btn-warning btn-sm editNote">
+                            <span  class="glyphicon glyphicon-pencil" aria-hidden="true">
+                            </span></button>
+                            <button type="button" class="btn btn-danger btn-sm deleteTgt">
                             <span  class="glyphicon glyphicon-remove" aria-hidden="true">
-                            </span>
-                        </button>';
+                            </span></button>
+                 </div>';
 
-        $result = "<tr class='targetRow' data-tid='{$row['tid']}'><td>{$row['url']}</td><td>{$row['ip']}</td><td>$btns</td></tr>";
+        $result = "<tr class='targetRow' data-tid='{$row['tid']}'><td>{$row['url']}</td><td>$btns</td></tr>";
         return $result;
     }
 
@@ -190,8 +194,9 @@ class CampaignTabs
             }
         }
 
-        $urlsArr = $this->Model->MysqliClass->getAssocArray("select sid,path from servers where deleted=0");
+        $urlsArr = $this->Model->MysqliClass->getAssocArray("SELECT sid,path FROM servers WHERE deleted=0 AND sid>0");
         if ($urlsArr) {
+            //each($urlsArr);
             foreach ($urlsArr as $url) {
                 $servers .= '<option value="' . $url['sid'] . '">' . $url['path'] . '</option>';
             }
@@ -210,6 +215,7 @@ class CampaignTabs
                                     <li><a href="#gg" data-toggle="tab">BRUTEFORCE</a></li>
                                     <li><a href="#nmap" data-toggle="tab">Nmap</a></li>
                                     <li><a href="#hashMaker" data-toggle="tab">hashmaker</a></li>
+                                    <li><a href="#gitDumper" data-toggle="tab">gitDumper</a></li>
 
                             </ul>
                             <br>
@@ -225,7 +231,7 @@ class CampaignTabs
                                 <div class="tab-pane fade" id="gg1">
                                     <h1>Wordpress</h1>
 
-                                    <form method="post" action="../cp.php" id="fileselect" class="navbar-form navbar-left">
+                                    <form method="post" action="../scan.php" id="fileselect" class="navbar-form navbar-left">
                                         <div class="form-group">
 
 
@@ -249,7 +255,8 @@ class CampaignTabs
                                             ' . $servers . '
                                             </select>
 
-                                            <input type="submit" name="brute" class="btn btn-default">
+                                            <input type="submit" name="sub" class="btn btn-default">
+                                            <input type="hidden" name="action" value="brute" class="btn btn-default">
                                         </div>
                                     </form>
 
@@ -270,20 +277,21 @@ class CampaignTabs
                                             <option selected="selected">Choose your file</option>
                                             ' . $dirs . '
                                             </select>
-                                            <select class="form-control" name="action" >
+                                            <select class="form-control options" name="action" >
                                                 <option selected="selected">Option</option>
                                                 <option value="dirScan" >path</option>
-                                                <option>url param</option>
                                                 <option value="subdomainScan">subdomain</option>
                                             </select>
+                                        </div>
 
-                                            <select class="form-control" name="sid">
-                                            <option selected="selected">Choose server</option>
+                                            <p><p><h4>servers:</h4></p><select class="form-control servers" name="sid[]" multiple="multiple">
+
                                             ' . $servers . '
-                                            </select>
+                                            </select></p>
+
 
                                             <input type="submit" class="btn btn-default">
-                                        </div>
+
                                     </form>
                                 </div>
 
@@ -383,7 +391,7 @@ class CampaignTabs
     function getScansTab($cid)
     {
         //var_dump( $cid);
-        $query = "select * from targets RIGHT JOIN scans on targets.tid=scans.tid where cid=$cid and scans.deleted=0 and targets.deleted=0 order by dateScan desc";
+        $query = "select * from targets RIGHT JOIN scans on targets.tid=scans.tid where cid=$cid and scans.deleted=0 and targets.deleted=0 group by scid order by dateScan desc";
         $result = $this->Model->MysqliClass->getAssocArray($query);
         $tbody = "<tbody>";
         foreach ($result as $row)
@@ -432,9 +440,9 @@ class CampaignTabs
                     {$row['url']}
                     </td>
 
-                    <td>{$row['filename']}</td>
-                    <td>" . (($row['status'] == 1) ? $finished : $proccessed) . "</td>
-                    <td><button type='button' class='btn btn-danger btn-sm deleteScn'>
+                    <td class='filename'><a  data-toggle='tooltip' data-placement='top' title='{$row['filename']}'>?</a></td>
+                    <td class='col-md-2'>" . (($row['status'] == 1) ? $finished : $proccessed) . "</td>
+                    <td ><button type='button' class='btn btn-danger btn-sm deleteScn'>
                             <span  class='glyphicon glyphicon-remove' aria-hidden='true'>
                             </span>
                         </button></td>
@@ -465,8 +473,13 @@ class CampaignTabs
                 $result = $this->getDirScanDetails($scid);
                 break;
             case "nmap":
-
                 $result = $this->getNmapDetails($scid);
+                break;
+            case "brute":
+                $result = $this->getBruteDetails($scid);
+                break;
+            case "gitdump":
+                $result = $this->getGitdumpDetails($scid);
                 break;
         }
 
@@ -477,8 +490,7 @@ class CampaignTabs
     function getSubdomainScanDetails($scid)
     {
         $foundPaths = $this->Model->MysqliClass->getAssocArray("select * from subdomain where scid=$scid ORDER BY resolve DESC");
-
-        //var_dump($foundPaths);
+        $testedUrl = $this->Model->MysqliClass->firstResult("select url from scans left JOIN targets on scans.tid=targets.tid where scid=$scid")['url'];
         $goodPaths = "";
         if (empty($foundPaths)) {
             $goodPaths = '<div class="alert alert-warning">
@@ -491,7 +503,7 @@ class CampaignTabs
         $result = '<div class="modal-content">
                           <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="gridSystemModalLabel">123456</h4>
+                            <h4 class="modal-title" id="gridSystemModalLabel">' . $testedUrl . '</h4>
                           </div>
                           <div class="modal-body">
                             <ul style="width: 300px" class="qwe nav nav-pills" >
@@ -510,10 +522,6 @@ class CampaignTabs
                             </div>
                     </div>
                 ';
-        //echo $result[$row['tid']];
-        //}
-        //echo (($wwsd[$row['tid']])? "beach":"treach");
-        //print_r($result);
         return $result;
     }
 
@@ -541,7 +549,8 @@ class CampaignTabs
     function getDirScanDetails($scid)
     {
         $foundPaths = $this->Model->MysqliClass->getAssocArray("select * from pathfound where scid=$scid order by httpcode asc");
-
+        //echo "select * from pathfound where scid=$scid order by httpcode asc\n";
+        $testedUrl = $this->Model->MysqliClass->firstResult("select url from scans left JOIN targets on scans.tid=targets.tid where scid=$scid")['url'];
         //var_dump($foundPaths);
         $goodPaths = "";
         if (empty($foundPaths)) {
@@ -552,8 +561,6 @@ class CampaignTabs
             $goodPaths = $this->getDirScanTable($foundPaths);
         }
 
-        //$res = $this->Model->MysqliClass->firstResult("select * from pathfound where scid=$scid where httpcode=404");
-        //$res = $this->Model->MysqliClass->firstResult("select * from pathfound where scid=$scid where httpcode=200");
 
         $childs = "";//$this->getSubInfoChilds($tid);
 
@@ -561,18 +568,15 @@ class CampaignTabs
         $result = '<div class="modal-content">
                           <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="gridSystemModalLabel">123456</h4>
+                            <h4 class="modal-title" id="gridSystemModalLabel">' . $testedUrl . '</h4>
                           </div>
                           <div class="modal-body">
                             <ul style="width: 300px" class="qwe nav nav-pills" >
                                 <li class="active"><a  href="#found" data-toggle="tab">Found</a></li>
-                                <li><a  href = "#notFound" data-toggle = "tab" > Not Found </a></li >
-                                <li><a  href = "#forbidden" data-toggle = "tab" > Forbidden </a></li >
+
                             </ul >
                             <p>
                                 <div class="tab-content" >
-
-
 
                                         <div class="tab-pane fade in active" id="found"  >
                                         ' . $goodPaths . ' </div>
@@ -587,10 +591,7 @@ class CampaignTabs
                             </div>
                     </div>
                 ';
-        //echo $result[$row['tid']];
-        //}
-        //echo (($wwsd[$row['tid']])? "beach":"treach");
-        //print_r($result);
+
         return $result;
     }
 
@@ -619,7 +620,8 @@ class CampaignTabs
     {
         $query = "select * from nmap where scid=$scid";
         $foundHosts = $this->Model->MysqliClass->getAssocArray($query);
-        //var_dump($foundHosts);
+        $testedUrl = $this->Model->MysqliClass->firstResult("select url from scans left JOIN targets on scans.tid=targets.tid where scid=$scid")['url'];
+
 
         if (empty($foundHosts)) {
             //var_dump("watafuck");
@@ -634,7 +636,7 @@ class CampaignTabs
         $result = '<div class="modal-content">
                           <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="gridSystemModalLabel">123456</h4>
+                            <h4 class="modal-title" id="gridSystemModalLabel">' . $testedUrl . '</h4>
                           </div>
                           <div class="modal-body">
                             <ul style="width: 300px" class="qwe nav nav-pills" >
@@ -652,10 +654,7 @@ class CampaignTabs
                             </div>
                     </div>
                 ';
-        //echo $result[$row['tid']];
-        //}
-        //echo (($wwsd[$row['tid']])? "beach":"treach");
-        //print_r($result);
+
         return $result;
 
     }
@@ -675,6 +674,129 @@ class CampaignTabs
             <td class="nmapservice"><span >' . $path['service'] . '</span></td>
             <td class="nmapversion"><span >' . $path['version'] . '</span></td>
 
+
+            </tr>';
+
+        }
+        $table .= $thead . $tbody . "</table>";
+
+        return $table;
+    }
+
+    function getBruteDetails($scid)
+    {
+
+        $combs = $this->Model->MysqliClass->getAssocArray("select * from bruteforce where scid=$scid");
+        $testedUrl = $this->Model->MysqliClass->firstResult("select url from scans left JOIN targets on scans.tid=targets.tid where scid=$scid")['url'];
+        $combsCont = "";
+        //print_r($combs);
+        if (empty($combs)) {
+            $combsCont = '<div class="alert alert-warning">
+                            <strong>Пусто</strong>
+                       </div>';
+        } else {
+            $combsCont = $this->getBruteforceTable($combs);
+        }
+
+        $result = '<div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="gridSystemModalLabel">' . $testedUrl . '</h4>
+                          </div>
+                          <div class="modal-body">
+                            <ul style="width: 300px" class="qwe nav nav-pills" >
+                                <li class="active"><a  href="#found" data-toggle="tab">Valid</a></li>
+                            </ul >
+                            <p>
+                                <div class="tab-content" >
+                                        <div class="tab-pane fade in active" id="found"  >
+                                        ' . $combsCont . ' </div>
+
+
+                                </div >
+                            </p>
+                            </div>
+                    </div>
+                ';
+        return $result;
+
+
+    }
+
+    function getBruteforceTable($combs)
+    {
+
+        $table = '<table class="table table-hover">';
+        $thead = '<thead><tr><th>login</th><th>password</th></tr></thead>';
+        //var_dump( $foundPaths);
+        $tbody = '';
+        //$httpcode=$path['httpcode'];
+        foreach ($combs as $comb) {
+            $tbody .= '<tr class="success">
+            <td>' . $comb['login'] . '</td>
+            <td class="httpcode"><span >' . $comb['password'] . '</span></td>
+
+            </tr>';
+
+        }
+        $table .= $thead . $tbody . "</table>";
+
+        return $table;
+    }
+
+    function getGitdumpDetails($scid)
+    {
+
+        $files = $this->Model->MysqliClass->getAssocArray("select * from gitdump where scid=$scid");
+        $testedUrl = $this->Model->MysqliClass->firstResult("select url from scans left JOIN targets on scans.tid=targets.tid where scid=$scid")['url'];
+        $combsCont = "";
+        //print_r($files);
+        if (empty($files)) {
+            $combsCont = '<div class="alert alert-warning">
+                            <strong>Пусто</strong>
+                       </div>';
+        } else {
+            $combsCont = $this->getGitdumpTable($files, $testedUrl);
+        }
+
+        $result = '<div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="gridSystemModalLabel">' . $testedUrl . '</h4>
+                          </div>
+                          <div class="modal-body">
+                            <ul style="width: 300px" class="qwe nav nav-pills" >
+                                <li class="active"><a  href="#found" data-toggle="tab">Valid</a></li>
+                            </ul >
+                            <p>
+                                <div class="tab-content" >
+                                        <div class="tab-pane fade in active" id="found"  >
+                                        ' . $combsCont . ' </div>
+
+
+                                </div >
+                            </p>
+                            </div>
+                    </div>
+                ';
+        return $result;
+
+
+    }
+
+    function getGitdumpTable($files, $testedUrl)
+    {
+
+        $table = '<table class="table table-hover">';
+        $thead = '<thead><tr><th>filename</th><th>filepath</th></tr></thead>';
+        //var_dump( $foundPaths);
+        $tbody = '';
+        //$httpcode=$path['httpcode'];
+        foreach ($files as $file) {
+            $tbody .= '<tr class="success">
+            <td>' . $testedUrl . $file['filename'] . '</td>
+            <td>' . $file['filepath'] . '</td>
+            <td class="httpcode"><span >' . $file['exist'] . '</span></td>
 
             </tr>';
 
@@ -795,5 +917,32 @@ class CampaignTabs
 
         return $result;
     }
+
+    function getNote($tid)
+    {
+        $query = "select note from targets where tid=$tid and deleted=0";
+        $note = $this->Model->MysqliClass->firstResult($query)['note'];
+        if (!$note)
+            $result = 0;
+        $result = "<div class='modal-content'>
+                    <div class='modal-header'>
+                        <div class='form-group'>
+                          <label for='Comment'>Заметка:</label>
+                        </div>
+                        <div class='modal-body'>
+                            <textarea class='form-control' rows='5' id='noteText'>$note</textarea>
+                        </div>
+                        <div class='modal-footer'>
+                           <button id='saveNote' style='float: right;' class='btn btn-success' data-tid='$tid'>Сохранить</button>
+                        </div>
+                     </div>
+                </div>";
+
+
+        $result = json_encode($result);
+        return $result;
+
+    }
+
 
 }

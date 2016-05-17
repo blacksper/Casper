@@ -7,7 +7,7 @@
  * Time: 22:45
  */
 
-require($_SERVER['DOCUMENT_ROOT'] . "/config.php");
+
 //include("Mysqli.class.php");
 include("Tabs.class.php");
 

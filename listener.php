@@ -8,9 +8,11 @@
 //echo 123123123;
 ignore_user_abort(1);
 set_time_limit(0);
-include './classes/Mysqli.class.php';
-$mysqliClass=new MysqliClass();
 
+include './classes/ProcessingController.class.php';
+$ProcessingClass = new ProcessingController();
+if (!isset($_POST['result']))
+    exit;
 $results=json_decode($_POST['result'],1);
 //$scanType=$results['scanType'];
 //echo $_POST['result'];
@@ -27,63 +29,28 @@ $date=date('Y-m-d H:i:s');
 
 
 //if($scanType=="subdomainScan")
-foreach ($results as $scid => $result) {
-    $scanType = $result['scanType'];
+foreach ($results as $scid => $results) {
+    //echo 123;
+    $query = "select * from scans where scid=$scid";
+    echo $query;
+    $scanType = $ProcessingClass->firstResult($query)['type'];
+
 
     switch ($scanType) {
         case "dirScan":
-            $queryStart = "INSERT INTO pathfound(scid,url,httpcode,dateResult) VALUES";
-            $query = $queryStart;
-            $i = 0;
-            foreach ($result as $infoArr) {
-                $query .= "($scid,'{$infoArr['url']}','{$infoArr['httpcode']}','$date'),";
-                $i++;
-                if ($i == 100) {
-                    $i = 0;
-                    $query = substr($query, 0, -1);
-                    $query .= " ON DUPLICATE KEY UPDATE httpcode=values(httpcode)";
-                    echo $query . "\n";
-                    $mysqliClass->query($query);
-                    $query = $queryStart;
-                }
-            }
-            $query = substr($query, 0, -1);
-            $query .= " ON DUPLICATE KEY UPDATE httpcode=values(httpcode)";
-            $mysqliClass->query($query);
-            $query = "update scans set status=1 where scid=$scid";
-            echo $query . "\n";
-            $mysqliClass->query($query);
+            $ProcessingClass->dirScanProc($results, $scid);
             break;
 
         case "subdomainScan":
-            $queryStart = "INSERT INTO subdomain(scid,subdomain,resolve,dateResult) VALUES";
-            $query = $queryStart;
-            $i = 0;
-
-            foreach ($result['data'] as $infoArr) {
-                //var_dump($result['data']);
-                //die();
-                $resolve = intval($infoArr['resolve']);
-                $query .= "($scid,'{$infoArr['subdomain']}',{$resolve},'$date'),";
-                $i++;
-                if ($i == 100) {
-                    $i = 0;
-                    $query = substr($query, 0, -1);
-                    //$query.=" ON DUPLICATE KEY UPDATE httpcode=values(httpcode)";
-                    echo $query . "\n";
-                    $mysqliClass->query($query);
-                    $query = $queryStart;
-                }
-            }
-
-            $query = substr($query, 0, -1);
-            $mysqliClass->query($query);
-            $query = "update scans set status=1 where scid=$scid";
-            echo $query . "\n";
-            $mysqliClass->query($query);
-
+            $ProcessingClass->subDomainScanProc($results, $scid);
             break;
 
+        case "brute":
+            $ProcessingClass->bruteForceProc($results, $scid);
+
+            break;
+        default:
+            exit;
     }
 
 

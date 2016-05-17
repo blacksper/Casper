@@ -8,55 +8,56 @@
  */
 //ignore_user_abort(1);
 //set_time_limit(0);
-class DirScan
+class DirScan extends Main
 {
     //public $MysqliClass;
 
     //function __construct($MysqliClass){
     //    $this->MysqliClass=$MysqliClass;
     //}
-    var $target;
+
     var $size404;
     var $httpCode404;
-    var $ch;
-    var $scid;
 
-    function __construct($target,$scid){
-        $this->target=$target;
-        $this->ch=curl_init();
-        $this->scid=$scid;
-        print_r($this);
-        //echo 123;
-    }
 
-    function scan($urls)
+    var $https;
+
+//    function __construct($target,$scid){
+//        $this->target=$target;
+//        $this->ch=curl_init();
+//        $this->scid=$scid;
+//
+//
+//    }
+
+    function startScan($urls)
     {
         $this->find404();
         file_put_contents(rand(1, 199999), "w");
-        //exit();
-        $result = array();
-        $result[$this->scid] = array();
-        $result["scanType"] = "scanType";
-
+        //echo 321;
         if ($this->httpCode404 == 0)
-            return $result;
+            return $this->result;
+        //echo 123;
         $ch = $this->ch;
         curl_setopt($ch, CURLOPT_URL, $this->target);
         //curl_setopt($ch,CURLOPT_POST,true);
         //curl_setopt($ch,CURLOPT_TIMEOUT,5);
-        //curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        //curl_setopt($ch, CURLOPT_NOBODY, true);
-        $vara = "";
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_NOBODY, true);
+        if ($this->https) {
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+        }
 
         $i = 0;
         $fp = fopen(rand(1000, 200000) . '.txt', 'a+');
+        //echo 123123;
         foreach ($urls as $url) {
             $i++;
             fwrite($fp, "$i\n");
 
-
             $url = trim($url);
-            $u = $this->target . $url;
+            $u = $this->target . "/" . $url;
             echo $u . "\n";
             if (substr($u, -1) !== "/")
                 $u .= "/";
@@ -64,23 +65,23 @@ class DirScan
             curl_exec($ch);
             $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
             $length = curl_getinfo($ch, CURLINFO_CONTENT_LENGTH_DOWNLOAD);
-            //print_r(array("url"=>$url,"httpcode"=>$code,"length"=>$length));
-            //if(($code!=$this->httpCode404)&&($this->size404!==$length))
-            array_push($result[$this->scid], array("url" => $url, "httpcode" => $code, "length" => $length));
-            //echo $hd;
+            array_push($this->result[$this->scid], array("url" => $url, "httpcode" => $code, "length" => $length));
         }
 
-        echo $result = json_encode($result);
+        //echo $result = json_encode($this->result);
 
         fclose($fp);
+        $this->sendResults();
 
-        curl_setopt($ch, CURLOPT_URL, "http://casper.localhost/listener.php");
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, "result=$result");
-        curl_setopt($ch, CURLOPT_TIMEOUT_MS, 100);
-        //echo $result;
-        //curl_setopt($ch, CURLOPT_NOBODY, false);
-        curl_exec($ch);
+        //print_r($this->result);
+
+//        curl_setopt($ch, CURLOPT_URL, "http://casper.localhost/listener.php");
+//        curl_setopt($ch, CURLOPT_POST, true);
+//        curl_setopt($ch, CURLOPT_POSTFIELDS, "result=$result");
+//        curl_setopt($ch, CURLOPT_TIMEOUT_MS, 100);
+//        //echo $result;
+//        //curl_setopt($ch, CURLOPT_NOBODY, false);
+//        curl_exec($ch);
         //echo curl_getinfo($this->ch,CURLINFO_HTTP_CODE);
 
     }
@@ -90,6 +91,10 @@ class DirScan
         curl_setopt($this->ch,CURLOPT_TIMEOUT,5);
         curl_setopt($this->ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($this->ch, CURLOPT_NOBODY, true);
+        if ($this->https) {
+            curl_setopt($this->ch, CURLOPT_SSL_VERIFYPEER, 0);
+            curl_setopt($this->ch, CURLOPT_SSL_VERIFYHOST, 0);
+        }
         curl_exec($this->ch);
 
         $code=curl_getinfo($this->ch,CURLINFO_HTTP_CODE);
@@ -99,10 +104,6 @@ class DirScan
          $this->httpCode404=$code;
     }
 
-    function __destruct(){
-        // TODO: Implement __destruct() method.
 
-        curl_close($this->ch);
-    }
 
 }

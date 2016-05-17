@@ -67,9 +67,9 @@ class Tabs
                                       <div class="nav pol" id="campaigns">
                                       <div  class="navbar-form navbar-left">
                                             <div class="form-group">
-                                                <button id="addCampaign" class="btn btn-success">Добавить цель</button>
+                                                <button id="addCampaign" class="btn btn-success">Добавить кампанию</button>
                                             </div>
-                                            <input class="form-control" id="campaignName" type="text">
+                                            <input class="form-control" id="campaignName" type="text" placeholder="Campaign name">
 
                                       </div>
                                       </div>
@@ -137,7 +137,7 @@ class Tabs
                                         <div class="form-group">
                                             <button id="addServer" class="btn btn-success"  >Добавить сервер</button>
                                         </div>
-                                        <input class="form-control" id="serverUrl" type="text">
+                                        <input placeholder="execute.php path" class="form-control" id="serverUrl" type="text">
 
                                     </div>
                                      </div>
@@ -157,14 +157,14 @@ class Tabs
         $btns = '<div class="btn-group btns" value="' . $row['sid'] . '">
 
 
-                        <button type="button" class="btn btn-info refresh">
+                        <button type="button" class="btn btn-sm btn-info refresh">
                             <span  class="glyphicon glyphicon-refresh" aria-hidden="true">
                             </span>
                         </button>
 
 
 
-                        <button type="button" class="btn btn-danger deleteSrv">
+                        <button type="button" class="btn btn-sm btn-danger deleteSrv">
                             <span  class="glyphicon glyphicon-remove" aria-hidden="true">
                             </span>
                         </button>

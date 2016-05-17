@@ -6,7 +6,7 @@
  * Time: 16:47
  */
 session_start();
-
+require($_SERVER['DOCUMENT_ROOT'] . "/config.php");
 include("Viewer.class.php");
 include("Model.class.php");
 
@@ -28,13 +28,6 @@ class Controller {
 
     }
 
-
-//    public function ShowMain(){
-//       // $servers=$this->model->GetNumericArray("select * from servers");
-//
-//        $this->view->ShowMain();
-//
-//    }
 
 
 

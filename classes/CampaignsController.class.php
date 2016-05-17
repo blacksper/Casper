@@ -69,12 +69,26 @@ class CampaignsController
 
     public function addTarget($targeturl, $cid)
     {    //добавление сервера
-        preg_match("#^(http[s]?:\/\/)?([A-z0-9.-_]*)\/+#", $targeturl, $clurl);
-        //echo 123;
+
+
+        preg_match("#^((http[s]?:\/\/)?([A-z0-9.-_]*)\/+)#", $targeturl, $clurl);
+
+        if (!isset($clurl[1])) {
+            preg_match("#^((\d{1,3}\.){3}\d{1,3})#", $targeturl, $ip);
+            if (isset($ip[1]))
+                $targeturl = $ip[1];
+            else
+                $targeturl = null;
+        } else {
+            $targeturl = $clurl[1];
+        }
+
+        //var_dump($clurl);
+        //die();
         $result = "";
 
-        if (isset($clurl[2])) {
-            $targeturl = $clurl[2];
+        if (isset($targeturl)) {
+            //$targeturl = $clurl[1];
 
             ####проверка есть ли уже в бд этот сервер
             $query = "SELECT tid from targets where url = '$targeturl' and deleted=0";//тут инъекция
@@ -139,6 +153,22 @@ class CampaignsController
 
         return json_encode($result);
     }
+
+
+    function saveNote($tid, $note)
+    {
+        //echo 123123;
+        $query = "select * from targets where tid=$tid";
+        $tid = $this->Model->MysqliClass->firstResult($query)['tid'];
+        if (!isset($tid))
+            return 0;
+        $query = "update targets set note='$note' where tid=$tid";
+        $result = $this->Model->MysqliClass->query($query);
+        if ($result)
+            return 1;
+
+    }
+
 
 
 }
