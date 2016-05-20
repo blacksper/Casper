@@ -286,10 +286,6 @@ $(document).ready(function(){
 
 
 
-    function showAlert(){
-        $("#myAlert").addClass("in");
-    }
-
 
 
     $("body").on('click', 'tr>td.dateScan a', function () {

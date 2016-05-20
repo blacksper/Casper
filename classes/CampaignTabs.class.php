@@ -527,6 +527,7 @@ class CampaignTabs
                             </div>
                     </div>
                 ';
+
         return $result;
     }
 
