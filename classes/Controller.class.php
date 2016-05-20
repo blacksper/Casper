@@ -48,7 +48,7 @@ class Controller {
             $name = $clname[1];
 
             ####проверка есть ли уже в бд эта кампания
-            $query = "SELECT cid from campaigns where name = '$name'";//тут инъекция
+            $query = "SELECT cid from campaigns where name = '$name' and deleted=0";//тут инъекция
             $cid = $this->Model->MysqliClass->firstResult($query)['cid'];
 
             if ($cid != "")
@@ -60,7 +60,7 @@ class Controller {
                 $query = "INSERT INTO campaigns(uid,name,dateCreate) values($uid,'$name',now())";
                 $result = $this->Model->MysqliClass->query($query);
                 //echo $query;
-                $query = "SELECT * from campaigns where name='$name'";
+                $query = "SELECT *,0 as cnt from campaigns where name='$name'";
                 $resultArr = $this->Model->MysqliClass->firstResult($query);
                 //echo $query;
                 //var_dump($resultArr);

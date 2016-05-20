@@ -20,6 +20,7 @@ class Tabs
 
     function getCampaignTab($cid = null)
     {
+        //echo 123123123;
         //echo $cid;
         if (!isset($cid)) {
             $this->getMainCampaign();
@@ -40,13 +41,13 @@ class Tabs
         $thead = '<thead>
                         <tr>
                             <th>name</th>
-                            <th>ip</th>
+                            <th>targets</th>
                             <th></th>
                         </tr>
                       </thead>';
         $tbody = "<tbody>";
 
-        $query = "select * from campaigns where deleted=0";
+        $query = "select *,(select count(*) from targets where campaigns.cid=targets.cid and deleted=0) as cnt from campaigns where deleted=0";
         $urlsArr = $this->Model->MysqliClass->getAssocArray($query);
 
         #################### Формирование таблицы
@@ -88,7 +89,7 @@ class Tabs
                         <a href="campaign.php?cid=' . $row['cid'] . '" class="btn btn-primary">' . $row['name'] . '</a>
 
                     </td>
-                    <td class="ip"> ----</td>
+                    <td class="ip"> ' . $row['cnt'] . '</td>
                     <td class="btns">
                     <form method=post>
                         <button type="button" class="btn btn-danger deleteCmp">

@@ -69,7 +69,7 @@ class CampaignViewer
                             <li ><a href="#scansCampaign-tab" data-toggle="tab">Сканирования</a></li>
                             <li><a href="#tools-tab" data-toggle="tab">Инструменты</a></li>
 
-                            <li><a href="#servers-tab" data-toggle="tab">Дочерные цели</a></li>
+                            <!--<li><a href="#servers-tab" data-toggle="tab">Дочерные цели</a></li>-->
 
                             <li><a href="panel.php"><span class="glyphicon glyphicon-menu-left"></span> В панель</a></li>
 
@@ -77,7 +77,7 @@ class CampaignViewer
                     </div>
                 </div>';
         $this->Body .= $menu . '
-                            <div class="tab-content col-xs-10 col-md-6" >
+                            <div class="tab-content col-md-10" >
                             ' . $this->Tabs->allHtml . '
                             </div>
                         ';

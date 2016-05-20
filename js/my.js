@@ -1,7 +1,8 @@
 /**
  * Created by Lalka on 06.04.2016.
  */
-
+var offset = 20;
+var limit = 10;
 
 
 
@@ -130,13 +131,37 @@ $(document).ready(function(){
 
         });
 
+    $("body").on('click', '#moreGitRows', function () {
+        //var serverUrl=$("#serverUrl").val();
+        var scid = $(this).parents('.modal-content').data("scid");
+        console.log(scid);
+
+        if (scid !== undefined) {
+            $.ajax({
+                url: "./ajax.php",
+                type: "POST",
+                data: "page=campaigns&scid=" + scid + "&action=getGitRows&offset=" + offset + "&limit=" + limit,
+                success: function (data) {
+                    console.log(limit + " " + offset);
+                    if (data !== undefined) {
+                        $("#gitTable tbody").append(JSON.parse(data));
+                        offset += limit;
+                    }
+
+
+                }
+            });
+        }
+
+        });
+
 
 
         $("body").on('click','.refresh',function(){
             var row=$(this).parents('.serverRow');
             var serverId=row.attr('value');
-            row.find('.ip').html('<img style="background-color: inherit;" width="50px" height="50px" src="images/1.gif">');
-            row.find('.status').html('<img style="background-color: inherit;" width="50px" height="50px" src="images/1.gif">');
+            row.find('.ip').html('<img style="background-color: inherit;" width="50px" height="50px" src="images/loader.gif">');
+            row.find('.status').html('<img style="background-color: inherit;" width="50px" height="50px" src="images/loader.gif">');
 
             if(serverId!==undefined) {
                 $.ajax({
@@ -150,7 +175,7 @@ $(document).ready(function(){
                             row.find('.ip').text(decodeData['ip']);
                             row.find('.status').text(decodeData['statusArr']['stmsg']);
                             row.find('.status').removeClassWild(" *");
-                            row.find('.status').addClass(decodeData['statusArr']['status'] + " 1");
+                            row.find('.status').addClass(decodeData['statusArr']['status']);
                         }
                     }
                 });
@@ -261,8 +286,6 @@ $(document).ready(function(){
 
 
 
-
-
     function showAlert(){
         $("#myAlert").addClass("in");
     }
@@ -318,6 +341,38 @@ $(document).ready(function(){
                 }
             });
         console.log($('#spoiler-' + tid).text().length);
+    });
+
+    $("body").on('click', '.downSrc', function () {
+
+        var row = $(this).parents('.gitRow');
+        var lst = row.find('td:last');
+        lst.html('<img style="background-color: inherit;" width="30px" height="30px" src="images/loader.gif">');
+        var filepath = row.find('.filepath .cc1 .cc2').html();
+        var filename = row.find('.filename .cc1 .cc2 a').html();
+        //row.find('.status').html('<img style="background-color: inherit;" width="50px" height="50px" src="images/1.gif">');
+        console.log(666 + ' ' + filepath + " " + filename);
+
+        if (filepath !== undefined) {
+            $.ajax({
+                url: "./scan.php",
+                type: "POST",
+                data: "filename=" + filename + "&action=downloadSrc&filepath=" + filepath,
+                success: function (data) {
+                    console.log(data);
+                    if ((data !== undefined) && (data == 1)) {
+                        row.removeClassWild(" *");
+                        row.addClass("success");
+                    } else {
+                        row.removeClassWild(" *");
+                        row.addClass("danger");
+                    }
+                    lst.html('<button class="btn btn-info btn-sm downSrc"><span class="glyphicon glyphicon-download-alt"></span></button>');
+                }
+            });
+        }
+
+
     });
 
 });

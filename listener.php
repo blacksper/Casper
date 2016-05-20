@@ -13,7 +13,7 @@ include './classes/ProcessingController.class.php';
 $ProcessingClass = new ProcessingController();
 if (!isset($_POST['result']))
     exit;
-$results=json_decode($_POST['result'],1);
+$result = json_decode($_POST['result'], 1);
 //$scanType=$results['scanType'];
 //echo $_POST['result'];
 //print_r($results);
@@ -29,7 +29,7 @@ $date=date('Y-m-d H:i:s');
 
 
 //if($scanType=="subdomainScan")
-foreach ($results as $scid => $results) {
+foreach ($result as $scid => $results) {
     //echo 123;
     $query = "select * from scans where scid=$scid";
     echo $query;

@@ -69,14 +69,6 @@ class Campaigns
                         ';
     }
 
-    public function GetTabs()//подгрузка всех закладок
-    {
-        //$this->GetMainTab();
-        // $this->tabs.=$this->tabsClass->allHtml;
-        //$this->GetServerTab();
-        //$this->GetToolsTab();
-    }
-
 
     public function ShowLoginForm($message = "", $alert = 0)
     { //alert=1- red;

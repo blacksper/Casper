@@ -281,14 +281,39 @@ class Tools
         return $string;
     }
 
-    function downloadFile($ura, $filename)
+    function downloadFile($url, $filename)
     {
-        @$filecont = file_get_contents($ura);
-        if ($filecont)
-            file_put_contents($filename, zlib_decode($filecont));
+        $result = 0;
+        @$filecont = file_get_contents($url);
+        $urlarr = parse_url($url);
+        //print_r($urlarr);
+        $path_parts = pathinfo($filename);
+
+        $filenameFull = PATH_GIT . "/" . $urlarr['host'] . "/" . $filename . "";
+        if ($path_parts['extension'] == "php")
+            $filenameFull .= ".txt";
+        //echo $filecont."66666666666";
+        $decode = @zlib_decode($filecont);
+        // echo 123123;
+        //print_r($decode);
+
+        if ($decode) {
+            file_put_contents($filenameFull, $decode);
+            $query = "update gitdump set exist=1 where filename='$filename' and filepath='$url'";
+            $result = 1;
+
+        } else {
+            $query = "update gitdump set exist=-1 where filename='$filename' and filepath='$url'";
+
+        }
+        //echo $query;
+
+
+        $this->Model->MysqliClass->query($query);
+        return $result;
     }
 
-    function gitDump($tid, array $sid, $option = "gitdump")
+    function gitDump($tid, $sid, $option = "gitdump")
     {
 
         $query = "select * from targets where tid=$tid";
@@ -299,38 +324,64 @@ class Tools
         $directory = PATH_GIT . "/" . $urlArr['host'];
         $results = array();
         echo $directory . "\n";
-        $scid = $this->addScan($tid, $sid, $option);
-        if (!file_exists("$directory/index"))
+        $scid = $this->addScan($tid, array($sid), $option);
+        //if (!file_exists("$directory/index"))//РАСКОМЕНТИРОВАТЬ ПОТОМ
             $this->downloadIndex($targeturl);
-        //die();
+
         $file = fopen("$directory/index", "rb");
         fread($file, 8);
         $entrycount = fread($file, 4);
         $entrycount = unpack("N", $entrycount)[1] . "\n";
 
-
+        //echo $entrycount;
+        $b = 0;
         for ($i = 0; $i < $entrycount; $i++) {
+            $b++;
+            echo $i . ", ";
             $entrylen = 62;
+
             $nulldata = fread($file, 40);
             $sha1part1 = bin2hex(fread($file, 1));
             $sha1part2 = bin2hex(fread($file, 19));
             $flag = hexdec(unpack("H4flag", fread($file, 2))['flag']);
+            $filename = "";
+            if ($flag < 0xFFF) {
+                $entrylen += $flag;
+                $filename = fread($file, $flag);
+                echo "$flag first " . $filename . "\n";
+            } else {
+                while (1) {
+                    $sym = fread($file, 1);
+                    if ($sym == "\x00")
+                        break;
+                    $filename .= $sym;
+                }
+                //echo "$flag second ".$filename."\n";
+            }
 
-            $filename = fread($file, $flag);
-            //echo $filename." ";
+            $padlen = (8 - ($entrylen % 8)) or 8;
+            fread($file, $padlen);
+
+
             $dname = dirname($filename);
-            if ($dname && !file_exists($directory . "/" . $dname))
-                mkdir($directory . "/" . $dname, 0777, 1);
+            if ($dname && !file_exists($directory . "/" . $dname)) {
+                //echo "ya sozdal "."";
+                $tomake = $directory . "/" . $dname;
+                if (strlen($tomake) > 247) //ограничение на длину пути, только в винде
+                    continue;
+                //echo "\n";
+                mkdir($tomake, 0777, 1);
+            }
+
             $filepath = $targeturl . ".git/objects/$sha1part1/$sha1part2";
             //echo $filepath."\n";
             //downloadFile($ura,$directory."/".$filename);
-            $entrylen += $flag;
-            $padlen = (8 - ($entrylen % 8)) or 8;
-            fread($file, $padlen);
+
             array_push($results, array("filename" => $filename, "filepath" => $filepath));
         }
-        fclose($file);
 
+        fclose($file);
+        //die();
         $queryStart = "INSERT INTO gitdump(scid,filename,filepath) VALUES";
         $query = $queryStart;
         $i = 0;
@@ -339,11 +390,11 @@ class Tools
         foreach ($results as $result) {
             $query .= "($scid,'{$result['filename']}','{$result['filepath']}'),";
             $i++;
-            if ($i == 100) {
+            if ($i == 300) {
                 $i = 0;
                 $query = substr($query, 0, -1);
                 $query .= " ON DUPLICATE KEY UPDATE filepath=values(filepath)";
-                echo $query . "\n";
+                //echo $query . "\n";
                 $this->Model->MysqliClass->query($query);
                 $query = $queryStart;
             }
@@ -352,7 +403,7 @@ class Tools
         $query = substr($query, 0, -1);
         $query .= " ON DUPLICATE KEY UPDATE filepath=values(filepath)";
         $this->Model->MysqliClass->query($query);
-        echo $query;
+        //echo $query;
         $query = "update scans set status=1 where scid=$scid";
         $this->Model->MysqliClass->query($query);
 
@@ -361,6 +412,7 @@ class Tools
 
     function downloadIndex($url)
     {
+        echo $url . "\n";
         $index = file_get_contents($url . "/.git/index");
         $urlArr = parse_url($url);
         $directory = PATH_GIT . "/" . $urlArr['host'];

@@ -17,7 +17,7 @@ if($_SESSION['auth']==true) {
     $Controller = new Controller();
     //var_dump($_GET);
     //if(empty($_GET))
-    $Controller->Viewer->ShowMain($_GET);
+    $Controller->Viewer->ShowMain();
     //$Viewer->ShowMain();
 
 

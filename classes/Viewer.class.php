@@ -46,12 +46,7 @@ class Viewer
 
     public function ShowMain(){
 
-        if (isset($getArr['cid']))
-            $this->Tabs->getCampaignTab($getArr['cid']);
-        else
-            $this->Tabs->getCampaignTab();
-
-        //$this->Tabs->getCampaignTab();
+        $this->Tabs->getCampaignTab();
         $this->Tabs->getServerTab();
 
         //$this->Tabs->getToolsTab();
@@ -59,7 +54,7 @@ class Viewer
         $menu = '<div class="tabs menu col-xs-3 col-md-2">
                                 <div class="panel panel-default">
                                 <ul class="nav nav-pills nav-stacked ">
-                                    <li><a href="#tab-1" data-toggle="tab">Главная</a></li>
+                                   <!-- <li><a href="#tab-1" data-toggle="tab">Главная</a></li>-->
                                     <li><a href="#campaigns-tab" data-toggle="tab">Campaigns</a></li>
                                     <li><a href="#servers-tab" data-toggle="tab">Сервера</a></li>
 
@@ -72,14 +67,6 @@ class Viewer
                             ' . $this->Tabs->allHtml . '
                             </div>
                         ';
-    }
-
-    public function GetTabs()//подгрузка всех закладок
-    {
-        //$this->GetMainTab();
-       // $this->tabs.=$this->tabsClass->allHtml;
-        //$this->GetServerTab();
-        //$this->GetToolsTab();
     }
 
 

@@ -17,6 +17,7 @@ class ProcessingController extends MysqliClass
 
         $queryStart = "INSERT INTO pathfound(scid,url,httpcode,dateResult) VALUES";
         $query = $queryStart;
+
         $i = 0;
         foreach ($result as $infoArr) {
             $query .= "($scid,'{$infoArr['url']}','{$infoArr['httpcode']}','$date'),";
@@ -33,6 +34,7 @@ class ProcessingController extends MysqliClass
         $query = substr($query, 0, -1);
         $query .= " ON DUPLICATE KEY UPDATE httpcode=values(httpcode)";
         $this->query($query);
+        echo $query . "\n";
         $query = "update scans set status=1 where scid=$scid";
         echo $query . "\n";
         $this->query($query);
@@ -40,20 +42,21 @@ class ProcessingController extends MysqliClass
 
     function subDomainScanProc($result, $scid)
     {
-        $date = date('Y-m-d H:i:s');
+        //$date = date('Y-m-d H:i:s');
 
-        $queryStart = "INSERT INTO subdomain(scid,subdomain,resolve,dateResult) VALUES";
+        $queryStart = "INSERT INTO subdomain(scid,subdomain,resolve) VALUES";
         $query = $queryStart;
         $i = 0;
-
-        foreach ($result['data'] as $infoArr) {
+        //echo $query;
+        foreach ($result as $infoArr) {
 
             $resolve = intval($infoArr['resolve']);
-            $query .= "($scid,'{$infoArr['subdomain']}',{$resolve},'$date'),";
+            $query .= "($scid,'{$infoArr['subdomain']}',{$resolve}),";
             $i++;
             if ($i == 100) {
                 $i = 0;
                 $query = substr($query, 0, -1);
+                $query .= " ON DUPLICATE KEY UPDATE resolve=values(resolve)";
                 echo $query . "\n";
                 $this->query($query);
                 $query = $queryStart;
@@ -61,7 +64,9 @@ class ProcessingController extends MysqliClass
         }
 
         $query = substr($query, 0, -1);
+        $query .= " ON DUPLICATE KEY UPDATE resolve=values(resolve)";
         $this->query($query);
+        echo $query . "\n";
         $query = "update scans set status=1 where scid=$scid";
         echo $query . "\n";
         $this->query($query);

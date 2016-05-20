@@ -84,7 +84,7 @@ body {
 }
 
 .btns{
-    width: 200px;
+    /*width: 100px;*/
 }
 
 #tab-content{
@@ -105,7 +105,7 @@ body {
 }
 
 .table tbody>tr>td{
-    vertical-align: top;
+    vertical-align: middle;
 }
 .wellm{
     border: 1px solid #e3e3e3;
@@ -185,9 +185,15 @@ body {
     background-color: #C6414D;
 }
 
-table#scansCampaignContent {
-
+/*table#gitTable {
+    table-layout:fixed;
 }
+table#gitTable td {
+  white-space: nowrap;
+  overflow: scroll;
+  text-overflow: ellipsis;
+
+}*/
 
 .navbar-form select.form-control.options {
 
@@ -196,7 +202,31 @@ table#scansCampaignContent {
 }
 
 .navbar-form select.form-control.servers {
-
     width: 400px;
+}
 
+.cc1 {
+    width: 300px;
+    height: 30px;
+    overflow: hidden;
+}
+
+.filenameS {
+    width: 100px;
+    height: 30px;
+    overflow: hidden;
+}
+
+.cc2 {
+    height: 50px; /*40px - more place for scrollbar, is hidden under parent box */
+    padding: 5px;
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    text-overflow: ellipsis;
+}
+
+#hashesAdd .form-inline {
+    margin: 10px 0px 10px 0px;
 }

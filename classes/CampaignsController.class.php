@@ -71,7 +71,7 @@ class CampaignsController
     {    //добавление сервера
 
 
-        preg_match("#^((http[s]?:\/\/)?([A-z0-9.-_]*)\/+)#", $targeturl, $clurl);
+        preg_match("#^((http[s]?:\/\/)?([A-z0-9.-_]*)\/.+)#", $targeturl, $clurl);
 
         if (!isset($clurl[1])) {
             preg_match("#^((\d{1,3}\.){3}\d{1,3})#", $targeturl, $ip);
@@ -91,7 +91,7 @@ class CampaignsController
             //$targeturl = $clurl[1];
 
             ####проверка есть ли уже в бд этот сервер
-            $query = "SELECT tid from targets where url = '$targeturl' and deleted=0";//тут инъекция
+            $query = "SELECT tid from targets where url = '$targeturl' and deleted=0 and cid=$cid";//тут инъекция
             $tid = $this->Model->MysqliClass->firstResult($query)['tid'];
 
             if (isset($tid))
@@ -103,7 +103,7 @@ class CampaignsController
                 $query = "INSERT INTO targets(uid,url,cid,dateAdd) values($uid,'$targeturl',$cid,now())";
                 $result = $this->Model->MysqliClass->query($query);
                 //echo $query;
-                $query = "SELECT * from targets where url='$targeturl'";
+                $query = "SELECT * from targets where url='$targeturl' and cid=$cid";
                 $resultArr = $this->Model->MysqliClass->firstResult($query);
                 //echo $query;
                 //var_dump($resultArr);

@@ -11,3 +11,4 @@ define('PATH_TXT', PATH_ROOT . '/txt');
 define('PATH_TXTP', PATH_TXT . '/paths');
 define('PATH_BSRC', PATH_TXT . '/src');
 define('PATH_GIT', PATH_ROOT . '/gitdumper');
+define('PATH_GITD', '/gitdumper');

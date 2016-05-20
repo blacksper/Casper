@@ -13,9 +13,10 @@ isset($_POST['action'])?$action=$_POST['action']:$action="";
 
 $Tools=new Tools();
 
-if (isset($_POST['tid'], $_POST['action'])) {
-    $tid = (int)$_POST['tid'];
-    (isset($_POST['sid'])) ? $sid = $_POST['sid'] : $sid = 0;
+if (isset($_POST['action'])) {
+    // $tid = (int)$_POST['tid'];
+    (isset($_POST['tid'])) ? $tid = (int)$_POST['tid'] : $tid = 0;
+    (isset($_POST['sid'])) ? $sid = (array)$_POST['sid'] : $sid = 0;
 
     //var_dump($sid);
     //die();
@@ -50,6 +51,23 @@ if (isset($_POST['tid'], $_POST['action'])) {
 
         case "gitdump":
             $Tools->gitDump($tid, $sid, $action);
+            break;
+
+        case "downloadSrc":
+            //echo 123123;
+            if (isset($_POST['filename'], $_POST['filepath'])) {
+
+                $f1 = pathinfo($_POST['filename']);
+                $f2 = pathinfo($_POST['filepath']);
+                if (!isset($f1['filename'], $f2['filename']))
+                    return 0;
+                $filename = $_POST['filename'];
+                $filepath = $_POST['filepath'];
+
+                if (($filename != "") && ($filepath != ""))
+                    echo $Tools->downloadFile($filepath, $filename);
+            }
+
             break;
 
 

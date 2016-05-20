@@ -127,6 +127,26 @@ switch ($_POST['page']) {
                             echo $CampaignsController->saveNote($tid, $note);
                         }
                         break;
+                    case "getGitRows":
+                        if (isset($_POST['scid'], $_POST['offset'], $_POST['limit'])) {
+                            //echo 123;
+                            $scid = $_POST['scid'];
+                            $offset = (int)$_POST['offset'];
+                            $limit = (int)$_POST['limit'];
+                            //$note = htmlspecialchars($_POST['note']);
+
+                            echo json_encode($CampaignsController->CampaignViewer->Tabs->getGitdumpRows($scid, $offset, $limit));
+                        }
+                        break;
+//                    case "downloadScr":
+//                        if (isset($_POST['url'])) {
+//                            //echo 123;
+//                            $tid = $_POST['tid'];
+//                            //$note = htmlspecialchars($_POST['note']);
+//
+//                            echo $CampaignsController->
+//                        }
+//                        break;
 
                 }
 
