@@ -24,9 +24,8 @@ class CampaignTabs
 
     function getMainTab($cid)//закладка главное
     {
-        $query = "select * from targets where cid=$cid and deleted=0";
-        $targetsArr = $this->Model->MysqliClass->getAssocArray($query);
-        //var_dump($targetsArr);
+        $targetsArr = $this->Model->getTargetsByCid($cid);
+
         if (!isset($targetsArr))
             exit;
 
@@ -108,17 +107,16 @@ class CampaignTabs
                       </thead>';
         $tbody = "<tbody>";
 
-        $query = "select * from campaigns where deleted=0";
-        $urlsArr = $this->Model->MysqliClass->getAssocArray($query);
+        $urlsArr = $this->Model->getCampaigns();
 
-        #################### Формирование таблицы
+
         $i = 0;
         foreach ($urlsArr as $row) {
             $tbody .= $this->getCampaignTableRow($row);
             $i++;
         }
         $tbody .= "</tbody>";
-        ####################
+
 
         $table = '<table id="campaignContent" class="table table-hover">123123123
                         ' . $thead . '
@@ -143,12 +141,11 @@ class CampaignTabs
 
     function getCampaignTableRow($row)
     {
-        //echo 123;
+
         $result = '<tr class="campaignRow" data-cid="' . $row['cid'] . '">';
         $result .= '
                     <td class="url">
                         <a href="?cid=' . $row['cid'] . '" class="btn btn-primary">' . $row['name'] . '</a>
-
                     </td>
                     <td class="ip"> ----</td>
                     <td class="btns">
@@ -157,13 +154,12 @@ class CampaignTabs
                             <span class="glyphicon glyphicon-remove" aria-hidden="true">
                             </span>
                         </button>
-
                     </form>
                     </td>
                     ';
         $result .= '</tr>';
 
-        //echo $result;
+
         return $result;
     }
 
@@ -494,8 +490,8 @@ class CampaignTabs
 
     function getSubdomainScanDetails($scid)
     {
-        $foundPaths = $this->Model->MysqliClass->getAssocArray("select * from subdomain where scid=$scid ORDER BY resolve DESC");
-        $testedUrl = $this->Model->MysqliClass->firstResult("select url from scans left JOIN targets on scans.tid=targets.tid where scid=$scid")['url'];
+        $foundPaths = $this->Model->getScansResult($scid, "subdomainScan", "resolve desc");
+        $testedUrl = $this->Model->getTestedUrl($scid);
         $goodPaths = "";
         if (empty($foundPaths)) {
             $goodPaths = '<div class="alert alert-warning">
@@ -535,7 +531,7 @@ class CampaignTabs
     {
 
         $table = '<table class="table table-hover">';
-        $thead = '<thead><tr><th>path</th><th>resolve</th></tr></thead>';
+        $thead = '<thead><tr><th>subdomain</th><th>resolve</th></tr></thead>';
         //var_dump( $foundPaths);
         $tbody = '';
         //$httpcode=$path['httpcode'];
@@ -554,9 +550,10 @@ class CampaignTabs
 
     function getDirScanDetails($scid)
     {
-        $foundPaths = $this->Model->MysqliClass->getAssocArray("select * from pathfound where scid=$scid order by httpcode asc");
+        $foundPaths = $this->Model->getScansResult($scid, "dirScan", "httpcode asc");//->getAssocArray("select * from pathfound where scid=$scid order by httpcode asc");
+
         //echo "select * from pathfound where scid=$scid order by httpcode asc\n";
-        $testedUrl = $this->Model->MysqliClass->firstResult("select url from scans left JOIN targets on scans.tid=targets.tid where scid=$scid")['url'];
+        $testedUrl = $this->Model->getTestedUrl($scid);
         //var_dump($foundPaths);
         $goodPaths = "";
         if (empty($foundPaths)) {
@@ -624,18 +621,20 @@ class CampaignTabs
 
     function getNmapDetails($scid)
     {
-        $query = "select * from nmap where scid=$scid";
-        $foundHosts = $this->Model->MysqliClass->getAssocArray($query);
-        $testedUrl = $this->Model->MysqliClass->firstResult("select url from scans left JOIN targets on scans.tid=targets.tid where scid=$scid")['url'];
+        //$query = "select * from nmap where scid=$scid";
+        $hostsArr = $this->Model->getScansResult($scid, "nmap", "dateAdd desc");
 
 
-        if (empty($foundHosts)) {
+        $testedUrl = $this->Model->getTestedUrl($scid);
+
+
+        if (empty($hostsArr)) {
             //var_dump("watafuck");
             $goodPaths = '<div class="alert alert-warning">
                             <strong>Пусто</strong>
                        </div>';
         } else {
-            $goodPaths = $this->getNmapScanTable($foundHosts);
+            $goodPaths = $this->getNmapScanTable($hostsArr);
         }
 
 
@@ -692,16 +691,17 @@ class CampaignTabs
     function getBruteDetails($scid)
     {
 
-        $combs = $this->Model->MysqliClass->getAssocArray("select * from bruteforce where scid=$scid");
-        $testedUrl = $this->Model->MysqliClass->firstResult("select url from scans left JOIN targets on scans.tid=targets.tid where scid=$scid")['url'];
+        //$combs = $this->Model->MysqliClass->getAssocArray("select * from bruteforce where scid=$scid");
+        $combinationsArr = $this->Model->getScansResult($scid, "bruteforce", "dateAdd");
+        $testedUrl = $this->Model->getTestedUrl($scid);
         $combsCont = "";
         //print_r($combs);
-        if (empty($combs)) {
+        if (empty($combinationsArr)) {
             $combsCont = '<div class="alert alert-warning">
                             <strong>Пусто</strong>
                        </div>';
         } else {
-            $combsCont = $this->getBruteforceTable($combs);
+            $combsCont = $this->getBruteforceTable($combinationsArr);
         }
 
         $result = '<div class="modal-content">
@@ -754,7 +754,7 @@ class CampaignTabs
     {
 
 
-        $testedUrl = $this->Model->MysqliClass->firstResult("select url from scans left JOIN targets on scans.tid=targets.tid where scid=$scid")['url'];
+        $testedUrl = $this->Model->getTestedUrl($scid);
         $combsCont = "";
         //print_r($files);
 
@@ -800,11 +800,13 @@ class CampaignTabs
 
     function getGitdumpRows($scid, $offset, $limit)
     {
-        $files = $this->Model->MysqliClass->getAssocArray("select * from gitdump where scid=$scid  limit $offset,$limit");
-        $testedUrl = $this->Model->MysqliClass->firstResult("select url from scans left JOIN targets on scans.tid=targets.tid where scid=$scid")['url'];
+        //$filesArr = $this->Model->MysqliClass->getAssocArray("select * from gitdump where scid=$scid  limit $offset,$limit");
+        $filesArr = $this->Model->getScansResult($scid, "gitDump", "dateAdd", $limit, $offset);
+        //$scid,$scanType,$orderby,$limit,$offset)
+        $testedUrl = $this->Model->getTestedUrl($scid);
         preg_match("@http[s]?:\/\/([\w\d.-]+)\/@", $testedUrl, $m);
         //preg_match("//", $targeturl, $m);
-        if (empty($files)) {
+        if (empty($filesArr)) {
             $tbody = '<div class="alert alert-warning">
                             <strong>Пусто</strong>
                        </div>';
@@ -813,11 +815,11 @@ class CampaignTabs
             //var_dump( $foundPaths);
             $tbody = '';
             //$httpcode=$path['httpcode'];
-            foreach ($files as $file) {
+            foreach ($filesArr as $file) {
                 $ext = pathinfo($file['filename'])["extension"];
 
                 $tbody .= '<tr class="gitRow ' . (($file['exist'] == 1) ? 'success' : (($file['exist'] == 0) ? 'warning' : "danger")) . '">
-            <td class="filename"><div class="cc1"><div class="cc2"><a target="_blank" href="' . PATH_GITD . "/" . $m[1] . "/" . $file['filename'] . (($ext == "php") ? ".txt" : '') . '">' . $file['filename'] . '</a></div></div></td>
+            <td class="filename"><div class="cc1"><div class="cc2"><a target="_blank" href="' . PATH_GITD . "/" . $m[1] . "/" . $file['filename'] . (($ext == "php") ? ".txt" : '') . '"><span class="glyphicon glyphicon-link"></span></a> ' . $file['filename'] . '</div></div></td>
             <td class="filepath"><div class="cc1"><div class="cc2">' . $file['filepath'] . '</div></div></td>
             <td class="buttonload"><button class="btn btn-info btn-sm downSrc"><span class="glyphicon glyphicon-download-alt"></span></button></td>
 
@@ -896,51 +898,51 @@ class CampaignTabs
         return $result;
     }
 
-    function getSubInfoChilds(int $tid)
-    {
-
-        $thead = '          <ul style="width: 300px" class="qwe nav nav-pills" >
-                                <li class="active"><a  href="#existChilds" data-toggle="tab">Существующие</a></li>
-                                <li><a  href = "#" data-toggle = "tab" > Добавить </a></li >
-                            </ul >
-                     ';
-
-
-        $scansArr = $this->Model->MysqliClass->getAssocArray("select * from targets where pid=$tid");//sqli
-
-        if (empty($scansArr)) {
-            $result = "<div class=\"alert alert-warning\">
-                            <strong>Пусто</strong>
-                       </div>";
-        } else {
-            $result = $thead;
-            $cont = "";
-            foreach ($scansArr as $row) {
-                $cont .= '
-                        <div class="row child-row childUrl">
-                             <div class="col-sm-2">' . $row['tid'] . '</div>
-                             <div class="col-sm-6 ">' . $row['url'] . '</div>
-                         </div>
-                    ';
-            }
-
-            $result .= '   <div class="tab-content" >
-                                <div class="tab-pane fade in active scanTable" id = "existChilds" >
-                                    <div class="row child-row">
-                                         <div class="col-sm-2">ид</div>
-                                         <div class="col-sm-4">url</div>
-
-                                    </div>
-                                    ' . $cont . '
-                                </div>
-                            </div>';
-
-
-        }
-
-
-        return $result;
-    }
+//    function getSubInfoChilds(int $tid)
+//    {
+//
+//        $thead = '          <ul style="width: 300px" class="qwe nav nav-pills" >
+//                                <li class="active"><a  href="#existChilds" data-toggle="tab">Существующие</a></li>
+//                                <li><a  href = "#" data-toggle = "tab" > Добавить </a></li >
+//                            </ul >
+//                     ';
+//
+//
+//        $scansArr = $this->Model->MysqliClass->getAssocArray("select * from targets where pid=$tid");//sqli
+//
+//        if (empty($scansArr)) {
+//            $result = "<div class=\"alert alert-warning\">
+//                            <strong>Пусто</strong>
+//                       </div>";
+//        } else {
+//            $result = $thead;
+//            $cont = "";
+//            foreach ($scansArr as $row) {
+//                $cont .= '
+//                        <div class="row child-row childUrl">
+//                             <div class="col-sm-2">' . $row['tid'] . '</div>
+//                             <div class="col-sm-6 ">' . $row['url'] . '</div>
+//                         </div>
+//                    ';
+//            }
+//
+//            $result .= '   <div class="tab-content" >
+//                                <div class="tab-pane fade in active scanTable" id = "existChilds" >
+//                                    <div class="row child-row">
+//                                         <div class="col-sm-2">ид</div>
+//                                         <div class="col-sm-4">url</div>
+//
+//                                    </div>
+//                                    ' . $cont . '
+//                                </div>
+//                            </div>';
+//
+//
+//        }
+//
+//
+//        return $result;
+//    }
 
     function getNote($tid)
     {
@@ -963,7 +965,7 @@ class CampaignTabs
                 </div>";
 
 
-        $result = json_encode($result);
+        //$result = json_encode($result);
         return $result;
 
     }

@@ -20,8 +20,6 @@ class Tabs
 
     function getCampaignTab($cid = null)
     {
-        //echo 123123123;
-        //echo $cid;
         if (!isset($cid)) {
             $this->getMainCampaign();
         } else {
@@ -47,7 +45,7 @@ class Tabs
                       </thead>';
         $tbody = "<tbody>";
 
-        $query = "select *,(select count(*) from targets where campaigns.cid=targets.cid and deleted=0) as cnt from campaigns where deleted=0";
+        $query = "select *,(select count(*) from targets where campaigns.cid=targets.cid and deleted=0) as cnt from campaigns where deleted=0 order by dateAdd desc";
         $urlsArr = $this->Model->MysqliClass->getAssocArray($query);
 
         #################### Формирование таблицы
@@ -177,9 +175,9 @@ class Tabs
 
         $result .= "<tr class='serverRow' value='{$row['sid']}' data-sid='{$row['sid']}'>
                             <td class=url> " . $row['path'] . "</td>
-                            <td class='ip'>" . $row['ip'] . "</td>
-                            <td class='status {$codeArr['status']}'>{$codeArr['stmsg']}</td>
-                            <td class='btns'>$btns</td>
+                            <td class='ip col-md-2'>" . $row['ip'] . "</td>
+                            <td class='col-md-1 status {$codeArr['status']} '>{$codeArr['stmsg']}</td>
+                            <td class='btns col-md-2'>$btns</td>
                         </tr>";
         return $result;
     }
@@ -271,10 +269,7 @@ class Tabs
                             </div>
                     </div>
                 ';
-        //echo $result[$row['tid']];
-        //}
-        //echo (($wwsd[$row['tid']])? "beach":"treach");
-        //print_r($result);
+
         return $result;
     }
 

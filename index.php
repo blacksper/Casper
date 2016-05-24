@@ -15,12 +15,12 @@ if(isset($_SESSION['auth'])) {
 }else{
     echo "<body >
                     <div class='container' id='main'>
-                        <form class='form-signin'>
+                        <div class='form-signin'>
                             <h2>Sign in</h2>
                             <input class='sign-inp' type='text' id='username' placeholder='Username'>
                             <input class='sign-inp' type='password' id='password' placeholder='Password'>
-                            <button class='btn btn-lg btn-primary btn-block' id='login' type='submit'>Login</button>
-                        </form>
+                            <button class='btn btn-lg btn-primary btn-block' id='login'>Login</button>
+                        </div>
                     </div>
                 </body>";
 }

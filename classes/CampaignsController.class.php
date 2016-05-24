@@ -9,14 +9,14 @@
 session_start();
 
 include("CampaignViewer.class.php");
-include("Model.class.php");
+include("CampaignModel.class.php");
 
 
 
 class CampaignsController
 {
 
-    public $CampaignViewer;
+    public $Viewer;
     public $Model;
 
     //public $cid;
@@ -24,7 +24,7 @@ class CampaignsController
     function __construct($cid = null)
     {
 
-        $this->Model = new Model();
+        $this->Model = new CampaignModel();
         if ($cid != null) {
             $query = "select * from campaigns where cid=$cid and deleted=0";
             $result = $this->Model->MysqliClass->firstResult($query);
@@ -36,7 +36,7 @@ class CampaignsController
 
         }
         // $this->cid=$cid;
-        $this->CampaignViewer = new CampaignViewer($this->Model);
+        $this->Viewer = new CampaignViewer($this->Model);
 
 
     }
@@ -107,7 +107,7 @@ class CampaignsController
                 $resultArr = $this->Model->MysqliClass->firstResult($query);
                 //echo $query;
                 //var_dump($resultArr);
-                $result = $this->CampaignViewer->Tabs->getMainTableRow($resultArr);
+                $result = $this->Viewer->Tabs->getMainTableRow($resultArr);
 
             } else {
                 $result = "";
@@ -149,9 +149,9 @@ class CampaignsController
         $query = "INSERT INTO hashes(source,hash,type,uid,cid,deleted) VALUES('$str','$hash','$type',$uid,$cid,0) ";
         //echo $query."\n";
         $this->Model->MysqliClass->query($query);
-        $result = $this->CampaignViewer->Tabs->getHashContentTableRow(array("hash" => $hash, "source" => $str, "type" => $type));
+        $result = $this->Viewer->Tabs->getHashContentTableRow(array("hash" => $hash, "source" => $str, "type" => $type));
 
-        return json_encode($result);
+        return $result;
     }
 
 

@@ -88,7 +88,7 @@ class Tools
         if (!isset($param))
             return 0;
 
-        $cmd = '"D:\Program Files (x86)\Nmap\nmap" ' . $param . ' ' . $targeturl;
+        $cmd = '"' . PATH_NMAP . '" ' . $param . ' ' . $targeturl;
         echo $cmd . "\n";
         system($cmd);
         $content = ob_get_clean();
@@ -288,16 +288,23 @@ class Tools
         $urlarr = parse_url($url);
         //print_r($urlarr);
         $path_parts = pathinfo($filename);
+        if (!isset($path_parts['extension']))
+            return 0;
 
+        //print_r($path_parts);
+        $filename = trim($filename);
         $filenameFull = PATH_GIT . "/" . $urlarr['host'] . "/" . $filename . "";
         if ($path_parts['extension'] == "php")
             $filenameFull .= ".txt";
         //echo $filecont."66666666666";
         $decode = @zlib_decode($filecont);
-        // echo 123123;
-        //print_r($decode);
+        //echo 123123;
+        //print_r($filenameFull);
 
         if ($decode) {
+            $pos = strpos($decode, 0x00) + 1;
+            //echo $pos." 1234fd";
+            $decode = substr($decode, $pos);
             file_put_contents($filenameFull, $decode);
             $query = "update gitdump set exist=1 where filename='$filename' and filepath='$url'";
             $result = 1;

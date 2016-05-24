@@ -80,11 +80,20 @@ body {
 }
 
 .ip, .status{
-    width: 120px;
+
 }
 
 .btns{
+    text-align: center;
     /*width: 100px;*/
+}
+
+td > form {
+    margin: 0px;
+}
+
+td > a.btn {
+    padding: 4px 12px;
 }
 
 #tab-content{

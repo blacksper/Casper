@@ -45,6 +45,8 @@ class CampaignViewer
 
     public function buildPage($cid)
     {
+        //$this->Model->MysqliClass->firstResult("select ");
+        $name = $this->Model->MysqliClass->firstResult("select name from campaigns where cid=$cid")['name'];
         $this->cid = $cid;
         //var_dump(123);
 
@@ -61,7 +63,7 @@ class CampaignViewer
                     <div class="panel panel-default">
                         <ul class="nav nav-pills nav-stacked list-group">
                               <div class="panel-heading">
-                                <h3 class="panel-title ">Кампания ' . $this->cid . '</h3>
+                                <h3 class="panel-title ">Кампания <strong>' . $name . '</strong></h3>
                               </div>
                             <!--<li  class="list-group-item campTitle"> \' . $this->cid . \'</li>-->
 

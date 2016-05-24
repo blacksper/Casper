@@ -26,13 +26,22 @@ $(document).ready(function(){
             type: "POST",
             data: "username="+username+"&password="+password,
             success:function(data) {
-                var script = document.createElement( 'script' );
-                script.type = 'text/javascript';
 
-                script.text = data;
-                $("body").append( script );
+                if (data != "") {
+                    //alert(22);
+                    var script = document.createElement('script');
+                    script.type = 'text/javascript';
 
-                console.log(data);
+                    script.text = data;
+                    $("body").append(script);
+
+                    console.log(data);
+                } else {
+                    //alert(123);
+                    $('input#password').after('<div class="alert alert-danger"> ' +
+                        '<strong>Error:</strong>Неверный логин или пароль ' +
+                        '</div>');
+                }
                 //$("body").append(123);
             }
         });
@@ -51,8 +60,13 @@ $(document).ready(function(){
                     data: "page=main&campaignName=" + campaignName + "&action=add",
                     success: function (data) {
                         console.log("viz");
-                        if(data!==undefined)
-                            $("#campaignContent tbody").append(JSON.parse(data));
+                        if (data !== undefined) {
+                            qwe = JSON.parse(data);
+                            htmll = $.parseHTML(qwe);
+                            $(htmll).addClass('success').prependTo('#campaignContent tbody');
+                            //$("#campaignContent tbody").prepend(htmll);
+
+                        }
 
                     }
                 });
@@ -79,8 +93,13 @@ $(document).ready(function(){
                 data: "page=campaigns&targetUrls=" + targetUrls + "&action=add&cid=" + $_GET('cid'),
                 success: function (data) {
                     console.log("viz");
-                    if (data !== undefined)
-                        $("#targetsContent tbody").append(data);
+                    if (data !== undefined) {
+                        qwe = JSON.parse(data);
+                        htmll = $.parseHTML(qwe);
+                        $(htmll).addClass('success').prependTo('#targetsContent tbody');
+                        //$("#targetsContent tbody").prepend(htmll);
+                        //$("#targetsContent tbody").append(data);
+                    }
 
                 }
             });
@@ -306,7 +325,7 @@ $(document).ready(function(){
                 type: "POST",
                 data: "page=campaigns&action=getScanDetails&scid=" + scid,
                 success: function (data) {
-                    $('.modal-dialog').html(data);
+                    $('.modal-dialog').html(JSON.parse(data));
                     $('#myModal').modal();
                 }
             });
@@ -345,7 +364,7 @@ $(document).ready(function(){
         var lst = row.find('td:last');
         lst.html('<img style="background-color: inherit;" width="30px" height="30px" src="images/loader.gif">');
         var filepath = row.find('.filepath .cc1 .cc2').html();
-        var filename = row.find('.filename .cc1 .cc2 a').html();
+        var filename = row.find('.filename .cc1 .cc2').text();
         //row.find('.status').html('<img style="background-color: inherit;" width="50px" height="50px" src="images/1.gif">');
         console.log(666 + ' ' + filepath + " " + filename);
 

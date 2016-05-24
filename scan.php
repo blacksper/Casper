@@ -9,7 +9,7 @@ session_start();
 require($_SERVER['DOCUMENT_ROOT'] . "/config.php");
 include "./classes/Tools.class.php";
 isset($_POST['action'])?$action=$_POST['action']:$action="";
-
+set_time_limit(0);
 
 $Tools=new Tools();
 

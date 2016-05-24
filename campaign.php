@@ -12,6 +12,6 @@ if (isset($_GET['cid'])) {
     $cid = (int)$_GET['cid'];
     $v = new CampaignsController();
     include "header.php";
-    $v->CampaignViewer->buildPage($cid);
-    $v->CampaignViewer->ShowPage();
+    $v->Viewer->buildPage($cid);
+    $v->Viewer->ShowPage();
 }

@@ -20,17 +20,17 @@ switch ($_POST['page']) {
                 case "add":
                     if (isset($_POST['campaignName'])) {
                         $name = $_POST['campaignName'];
-                        echo json_encode($Controller->addCampaign($name));
+                        $result = ($Controller->addCampaign($name));
                     } elseif (isset($_POST['serverUrl'])) {
                         $url = $_POST['serverUrl'];
-                        echo json_encode($Controller->addServer($url));
+                        $result = ($Controller->addServer($url));
                     }
 
                     break;
                 case "refresh":
                     if (isset($_POST['serverId'])) {
                         $sid = $_POST['serverId'];
-                        echo json_encode($Controller->refreshStatus($sid));
+                        $result = $Controller->refreshStatus($sid);
                     }
                     break;
                 case "delete":
@@ -61,7 +61,7 @@ switch ($_POST['page']) {
                     if (isset($_POST['scid'])) {
                         $scid = $_POST['scid'];
                         //echo $Controller->Viewer->Tabs->getSubInfoTable($scid);
-                        echo $CampaignsController->CampaignViewer->Tabs->getDirScanDetails($scid);
+                        $result = $CampaignsController->Viewer->Tabs->getDirScanDetails($scid);
                     }
                     break;
             }
@@ -85,7 +85,7 @@ switch ($_POST['page']) {
                         if (isset($_POST['targetUrls'])) {
                             $targetUrls = $_POST['targetUrls'];
                             $cid = $_POST['cid'];
-                            echo($CampaignsController->addTargets($targetUrls, $cid));
+                            $result = $CampaignsController->addTargets($targetUrls, $cid);
                         }
 
                         break;
@@ -98,7 +98,7 @@ switch ($_POST['page']) {
                     case "getNote":
                         if (isset($_POST['tid'])) {
                             $tid = (int)$_POST['tid'];
-                            echo $CampaignsController->CampaignViewer->Tabs->getNote($tid);
+                            $result = $CampaignsController->Viewer->Tabs->getNote($tid);
                         }
 
                         break;
@@ -106,7 +106,7 @@ switch ($_POST['page']) {
                         if (isset($_POST['scid'])) {
                             $scid = $_POST['scid'];
 
-                            echo $CampaignsController->CampaignViewer->Tabs->getScanDetails($scid);
+                            $result = $CampaignsController->Viewer->Tabs->getScanDetails($scid);
                         }
                         break;
                     case "addHash":
@@ -114,7 +114,7 @@ switch ($_POST['page']) {
                             //echo 123;
                             $cid = $_POST['cid'];
 
-                            echo $CampaignsController->addHash($_POST['strForHash'], $_POST['type'], $cid);
+                            $result = $CampaignsController->addHash($_POST['strForHash'], $_POST['type'], $cid);
                         }
                         break;
 
@@ -124,7 +124,7 @@ switch ($_POST['page']) {
                             $tid = $_POST['tid'];
                             $note = htmlspecialchars($_POST['note']);
 
-                            echo $CampaignsController->saveNote($tid, $note);
+                            $result = $CampaignsController->saveNote($tid, $note);
                         }
                         break;
                     case "getGitRows":
@@ -135,7 +135,8 @@ switch ($_POST['page']) {
                             $limit = (int)$_POST['limit'];
                             //$note = htmlspecialchars($_POST['note']);
 
-                            echo json_encode($CampaignsController->CampaignViewer->Tabs->getGitdumpRows($scid, $offset, $limit));
+                            //echo json_encode($CampaignsController->CampaignViewer->Tabs->getGitdumpRows($scid, $offset, $limit));
+                            $result = $CampaignsController->Viewer->Tabs->getGitdumpRows($scid, $offset, $limit);
                         }
                         break;
 //                    case "downloadScr":
@@ -156,3 +157,4 @@ switch ($_POST['page']) {
         break;
 
 }
+echo json_encode($result);
