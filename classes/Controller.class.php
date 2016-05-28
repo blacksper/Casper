@@ -186,11 +186,13 @@ class Controller {
     function setDelete($id,$type){   //удаление сервера
         $result="";
         $id=(int)$id;
-        if($id) {
+        // echo $type;
+
             if ($type == "server") {
                 //$sid=(int)$id;
                 $query = "UPDATE servers set deleted=1 WHERE sid=$id";
                 $result = $this->Model->MysqliClass->query($query);
+                //echo $query;
             } elseif ($type == "campaign") {
                 //$tid=(int)$id;
                 $query = "UPDATE campaigns set deleted=1 WHERE cid=$id";
@@ -205,7 +207,7 @@ class Controller {
                 $result = $this->Model->MysqliClass->query($query);
             }
             //echo $query;
-        }
+
         return $result;
     }
 

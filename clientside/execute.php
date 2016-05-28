@@ -14,9 +14,9 @@ error_reporting(E_ALL);
 //file_put_contents("dd.txt",print_r($_SERVER,1));
 
 //sleep(5);
-$fp = fopen("gg" . rand(1000, 200000) . '.txt', 'w+');
-fwrite($fp, print_r($_POST, 1));
-fclose($fp);
+//$fp = fopen("gg" . rand(1000, 200000) . '.txt', 'w+');
+//fwrite($fp, print_r($_POST, 1));
+//fclose($fp);
 
 //die();
 

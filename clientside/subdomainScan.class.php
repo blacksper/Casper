@@ -22,10 +22,10 @@ class SubdomainScanClass extends Main
 
         echo $this->target = $m[3];
 
-        $this->ch = curl_init();
-        $this->scid = $scid;
-        $this->result = array();
-        $this->result[$this->scid] = array();
+        //$this->ch = curl_init();
+        //$this->scid = $scid;
+        //$this->result = array();
+        //$this->result[$this->scid] = array();
 
     }
 

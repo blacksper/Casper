@@ -18,59 +18,63 @@ class DirScan extends Main
 
     var $size404;
     var $httpCode404;
-
+    var $ch;
 
     var $https;
 
-//    function __construct($target,$scid){
-//        $this->target=$target;
-//        $this->ch=curl_init();
-//        $this->scid=$scid;
-//
-//
-//    }
+
 
     function startScan($urls)
     {
+
+        //$this->ch=curl_init();
         $this->find404();
-        file_put_contents(rand(1, 199999), "w");
-        //echo 321;
+        //file_put_contents(rand(1, 199999), "w");
+
         if ($this->httpCode404 == 0)
             return $this->result;
-        //echo 123;
+
         $ch = $this->ch;
-        curl_setopt($ch, CURLOPT_URL, $this->target);
+        curl_reset($ch);
+        //curl_setopt($ch, CURLOPT_URL, $this->target);
         //curl_setopt($ch,CURLOPT_POST,true);
         //curl_setopt($ch,CURLOPT_TIMEOUT,5);
+        curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:42.0) Gecko/20100101 Firefox/42.0");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_NOBODY, true);
+        //curl_setopt($ch, CURLOPT_NOBODY, true);
         if ($this->https) {
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
             curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
         }
 
         $i = 0;
-        $fp = fopen(rand(1000, 200000) . '.txt', 'a+');
+        //$fp = fopen(rand(1000, 200000) . '.txt', 'a+');
         //echo 123123;
         foreach ($urls as $url) {
             $i++;
-            fwrite($fp, "$i\n");
-
+            //fwrite($fp, "$i\n");
             $url = trim($url);
-            $u = $this->target . "/" . $url;
-            echo $u . "\n";
+            $u = $this->target . $url;
+
             if (substr($u, -1) !== "/")
                 $u .= "/";
             curl_setopt($ch, CURLOPT_URL, $u);
             curl_exec($ch);
             $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-            $length = curl_getinfo($ch, CURLINFO_CONTENT_LENGTH_DOWNLOAD);
+            $length = curl_getinfo($ch, CURLINFO_SIZE_DOWNLOAD);
+            //$length = strlen($responseData);
+            //print_r(curl_getinfo($ch));
+
+            //if($length!=$this->size404)//есть ли смысл хранить 404
             array_push($this->result[$this->scid], array("url" => $url, "httpcode" => $code, "length" => $length));
+            echo $u . " " . $code . " " . $length . " " . "\n";
+            //echo $code." ".$length." ".$u."\n";
+            //die();
         }
 
         //echo $result = json_encode($this->result);
 
-        fclose($fp);
+        //fclose($fp);
         $this->sendResults();
 
         //print_r($this->result);
@@ -87,10 +91,13 @@ class DirScan extends Main
     }
 
     function find404(){
-        curl_setopt($this->ch,CURLOPT_URL,$this->target."/qwedsfwrefve5h45r143rb5t3");
+        //$this->ch=curl_init();
+        $absurdUrl = "qwewqecdsgvrefb325143rfqew";
+        $url = $this->target . $absurdUrl;
+        curl_setopt($this->ch, CURLOPT_URL, $url);
         curl_setopt($this->ch,CURLOPT_TIMEOUT,5);
         curl_setopt($this->ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($this->ch, CURLOPT_NOBODY, true);
+        //curl_setopt($this->ch, CURLOPT_NOBODY, true);
         if ($this->https) {
             curl_setopt($this->ch, CURLOPT_SSL_VERIFYPEER, 0);
             curl_setopt($this->ch, CURLOPT_SSL_VERIFYHOST, 0);
@@ -98,10 +105,12 @@ class DirScan extends Main
         curl_exec($this->ch);
 
         $code=curl_getinfo($this->ch,CURLINFO_HTTP_CODE);
-        $length=curl_getinfo($this->ch,CURLINFO_CONTENT_LENGTH_DOWNLOAD);
-
+        $length = curl_getinfo($this->ch, CURLINFO_SIZE_DOWNLOAD);
+        //$length=strlen($data);
+        //echo $data;
          $this->size404=$length;
          $this->httpCode404=$code;
+        echo $url . " " . $this->size404 . " " . $this->httpCode404 . "\n";
     }
 
 

@@ -48,7 +48,7 @@ switch ($_POST['page']) {
                         $scid = $_POST['scanId'];
                         $result = $Controller->setDelete($scid, "scan");
                     }
-                    echo intval($result);
+                    $result = intval($result);
                     //var_dump($result);
                     break;
                 case "getsubinfo":

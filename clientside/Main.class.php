@@ -15,7 +15,10 @@ abstract class Main
 
     function __construct($target, $scid)
     {
+        //echo 123;
         $this->target = $target;
+        if (substr($this->target, -1) !== "/")
+            $this->target .= "/";
         $this->ch = curl_init();
         $this->scid = $scid;
         $this->result = array();

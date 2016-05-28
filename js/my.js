@@ -179,8 +179,11 @@ $(document).ready(function(){
         $("body").on('click','.refresh',function(){
             var row=$(this).parents('.serverRow');
             var serverId=row.attr('value');
-            row.find('.ip').html('<img style="background-color: inherit;" width="50px" height="50px" src="images/loader.gif">');
-            row.find('.status').html('<img style="background-color: inherit;" width="50px" height="50px" src="images/loader.gif">');
+            var ip = row.find('.ip');
+            var rstat = row.find('.status');
+
+            ip.html('<img style="background-color: inherit;" width="30px" height="30px" src="images/loader.gif">')
+            rstat.html('<img style="background-color: inherit;" width="30px" height="30px" src="images/loader.gif">');
 
             if(serverId!==undefined) {
                 $.ajax({
@@ -191,17 +194,18 @@ $(document).ready(function(){
                         console.log(data);
                         if(data!==undefined) {
                             decodeData=JSON.parse(data);
-                            row.find('.ip').text(decodeData['ip']);
-                            row.find('.status').text(decodeData['statusArr']['stmsg']);
-                            row.find('.status').removeClassWild(" *");
-                            row.find('.status').addClass(decodeData['statusArr']['status']);
+                            ip.text(decodeData['ip']);
+
+                            rstat.text(decodeData['statusArr']['stmsg']);
+                            rstat.removeClassWild("");
+                            rstat.addClass("col-md-1 " + decodeData['statusArr']['status']);
                         }
                     }
                 });
             }
         });
 
-        $("body").on('click','.deleteSrv',function(){
+    $("body").on('click', '.deleteSrv', function () {
             var row=$(this).parents('.serverRow');
             var serverId=row.data('sid');
             console.log(serverId);
@@ -213,6 +217,7 @@ $(document).ready(function(){
                     success: function (data) {
                         console.log(data);
                         if(data==1) {
+                            //alert();
                             row.fadeOut(500);
                         }
                     }

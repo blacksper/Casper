@@ -8,6 +8,10 @@
  */
 class Bruteforce extends Main
 {
+    function __construct()
+    {
+        $this->ch = curl_init();
+    }
 
 
     function startScan($source)
@@ -24,7 +28,6 @@ class Bruteforce extends Main
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, false);
         curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:42.0) Gecko/20100101 Firefox/42.0");
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         //curl_setopt($ch, CURLINFO_HEADER_OUT, 1);
         //curl_setopt($ch, CURLOPT_NOBODY, 1);
         foreach ($logins as $login) {
