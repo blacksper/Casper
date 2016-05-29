@@ -6,8 +6,9 @@
  * Date: 21.04.2016
  * Time: 15:02
  */
+session_start();
 include "Model.class.php";
-
+require($_SERVER['DOCUMENT_ROOT'] . "/config.php");
 class Tools
 {
 
@@ -146,6 +147,7 @@ class Tools
 
     }
 
+
     // сканирование директорий и сабдоменов
 
     function startScanPath($action, $filename, $tid, $sidArr)
@@ -221,7 +223,7 @@ class Tools
 
     }
 
-    function startBruteforce($loginsfile, $passwordsfile, $tid, $sidArr)
+    function startBruteforce($type, $loginsfile, $passwordsfile, $tid, $sidArr)
     {
         //$sidArr=explode(',',$sid);
 
@@ -230,7 +232,7 @@ class Tools
         $source = $this->generateSource($logins, $passwords);
 
         $filename = time() . "-$loginsfile-$passwordsfile";
-        $scid = $this->addScan($tid, $sidArr, "brute", $filename);
+        $scid = $this->addScan($tid, $sidArr, $type, $filename);
         if (!$scid) exit;
 
         file_put_contents(PATH_BSRC . "/" . $filename, $source);
@@ -320,18 +322,22 @@ class Tools
         return $result;
     }
 
-    function gitDump($tid, $sid, $option = "gitdump")
+    function gitDump($tid, $sid = array(0), $option = "gitdump")
     {
 
         $query = "select * from targets where tid=$tid";
         $targeturl = $this->Model->MysqliClass->firstResult($query)['url'];
 
-        //$targeturl="http://moscow.questoria.ru/";
+
         $urlArr = parse_url($targeturl);
         $directory = PATH_GIT . "/" . $urlArr['host'];
         $results = array();
-        echo $directory . "\n";
-        $scid = $this->addScan($tid, array($sid), $option);
+
+        $query = "select scid from scans where tid=$tid and type='gitdump'";
+        $scid = $this->Model->MysqliClass->firstResult($query)['scid'];
+
+        if (!$scid)
+            $scid = $this->addScan($tid, $sid, $option);
         //if (!file_exists("$directory/index"))//РАСКОМЕНТИРОВАТЬ ПОТОМ
             $this->downloadIndex($targeturl);
 
@@ -340,11 +346,11 @@ class Tools
         $entrycount = fread($file, 4);
         $entrycount = unpack("N", $entrycount)[1] . "\n";
 
-        //echo $entrycount;
+
         $b = 0;
         for ($i = 0; $i < $entrycount; $i++) {
             $b++;
-            echo $i . ", ";
+            //echo $i . ", ";
             $entrylen = 62;
 
             $nulldata = fread($file, 40);
@@ -355,7 +361,7 @@ class Tools
             if ($flag < 0xFFF) {
                 $entrylen += $flag;
                 $filename = fread($file, $flag);
-                echo "$flag first " . $filename . "\n";
+                //echo "$flag first " . $filename . "\n";
             } else {
                 while (1) {
                     $sym = fread($file, 1);
@@ -363,13 +369,10 @@ class Tools
                         break;
                     $filename .= $sym;
                 }
-                //echo "$flag second ".$filename."\n";
-            }
 
+            }
             $padlen = (8 - ($entrylen % 8)) or 8;
             fread($file, $padlen);
-
-
             $dname = dirname($filename);
             if ($dname && !file_exists($directory . "/" . $dname)) {
                 //echo "ya sozdal "."";
@@ -379,16 +382,11 @@ class Tools
                 //echo "\n";
                 mkdir($tomake, 0777, 1);
             }
-
             $filepath = $targeturl . ".git/objects/$sha1part1/$sha1part2";
-            //echo $filepath."\n";
-            //downloadFile($ura,$directory."/".$filename);
-
             array_push($results, array("filename" => $filename, "filepath" => $filepath));
         }
-
         fclose($file);
-        //die();
+
         $queryStart = "INSERT INTO gitdump(scid,filename,filepath) VALUES";
         $query = $queryStart;
         $i = 0;
@@ -414,12 +412,12 @@ class Tools
         $query = "update scans set status=1 where scid=$scid";
         $this->Model->MysqliClass->query($query);
 
-
+        return $scid;
     }
 
     function downloadIndex($url)
     {
-        echo $url . "\n";
+        //echo $url . "\n";
         $index = file_get_contents($url . "/.git/index");
         $urlArr = parse_url($url);
         $directory = PATH_GIT . "/" . $urlArr['host'];

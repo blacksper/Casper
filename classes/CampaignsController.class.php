@@ -169,6 +169,14 @@ class CampaignsController
 
     }
 
+    function getTargetScans($tid, $type)
+    {
+        $query = "select * from scans where tid=$tid and type='$type' and deleted=0 GROUP BY scid";
+        $scansArr = $this->Model->MysqliClass->getAssocArray($query);
+        return $scansArr;
+    }
+
+
 
 
 }

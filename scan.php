@@ -5,8 +5,8 @@
  * Date: 21.04.2016
  * Time: 15:34
  */
-session_start();
-require($_SERVER['DOCUMENT_ROOT'] . "/config.php");
+//session_start();
+//require($_SERVER['DOCUMENT_ROOT'] . "/config.php");
 include "./classes/Tools.class.php";
 isset($_POST['action'])?$action=$_POST['action']:$action="";
 set_time_limit(0);
@@ -31,16 +31,18 @@ if (isset($_POST['action'])) {
             }
 
             break;
-        case "brute":
+        case "wpBrute":
+        case "dleBrute":
             if (($sid == 0) || ($tid == 0))
                 return 0;
+            $type = $action;
             $loginfile = $_POST['loginfile'];
             $passwordfile = $_POST['passwordfile'];
 
             if (!isset($loginfile, $passwordfile))
                 return 0;
 
-            $Tools->startBruteforce($loginfile, $passwordfile, $tid, $sid);
+            $Tools->startBruteforce($type, $loginfile, $passwordfile, $tid, $sid);
 
             break;
 
@@ -50,7 +52,7 @@ if (isset($_POST['action'])) {
             break;
 
         case "gitdump":
-            $Tools->gitDump($tid, $sid, $action);
+            $Tools->gitDump($tid);
             break;
 
         case "downloadSrc":

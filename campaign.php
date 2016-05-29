@@ -1,3 +1,4 @@
+<html>
 <?php
 /**
  * Created by PhpStorm.
@@ -15,3 +16,5 @@ if (isset($_GET['cid'])) {
     $v->Viewer->buildPage($cid);
     $v->Viewer->ShowPage();
 }
+?>
+</html>

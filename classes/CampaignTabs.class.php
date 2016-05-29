@@ -163,7 +163,6 @@ class CampaignTabs
         return $result;
     }
 
-// " . $row['ip'] . "
 
     function getToolsTab($cid)//закладка инструменты
     {
@@ -216,14 +215,14 @@ class CampaignTabs
                             <div class="tab-content" >
                                 <div class="tab-pane fade" id="gg">
                                     <ul style="width: 300px" class="nav nav-pils nav-stacked">
-                                            <li><a href="#gg1" data-toggle="tab">Wordpress</a></li>
+                                            <li><a href="#wpBrute" data-toggle="tab">Wordpress</a></li>
+                                            <li><a href="#dleBrute" data-toggle="tab">DLE</a></li>
                                     </ul>
                                 </div>
 
 
-                                <div class="tab-pane fade" id="gg1">
+                                <div class="tab-pane fade" id="wpBrute">
                                     <h1>Wordpress</h1>
-
                                     <form method="post" action="../scan.php" id="fileselect" class="navbar-form navbar-left">
                                         <div class="form-group">
                                            <select class="form-control" name="tid">
@@ -246,11 +245,43 @@ class CampaignTabs
                                             ' . $servers . '
                                             </select>
                                             <input type="submit" name="sub" class="btn btn-default">
-                                            <input type="hidden" name="action" value="brute" class="btn btn-default">
+                                            <input type="hidden" name="action" value="wpBrute" class="btn btn-default">
                                         </div>
                                     </form>
-
                                 </div>
+
+
+                                <div class="tab-pane fade" id="dleBrute">
+                                    <h1>DLE</h1>
+                                    <form method="post" action="../scan.php" id="fileselect" class="navbar-form navbar-left">
+                                        <div class="form-group">
+                                           <select class="form-control" name="tid">
+                                            <option selected="selected">Choose target</option>
+                                            ' . $urls . '
+                                            </select>
+
+                                            <select class="form-control" name="loginfile">
+                                            <option selected="selected">loginfile</option>
+                                            ' . $dirs . '
+                                            </select>
+
+                                            <select class="form-control" name="passwordfile">
+                                            <option selected="selected">passwordfile</option>
+                                            ' . $dirs . '
+                                            </select>
+
+                                            <select class="form-control" name="sid">
+                                            <option selected="selected">Choose server</option>
+                                            ' . $servers . '
+                                            </select>
+                                            <input type="submit" name="sub" class="btn btn-default">
+                                            <input type="hidden" name="action" value="dleBrute" class="btn btn-default">
+                                        </div>
+                                    </form>
+                                </div>
+
+
+
 
 
                                 <div class="tab-pane fade in active" id="gl">
@@ -328,28 +359,30 @@ class CampaignTabs
                                                     <input id="strForHash" type="text" class="form-control" >
                                                     <button id="addHash" class="btn btn-default">getHash</button>
                                                 </div>
-
                                         </div>
 
                                         <div class="tab-pane fade in active" id="hashesTab">
                                             ' . $hashContent . '
                                         </div>
-
-                                        </div>
+                                    </div>
                                 </div>
+
                                 <div class="tab-pane fade" id="gitDumper">
-                                    <form class="navbar-form navbar-left" method="post" action="../scan.php" id="fileselect">
-                                        <div class="form-group">
-                                            <select class="form-control" name="tid">
-                                            <option selected="selected">Choose target</option>
+                                    <div class="row">
+                                        <div class="form-group col-md-6">
+                                         <div class="form-inline">
+                                            <select id="gitTarget" class="form-control" name="tid">
+                                            <option  selected="selected" value="0">Choose target</option>
                                             ' . $urls . '
                                             </select>
-                                            <input class="btn btn-default" type="submit">
-                                            <input type="hidden" name="action" value="gitdump">
-                                        </div>
-                                    </form>
-
+                                            <input id="searchText" type="text" class="form-control" placeholder="ex.: .php">
+                                            <button id="searchGit" class="btn btn-default">search in filename</button>
+                                            <input type="hidden" class="action" name="action" value="gitdump">
+                                            </div>
+                                         </div>
+                                    </div>
                                 </div>
+
 
                             </div>
                         </div>
@@ -392,7 +425,8 @@ class CampaignTabs
     function getScansTab($cid)
     {
         //var_dump( $cid);
-        $query = "select * from targets RIGHT JOIN scans on targets.tid=scans.tid where cid=$cid and scans.deleted=0 and targets.deleted=0 group by scid order by dateScan desc";
+        $query = "select * from targets RIGHT JOIN scans on targets.tid=scans.tid where cid=$cid and scans.deleted=0 and targets.deleted=0 and scans.type<>'gitdump' group by scid order by dateScan desc";
+        //echo $query;
         $result = $this->Model->MysqliClass->getAssocArray($query);
         $tbody = "<tbody>";
         foreach ($result as $row)
@@ -476,11 +510,12 @@ class CampaignTabs
             case "nmap":
                 $result = $this->getNmapDetails($scid);
                 break;
-            case "brute":
+            case "wpBrute":
+            case "dleBrute":
                 $result = $this->getBruteDetails($scid);
                 break;
             case "gitdump":
-                $result = $this->getGitdumpDetails($scid, 0, 10);
+                $result = $this->getGitdumpDetails($scid);
                 break;
         }
 
@@ -715,6 +750,7 @@ class CampaignTabs
                             </ul >
                             <p>
                                 <div class="tab-content" >
+
                                         <div class="tab-pane fade in active" id="found"  >
                                         ' . $combsCont . ' </div>
 
@@ -750,71 +786,68 @@ class CampaignTabs
         return $table;
     }
 
-    function getGitdumpDetails($scid, $offset = 0, $limit = 10)
+    function getGitdumpDetails($scid, $like = "", $offset = 0, $limit = 10)
     {
 
-
-        $testedUrl = $this->Model->getTestedUrl($scid);
-        $combsCont = "";
-        //print_r($files);
-
-
-        //if (empty($files)) {
-        //    $combsCont = '<div class="alert alert-warning">
-        //                    <strong>Пусто</strong>
-        //               </div>';
-        //} else {
         $table = '<table id="gitTable" class="table table-hover">';
         $thead = '<thead><tr><th>filename</th><th>filepath</th></tr></thead>';
-        $tbody = $this->getGitdumpRows($scid, $offset, $limit);
+        $tbody = $this->getGitdumpRows($scid, $like, $offset, $limit);
         if (!strstr($tbody, "<strong>Пусто</strong>"))
             $combsCont = $table . $thead . $tbody . "</table>";
         else $combsCont = $tbody;
 
-        //}
+        $result = '
 
-        $result = '<div class="modal-content" data-scid="' . $scid . '">
-                          <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="gridSystemModalLabel">' . $testedUrl . '</h4>
-                          </div>
-                          <div class="modal-body">
-                            <ul style="width: 300px" class="qwe nav nav-pills" >
-                                <li class="active"><a  href="#found" data-toggle="tab">Valid</a></li>
-                            </ul >
-                            <p>
-                                <div class="tab-content" >
-                                        <div class="tab-pane fade in active" id="found"  >
-                                        ' . $combsCont . ' </div>
+             <div id="gitDumpTable" data-scid="' . $scid . '">
+                <div class="row"><div class="col-md-8">
 
-                                   <div class="row" style="text-align:center;"><div class="col-md-12"><button id="moreGitRows" class="btn btn-info">MORE <span class="glyphicon glyphicon-download"></span></button></div></div>
-                                </div >
-                            </p>
+
+
+
+                             <div >
+                                <input style="margin: 0 5px;" class="btn btn-primary doScan" type="submit" value="Обновить список файлов">
+
                             </div>
-                    </div>
+
+
+
+                        <div class="tab-content" >
+                                <div class="tab-pane fade in active" id="found"  >
+                                ' . $combsCont . ' </div>
+
+                                    <div class="row" style="text-align:center;"><div class="col-md-12">
+                                        <button id="moreGitRows" class="btn btn-info btn-sm">MORE <span class="glyphicon glyphicon-download"></span></button>
+                                    </div>
+                                 </div>
+                        </div >
+                    </div></div></div>
                 ';
         return $result;
-
-
     }
 
-    function getGitdumpRows($scid, $offset, $limit)
+    function getGitdumpRows($scid, $like, $offset, $limit)
     {
-        //$filesArr = $this->Model->MysqliClass->getAssocArray("select * from gitdump where scid=$scid  limit $offset,$limit");
-        $filesArr = $this->Model->getScansResult($scid, "gitDump", "dateAdd", $limit, $offset);
-        //$scid,$scanType,$orderby,$limit,$offset)
+
+        //$filesArr = $this->Model->getScansResult($scid, "gitDump", "exist desc", $limit, $offset);
+
+        $query = "select * from gitdump where scid=$scid and filename like '%$like%' ORDER BY exist desc,dateAdd desc limit $offset,$limit";
+        //echo $query;
+        $filesArr = $this->Model->MysqliClass->getAssocArray($query);
+
         $testedUrl = $this->Model->getTestedUrl($scid);
+
         preg_match("@http[s]?:\/\/([\w\d.-]+)\/@", $testedUrl, $m);
-        //preg_match("//", $targeturl, $m);
+
         if (empty($filesArr)) {
+            if ($offset == 0)
             $tbody = '<div class="alert alert-warning">
                             <strong>Пусто</strong>
                        </div>';
+            else
+                $tbody = "";
         } else {
 
-            //var_dump( $foundPaths);
             $tbody = '';
-            //$httpcode=$path['httpcode'];
             foreach ($filesArr as $file) {
                 $ext = pathinfo($file['filename'])["extension"];
 
@@ -822,12 +855,10 @@ class CampaignTabs
             <td class="filename"><div class="cc1"><div class="cc2"><a target="_blank" href="' . PATH_GITD . "/" . $m[1] . "/" . $file['filename'] . (($ext == "php") ? ".txt" : '') . '"><span class="glyphicon glyphicon-link"></span></a> ' . $file['filename'] . '</div></div></td>
             <td class="filepath"><div class="cc1"><div class="cc2">' . $file['filepath'] . '</div></div></td>
             <td class="buttonload"><button class="btn btn-info btn-sm downSrc"><span class="glyphicon glyphicon-download-alt"></span></button></td>
-
             </tr>';
-
             }
         }
-        //$table .= $thead . $tbody . "<tr>";
+
 
         return $tbody;
     }

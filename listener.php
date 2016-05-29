@@ -45,7 +45,8 @@ foreach ($result as $scid => $results) {
             $ProcessingClass->subDomainScanProc($results, $scid);
             break;
 
-        case "brute":
+        case "wpBrute":
+        case "dleBrute":
             $ProcessingClass->bruteForceProc($results, $scid);
 
             break;

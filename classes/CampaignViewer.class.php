@@ -29,7 +29,7 @@ class CampaignViewer
         $this->Head = '';
         $this->Tabs = new CampaignTabs($this->Model);
         //<script src="my.js"></script>
-        $this->Head .= "</head>";
+        //$this->Head .= "</head>";
         $this->Body = "<body>";
         $this->Footer = "";
 

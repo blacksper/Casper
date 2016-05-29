@@ -239,3 +239,23 @@ table#gitTable td {
 #hashesAdd .form-inline {
     margin: 10px 0px 10px 0px;
 }
+
+#gitTarget {
+    width: 35%;
+}
+
+#searchText {
+    width: 33%;
+}
+
+#searchGit {
+    width: 30%;
+}
+
+#gitDumper .row {
+    border: none;
+}
+
+#gitDumper {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}

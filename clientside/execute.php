@@ -54,7 +54,8 @@ if(!empty($ar)) {
 
                 break;
 
-            case "brute":
+            case "wpBrute":
+            case "dleBrute":
                 include("Bruteforce.class.php");
                 // echo 12;
                 $target = $b['url'];
@@ -63,8 +64,9 @@ if(!empty($ar)) {
                 //var_dump($passwords);
                 //var_dump($logins);
                 //die();
-
+                $type = $action;
                 $subdomainC = new Bruteforce($target, $scid);
+                $subdomainC->type = $action;
                 $subdomainC->startScan($source);
 
                 break;

@@ -6,12 +6,11 @@
  * Date: 08.04.2016
  * Time: 12:30
  */
-//include("Tools.class.php");
 class Tabs
 {
     //var $MysqliClass;
     var $allHtml;
-    //var $Tools;
+
     function __construct($Model){
         $this->Model=$Model;
 

@@ -54,7 +54,9 @@ class CampaignModel
      */
     public function getTestedUrl($scid)
     {
-        $testedUrl = $this->MysqliClass->firstResult("select url from scans left JOIN targets on scans.tid=targets.tid where scid=$scid")['url'];
+        $query = "select url from scans left JOIN targets on scans.tid=targets.tid where scid=$scid";
+        //echo $query;
+        $testedUrl = $this->MysqliClass->firstResult($query)['url'];
         return $testedUrl;
     }
 
@@ -87,7 +89,7 @@ class CampaignModel
 
         }
         $query = "select * from $tableName where scid=$scid ORDER BY $orderby limit $offset,$limit";
-        //echo $query;
+        // echo $query;
         $foundPaths = $this->MysqliClass->getAssocArray($query);
         return $foundPaths;
     }
