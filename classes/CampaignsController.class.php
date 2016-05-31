@@ -216,7 +216,7 @@ class CampaignsController
                 $offset = 0;
                 $limit = 10;
                 $filesArr = $this->Model->getGitdumpFiles($scid, $like, $offset, $limit);
-
+                //print_r($filesArr);die();
                 $result = $this->Viewer->Tabs->getGitdumpDetails($filesArr, $scid);
                 break;
         }

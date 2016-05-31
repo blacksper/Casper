@@ -758,14 +758,16 @@ class CampaignTabs
         return $table;
     }
 
-    function getGitdumpDetails($filesArr, $testedUrl)
+    function getGitdumpDetails($filesArr, $testedUrl, $scid = 0)
     {
+        //print_r($filesArr);
+        //die();
 
         $table = '<table id="gitTable" class="table table-hover">';
         $thead = '<thead><tr><th>filename</th><th>filepath</th></tr></thead>';
 
         $tbody = $this->getGitdumpTable($filesArr, $testedUrl);
-        $scid = 0;//!!!!!!!!!!!вернуться сюда
+        //$scid = 0;//!!!!!!!!!!!вернуться сюда
         if (!strstr($tbody, "<strong>Пусто</strong>"))
             $combsCont = $table . $thead . $tbody . "</table>";
         else $combsCont = $tbody;
@@ -939,22 +941,22 @@ class CampaignTabs
 //        return $result;
 //    }
 
-    function getNote($tid)
+    function getNote($note)
     {
-        $query = "select note from targets where tid=$tid and deleted=0";
-        $note = $this->Model->MysqliClass->firstResult($query)['note'];
+
         if (!$note)
             $result = 0;
+
         $result = "<div class='modal-content'>
                     <div class='modal-header'>
                         <div class='form-group'>
                           <label for='Comment'>Заметка:</label>
                         </div>
                         <div class='modal-body'>
-                            <textarea class='form-control' rows='5' id='noteText'>$note</textarea>
+                            <textarea class='form-control' rows='5' id='noteText'>{$note['note']}</textarea>
                         </div>
                         <div class='modal-footer'>
-                           <button id='saveNote' style='float: right;' class='btn btn-success' data-tid='$tid'>Сохранить</button>
+                           <button id='saveNote' style='float: right;' class='btn btn-success' data-tid='{$note['tid']}'>Сохранить</button>
                         </div>
                      </div>
                 </div>";

@@ -112,9 +112,10 @@ class CampaignModel
         return $foundPaths;
     }
 
-    function getGitdumpFiles($scid, $like, $offset, $limit)
+    function getGitdumpFiles($scid, $like = "", $offset = 0, $limit = 10)
     {
         $query = "select * from gitdump where scid=$scid and filename like '%$like%' ORDER BY exist desc,dateAdd desc limit $offset,$limit";
+        //echo $query;
         $filesArr = $this->MysqliClass->getAssocArray($query);
         return $filesArr;
     }
@@ -144,6 +145,13 @@ class CampaignModel
         $query = "SELECT sid,path FROM servers WHERE deleted=0 AND sid>0";
         $serversArr = $this->MysqliClass->getAssocArray($query);
         return $serversArr;
+    }
+
+    function getNote($tid)
+    {
+        $query = "select note,tid from targets where tid=$tid and deleted=0";
+        $note = $this->MysqliClass->firstResult($query);
+        return $note;
     }
 
 }

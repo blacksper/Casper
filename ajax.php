@@ -96,14 +96,15 @@ switch ($_POST['page']) {
                     case "getNote":
                         if (isset($_POST['tid'])) {
                             $tid = (int)$_POST['tid'];
-                            $result = $CampaignsController->Viewer->Tabs->getNote($tid);
+                            $note = $CampaignsController->Model->getNote($tid);
+                            $result = $CampaignsController->Viewer->Tabs->getNote($note);
                         }
 
                         break;
                     case "getScanDetails":
                         if (isset($_POST['scid'])) {
                             $scid = $_POST['scid'];
-                            $result = $CampaignsController->Viewer->Tabs->getScanDetails($scid);
+                            $result = $CampaignsController->getScanDetails($scid);
                         }
                         break;
                     case "addHash":
@@ -132,7 +133,9 @@ switch ($_POST['page']) {
                             $searchText = $_POST['searchText'];
                             //$note = htmlspecialchars($_POST['note']);
                             //echo json_encode($CampaignsController->CampaignViewer->Tabs->getGitdumpRows($scid, $offset, $limit));
-                            $result = $CampaignsController->Viewer->Tabs->getGitdumpTable($scid, $searchText, $offset, $limit);
+                            $fileArr = $CampaignsController->Model->getGitdumpFiles($scid, $searchText, $offset, $limit);
+                            $testedUrl = $CampaignsController->Model->getTestedUrl($scid);
+                            $result = $CampaignsController->Viewer->Tabs->getGitdumpTable($fileArr, $testedUrl);
                         }
                         break;
                     case "getGitDetails":
@@ -143,8 +146,13 @@ switch ($_POST['page']) {
                             $query = "select * from scans where scans.tid=$tid and scans.type='$type' and scans.deleted=0";
                             //echo $query;
                             $scid = $CampaignsController->Model->MysqliClass->firstResult($query)['scid'];
-                            if (isset($scid))
-                                $result = $CampaignsController->Viewer->Tabs->getGitdumpDetails($scid, $searchtext);
+
+                            if (isset($scid)) {
+                                $fileArr = $CampaignsController->Model->getGitdumpFiles($scid);
+                                $testedUrl = $CampaignsController->Model->getTestedUrl($scid);
+                                //print_r($fileArr);//die();
+                                $result = $CampaignsController->Viewer->Tabs->getGitdumpDetails($fileArr, $testedUrl, $scid);
+                            }
                             else
                                 $result = '<div id="gitDumpTable">
                                         <div >
@@ -179,7 +187,7 @@ switch ($_POST['page']) {
                 $result = $scid;
                 break;
             case "detectCms":
-                $result = $Tools->detectCms($tid);
+                $result = $Tools->doDetectCms($tid);
                 break;
             case "mscan":
                 $type = $_POST['type'];

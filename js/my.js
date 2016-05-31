@@ -337,11 +337,15 @@ $(document).ready(function () {
     });
 
     $("body").on('click', '#searchGit', function () {
-        var tid = $("#gitTarget option:selected").val();
-        console.log(tid);
+        var pnt = $(this).parents(".form-group");
+        var tid = pnt.find(".targetsList option:selected").val();
+
+
+        // console.log(action);
         if (tid > 0) {
 
-            var type = $('.action').val();
+            //var type = $('.action').val();
+            var type = pnt.find(".action").val();
             console.log(type);
             var searchText = $("#searchText").val();
             getGitDetails(tid, type, searchText);
@@ -393,33 +397,13 @@ $(document).ready(function () {
 
     }
 
-    //$("body").on('click', '.doScan', function () {
-    //    var pnt=$(this).parents(".form-inline");
-    //    //console.log(pnt);
-    //    var type = $('.action').val();
-    //    var tid = $("#gitTarget option:selected").val();
-    //    if ((tid !== undefined) && (type !== undefined)) {
-    //
-    //        console.log(type);
-    //        $.ajax({
-    //            url: "ajax.php",
-    //            type: "POST",
-    //            data: "page=scan&action=doScan&tid=" + tid + "&type=" + type,
-    //            success: function (data) {
-    //                console.log(data);
-    //                if (data !== undefined)
-    //                    getGitDetails(tid, type);
-    //            }
-    //        });
-    //    }
-    //});
 
 
     $("body").on('click', '.doScan', function () {
         var pnt = $(this).parents(".form-group");
-
-        var action = pnt.find(".action").val();
         var tid = pnt.find(".targetsList option:selected").val();
+        var action = pnt.find(".action").val();
+
         console.log(tid);
         console.log(action);
         if ((tid !== undefined) && (action !== undefined) && (tid > 0)) {
@@ -484,10 +468,7 @@ $(document).ready(function () {
     }
 
 
-
-
-
-    $("body").on('change', '#gitTarget', function () {
+    $("body").on('change', '#gitDumper .row .form-group .form-inline .targetsList', function () {
 
         if ($(".error").html() !== undefined) {
             $(".error").remove();
