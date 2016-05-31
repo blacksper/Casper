@@ -60,6 +60,18 @@ class CampaignModel
         return $testedUrl;
     }
 
+    function getScanType($scid)
+    {
+        $query = "select type from scans where scid=$scid";
+        $type = $this->MysqliClass->firstResult($query)['type'];
+        return $type;
+    }
+
+    function getFoundSubs($scid)
+    {
+        $foundPaths = $this->getScansResult($scid, "subdomainScan", "resolve desc");
+        return $foundPaths;
+    }
 
     /**
      * @param $scid
@@ -94,5 +106,44 @@ class CampaignModel
         return $foundPaths;
     }
 
+    function getFoundDirs($scid)
+    {
+        $foundPaths = $this->getScansResult($scid, "dirScan", "httpcode asc");
+        return $foundPaths;
+    }
+
+    function getGitdumpFiles($scid, $like, $offset, $limit)
+    {
+        $query = "select * from gitdump where scid=$scid and filename like '%$like%' ORDER BY exist desc,dateAdd desc limit $offset,$limit";
+        $filesArr = $this->MysqliClass->getAssocArray($query);
+        return $filesArr;
+    }
+
+    function getCampName($cid)
+    {
+        $name = $this->MysqliClass->firstResult("select name from campaigns where cid=$cid")['name'];
+        return $name;
+    }
+
+    function getScans($cid)
+    {
+        $query = "select * from targets RIGHT JOIN scans on targets.tid=scans.tid where cid=$cid and scans.deleted=0 and targets.deleted=0 and scans.type<>'gitdump' group by scid order by dateScan desc";
+        $scanSArr = $this->MysqliClass->getAssocArray($query);
+        return $scanSArr;
+    }
+
+    function getTargets($cid)
+    {
+        $query = "select tid,url from targets where cid=$cid and deleted=0";
+        $targetsArr = $this->MysqliClass->getAssocArray($query);
+        return $targetsArr;
+    }
+
+    function getServers($cid)
+    {
+        $query = "SELECT sid,path FROM servers WHERE deleted=0 AND sid>0";
+        $serversArr = $this->MysqliClass->getAssocArray($query);
+        return $serversArr;
+    }
 
 }

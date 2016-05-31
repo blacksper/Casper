@@ -8,6 +8,9 @@
 
 
 //$action=$_POST['action'];
+if (!isset($_POST['page']))
+    return 0;
+
 switch ($_POST['page']) {
     case "main":
         include("./classes/Controller.class.php");
@@ -129,7 +132,7 @@ switch ($_POST['page']) {
                             $searchText = $_POST['searchText'];
                             //$note = htmlspecialchars($_POST['note']);
                             //echo json_encode($CampaignsController->CampaignViewer->Tabs->getGitdumpRows($scid, $offset, $limit));
-                            $result = $CampaignsController->Viewer->Tabs->getGitdumpRows($scid, $searchText, $offset, $limit);
+                            $result = $CampaignsController->Viewer->Tabs->getGitdumpTable($scid, $searchText, $offset, $limit);
                         }
                         break;
                     case "getGitDetails":
@@ -160,14 +163,36 @@ switch ($_POST['page']) {
 
         break;
     case "scan":
+        (isset($_POST['sid'])) ? $sid = (array)$_POST['sid'] : $sid = 0;
+        include "./classes/ToolsController.class.php";
+        $Tools = new ToolsController();
+        $tid = (int)$_POST['tid'];
+        if (!$tid)
+            return 0;
 
-        if ($_POST['type'] == "gitDump") {
-            $tid = $_POST['tid'];
-            include "./classes/Tools.class.php";
-            $Tools = new Tools();
-            $scid = $Tools->gitDump($tid);
-            $result = $scid;
+        if (!isset($_POST['action']))
+            return 0;
+        $action = $_POST['action'];
+        switch ($action) {
+            case "gitDump":
+                $scid = $Tools->gitDump($tid);
+                $result = $scid;
+                break;
+            case "detectCms":
+                $result = $Tools->detectCms($tid);
+                break;
+            case "mscan":
+                $type = $_POST['type'];
+                if (isset($_POST['filename'])) {
+                    $filename = $_POST['filename'];
+                    $result = $Tools->doScanPath($type, $filename, $tid, $sid);
+                    //$CampaignsController->Model->MysqliClass->getAssocArray("select * from scans where scid=$scid");
+                    //$CampaignsController->Viewer->Tabs->getScansTableRow();
+                }
+                break;
+
         }
+
 
         break;
 

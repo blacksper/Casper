@@ -6,7 +6,7 @@
  * Date: 29.04.2016
  * Time: 17:26
  */
-session_start();
+//session_start();
 
 include("CampaignViewer.class.php");
 include("CampaignModel.class.php");
@@ -18,6 +18,7 @@ class CampaignsController
 
     public $Viewer;
     public $Model;
+    public $cid;
 
     //public $cid;
 
@@ -43,7 +44,6 @@ class CampaignsController
 
     function doRedirect()
     {
-        //echo 123123;
         header("Location: ./index.php");
     }
 
@@ -67,7 +67,7 @@ class CampaignsController
 
     }
 
-    public function addTarget($targeturl, $cid)
+    function addTarget($targeturl, $cid)
     {    //добавление сервера
 
 
@@ -174,6 +174,105 @@ class CampaignsController
         $query = "select * from scans where tid=$tid and type='$type' and deleted=0 GROUP BY scid";
         $scansArr = $this->Model->MysqliClass->getAssocArray($query);
         return $scansArr;
+    }
+
+    function getScanDetails($scid)
+    {
+        $type = $this->Model->getScanType($scid);
+
+        $result = "";
+        if (!isset($type))
+            return 0;
+        if (strstr($type, "nmap")) {
+
+            $type = "nmap";
+        }
+
+        switch ($type) {
+            case "subdomainScan":
+                $testedUrl = $this->Model->getTestedUrl($scid);
+                $foundSubs = $this->Model->getFoundSubs($scid);
+                $result = $this->Viewer->Tabs->getSubdomainScanDetails($foundSubs, $testedUrl);
+                break;
+            case "dirScan":
+                $testedUrl = $this->Model->getTestedUrl($scid);
+                $foundDirs = $this->Model->getFoundDirs($scid);
+                $result = $this->Viewer->Tabs->getDirScanDetails($foundDirs, $testedUrl);
+                break;
+            case "nmap":
+                $testedUrl = $this->Model->getTestedUrl($scid);
+                $hostsArr = $this->Model->getScansResult($scid, "nmap", "dateAdd desc");
+                $result = $this->Viewer->Tabs->getNmapDetails($hostsArr, $testedUrl);
+                break;
+            case "wpBrute":
+            case "dleBrute":
+                $testedUrl = $this->Model->getTestedUrl($scid);
+                $combinationsArr = $this->Model->getScansResult($scid, "bruteforce", "dateAdd");
+                $result = $this->Viewer->Tabs->getBruteDetails($combinationsArr, $testedUrl);
+                break;
+            case "gitdump":
+                $testedUrl = $this->Model->getTestedUrl($scid);
+                $like = "";
+                $offset = 0;
+                $limit = 10;
+                $filesArr = $this->Model->getGitdumpFiles($scid, $like, $offset, $limit);
+
+                $result = $this->Viewer->Tabs->getGitdumpDetails($filesArr, $scid);
+                break;
+        }
+        return $result;
+
+    }
+
+
+    function getPage($cid)
+    {
+        $targetsArr = $this->Model->getTargetsByCid($cid);
+        //var_dump($targetsArr);
+        $this->Viewer->Tabs->getMainTab($targetsArr);
+
+        $scansArr = $this->Model->getScans($cid);
+        $this->Viewer->Tabs->getScansTab($scansArr);
+
+        $targetsArr = $this->Model->getTargets($cid);
+        $serversArr = $this->Model->getServers($cid);
+
+
+        $handle = opendir(PATH_TXTP);
+        $dirs = '';//список директорий
+        $i = 0;
+
+        while ($dir = readdir($handle)) {
+            if ($i < 2) {
+                $i++;
+                continue;
+            }
+            $dirs .= '<option>' . $dir . "</option>";
+        }
+
+        $targetList = $this->Viewer->getTargetList($targetsArr);
+        $servers = $this->Viewer->getServersList($serversArr);
+        $hashesArr = $this->Model->MysqliClass->getAssocArray("SELECT * FROM hashes WHERE deleted=0 ORDER BY dateAdd DESC");
+
+        $this->Viewer->Tabs->getDirscanTab($targetList, $servers, $dirs);
+        $this->Viewer->Tabs->getNmapTab($targetList);
+        $this->Viewer->Tabs->getHashmakerTab($hashesArr);
+        $this->Viewer->Tabs->getGitdumperTab($targetList);
+        $this->Viewer->Tabs->getCmsDetecterTab($targetList);
+        $this->Viewer->Tabs->getWpBruteTab($targetList, $servers, $dirs);
+        $this->Viewer->Tabs->getDleBruteTab($targetList, $servers, $dirs);
+
+
+        $this->Viewer->Tabs->getToolsTab($targetsArr, $serversArr);
+
+        //$this->Model->MysqliClass->firstResult("select ");
+        $name = $this->Model->getCampName($cid);
+        //$this->cid = $cid;
+
+
+        $this->Viewer->buildPage($name);
+
+
     }
 
 

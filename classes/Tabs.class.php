@@ -135,7 +135,7 @@ class Tabs
                                         <div class="form-group">
                                             <button id="addServer" class="btn btn-success"  >Добавить сервер</button>
                                         </div>
-                                        <input placeholder="execute.php path" class="form-control" id="serverUrl" type="text">
+                                        <input placeholder="execute1.php path" class="form-control" id="serverUrl" type="text">
 
                                     </div>
                                      </div>

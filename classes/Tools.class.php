@@ -6,7 +6,7 @@
  * Date: 21.04.2016
  * Time: 15:02
  */
-session_start();
+//session_start();
 include "Model.class.php";
 require($_SERVER['DOCUMENT_ROOT'] . "/config.php");
 class Tools
@@ -14,11 +14,13 @@ class Tools
 
     public $Model;
     public $uid;
+    public $cms;
+    private $url;
 
     function __construct()
     {
         $this->Model = new Model();
-        $this->uid = $this->Model->getUserId($_SESSION['username']);
+        $this->uid = $this->Model->getUserId("admin");
     }
 
     function startScan1(int $tid, int $sid, $filename, $type = null)
@@ -39,7 +41,7 @@ class Tools
                 }
                 $arrOpt = array('l_onoff' => 1, 'l_linger' => 1);
                 socket_set_option($socket, SOL_SOCKET, SO_LINGER,$arrOpt);
-                $in= "POST /clientside/execute.php HTTP/1.1\r\n";
+                $in= "POST /clientside/execute1.php HTTP/1.1\r\n";
                 $in.= "Host: example.com\r\n";
                 $in.= "Content-Type: application/x-www-form-urlencoded\r\n";
                 $in.= "Content-Length: ".strlen($enc)."\r\n";
@@ -140,7 +142,7 @@ class Tools
         $scid = rand(1000000, 90000000);
         foreach ($sids as $sid) {
             $query = "insert into scans(scid,type,uid,sid,tid,status,filename,dateScan) VALUES($scid,'$action',$this->uid,$sid,$tid,0,'$filename',now()) ";
-            echo $query;
+            echo $query . "\n";
             $this->Model->MysqliClass->query($query);
         }
         return $scid;
@@ -154,10 +156,9 @@ class Tools
     {
         if (($action != "dirScan") && ($action != "subdomainScan"))
             exit;
-        //var_dump($sidArr);
-        //die();
-        //$sidArr=explode(',',$sid);
 
+        //print_r($sidArr);
+        //die();
         $urls = explode("\r\n", file_get_contents(PATH_TXTP . "/" . $filename));
         $scid = $this->addScan($tid, $sidArr, $action, $filename);
         if (!$scid) exit;
@@ -173,7 +174,7 @@ class Tools
             $this->startScan($scid, $urlsParts[$i], $sid);
         }
 
-
+        return $scid;
     }
 
     //брутфорс
@@ -428,6 +429,68 @@ class Tools
         if (!file_exists($directory))
             mkdir($directory, null, 1);
         file_put_contents("$directory/index", $index);
+    }
+
+
+    function detectCms($tid)
+    {
+
+        $query = "select * from targets where tid=$tid";
+        $this->url = $this->Model->MysqliClass->firstResult($query)['url'];
+        //$this->url="http://yegor1111-joomla-4.tw1.ru/";
+        //$this->url="http://casper.localhost/dle/";
+        echo $this->url . "\n";
+        $ch = curl_init();
+        //curl_setopt($ch,CURLOPT_URL,$url."/administrator/");
+
+        //$responseData=$this->getContent($ch,"wp-login.php");
+        //$responseData=$this->getContent($ch,"/administrator/");
+        $responseData = $this->getContent($ch, "wp-login.php");
+        $this->checkCms($responseData, "wp-login.php", "wordpress");
+        $this->checkCms($responseData, "wordpress", "wordpress");
+        $this->checkCms($responseData, "wp-content", "wordpress");
+
+        $responseData = $this->getContent($ch, "/administrator/");
+        $this->checkCms($responseData, "Joomla!", "joomla");
+        $this->checkCms($responseData, "loginform", "joomla");
+
+        $responseData = $this->getContent($ch, "admin.php");
+        $this->checkCms($responseData, "DataLife Engine", "dle");
+        $this->checkCms($responseData, "var dle_root", "dle");
+        //$this->checkCms($responseData,"wp-content","joomla");
+
+        curl_close($ch);
+
+        //print_r($this->cms);
+        return $this->cms;
+
+    }
+
+    function getContent($ch, $path)
+    {
+
+        curl_setopt($ch, CURLOPT_URL, $this->url . $path);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $responseData = curl_exec($ch);
+        curl_close($ch);
+        return $responseData;
+    }
+
+    function checkCms($responseData, $content, $cmsName)
+    {
+        if (!isset($this->cms[$cmsName]))
+            $this->cms[$cmsName] = 0;
+
+//        curl_setopt($ch,CURLOPT_URL,$this->url.$path);
+//        curl_setopt($ch,CURLOPT_FOLLOWLOCATION,0);
+//        curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
+        //$responseData=curl_exec($ch);
+
+
+        if (strpos($responseData, $content)) {
+            $this->cms[$cmsName]++;
+        }
     }
 
 

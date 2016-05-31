@@ -13,7 +13,7 @@ if (isset($_GET['cid'])) {
     $cid = (int)$_GET['cid'];
     $v = new CampaignsController();
     include "header.php";
-    $v->Viewer->buildPage($cid);
+    $v->getPage($cid);
     $v->Viewer->ShowPage();
 }
 ?>

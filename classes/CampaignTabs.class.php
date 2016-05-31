@@ -10,11 +10,12 @@ class CampaignTabs
 {
     //var $MysqliClass;
     var $allHtml;
+    var $tabsHtml;
 
-
-    function __construct($Model)
+    function __construct()
     {
-        $this->Model = $Model;
+        //$this->Model = $Model;
+        $this->tabsHtml = "";
         //$this->GetMainTab();
         //$this->getCampaignTab();
         //$this->getServerTab();
@@ -22,9 +23,9 @@ class CampaignTabs
     }
 
 
-    function getMainTab($cid)//закладка главное
+    function getMainTab($targetsArr)//закладка главное
     {
-        $targetsArr = $this->Model->getTargetsByCid($cid);
+
 
         if (!isset($targetsArr))
             exit;
@@ -164,41 +165,14 @@ class CampaignTabs
     }
 
 
-    function getToolsTab($cid)//закладка инструменты
+    function getToolsTab($targetsArr, $serversArr)//закладка инструменты
     {
-        $handle = opendir(PATH_TXTP);
-        $dirs = '';//список директорий
-        $urls = '';//список целей
-        $servers = '';//
-        $i = 0;
-        while ($dir = readdir($handle)) {
-            if ($i < 2) {
-                $i++;
-                continue;
-            }
-            $dirs .= '<option>' . $dir . "</option>";
-        }
 
-        $urlsArr = $this->Model->MysqliClass->getAssocArray("select tid,url from targets where cid=$cid and deleted=0");
-        if ($urlsArr) {
-            foreach ($urlsArr as $url) {
-                $urls .= '<option value="' . $url['tid'] . '">' . $url['url'] . '</option>';
-            }
-        }
-
-        $urlsArr = $this->Model->MysqliClass->getAssocArray("SELECT sid,path FROM servers WHERE deleted=0 AND sid>0");
-        if ($urlsArr) {
-            //each($urlsArr);
-            foreach ($urlsArr as $url) {
-                $servers .= '<option value="' . $url['sid'] . '">' . $url['path'] . '</option>';
-            }
-        }
-
-        $hashesArr = $this->Model->MysqliClass->getAssocArray("SELECT * FROM hashes WHERE deleted=0 ORDER BY dateAdd DESC");
-        if (!empty($hashesArr))
-            $hashContent = $this->getHashContentTable($hashesArr);
-        else
-            $hashContent = "pusto";
+//        $dirScanTab=$this->getDirscanTab($targetList,$servers,$dirs);
+//        $nmapTab=$this->getNmapTab($targetList);
+//        $hashMakerTab=$this->getHashmakerTab($hashesArr);
+//        $gitDumperTab=$this->getGitdumperTab($targetList);
+//        $cmsDetecterTab=$this->getCmsDetecterTab($targetList);
 
         $this->allHtml .= '
                         <div class="tab-pane fade" id="tools-tab">
@@ -208,6 +182,7 @@ class CampaignTabs
                                     <li><a href="#nmap" data-toggle="tab">Nmap</a></li>
                                     <li><a href="#hashMaker" data-toggle="tab">hashmaker</a></li>
                                     <li><a href="#gitDumper" data-toggle="tab">gitDumper</a></li>
+                                    <li><a href="#cmsDetecter" data-toggle="tab">cmsDetecter</a></li>
 
                             </ul>
                             <br>
@@ -221,172 +196,108 @@ class CampaignTabs
                                 </div>
 
 
-                                <div class="tab-pane fade" id="wpBrute">
-                                    <h1>Wordpress</h1>
-                                    <form method="post" action="../scan.php" id="fileselect" class="navbar-form navbar-left">
-                                        <div class="form-group">
-                                           <select class="form-control" name="tid">
-                                            <option selected="selected">Choose target</option>
-                                            ' . $urls . '
-                                            </select>
-
-                                            <select class="form-control" name="loginfile">
-                                            <option selected="selected">loginfile</option>
-                                            ' . $dirs . '
-                                            </select>
-
-                                            <select class="form-control" name="passwordfile">
-                                            <option selected="selected">passwordfile</option>
-                                            ' . $dirs . '
-                                            </select>
-
-                                            <select class="form-control" name="sid">
-                                            <option selected="selected">Choose server</option>
-                                            ' . $servers . '
-                                            </select>
-                                            <input type="submit" name="sub" class="btn btn-default">
-                                            <input type="hidden" name="action" value="wpBrute" class="btn btn-default">
-                                        </div>
-                                    </form>
-                                </div>
-
-
-                                <div class="tab-pane fade" id="dleBrute">
-                                    <h1>DLE</h1>
-                                    <form method="post" action="../scan.php" id="fileselect" class="navbar-form navbar-left">
-                                        <div class="form-group">
-                                           <select class="form-control" name="tid">
-                                            <option selected="selected">Choose target</option>
-                                            ' . $urls . '
-                                            </select>
-
-                                            <select class="form-control" name="loginfile">
-                                            <option selected="selected">loginfile</option>
-                                            ' . $dirs . '
-                                            </select>
-
-                                            <select class="form-control" name="passwordfile">
-                                            <option selected="selected">passwordfile</option>
-                                            ' . $dirs . '
-                                            </select>
-
-                                            <select class="form-control" name="sid">
-                                            <option selected="selected">Choose server</option>
-                                            ' . $servers . '
-                                            </select>
-                                            <input type="submit" name="sub" class="btn btn-default">
-                                            <input type="hidden" name="action" value="dleBrute" class="btn btn-default">
-                                        </div>
-                                    </form>
-                                </div>
-
-
-
-
-
-                                <div class="tab-pane fade in active" id="gl">
-                                    <form method="post" action="../scan.php" id="fileselect" class="navbar-form navbar-left">
-                                        <div class="form-group">
-                                            <select class="form-control" name="tid">
-                                            <option selected="selected">Choose target</option>
-                                            ' . $urls . '
-                                            </select>
-
-                                            <select class="form-control" name="filename">
-                                            <option selected="selected">Choose your file</option>
-                                            ' . $dirs . '
-                                            </select>
-                                            <select class="form-control options" name="action" >
-                                                <option selected="selected">Option</option>
-                                                <option value="dirScan" >path</option>
-                                                <option value="subdomainScan">subdomain</option>
-                                            </select>
-                                        </div>
-
-                                            <p><p><h4>servers:</h4></p><select class="form-control servers" name="sid[]" multiple="multiple">
-
-                                            ' . $servers . '
-                                            </select></p>
-
-
-                                            <input type="submit" class="btn btn-default">
-
-                                    </form>
-                                </div>
-
-                                <div class="tab-pane fade" id="nmap">
-                                    <form method="post" action="../scan.php" id="fileselect" class="navbar-form navbar-left">
-                                        <div class="form-group">
-                                            <select class="form-control" name="tid">
-                                            <option selected="selected">Choose target</option>
-                                            ' . $urls . '
-                                            </select>
-
-
-                                            <select class="form-control" name="option" >
-                                                <option value="quick" selected="quick">quick scan</option>
-                                                <option value="quickplus" >quick scan plus versions</option>
-
-                                            </select>
-
-
-                                            <input type="hidden" name="action" value="nmap">
-                                            <input type="submit" class="btn btn-default">
-                                        </div>
-                                    </form>
-                                </div>
-
-
-                                <div class="tab-pane fade" id="hashMaker">
-                                        <ul class="nav nav-pills ">
-                                            <!--<li class="active"><a href="#hashesTab" data-toggle="tab">Hashes</a></li>-->
-
-                                            <li><button style="margin: 0px 0px 10px 0px;" class="btn btn-success" data-toggle="collapse" data-target="#hashesAdd">Add hash</button></li>
-                                        </ul>
-
-
-                                    <div class="tab-content">
-                                        <div class="collapse" id="hashesAdd">
-                                                <div class="form-inline">
-                                                    <select class="form-control" id="hashType" >
-                                                        <option selected="quick">select hash type</option>
-                                                        <option value="md5" >MD5</option>
-                                                        <option value="sha1" >SHA-1</option>
-                                                        <option value="wordpress3" >WordPress v3+</option>
-                                                        <option value="mysqlOld" >Mysql old</option>
-                                                        <option value="mysql" >Mysql</option>
-                                                    </select>
-                                                    <input id="strForHash" type="text" class="form-control" >
-                                                    <button id="addHash" class="btn btn-default">getHash</button>
-                                                </div>
-                                        </div>
-
-                                        <div class="tab-pane fade in active" id="hashesTab">
-                                            ' . $hashContent . '
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="tab-pane fade" id="gitDumper">
-                                    <div class="row">
-                                        <div class="form-group col-md-6">
-                                         <div class="form-inline">
-                                            <select id="gitTarget" class="form-control" name="tid">
-                                            <option  selected="selected" value="0">Choose target</option>
-                                            ' . $urls . '
-                                            </select>
-                                            <input id="searchText" type="text" class="form-control" placeholder="ex.: .php">
-                                            <button id="searchGit" class="btn btn-default">search in filename</button>
-                                            <input type="hidden" class="action" name="action" value="gitdump">
-                                            </div>
-                                         </div>
-                                    </div>
-                                </div>
+                                ' ./*$dirScanTab.$nmapTab.$hashMakerTab.$gitDumperTab.$cmsDetecterTab*/
+            $this->tabsHtml . '
 
 
                             </div>
                         </div>
                        ';
+    }
+
+
+    function getDirscanTab($targetList, $servers, $files)
+    {
+
+        $tab = '        <div class="tab-pane fade in active" id="gl">
+                            <div id="fileselect" class="navbar-form navbar-left">
+                                <div class="form-group">
+                                    ' . $targetList . '
+
+                                    <select class="form-control" name="filename">
+                                    <option selected="selected" value="0">Choose your file</option>
+                                    ' . $files . '
+                                    </select>
+                                    <select class="form-control options" name="action" >
+                                        <option selected="selected">Option</option>
+                                        <option value="dirScan" >path</option>
+                                        <option value="subdomainScan">subdomain</option>
+                                    </select>
+                                    <button class="btn btn-default doScan">wer</button>
+                                    <input type="hidden" class="action" name="action" value="mscan">
+
+
+
+                                    ' . $servers . '
+
+
+                                </div>
+
+                                    <p><p><h4>servers:</h4></p>
+                                    </p>
+
+                            </div>
+                        </div>';
+        $this->tabsHtml .= $tab;
+    }
+
+    function getNmapTab($targetList)
+    {
+
+        $tab = '       <div class="tab-pane fade" id="nmap">
+                        <form method="post" action="../scan.php" id="fileselect" class="navbar-form navbar-left">
+                            <div class="form-group">
+                               ' . $targetList . '
+
+                                <select class="form-control" name="option" >
+                                    <option value="quick" selected="quick">quick scan</option>
+                                    <option value="quickplus" >quick scan plus versions</option>
+
+                                </select>
+
+                                <input type="hidden" name="action" value="nmap">
+                                <input type="submit" class="btn btn-default">
+                            </div>
+                        </form>
+                    </div>';
+        $this->tabsHtml .= $tab;
+    }
+
+    function getHashmakerTab($hashesArr)
+    {
+
+        if (!empty($hashesArr))
+            $hashContent = $this->getHashContentTable($hashesArr);
+        else
+            $hashContent = "pusto";//!!!!!!!!!!!!!!!!!!!!
+
+        $tab = '      <div class="tab-pane fade" id="hashMaker">
+                                        <ul class="nav nav-pills ">
+                                            <li><button style="margin: 0px 0px 10px 0px;" class="btn btn-success" data-toggle="collapse" data-target="#hashesAdd">Add hash</button></li>
+                                        </ul>
+
+                        <div class="tab-content">
+                            <div class="collapse" id="hashesAdd">
+                                    <div class="form-inline">
+                                        <select class="form-control" id="hashType" >
+                                            <option selected="quick">select hash type</option>
+                                            <option value="md5" >MD5</option>
+                                            <option value="sha1" >SHA-1</option>
+                                            <option value="wordpress3" >WordPress v3+</option>
+                                            <option value="mysqlOld" >Mysql old</option>
+                                            <option value="mysql" >Mysql</option>
+                                        </select>
+                                        <input id="strForHash" type="text" class="form-control" >
+                                        <button id="addHash" class="btn btn-default">getHash</button>
+                                    </div>
+                            </div>
+
+                            <div class="tab-pane fade in active" id="hashesTab">
+                                ' . $hashContent . '
+                            </div>
+                        </div>
+                    </div>';
+        $this->tabsHtml .= $tab;
     }
 
     function getHashContentTable($hashesArr)
@@ -422,14 +333,111 @@ class CampaignTabs
         return $result;
     }
 
-    function getScansTab($cid)
+    function getGitdumperTab($targetList)
+    {
+        $tab = '  <div class="tab-pane fade" id="gitDumper">
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                         <div class="form-inline">
+
+                                ' . $targetList . '
+
+                            <input id="searchText" type="text" class="form-control" placeholder="ex.: .php">
+                            <button id="searchGit" class="btn btn-default">search in filename</button>
+                            <input type="hidden" class="action" name="action" value="gitdump">
+                            </div>
+                         </div>
+                    </div>
+                </div>';
+        $this->tabsHtml .= $tab;
+    }
+
+    function getCmsDetecterTab($targetList)
+    {
+
+        $tab = '  <div class="tab-pane fade" id="cmsDetecter">
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                         <div class="form-inline">
+                              ' . $targetList . '
+
+                            <button id="detectCMS" class="btn btn-default">detectCms</button>
+                            <input type="hidden" class="action" name="action" value="detectCms">
+                            </div>
+                         </div>
+                    </div>
+                </div>';
+        $this->tabsHtml .= $tab;
+    }
+
+    function getWpBruteTab($targetList, $servers, $files)
+    {
+
+        $tab = '<div class="tab-pane fade" id="wpBrute">
+                                    <h1>Wordpress</h1>
+                                    <form method="post" action="../scan.php" id="fileselect" class="navbar-form navbar-left">
+                                        <div class="form-group">
+                                           ' . $targetList . '
+
+                                            <select class="form-control" name="loginfile">
+                                            <option selected="selected">loginfile</option>
+                                            ' . $files . '
+                                            </select>
+
+                                            <select class="form-control" name="passwordfile">
+                                            <option selected="selected">passwordfile</option>
+                                            ' . $files . '
+                                            </select>
+
+                                            <select class="form-control" name="sid">
+                                            <option selected="selected">Choose server</option>
+                                            ' . $servers . '
+                                            </select>
+                                            <input type="submit" name="sub" class="btn btn-default">
+                                            <input type="hidden" name="action" value="wpBrute" class="btn btn-default">
+                                        </div>
+                                    </form>
+                                </div>';
+        $this->tabsHtml .= $tab;
+    }
+
+    function getDleBruteTab($targetList, $servers, $files)
+    {
+
+        $tab = '<div class="tab-pane fade" id="dleBrute">
+                                    <h1>DLE</h1>
+                                    <form method="post" action="../scan.php" id="fileselect" class="navbar-form navbar-left">
+                                        <div class="form-group">
+                                           ' . $targetList . '
+
+                                            <select class="form-control" name="loginfile">
+                                            <option selected="selected">loginfile</option>
+                                            ' . $files . '
+                                            </select>
+
+                                            <select class="form-control" name="passwordfile">
+                                            <option selected="selected">passwordfile</option>
+                                            ' . $files . '
+                                            </select>
+
+                                            <select class="form-control" name="sid">
+                                            <option selected="selected">Choose server</option>
+                                            ' . $servers . '
+                                            </select>
+                                            <input type="submit" name="sub" class="btn btn-default">
+                                            <input type="hidden" name="action" value="dleBrute" class="btn btn-default">
+                                        </div>
+                                    </form>
+                                </div>';
+        $this->tabsHtml .= $tab;
+    }
+
+    function getScansTab($scanArr)
     {
         //var_dump( $cid);
-        $query = "select * from targets RIGHT JOIN scans on targets.tid=scans.tid where cid=$cid and scans.deleted=0 and targets.deleted=0 and scans.type<>'gitdump' group by scid order by dateScan desc";
-        //echo $query;
-        $result = $this->Model->MysqliClass->getAssocArray($query);
+
         $tbody = "<tbody>";
-        foreach ($result as $row)
+        foreach ($scanArr as $row)
             $tbody .= $this->getScansTableRow($row);
 
 
@@ -487,53 +495,17 @@ class CampaignTabs
 
     }
 
-    function getScanDetails($scid)
+
+    function getSubdomainScanDetails($foundSubs, $testedUrl)
     {
-        $query = "select type from scans where scid=$scid";
-        $type = $this->Model->MysqliClass->firstResult($query)['type'];
 
-        $result = "";
-        if (!isset($type))
-            return 0;
-        if (strstr($type, "nmap")) {
-
-            $type = "nmap";
-        }
-
-        switch ($type) {
-            case "subdomainScan":
-                $result = $this->getSubdomainScanDetails($scid);
-                break;
-            case "dirScan":
-                $result = $this->getDirScanDetails($scid);
-                break;
-            case "nmap":
-                $result = $this->getNmapDetails($scid);
-                break;
-            case "wpBrute":
-            case "dleBrute":
-                $result = $this->getBruteDetails($scid);
-                break;
-            case "gitdump":
-                $result = $this->getGitdumpDetails($scid);
-                break;
-        }
-
-        return $result;
-
-    }
-
-    function getSubdomainScanDetails($scid)
-    {
-        $foundPaths = $this->Model->getScansResult($scid, "subdomainScan", "resolve desc");
-        $testedUrl = $this->Model->getTestedUrl($scid);
         $goodPaths = "";
-        if (empty($foundPaths)) {
+        if (empty($foundSubs)) {
             $goodPaths = '<div class="alert alert-warning">
                             <strong>Пусто</strong>
                        </div>';
         } else {
-            $goodPaths = $this->getSubdomainScanTable($foundPaths);
+            $goodPaths = $this->getSubdomainScanTable($foundSubs);
         }
 
         $result = '<div class="modal-content">
@@ -562,6 +534,7 @@ class CampaignTabs
         return $result;
     }
 
+
     function getSubdomainScanTable($foundPaths)
     {
 
@@ -583,12 +556,13 @@ class CampaignTabs
         return $table;
     }
 
-    function getDirScanDetails($scid)
+    function getDirScanDetails($foundPaths, $testedUrl)
     {
-        $foundPaths = $this->Model->getScansResult($scid, "dirScan", "httpcode asc");//->getAssocArray("select * from pathfound where scid=$scid order by httpcode asc");
+        //$foundPaths = $this->Model->getScansResult($scid, "dirScan", "httpcode asc");//->getAssocArray("select * from pathfound where scid=$scid order by httpcode asc");
+        //$testedUrl = $this->Model->getTestedUrl($scid);
 
         //echo "select * from pathfound where scid=$scid order by httpcode asc\n";
-        $testedUrl = $this->Model->getTestedUrl($scid);
+
         //var_dump($foundPaths);
         $goodPaths = "";
         if (empty($foundPaths)) {
@@ -654,13 +628,11 @@ class CampaignTabs
         return $table;
     }
 
-    function getNmapDetails($scid)
+    function getNmapDetails($hostsArr, $testedUrl)
     {
         //$query = "select * from nmap where scid=$scid";
-        $hostsArr = $this->Model->getScansResult($scid, "nmap", "dateAdd desc");
-
-
-        $testedUrl = $this->Model->getTestedUrl($scid);
+        //$hostsArr = $this->Model->getScansResult($scid, "nmap", "dateAdd desc");
+        //$testedUrl = $this->Model->getTestedUrl($scid);
 
 
         if (empty($hostsArr)) {
@@ -723,13 +695,13 @@ class CampaignTabs
         return $table;
     }
 
-    function getBruteDetails($scid)
+    function getBruteDetails($combinationsArr, $testedUrl)
     {
 
         //$combs = $this->Model->MysqliClass->getAssocArray("select * from bruteforce where scid=$scid");
-        $combinationsArr = $this->Model->getScansResult($scid, "bruteforce", "dateAdd");
-        $testedUrl = $this->Model->getTestedUrl($scid);
-        $combsCont = "";
+        //$combinationsArr = $this->Model->getScansResult($scid, "bruteforce", "dateAdd");
+        //$testedUrl = $this->Model->getTestedUrl($scid);
+        //$combsCont = "";
         //print_r($combs);
         if (empty($combinationsArr)) {
             $combsCont = '<div class="alert alert-warning">
@@ -786,12 +758,14 @@ class CampaignTabs
         return $table;
     }
 
-    function getGitdumpDetails($scid, $like = "", $offset = 0, $limit = 10)
+    function getGitdumpDetails($filesArr, $testedUrl)
     {
 
         $table = '<table id="gitTable" class="table table-hover">';
         $thead = '<thead><tr><th>filename</th><th>filepath</th></tr></thead>';
-        $tbody = $this->getGitdumpRows($scid, $like, $offset, $limit);
+
+        $tbody = $this->getGitdumpTable($filesArr, $testedUrl);
+        $scid = 0;//!!!!!!!!!!!вернуться сюда
         if (!strstr($tbody, "<strong>Пусто</strong>"))
             $combsCont = $table . $thead . $tbody . "</table>";
         else $combsCont = $tbody;
@@ -800,16 +774,9 @@ class CampaignTabs
 
              <div id="gitDumpTable" data-scid="' . $scid . '">
                 <div class="row"><div class="col-md-8">
-
-
-
-
-                             <div >
-                                <input style="margin: 0 5px;" class="btn btn-primary doScan" type="submit" value="Обновить список файлов">
-
-                            </div>
-
-
+                     <div >
+                        <input style="margin: 0 5px;" class="btn btn-primary doScan" type="submit" value="Обновить список файлов">
+                    </div>
 
                         <div class="tab-content" >
                                 <div class="tab-pane fade in active" id="found"  >
@@ -825,26 +792,23 @@ class CampaignTabs
         return $result;
     }
 
-    function getGitdumpRows($scid, $like, $offset, $limit)
+    function getGitdumpTable($filesArr, $testedUrl)
     {
 
         //$filesArr = $this->Model->getScansResult($scid, "gitDump", "exist desc", $limit, $offset);
-
-        $query = "select * from gitdump where scid=$scid and filename like '%$like%' ORDER BY exist desc,dateAdd desc limit $offset,$limit";
-        //echo $query;
-        $filesArr = $this->Model->MysqliClass->getAssocArray($query);
-
-        $testedUrl = $this->Model->getTestedUrl($scid);
+        //$query = "select * from gitdump where scid=$scid and filename like '%$like%' ORDER BY exist desc,dateAdd desc limit $offset,$limit";
+        //$filesArr = $this->Model->MysqliClass->getAssocArray($query);
+        //$testedUrl = $this->Model->getTestedUrl($scid);
 
         preg_match("@http[s]?:\/\/([\w\d.-]+)\/@", $testedUrl, $m);
 
-        if (empty($filesArr)) {
-            if ($offset == 0)
+        if (empty($filesArr)) {//!!!!!!!!вернуться сюда
+            //if ($offset == 0)
             $tbody = '<div class="alert alert-warning">
                             <strong>Пусто</strong>
                        </div>';
-            else
-                $tbody = "";
+            //else
+            //    $tbody = "";
         } else {
 
             $tbody = '';

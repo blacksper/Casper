@@ -22,12 +22,12 @@ class CampaignViewer
     //var $tabsClass;
 
 
-    function __construct($Model)
+    function __construct()
     {
         //$this->cid = $cid;
-        $this->Model = $Model;
+        //$this->Model = $Model;
         $this->Head = '';
-        $this->Tabs = new CampaignTabs($this->Model);
+        $this->Tabs = new CampaignTabs();
         //<script src="my.js"></script>
         //$this->Head .= "</head>";
         $this->Body = "<body>";
@@ -35,28 +35,8 @@ class CampaignViewer
 
     }
 
-    public function ShowPage()
+    function buildPage($name)
     {
-
-        $outstr = $this->Head . $this->Body . "</body>" . $this->Footer;
-        echo $outstr; //iconv("CP1252","UTF-8", $outstr);
-    }
-
-
-    public function buildPage($cid)
-    {
-        //$this->Model->MysqliClass->firstResult("select ");
-        $name = $this->Model->MysqliClass->firstResult("select name from campaigns where cid=$cid")['name'];
-        $this->cid = $cid;
-        //var_dump(123);
-
-        $this->Tabs->getMainTab($this->cid);
-
-        $this->Tabs->getScansTab($this->cid);
-        $this->Tabs->getToolsTab($this->cid);
-        //$this->Tabs->getInfoTab($this->cid);
-        //echo 123;
-        //$this->Tabs->getToolsTab();
 
 
         $menu = '<div class="tabs menu col-xs-3 col-md-2">
@@ -83,6 +63,51 @@ class CampaignViewer
                             ' . $this->Tabs->allHtml . '
                             </div>
                         ';
+    }
+
+    public function ShowPage()
+    {
+
+        $outstr = $this->Head . $this->Body . "</body>" . $this->Footer;
+        echo $outstr; //iconv("CP1252","UTF-8", $outstr);
+    }
+
+    function getTargetList($targetsArr)
+    {
+        $urls = "";
+
+        if ($targetsArr) {
+            foreach ($targetsArr as $url) {
+                $urls .= '<option value="' . $url['tid'] . '">' . $url['url'] . '</option>';
+            }
+        }
+        $targetList = '        <select class="form-control targetsList" name="tid">
+                    <option  selected="selected" value="0">Choose target</option>
+                    ' . $urls . '
+                    </select>';
+
+        return $targetList;
+
+    }
+
+    function getServersList($serversArr)
+    {
+        $servers = "";
+
+        if ($serversArr) {
+            foreach ($serversArr as $url) {
+                $servers .= '<option value="' . $url['sid'] . '">' . $url['path'] . '</option>';
+            }
+        }
+
+        $serversList = '<select class="form-control servers" name="sid[]" multiple="multiple">
+
+                        ' . $servers . '
+                    </select>';
+
+        // var_dump()
+        return $serversList;
+
     }
 
 

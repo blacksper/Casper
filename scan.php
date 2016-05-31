@@ -71,6 +71,9 @@ if (isset($_POST['action'])) {
             }
 
             break;
+        case "detectCms":
+            $Tools->de($tid);
+            break;
 
 
         default:

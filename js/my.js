@@ -57,7 +57,7 @@ $(document).ready(function () {
                 type: "POST",
                 data: "page=main&campaignName=" + campaignName + "&action=add",
                 success: function (data) {
-                    console.log("viz");
+                    // console.log("viz");
                     if (data !== undefined) {
                         qwe = JSON.parse(data);
                         htmll = $.parseHTML(qwe);
@@ -393,24 +393,98 @@ $(document).ready(function () {
 
     }
 
-    $("body").on('click', '.doScan', function () {
-        var type = $('.action').val();
-        var tid = $("#gitTarget option:selected").val();
-        if ((tid !== undefined) && (type !== undefined)) {
+    //$("body").on('click', '.doScan', function () {
+    //    var pnt=$(this).parents(".form-inline");
+    //    //console.log(pnt);
+    //    var type = $('.action').val();
+    //    var tid = $("#gitTarget option:selected").val();
+    //    if ((tid !== undefined) && (type !== undefined)) {
+    //
+    //        console.log(type);
+    //        $.ajax({
+    //            url: "ajax.php",
+    //            type: "POST",
+    //            data: "page=scan&action=doScan&tid=" + tid + "&type=" + type,
+    //            success: function (data) {
+    //                console.log(data);
+    //                if (data !== undefined)
+    //                    getGitDetails(tid, type);
+    //            }
+    //        });
+    //    }
+    //});
 
-            console.log(type);
-            $.ajax({
-                url: "ajax.php",
-                type: "POST",
-                data: "page=scan&action=doScan&tid=" + tid + "&type=" + type,
-                success: function (data) {
-                    console.log(data);
-                    if (data !== undefined)
-                        getGitDetails(tid, type);
-                }
-            });
+
+    $("body").on('click', '.doScan', function () {
+        var pnt = $(this).parents(".form-group");
+
+        var action = pnt.find(".action").val();
+        var tid = pnt.find(".targetsList option:selected").val();
+        console.log(tid);
+        console.log(action);
+        if ((tid !== undefined) && (action !== undefined) && (tid > 0)) {
+            if ($(".error").html() !== undefined)
+                $(".error").remove();
+
+            switch (action) {
+                //case "dirScan":
+                case "mscan":
+                    var filename = pnt.find("select[name*='filename'] option:selected").val();
+                    var type = pnt.find("select[name*='action'] option:selected").val();
+                    var sids = "";
+
+                    pnt.find("select[name*='sid[]'] option:selected").each(function (i, selected) {
+                        sids += "&sid[]=" + $(selected).val();
+                    });
+
+                    options = "&action=" + action + "&filename=" + filename + sids + "&type=" + type;
+                    //console.log(filename);
+                    console.log(options);
+                    //console.log(filename);
+                    break;
+                case "":
+                    break;
+            }
+
+            //if()
+
+            doScan(tid, options);
+
+        } else {
+            if ($(".error").html() == undefined) {
+                $(pnt).append(
+                    '<div style="margin: 10px 4px 0 0;" class="alert alert-danger error">' +
+                    ' <strong>Ошибка</strong> ' +
+                    'Цель не выбрана! ' +
+                    '</div>');
+            } else {
+                $('.error').fadeOut(500);
+                $('.error').fadeIn(500);
+            }
+
         }
     });
+
+    function doScan(tid, options) {
+
+        $.ajax({
+            url: "ajax.php",
+            type: "POST",
+            //data: "page=scan&action=doScan&tid=" + tid + "&type=" + type,
+            data: "page=scan&tid=" + tid + options,
+            success: function (data) {
+                datajdecode = JSON.parse(data);
+                html = $.parseHTML(datajdecode);
+                $(html).addClass("success");
+                $('#scansCampaignContent tbody').prepend(html);
+            }
+        });
+
+
+    }
+
+
+
 
 
     $("body").on('change', '#gitTarget', function () {

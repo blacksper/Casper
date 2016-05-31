@@ -23,6 +23,7 @@ class Model{
     function getUserId($username){
 
         $query="SELECT uid from users where username='$username'";
+        //echo $query;
         $result=$this->MysqliClass->firstResult($query)['uid'];
         return $result;
     }
