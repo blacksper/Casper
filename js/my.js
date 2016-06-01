@@ -404,6 +404,13 @@ $(document).ready(function () {
         var tid = pnt.find(".targetsList option:selected").val();
         var action = pnt.find(".action").val();
 
+        console.log(action + " actn");
+
+        var sids = "";
+        pnt.find("select[name*='sid[]'] option:selected").each(function (i, selected) {
+            sids += "&sid[]=" + $(selected).val();
+        });
+
         console.log(tid);
         console.log(action);
         if ((tid !== undefined) && (action !== undefined) && (tid > 0)) {
@@ -411,27 +418,30 @@ $(document).ready(function () {
                 $(".error").remove();
 
             switch (action) {
-                //case "dirScan":
                 case "mscan":
                     var filename = pnt.find("select[name*='filename'] option:selected").val();
                     var type = pnt.find("select[name*='action'] option:selected").val();
-                    var sids = "";
 
-                    pnt.find("select[name*='sid[]'] option:selected").each(function (i, selected) {
-                        sids += "&sid[]=" + $(selected).val();
-                    });
 
                     options = "&action=" + action + "&filename=" + filename + sids + "&type=" + type;
-                    //console.log(filename);
-                    console.log(options);
-                    //console.log(filename);
+                    //console.log(options);
+
                     break;
-                case "":
+                case "wpBrute":
+                case "dleBrute":
+                    var loginfile = pnt.find("select[name*='loginfile'] option:selected").val();
+                    var passwordfile = pnt.find("select[name*='passwordfile'] option:selected").val();
+
+                    options = "&action=" + action + "&loginfile=" + loginfile + "&passwordfile=" + passwordfile + sids;
+                    break;
+                case "detectCms":
+                    options = "&action=" + action;
                     break;
             }
 
             //if()
 
+            console.log(options);
             doScan(tid, options);
 
         } else {

@@ -193,15 +193,15 @@ class ToolsModel extends Model
         file_put_contents(PATH_BSRC . "/" . $filename, $source);
         $countLogins = ceil(count($logins) / count($sidArr));
         $loginsParts = (array_chunk($logins, $countLogins));
-        echo $countLogins . "\n";
+        //echo $countLogins . "\n";
 
         foreach ($sidArr as $i => $sid) {
             if (!$this->getUrls($tid, $sid))
                 return 0;
             $this->startScan($scid, array("logins" => $loginsParts[$i], "passwords" => $passwords), $sid);
         }
-        die();
-
+        //die();
+        return $scid;
     }
 
     function generateSource($loginsArr, $passwordsArr)

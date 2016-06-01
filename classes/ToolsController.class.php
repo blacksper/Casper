@@ -39,7 +39,7 @@ class ToolsController
     {
         if (isset($action, $filename, $tid, $sid)) {
             $scid = $this->Model->startScanPath($action, $filename, $tid, $sid);
-            $rowArr = $this->Model->MysqliClass->firstResult("select * from targets RIGHT JOIN scans on targets.tid=scans.tid where scans.deleted=0 and targets.deleted=0 and scans.scid=$scid group by scid order by dateScan desc");
+            $rowArr = $this->Model->MysqliClass->firstResult("select * from targets RIGHT JOIN scans on targets.tid=scans.tid where  scans.scid=$scid group by scid order by dateScan desc");
             $row = $this->Viewer->Tabs->getScansTableRow($rowArr);
             $result = $row;
         } else {
@@ -47,6 +47,19 @@ class ToolsController
         }
         return $result;
 
+    }
+
+    function doBruteforce($type, $loginfile, $passwordfile, $tid, $sid)
+    {
+        if (isset($type, $loginfile, $passwordfile, $tid, $sid)) {
+            $scid = $this->Model->startBruteforce($type, $loginfile, $passwordfile, $tid, $sid);
+            $rowArr = $this->Model->MysqliClass->firstResult("select * from targets RIGHT JOIN scans on targets.tid=scans.tid where  scans.scid=$scid group by scid order by dateScan desc");
+            $row = $this->Viewer->Tabs->getScansTableRow($rowArr);
+            $result = $row;
+        } else
+            $result = 0;
+
+        return $result;
     }
 
 

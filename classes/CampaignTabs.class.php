@@ -361,7 +361,7 @@ class CampaignTabs
                          <div class="form-inline">
                               ' . $targetList . '
 
-                            <button id="detectCMS" class="btn btn-default">detectCms</button>
+                            <button id="detectCMS" class="btn btn-default doScan">detectCms</button>
                             <input type="hidden" class="action" name="action" value="detectCms">
                             </div>
                          </div>
@@ -375,7 +375,7 @@ class CampaignTabs
 
         $tab = '<div class="tab-pane fade" id="wpBrute">
                                     <h1>Wordpress</h1>
-                                    <form method="post" action="../scan.php" id="fileselect" class="navbar-form navbar-left">
+                                    <div  id="fileselect" class="navbar-form navbar-left">
                                         <div class="form-group">
                                            ' . $targetList . '
 
@@ -389,14 +389,13 @@ class CampaignTabs
                                             ' . $files . '
                                             </select>
 
-                                            <select class="form-control" name="sid">
-                                            <option selected="selected">Choose server</option>
+
                                             ' . $servers . '
-                                            </select>
-                                            <input type="submit" name="sub" class="btn btn-default">
-                                            <input type="hidden" name="action" value="wpBrute" class="btn btn-default">
+
+                                            <button type="submit" name="sub" class="btn btn-default doScan">btn</button>
+                                            <input type="hidden" name="action" value="wpBrute" class="action">
                                         </div>
-                                    </form>
+                                    </div>
                                 </div>';
         $this->tabsHtml .= $tab;
     }
@@ -420,10 +419,10 @@ class CampaignTabs
                                             ' . $files . '
                                             </select>
 
-                                            <select class="form-control" name="sid">
-                                            <option selected="selected">Choose server</option>
+
+
                                             ' . $servers . '
-                                            </select>
+
                                             <input type="submit" name="sub" class="btn btn-default">
                                             <input type="hidden" name="action" value="dleBrute" class="btn btn-default">
                                         </div>
@@ -767,7 +766,7 @@ class CampaignTabs
         $thead = '<thead><tr><th>filename</th><th>filepath</th></tr></thead>';
 
         $tbody = $this->getGitdumpTable($filesArr, $testedUrl);
-        //$scid = 0;//!!!!!!!!!!!вернуться сюда
+
         if (!strstr($tbody, "<strong>Пусто</strong>"))
             $combsCont = $table . $thead . $tbody . "</table>";
         else $combsCont = $tbody;
@@ -829,71 +828,71 @@ class CampaignTabs
         return $tbody;
     }
 
-    function getSubInfoScans(int $cid)
-    {
+//    function getSubInfoScans(int $cid)
+//    {
+//
+//        $thead = '<div class="row scan-row">
+//                         <div class="col-sm-3">Тип</div>
+//                         <div class="col-sm-3">Заголовок2</div>
+//                         <div class="col-sm-3">Заголовок3</div>
+//                     </div>';
+//        $hashes = "";
+//
+//        $scansArr = $this->Model->MysqliClass->getAssocArray("select * from scans where tid=$cid");//sqli
+//
+//        if (empty($scansArr)) {
+//            $result = "<div class=\"alert alert-warning\">
+//                            <strong>Пусто</strong>
+//                       </div>";
+//        } else {
+//            $result = $thead;
+//            foreach ($scansArr as $row) {
+//                $result .= '
+//                        <div class="row scan-row">
+//                             <div class="col-sm-3">' . $row['type'] . '</div>
+//                             <div class="col-sm-3">' . $row['sid'] . '</div>
+//                             <div class="col-sm-3">' . $row['tid'] . '</div>
+//                         </div>
+//                    ';
+//
+//            }
+//        }
+//
+//        return $result;
+//    }
 
-        $thead = '<div class="row scan-row">
-                         <div class="col-sm-3">Тип</div>
-                         <div class="col-sm-3">Заголовок2</div>
-                         <div class="col-sm-3">Заголовок3</div>
-                     </div>';
-        $hashes = "";
-
-        $scansArr = $this->Model->MysqliClass->getAssocArray("select * from scans where tid=$cid");//sqli
-
-        if (empty($scansArr)) {
-            $result = "<div class=\"alert alert-warning\">
-                            <strong>Пусто</strong>
-                       </div>";
-        } else {
-            $result = $thead;
-            foreach ($scansArr as $row) {
-                $result .= '
-                        <div class="row scan-row">
-                             <div class="col-sm-3">' . $row['type'] . '</div>
-                             <div class="col-sm-3">' . $row['sid'] . '</div>
-                             <div class="col-sm-3">' . $row['tid'] . '</div>
-                         </div>
-                    ';
-
-            }
-        }
-
-        return $result;
-    }
-
-    function getSubInfoHashes(int $tid)
-    {
-
-        $thead = '<div class="row scan-row">
-                         <div class="col-sm-3">Тип</div>
-                         <div class="col-sm-3">Заголовок2</div>
-                         <div class="col-sm-3">Заголовок3</div>
-                     </div>';
-        $hashes = "";
-
-        $scansArr = $this->Model->MysqliClass->getAssocArray("select * from hashes where tid=$tid");//sqli
-
-        if (empty($scansArr)) {
-            $result = "<div class=\"alert alert-warning\">
-                            <strong>Пусто</strong>
-                       </div>";
-        } else {
-            $result = $thead;
-            foreach ($scansArr as $row) {
-                $result .= '
-                        <div class="row scan-row">
-                             <div class="col-sm-3">' . $row['source'] . '</div>
-                             <div class="col-sm-3">' . $row['type'] . '</div>
-                             <div class="col-sm-3">' . $row['hash'] . '</div>
-                         </div>
-                    ';
-
-            }
-        }
-
-        return $result;
-    }
+//    function getSubInfoHashes(int $tid)
+//    {
+//
+//        $thead = '<div class="row scan-row">
+//                         <div class="col-sm-3">Тип</div>
+//                         <div class="col-sm-3">Заголовок2</div>
+//                         <div class="col-sm-3">Заголовок3</div>
+//                     </div>';
+//        $hashes = "";
+//
+//        $scansArr = $this->Model->MysqliClass->getAssocArray("select * from hashes where tid=$tid");//sqli
+//
+//        if (empty($scansArr)) {
+//            $result = "<div class=\"alert alert-warning\">
+//                            <strong>Пусто</strong>
+//                       </div>";
+//        } else {
+//            $result = $thead;
+//            foreach ($scansArr as $row) {
+//                $result .= '
+//                        <div class="row scan-row">
+//                             <div class="col-sm-3">' . $row['source'] . '</div>
+//                             <div class="col-sm-3">' . $row['type'] . '</div>
+//                             <div class="col-sm-3">' . $row['hash'] . '</div>
+//                         </div>
+//                    ';
+//
+//            }
+//        }
+//
+//        return $result;
+//    }
 
 //    function getSubInfoChilds(int $tid)
 //    {

@@ -240,7 +240,7 @@ table#gitTable td {
     margin: 10px 0px 10px 0px;
 }
 
-#gitTarget {
+#gitDumper select {
     width: 35%;
 }
 

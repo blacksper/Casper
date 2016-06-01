@@ -6,7 +6,7 @@
  * Date: 29.04.2016
  * Time: 17:26
  */
-//session_start();
+session_start();
 
 include("CampaignViewer.class.php");
 include("CampaignModel.class.php");
@@ -19,6 +19,7 @@ class CampaignsController
     public $Viewer;
     public $Model;
     public $cid;
+    //public $uid;
 
     //public $cid;
 

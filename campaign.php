@@ -11,7 +11,7 @@ include "./classes/CampaignsController.class.php";
 
 if (isset($_GET['cid'])) {
     $cid = (int)$_GET['cid'];
-    $v = new CampaignsController();
+    $v = new CampaignsController($cid);
     include "header.php";
     $v->getPage($cid);
     $v->Viewer->ShowPage();

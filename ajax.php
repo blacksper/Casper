@@ -198,6 +198,20 @@ switch ($_POST['page']) {
                     //$CampaignsController->Viewer->Tabs->getScansTableRow();
                 }
                 break;
+            case "wpBrute":
+            case "dleBrute":
+                if (($sid == 0) || ($tid == 0))
+                    return 0;
+                $type = $action;
+                $loginfile = $_POST['loginfile'];
+                $passwordfile = $_POST['passwordfile'];
+
+                if (!isset($loginfile, $passwordfile))
+                    return 0;
+
+                $result = $Tools->doBruteforce($type, $loginfile, $passwordfile, $tid, $sid);
+
+                break;
 
         }
 
