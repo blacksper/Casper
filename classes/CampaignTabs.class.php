@@ -53,6 +53,7 @@ class CampaignTabs
             <tr>
             <th>Url</th>
             <th></th>
+            <th></th>
             </tr>
             </thead>
             <tbody>";
@@ -75,7 +76,7 @@ class CampaignTabs
                             </span></button>
                  </div>';
 
-        $result = "<tr class='targetRow' data-tid='{$row['tid']}'><td class=' col-md-10'>{$row['url']}</td><td>$btns</td></tr>";
+        $result = "<tr class='targetRow' data-tid='{$row['tid']}'><td class=' col-md-6'>{$row['url']}</td><td>{$row['cms']}</td><td>$btns</td></tr>";
         return $result;
     }
 
@@ -119,7 +120,7 @@ class CampaignTabs
         $tbody .= "</tbody>";
 
 
-        $table = '<table id="campaignContent" class="table table-hover">123123123
+        $table = '<table id="campaignContent" class="table table-hover">
                         ' . $thead . '
                         ' . $tbody . '
                         </table>';
@@ -227,14 +228,12 @@ class CampaignTabs
                                     <input type="hidden" class="action" name="action" value="mscan">
 
 
-
+                                <p><h4>Servers:</h4></p>
                                     ' . $servers . '
 
 
                                 </div>
 
-                                    <p><p><h4>servers:</h4></p>
-                                    </p>
 
                             </div>
                         </div>';
@@ -337,14 +336,15 @@ class CampaignTabs
     {
         $tab = '  <div class="tab-pane fade" id="gitDumper">
                     <div class="row">
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-8">123
                          <div class="form-inline">
 
                                 ' . $targetList . '
 
                             <input id="searchText" type="text" class="form-control" placeholder="ex.: .php">
                             <button id="searchGit" class="btn btn-default">search in filename</button>
-                            <input type="hidden" class="action" name="action" value="gitdump">
+
+                            <input type="hidden" class="action" name="action" value="gitDump">
                             </div>
                          </div>
                     </div>
@@ -774,9 +774,10 @@ class CampaignTabs
         $result = '
 
              <div id="gitDumpTable" data-scid="' . $scid . '">
-                <div class="row"><div class="col-md-8">
-                     <div >
+                <div class="row"><div >
+                     <div class="form-group">
                         <input style="margin: 0 5px;" class="btn btn-primary doScan" type="submit" value="Обновить список файлов">
+                        <input type="hidden" class="action" name="action" value="gitDump">
                     </div>
 
                         <div class="tab-content" >

@@ -25,7 +25,7 @@ class ToolsController
     {
         $this->Model = new ToolsModel();
         $this->Viewer = new ToolsViewer();
-        $this->Model->uid = $this->Model->getUserId("admin");
+        $this->Model->uid = $this->Model->getUserId($_SESSION['username']);
     }
 
 
@@ -66,6 +66,13 @@ class ToolsController
     {
         $this->Model->startNmap($tid, $option);
 
+    }
+
+    function doGitDump($tid)
+    {
+        $scid = $this->Model->gitDump($tid);
+        //$result=$this->Model->
+        return $scid;
     }
 
 

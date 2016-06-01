@@ -8,7 +8,7 @@
 ini_set("zlib.output_compression", 0);
 ob_implicit_flush(1);
 header('Content-type: text/html; charset=utf-8');
-
+session_start();
 
 //$action=$_POST['action'];
 if (!isset($_POST['page']))
@@ -151,14 +151,14 @@ switch ($_POST['page']) {
                             $scid = $CampaignsController->Model->MysqliClass->firstResult($query)['scid'];
 
                             if (isset($scid)) {
-                                $fileArr = $CampaignsController->Model->getGitdumpFiles($scid);
+                                $fileArr = $CampaignsController->Model->getGitdumpFiles($scid, $searchtext);
                                 $testedUrl = $CampaignsController->Model->getTestedUrl($scid);
                                 //print_r($fileArr);//die();
                                 $result = $CampaignsController->Viewer->Tabs->getGitdumpDetails($fileArr, $testedUrl, $scid);
                             }
                             else
                                 $result = '<div id="gitDumpTable">
-                                        <div >
+                                        <div>
                                             <input class="btn btn-success doScan" type="submit" value="Получить список файлов">
                                             <input type="hidden" class="action" name="action" value="gitDump">
                                         </div>
@@ -186,7 +186,7 @@ switch ($_POST['page']) {
         $action = $_POST['action'];
         switch ($action) {
             case "gitDump":
-                $scid = $Tools->gitDump($tid);
+                $scid = $Tools->doGitDump($tid);
                 $result = $scid;
                 break;
             case "detectCms":

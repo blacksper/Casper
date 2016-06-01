@@ -29,7 +29,6 @@ $(document).ready(function () {
                     //alert(22);
                     var script = document.createElement('script');
                     script.type = 'text/javascript';
-
                     script.text = data;
                     $("body").append(script);
 
@@ -281,7 +280,7 @@ $(document).ready(function () {
     });
 
     $("body").on('click', 'tr>td.dateScan a', function () {
-        //$("body").on('change', '#gitTarget', function () {
+
         var status = $(this).parents('tr.scanRow').find('span').attr("value");
         console.log(status);
         if (status == 1) {
@@ -366,10 +365,11 @@ $(document).ready(function () {
     });
 
     function getGitDetails(tid, type, searchText) {
+        //console.log("kill me");
         if (tid !== undefined && type !== undefined) {
 
             var loader = $(".loader");
-
+            //console.log(loader);
             if (searchText == undefined) searchText = "";
 
             if (($('#gitDumpTable').html() != undefined))
@@ -388,7 +388,7 @@ $(document).ready(function () {
                 success: function (data) {
                     if (data !== undefined) {
 
-                        $('#gitDumper .row').append(JSON.parse(data));
+                        $('#gitDumper .row .form-group').append(JSON.parse(data));
                         loader.remove();
                     }
                 }
@@ -397,9 +397,42 @@ $(document).ready(function () {
 
     }
 
+    function dogitdump(tid) {
+
+        var loader = $(".loader");
+        //console.log(loader);
+        if (searchText == undefined) searchText = "";
+
+        if (($('#gitDumpTable').html() != undefined))
+            $('#gitDumpTable').remove();
+
+        if (loader.html() === undefined) {
+            $("#gitDumper .form-group").append('<img class="loader" style="background-color: inherit;" width="50px" height="50px" src="images/loader.gif">');
+            loader = $(".loader");
+        }
+
+        var type = "gitdump";
+        $.ajax({
+            url: "ajax.php",
+            type: "POST",
+            //data: "page=scan&action=doScan&tid=" + tid + "&type=" + type,
+            data: "page=scan&action=gitDump&tid=" + tid,
+            success: function (data) {
+                datajdecode = JSON.parse(data);
+
+                var searchText = $('#searchtext').val();
+                getGitDetails(tid, type, searchText);
+
+            }
+        });
+
+
+    }
+
 
 
     $("body").on('click', '.doScan', function () {
+        //var pnt = $(this).parents(".form-group");
         var pnt = $(this).parents(".form-group");
         var tid = pnt.find(".targetsList option:selected").val();
         var action = pnt.find(".action").val();
@@ -413,7 +446,7 @@ $(document).ready(function () {
 
         console.log(tid);
         console.log(action);
-        if ((tid !== undefined) && (action !== undefined) && (tid > 0)) {
+        if ((tid !== undefined) && (tid > 0)) {
             if ($(".error").html() !== undefined)
                 $(".error").remove();
 
@@ -421,8 +454,6 @@ $(document).ready(function () {
                 case "mscan":
                     var filename = pnt.find("select[name*='filename'] option:selected").val();
                     var type = pnt.find("select[name*='action'] option:selected").val();
-
-
                     options = "&action=" + action + "&filename=" + filename + sids + "&type=" + type;
                     //console.log(options);
 
@@ -433,20 +464,35 @@ $(document).ready(function () {
                     var passwordfile = pnt.find("select[name*='passwordfile'] option:selected").val();
 
                     options = "&action=" + action + "&loginfile=" + loginfile + "&passwordfile=" + passwordfile + sids;
+                    doScan(tid, options);
                     break;
                 case "nmapScan":
                     optionscan = pnt.find("select[name*='option'] option:selected").val();
                     options = "&action=" + action + "&option=" + optionscan;
+                    doScan(tid, options);
+                    //document.location("./index.php");
+                    //document.location.href = document.location.href;
+
                     break;
                 case "detectCms":
                     options = "&action=" + action;
+                    doScan(tid, options);
+                    break;
+                case "gitDump":
+
+                    options = "&action=" + action;
+                    dogitdump(tid);
+                    //doScan(tid, options);
+                    //getGitDetails();
+
                     break;
             }
 
             //if()
 
-            console.log(options);
-            doScan(tid, options);
+            //console.log(options);
+            //doScan(tid, options);
+            //document.location.reload();
 
         } else {
             if ($(".error").html() == undefined) {
@@ -464,6 +510,8 @@ $(document).ready(function () {
     });
 
     function doScan(tid, options) {
+        if (options == undefined)
+            options = "";
 
         $.ajax({
             url: "ajax.php",

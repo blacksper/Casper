@@ -128,22 +128,10 @@ class ToolsModel extends Model
         if (!isset($param))
             return 0;
 
-        $cmd = '"' . PATH_NMAP . '" ' . $param . ' ' . $targeturl;
-
-        echo $scid;
-        //echo str_pad('',4096);
-        ob_flush();
-        flush();
-
-
-//        for($i=0;$i<10;$i++) {
-//            echo "grrrrrrrrrr\n";
-//            ob_flush();
-//        }
-
-
-        system($cmd);
-        $content = ob_get_clean();
+        $cmd = '"' . PATH_NMAP . '" ' . escapeshellcmd($param . ' ' . $targeturl);
+        //$cmd =  '"'.PATH_NMAP.'" '.escapeshellarg($param . ' ' . $targeturl);
+        $content = shell_exec($cmd);
+        //$content = ob_get_clean();
 
         echo $content;
         preg_replace("/\s+/", "", $content);
@@ -153,10 +141,7 @@ class ToolsModel extends Model
 
         $queryStart = "INSERT INTO nmap(scid,port,status,service,version) VALUES";
         $query = $queryStart;
-
         $i = 0;
-
-
         foreach ($m[0] as $d) {
             preg_match("/(\d+)\/tcp\s+(\w+)\s+([^\s]+)([\r\n]+|[\s]+([^\r\n]+))?[\r\n]?/", trim($d, "\r\n"), $mf);//маска для парсинга результатов nmap
 
@@ -183,8 +168,6 @@ class ToolsModel extends Model
         //echo $query;
         $query = "update scans set status=1 where scid=$scid";
         $this->MysqliClass->query($query);
-
-
     }
 
     function startBruteforce($type, $loginsfile, $passwordsfile, $tid, $sidArr)
@@ -397,6 +380,8 @@ class ToolsModel extends Model
     function detectCms($tid)
     {
 
+        $scid = $this->addScan($tid, array(0), "detectCms");
+
         $query = "select * from targets where tid=$tid";
         $this->url = $this->MysqliClass->firstResult($query)['url'];
         //$this->url="http://yegor1111-joomla-4.tw1.ru/";
@@ -408,23 +393,49 @@ class ToolsModel extends Model
         //$responseData=$this->getContent($ch,"wp-login.php");
         //$responseData=$this->getContent($ch,"/administrator/");
         $responseData = $this->getContent($ch, "wp-login.php");
-        $this->checkCms($responseData, "wp-login.php", "wordpress");
-        $this->checkCms($responseData, "wordpress", "wordpress");
-        $this->checkCms($responseData, "wp-content", "wordpress");
+        $this->checkCms($responseData, "wp-login.php", "WordPress");
+        $this->checkCms($responseData, "wordpress", "WordPress");
+        $this->checkCms($responseData, "wp-content", "WordPress");
 
         $responseData = $this->getContent($ch, "/administrator/");
-        $this->checkCms($responseData, "Joomla!", "joomla");
-        $this->checkCms($responseData, "loginform", "joomla");
+        $this->checkCms($responseData, "Joomla!", "Joomla");
+        $this->checkCms($responseData, "loginform", "Joomla");
 
         $responseData = $this->getContent($ch, "admin.php");
-        $this->checkCms($responseData, "DataLife Engine", "dle");
-        $this->checkCms($responseData, "var dle_root", "dle");
+        $this->checkCms($responseData, "DataLife Engine", "Datalife Engine");
+        $this->checkCms($responseData, "var dle_root", "Datalife Engine");
         //$this->checkCms($responseData,"wp-content","joomla");
 
         curl_close($ch);
 
+        arsort($this->cms);
+        print_r($this->cms);
+        $cms = key($this->cms);
+        echo $cms;
+        if (isset($cms)) {
+            if ($cms == "WordPress") {
+                if (!$version = $this->getVersionWp())
+                    $version = "?";
+            } elseif ($cms == "Joomla") {
+                if (!$version = $this->getVersionJoomla())
+                    $version = "?";
+            } elseif ($cms == "Datalife Engine") {
+                if (!$version = $this->getVersionDle())
+                    $version = "?";
+
+            }
+
+
+            $query = "update targets set cms='$cms $version' WHERE tid=$tid";
+            $this->MysqliClass->query($query);
+
+            $query = "update scans set status=1 where scid=$scid";
+            $this->MysqliClass->query($query);
+        }
+
+
         //print_r($this->cms);
-        return $this->cms;
+        //return $this->cms;
 
     }
 
@@ -444,15 +455,67 @@ class ToolsModel extends Model
         if (!isset($this->cms[$cmsName]))
             $this->cms[$cmsName] = 0;
 
-//        curl_setopt($ch,CURLOPT_URL,$this->url.$path);
-//        curl_setopt($ch,CURLOPT_FOLLOWLOCATION,0);
-//        curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
-        //$responseData=curl_exec($ch);
-
-
         if (strpos($responseData, $content)) {
             $this->cms[$cmsName]++;
         }
+    }
+
+    function getVersionWp()
+    {
+        $result = 0;
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $this->url . "/wp-content/languages/ru_RU.po");
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $content = curl_exec($ch);
+        if ($content) {
+            //preg_match("#Project-Id-Version: ([\w\d.]+)#",$content,$m);
+            //echo $content;
+            preg_match("#Project-Id-Version:([\s\w()]*)(\d\.\d\.[\d\w]?)#", $content, $m);
+            if (isset($m[1]))
+                $result = $m[2];
+            print_r($m);
+        }
+        curl_close($ch);
+        return $result;
+    }
+
+    function getVersionJoomla()
+    {
+        $result = 0;
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $this->url . "/language/en-GB/en-GB.xml");
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 0);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $content = curl_exec($ch);
+        if ($content) {
+            preg_match('#metafile version="([\w.]+)"#', $content, $m);
+            if (isset($m[1]))
+                $result = $m[1];
+            print_r($m);
+        }
+
+        return $result;
+    }
+
+    function getVersionDle()
+    {
+        $result = 0;
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $this->url . "/engine/ajax/updates.php");
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 0);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $content = curl_exec($ch);
+        if ($content) {
+            preg_match('#color="red">([]\d.]+)<\/font\>#', $content, $m);
+            if (isset($m[1]))
+                $result = $m[1];
+            print_r($m);
+        }
+
+        return $result;
     }
 
 }
