@@ -434,6 +434,10 @@ $(document).ready(function () {
 
                     options = "&action=" + action + "&loginfile=" + loginfile + "&passwordfile=" + passwordfile + sids;
                     break;
+                case "nmapScan":
+                    optionscan = pnt.find("select[name*='option'] option:selected").val();
+                    options = "&action=" + action + "&option=" + optionscan;
+                    break;
                 case "detectCms":
                     options = "&action=" + action;
                     break;

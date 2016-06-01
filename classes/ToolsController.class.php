@@ -62,5 +62,11 @@ class ToolsController
         return $result;
     }
 
+    function doNmapScan($tid, $option)
+    {
+        $this->Model->startNmap($tid, $option);
+
+    }
+
 
 }

@@ -5,6 +5,9 @@
  * Date: 10.10.2015
  * Time: 2:15
  */
+ini_set("zlib.output_compression", 0);
+ob_implicit_flush(1);
+header('Content-type: text/html; charset=utf-8');
 
 
 //$action=$_POST['action'];
@@ -211,6 +214,11 @@ switch ($_POST['page']) {
 
                 $result = $Tools->doBruteforce($type, $loginfile, $passwordfile, $tid, $sid);
 
+                break;
+
+            case "nmapScan":
+                $option = $_POST['option'];
+                $Tools->doNmapScan($tid, $option);
                 break;
 
         }

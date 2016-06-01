@@ -245,7 +245,7 @@ class CampaignTabs
     {
 
         $tab = '       <div class="tab-pane fade" id="nmap">
-                        <form method="post" action="../scan.php" id="fileselect" class="navbar-form navbar-left">
+                        <div id="fileselect" class="navbar-form navbar-left">
                             <div class="form-group">
                                ' . $targetList . '
 
@@ -255,10 +255,10 @@ class CampaignTabs
 
                                 </select>
 
-                                <input type="hidden" name="action" value="nmap">
-                                <input type="submit" class="btn btn-default">
+                                <input type="hidden" name="action" value="nmapScan" class="action">
+                                <input type="submit" class="btn btn-default doScan">
                             </div>
-                        </form>
+                        </div>
                     </div>';
         $this->tabsHtml .= $tab;
     }
@@ -945,7 +945,7 @@ class CampaignTabs
 
         if (!$note)
             $result = 0;
-
+        else
         $result = "<div class='modal-content'>
                     <div class='modal-header'>
                         <div class='form-group'>

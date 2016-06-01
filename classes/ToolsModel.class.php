@@ -6,6 +6,7 @@
  * Date: 31.05.2016
  * Time: 15:54
  */
+
 include "Model.class.php";
 
 class ToolsModel extends Model
@@ -98,7 +99,7 @@ class ToolsModel extends Model
 
     }
 
-    function startNmap(int $tid, int $sid, $option = null)
+    function startNmap(int $tid, $option = null, int $sid = 0)
     {
 
         switch ($option) {
@@ -106,7 +107,7 @@ class ToolsModel extends Model
                 $param = "-T4 -F";
                 break;
             case "quickplus":
-                $param = "-sV -T4 -O -sS";
+                $param = "-sV -T4 -O -sS -v";
                 break;
 
             default:
@@ -117,35 +118,42 @@ class ToolsModel extends Model
         $query = "select * from targets where tid=$tid";
         $targeturl = $this->MysqliClass->firstResult($query)['url'];
         preg_match("/http[s]?:\/\/([\w\d.-]+)\//", $targeturl, $m);
-        var_dump($m);
-        //die();
         if (!isset($m[1]))
             return 0;
-        //echo 1234;
+
         $targeturl = $m[1];
         $scid = $this->addScan($tid, array($sid), "nmap $option");
 
-
-        ob_start();
         $result = array();
-
-
         if (!isset($param))
             return 0;
 
         $cmd = '"' . PATH_NMAP . '" ' . $param . ' ' . $targeturl;
-        echo $cmd . "\n";
+
+        echo $scid;
+        //echo str_pad('',4096);
+        ob_flush();
+        flush();
+
+
+//        for($i=0;$i<10;$i++) {
+//            echo "grrrrrrrrrr\n";
+//            ob_flush();
+//        }
+
+
         system($cmd);
         $content = ob_get_clean();
+
         echo $content;
-        //die();
         preg_replace("/\s+/", "", $content);
-        preg_match_all("/(\d+)\/tcp\s+(\w+)\s+([^\s]+)([\r\n]+|[\s]+([^\r\n]+))?[\r\n]?/", $content, $m);
-        //var_dump($m);
+        preg_match_all("/(\d+)\/tcp\s+(\w{4,})\s+([^\s]+)([\r\n]+|[\s]+([^\r\n]+))?[\r\n]?/", $content, $m);
+        //print_r($m);
         //die();
 
         $queryStart = "INSERT INTO nmap(scid,port,status,service,version) VALUES";
         $query = $queryStart;
+
         $i = 0;
 
 
@@ -170,6 +178,7 @@ class ToolsModel extends Model
         //die();
         $query = substr($query, 0, -1);
         $query .= " ON DUPLICATE KEY UPDATE status=values(status)";
+        echo $query . "\n";
         $this->MysqliClass->query($query);
         //echo $query;
         $query = "update scans set status=1 where scid=$scid";
