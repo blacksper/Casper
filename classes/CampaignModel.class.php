@@ -101,7 +101,7 @@ class CampaignModel
 
         }
         $query = "select * from $tableName where scid=$scid ORDER BY $orderby limit $offset,$limit";
-        // echo $query;
+        //echo $query;
         $foundPaths = $this->MysqliClass->getAssocArray($query);
         return $foundPaths;
     }

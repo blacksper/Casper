@@ -8,7 +8,7 @@
  */
 
 //include "Model.class.php";
-
+session_start();
 include "ToolsModel.class.php";
 include "ToolsViewer.class.php";
 

@@ -56,6 +56,7 @@ if(!empty($ar)) {
 
             case "wpBrute":
             case "dleBrute":
+            case "joomlaBrute":
                 include("Bruteforce.class.php");
                 // echo 12;
                 $target = $b['url'];

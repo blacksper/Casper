@@ -203,6 +203,7 @@ class CampaignsController
             case "nmap":
                 $testedUrl = $this->Model->getTestedUrl($scid);
                 $hostsArr = $this->Model->getScansResult($scid, "nmap", "dateAdd desc");
+                //print_r($hostsArr);
                 $result = $this->Viewer->Tabs->getNmapDetails($hostsArr, $testedUrl);
                 break;
             case "wpBrute":
@@ -217,6 +218,7 @@ class CampaignsController
                 $offset = 0;
                 $limit = 10;
                 $filesArr = $this->Model->getGitdumpFiles($scid, $like, $offset, $limit);
+
                 //print_r($filesArr);die();
                 $result = $this->Viewer->Tabs->getGitdumpDetails($filesArr, $scid);
                 break;

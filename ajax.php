@@ -5,10 +5,10 @@
  * Date: 10.10.2015
  * Time: 2:15
  */
-ini_set("zlib.output_compression", 0);
-ob_implicit_flush(1);
-header('Content-type: text/html; charset=utf-8');
-session_start();
+//ini_set("zlib.output_compression", 0);
+//ob_implicit_flush(1);
+//header('Content-type: text/html; charset=utf-8');
+//session_start();
 
 //$action=$_POST['action'];
 if (!isset($_POST['page']))

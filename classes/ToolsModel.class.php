@@ -410,6 +410,11 @@ class ToolsModel extends Model
 
         arsort($this->cms);
         print_r($this->cms);
+        if (current($this->cms) <= 1) {
+            $cms = "?";
+            $version = "";
+        } else {
+
         $cms = key($this->cms);
         echo $cms;
         if (isset($cms)) {
@@ -424,14 +429,14 @@ class ToolsModel extends Model
                     $version = "?";
 
             }
-
-
+        }
+        }
             $query = "update targets set cms='$cms $version' WHERE tid=$tid";
+        echo $query;
             $this->MysqliClass->query($query);
 
             $query = "update scans set status=1 where scid=$scid";
             $this->MysqliClass->query($query);
-        }
 
 
         //print_r($this->cms);
