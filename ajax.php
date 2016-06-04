@@ -158,7 +158,7 @@ switch ($_POST['page']) {
                             }
                             else
                                 $result = '<div id="gitDumpTable">
-                                        <div>
+                                        <div style="margin-top: 10px">
                                             <input class="btn btn-success doScan" type="submit" value="Получить список файлов">
                                             <input type="hidden" class="action" name="action" value="gitDump">
                                         </div>
@@ -202,6 +202,7 @@ switch ($_POST['page']) {
                 }
                 break;
             case "wpBrute":
+            case "joomlaBrute":
             case "dleBrute":
                 if (($sid == 0) || ($tid == 0))
                     return 0;

@@ -55,7 +55,7 @@ class Viewer
                                 <div class="panel panel-default">
                                 <ul class="nav nav-pills nav-stacked ">
                                    <!-- <li><a href="#tab-1" data-toggle="tab">Главная</a></li>-->
-                                    <li><a href="#campaigns-tab" data-toggle="tab">Campaigns</a></li>
+                                    <li class="active"><a href="#campaigns-tab" data-toggle="tab">Кампании</a></li>
                                     <li><a href="#servers-tab" data-toggle="tab">Сервера</a></li>
 
                                     <li><a href="'.$_SERVER['PHP_SELF'].'?logout=1">Выход</a></li>

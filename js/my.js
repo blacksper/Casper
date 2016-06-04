@@ -35,9 +35,15 @@ $(document).ready(function () {
                     console.log(data);
                 } else {
                     //alert(123);
-                    $('input#password').after('<div class="alert alert-danger"> ' +
-                        '<strong>Error:</strong>Неверный логин или пароль ' +
-                        '</div>');
+                    if ($(".alert-danger").html() == undefined) {
+                        $('input#password').after('<div class="alert alert-danger"> ' +
+                            '<strong>Error:</strong>Неверный логин или пароль ' +
+                            '</div>');
+                    } else {
+                        $('.alert-danger').fadeOut(500);
+                        $('.alert-danger').fadeIn(500);
+                    }
+
                 }
                 //$("body").append(123);
             }
@@ -137,9 +143,13 @@ $(document).ready(function () {
                 type: "POST",
                 data: "page=main&serverUrl=" + serverUrl + "&action=add",
                 success: function (data) {
-                    console.log(data);
-                    if (data !== undefined)
-                        $("#serverContent tbody").append(JSON.parse(data));
+                    //console.log(data);
+                    if (data !== undefined) {
+                        datajdecode = JSON.parse(data);
+                        html = $.parseHTML(datajdecode);
+                        $(html).addClass("success");
+                        $("#serverContent tbody").prepend(html);
+                    }
 
                 }
             });
@@ -456,10 +466,11 @@ $(document).ready(function () {
                     var type = pnt.find("select[name*='action'] option:selected").val();
                     options = "&action=" + action + "&filename=" + filename + sids + "&type=" + type;
                     //console.log(options);
-
+                    doScan(tid, options);
                     break;
                 case "wpBrute":
                 case "dleBrute":
+                case "joomlaBrute":
                     var loginfile = pnt.find("select[name*='loginfile'] option:selected").val();
                     var passwordfile = pnt.find("select[name*='passwordfile'] option:selected").val();
 

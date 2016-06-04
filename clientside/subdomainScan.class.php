@@ -13,24 +13,16 @@ class SubdomainScanClass extends Main
 //    var $ch;
 //    var $scid;
 
-    function __construct($target,$scid){
-        preg_match("#(http[s]?:\/\/)?(www\.)?([\w.]*)\/#", $target, $m);
-        //print_r($m);
-        //die();
+
+
+    function startScan($subdomains)
+    {
+
+        preg_match("#(http[s]?:\/\/)?(www\.)?([\w.]*)\/?#", $this->target, $m);
         if (!isset($m[3]))
             return 0;
 
         echo $this->target = $m[3];
-
-        //$this->ch = curl_init();
-        //$this->scid = $scid;
-        //$this->result = array();
-        //$this->result[$this->scid] = array();
-
-    }
-
-    function startScan($subdomains)
-    {
 
         //$res['url']=array();
         foreach($subdomains as $subdomain) {

@@ -49,22 +49,21 @@ class Controller {
 
             ####проверка есть ли уже в бд эта кампания
             $query = "SELECT cid from campaigns where name = '$name' and deleted=0";//тут инъекция
+
             $cid = $this->Model->MysqliClass->firstResult($query)['cid'];
 
             if ($cid != "")
-                exit;
+                return 0;
 
             $uid = $this->Model->getUserId($_SESSION['username']);
             //var_dump($uid);
             if ($uid) {
-                $query = "INSERT INTO campaigns(uid,name,dateCreate) values($uid,'$name',now())";
+                $query = "INSERT INTO campaigns(uid,name,dateAdd) values($uid,'$name',now())";
                 $result = $this->Model->MysqliClass->query($query);
-                //echo $query;
+
                 $query = "SELECT *,0 as cnt from campaigns where name='$name'";
                 $resultArr = $this->Model->MysqliClass->firstResult($query);
-                //echo $query;
-                //var_dump($resultArr);
-//echo 123;
+
                 if (!empty($resultArr))
                     $result = $this->Viewer->Tabs->getCampaignTableRow($resultArr);
 
@@ -88,7 +87,7 @@ class Controller {
              $url=$clurl[1];
 
             ####проверка есть ли уже в бд этот сервер
-            $query="SELECT sid from servers where path = '$url'";//тут инъекция
+            $query = "SELECT sid from servers where path = '$url' and deleted=0";//тут инъекция
             $sid=$this->Model->MysqliClass->firstResult($query)['sid'];
 
             if($sid!="")

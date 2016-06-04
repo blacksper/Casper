@@ -50,7 +50,7 @@ class CampaignsController
 
     function addTargets($urls, int $cid)
     {
-        $query = "select cid from campaigns where cid=$cid";
+        $query = "select cid from campaigns where cid=$cid and deleted=0";
         $cid = $this->Model->MysqliClass->firstResult($query)['cid']; // проверка на существование кампании с таким cid
         if (!isset($cid))
             exit;
@@ -93,6 +93,7 @@ class CampaignsController
 
             ####проверка есть ли уже в бд этот сервер
             $query = "SELECT tid from targets where url = '$targeturl' and deleted=0 and cid=$cid";//тут инъекция
+            //echo $query;
             $tid = $this->Model->MysqliClass->firstResult($query)['tid'];
 
             if (isset($tid))
@@ -104,7 +105,7 @@ class CampaignsController
                 $query = "INSERT INTO targets(uid,url,cid,dateAdd) values($uid,'$targeturl',$cid,now())";
                 $result = $this->Model->MysqliClass->query($query);
                 //echo $query;
-                $query = "SELECT * from targets where url='$targeturl' and cid=$cid";
+                $query = "SELECT * from targets where url='$targeturl' and cid=$cid and deleted=0";
                 $resultArr = $this->Model->MysqliClass->firstResult($query);
                 //echo $query;
                 //var_dump($resultArr);
@@ -263,7 +264,7 @@ class CampaignsController
         $this->Viewer->Tabs->getGitdumperTab($targetList);
         $this->Viewer->Tabs->getCmsDetecterTab($targetList);
         $this->Viewer->Tabs->getWpBruteTab($targetList, $servers, $dirs);
-        $this->Viewer->Tabs->getDleBruteTab($targetList, $servers, $dirs);
+        //$this->Viewer->Tabs->getDleBruteTab($targetList, $servers, $dirs);
 
 
         $this->Viewer->Tabs->getToolsTab($targetsArr, $serversArr);

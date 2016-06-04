@@ -24,7 +24,7 @@ class Tabs
         } else {
             $this->allHtml .= '<div class="tab-pane fade in active" id="campaigns-tab">
                                       <div class="nav pol" id="campaigns">
-                                     12345678
+
                                       </div>
 
                                </div>';
@@ -37,8 +37,8 @@ class Tabs
     {
         $thead = '<thead>
                         <tr>
-                            <th>name</th>
-                            <th>targets</th>
+                            <th>Название кампании</th>
+                            <th>Количество целей</th>
                             <th></th>
                         </tr>
                       </thead>';
@@ -67,7 +67,7 @@ class Tabs
                                             <div class="form-group">
                                                 <button id="addCampaign" class="btn btn-success">Добавить кампанию</button>
                                             </div>
-                                            <input class="form-control" id="campaignName" type="text" placeholder="Campaign name">
+                                            <input class="form-control" id="campaignName" type="text" placeholder="Название кампании">
 
                                       </div>
                                       </div>
@@ -135,7 +135,7 @@ class Tabs
                                         <div class="form-group">
                                             <button id="addServer" class="btn btn-success"  >Добавить сервер</button>
                                         </div>
-                                        <input placeholder="execute1.php path" class="form-control" id="serverUrl" type="text">
+                                        <input placeholder="путь до execute.php" class="form-control" id="serverUrl" type="text">
 
                                     </div>
                                      </div>
@@ -159,9 +159,6 @@ class Tabs
                             <span  class="glyphicon glyphicon-refresh" aria-hidden="true">
                             </span>
                         </button>
-
-
-
                         <button type="button" class="btn btn-sm btn-danger deleteSrv">
                             <span  class="glyphicon glyphicon-remove" aria-hidden="true">
                             </span>
@@ -175,7 +172,7 @@ class Tabs
         $result .= "<tr class='serverRow' value='{$row['sid']}' data-sid='{$row['sid']}'>
                             <td class=url> " . $row['path'] . "</td>
                             <td class='ip col-md-2'>" . $row['ip'] . "</td>
-                            <td class='col-md-1 status {$codeArr['status']} '>{$codeArr['stmsg']}</td>
+                            <td class='col-md-2 status {$codeArr['status']} '>{$codeArr['stmsg']}</td>
                             <td class='btns col-md-2'>$btns</td>
                         </tr>";
         return $result;
