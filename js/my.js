@@ -15,6 +15,10 @@ var limit = 10;
 })(jQuery);
 
 
+
+
+
+
 $(document).ready(function () {
     $("#login").click(function () {
         var password = $("#password").val();
@@ -52,16 +56,23 @@ $(document).ready(function () {
     });
 
 
+
+
     $("#addCampaign").click(function () {
+        if($('.error').html()!==undefined)
+            $('.error').remove();
+        var serverUrl = $("#serverUrl").val();
         var campaignName = $("#campaignName").val();
         console.log(campaignName);
 
-        if (campaignName !== undefined) {
+        if ((campaignName != undefined)&&(campaignName!=="")) {
             $.ajax({
                 url: "./ajax.php",
                 type: "POST",
                 data: "page=main&campaignName=" + campaignName + "&action=add",
                 success: function (data) {
+                    if($('.error').html()!==undefined)
+                        $('.error').remove();
                     // console.log("viz");
                     if (data !== undefined) {
                         qwe = JSON.parse(data);
@@ -73,6 +84,13 @@ $(document).ready(function () {
 
                 }
             });
+        }else{
+            $("#campaigns").after(
+                '<div class="alert alert-danger error">' +
+                ' <strong>Ошибка</strong> ' +
+                'Не указано имя кампании! ' +
+                '</div>'
+            );
         }
 
     });
@@ -111,10 +129,12 @@ $(document).ready(function () {
     });
 
     $("#addHash").click(function () {
+        if($('.error').html()!==undefined)
+            $('.error').remove();
         var strForHash = $("#strForHash").val();
         var hashType = $("#hashType").val();
         var cid = $_GET('cid');
-        if ((strForHash !== undefined) && (hashType !== undefined) && (cid !== undefined)) {
+        if (((strForHash !== undefined)&&(strForHash!=="")) && (hashType !== undefined) && (cid !== undefined)) {
             $.ajax({
                 url: "./ajax.php",
                 type: "POST",
@@ -129,32 +149,70 @@ $(document).ready(function () {
                     }
                 }
             });
+        }else {
+            if ($(".error").html() == undefined) {
+                $("#hashesAdd").append(
+                    '<div style="width:410px;margin: 10px 4px 0 0;" class="alert alert-danger error">' +
+                    ' <strong>Ошибка</strong> ' +
+                    'Не указана строка для вычисления хэша! ' +
+                    '</div>');
+            } else {
+                //$(".error").fadeIn
+                $('.error').fadeOut(500);
+                $('.error').fadeIn(500);
+            }
         }
 
     });
 
     $("#addServer").click(function () {
+        if($('.error').html()!==undefined)
+            $('.error').remove();
         var serverUrl = $("#serverUrl").val();
         console.log(serverUrl);
 
-        if (serverUrl !== undefined) {
+        if ((serverUrl != undefined)&&(serverUrl!=="")) {
             $.ajax({
                 url: "./ajax.php",
                 type: "POST",
                 data: "page=main&serverUrl=" + serverUrl + "&action=add",
                 success: function (data) {
+                    if($('.error').html()!==undefined)
+                        $('.error').remove();
                     //console.log(data);
                     if (data !== undefined) {
                         datajdecode = JSON.parse(data);
-                        html = $.parseHTML(datajdecode);
-                        $(html).addClass("success");
-                        $("#serverContent tbody").prepend(html);
+                        if(datajdecode==""){
+                            $("#servers").after(
+                                '<div class="alert alert-danger error">' +
+                                ' <strong>Ошибка</strong> ' +
+                                'Неверный путь до ИС! ' +
+                                '</div>'
+                            );
+
+                        }else {
+                            html = $.parseHTML(datajdecode);
+                            $(html).addClass("success");
+                            $("#serverContent tbody").prepend(html);
+                        }
                     }
 
                 }
             });
-        }
+        }else{
+        $("#servers").after(
+            '<div class="alert alert-danger error">' +
+            ' <strong>Ошибка</strong> ' +
+            'Не указан путь до ИС! ' +
+            '</div>'
+        );
+    }
 
+    });
+
+    $('body').on('shown.bs.tab','a[data-toggle="tab"]',function(){
+        if ($(".error").html() !== undefined)
+            $(".error").remove();
     });
 
     $("body").on('click', '.refresh', function () {
@@ -446,6 +504,7 @@ $(document).ready(function () {
         var pnt = $(this).parents(".form-group");
         var tid = pnt.find(".targetsList option:selected").val();
         var action = pnt.find(".action").val();
+        var r;
 
         console.log(action + " actn");
 
@@ -466,28 +525,29 @@ $(document).ready(function () {
                     var type = pnt.find("select[name*='action'] option:selected").val();
                     options = "&action=" + action + "&filename=" + filename + sids + "&type=" + type;
                     //console.log(options);
-                    doScan(tid, options);
+                    r=doScan(tid, options);
                     break;
                 case "wpBrute":
                 case "dleBrute":
                 case "joomlaBrute":
                     var loginfile = pnt.find("select[name*='loginfile'] option:selected").val();
                     var passwordfile = pnt.find("select[name*='passwordfile'] option:selected").val();
-
+                    console.log(tid);
                     options = "&action=" + action + "&loginfile=" + loginfile + "&passwordfile=" + passwordfile + sids;
-                    doScan(tid, options);
+                    r=doScan(tid, options);
                     break;
                 case "nmapScan":
                     optionscan = pnt.find("select[name*='option'] option:selected").val();
                     options = "&action=" + action + "&option=" + optionscan;
-                    doScan(tid, options);
+                    r=doScan(tid, options);
                     //document.location("./index.php");
                     //document.location.href = document.location.href;
 
                     break;
                 case "detectCms":
                     options = "&action=" + action;
-                    doScan(tid, options);
+                    r=doScan(tid, options);
+
                     break;
                 case "gitDump":
 
@@ -497,6 +557,19 @@ $(document).ready(function () {
                     //getGitDetails();
 
                     break;
+            }
+            if(r==0){
+                if ($(".error").html() == undefined) {
+                    $(pnt).append(
+                        '<div style="margin: 10px 4px 0 0;" class="alert alert-danger error">' +
+                        ' <strong>Ошибка</strong> ' +
+                        'Цель не выбрана! ' +
+                        '</div>');
+                } else {
+                    $('.error').fadeOut(500);
+                    $('.error').fadeIn(500);
+                }
+
             }
 
             //if()
@@ -523,20 +596,23 @@ $(document).ready(function () {
     function doScan(tid, options) {
         if (options == undefined)
             options = "";
+        if(tid!==undefined) {
 
-        $.ajax({
-            url: "ajax.php",
-            type: "POST",
-            //data: "page=scan&action=doScan&tid=" + tid + "&type=" + type,
-            data: "page=scan&tid=" + tid + options,
-            success: function (data) {
-                datajdecode = JSON.parse(data);
-                html = $.parseHTML(datajdecode);
-                $(html).addClass("success");
-                $('#scansCampaignContent tbody').prepend(html);
-            }
-        });
-
+            $.ajax({
+                url: "ajax.php",
+                type: "POST",
+                //data: "page=scan&action=doScan&tid=" + tid + "&type=" + type,
+                data: "page=scan&tid=" + tid + options,
+                success: function (data) {
+                    datajdecode = JSON.parse(data);
+                    html = $.parseHTML(datajdecode);
+                    $(html).addClass("success");
+                    $('#scansCampaignContent tbody').prepend(html);
+                }
+            });
+        }else{
+           return 0;
+        }
 
     }
 
