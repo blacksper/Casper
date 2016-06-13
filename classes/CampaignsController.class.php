@@ -151,7 +151,10 @@ class CampaignsController
         $query = "INSERT INTO hashes(source,hash,type,uid,cid,deleted) VALUES('$str','$hash','$type',$uid,$cid,0) ";
         //echo $query."\n";
         $this->Model->MysqliClass->query($query);
-        $result = $this->Viewer->Tabs->getHashContentTableRow(array("hash" => $hash, "source" => $str, "type" => $type));
+        $query = "SELECT * FROM hashes ORDER BY dateAdd DESC LIMIT 0,1";
+        $hasharr = $this->Model->MysqliClass->firstResult($query);
+        //$result = $this->Viewer->Tabs->getHashContentTableRow(array("hash" => $hash, "source" => $str, "type" => $type));
+        $result = $this->Viewer->Tabs->getHashContentTableRow($hasharr);
 
         return $result;
     }
