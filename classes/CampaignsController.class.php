@@ -48,7 +48,7 @@ class CampaignsController
         header("Location: ./index.php");
     }
 
-    function addTargets($urls, int $cid)
+    function addTargets($urls, $cid)
     {
         $query = "select cid from campaigns where cid=$cid and deleted=0";
         $cid = $this->Model->MysqliClass->firstResult($query)['cid']; // проверка на существование кампании с таким cid

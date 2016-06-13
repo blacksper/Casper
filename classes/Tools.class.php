@@ -23,40 +23,7 @@ class Tools
         $this->uid = $this->Model->getUserId("admin");
     }
 
-    function startScan1(int $tid, int $sid, $filename, $type = null)
-    {
-
-        /*
-                $enc ="execute=". json_encode($arrTask);
-                $socket = socket_create(AF_INET, SOCK_STREAM, 0);
-                $parseUrl=parse_url($serverUrl);
-                $addres=$parseUrl['host'];
-                $port=80;
-                //print_r($parseUrl);
-                $result = socket_connect($socket, $addres, $port);
-                if ($result === false) {
-                    echo "Не получилось выполнить функцию socket_connect().\nПричина: ($result) " . socket_strerror(socket_last_error($socket)) . "\n";
-                } else {
-                    echo "OK.\n";
-                }
-                $arrOpt = array('l_onoff' => 1, 'l_linger' => 1);
-                socket_set_option($socket, SOL_SOCKET, SO_LINGER,$arrOpt);
-                $in= "POST /clientside/execute1.php HTTP/1.1\r\n";
-                $in.= "Host: example.com\r\n";
-                $in.= "Content-Type: application/x-www-form-urlencoded\r\n";
-                $in.= "Content-Length: ".strlen($enc)."\r\n";
-                $in.= "Connection: close\r\n";
-                $in.= "\r\n";
-                $in.= $enc;
-                echo $in;
-                socket_write($socket, $in, strlen($in));
-                socket_close($socket);
-        */
-
-
-    }
-
-    function startNmap(int $tid, int $sid, $option = null)
+    function startNmap($tid, $sid, $option = null)
     {
 
         switch ($option) {

@@ -29,7 +29,7 @@ class ToolsController
     }
 
 
-    function doDetectCms(int $tid)
+    function doDetectCms($tid)
     {
         $scid = $this->Model->detectCms($tid);
         return $scid;

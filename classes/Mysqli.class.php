@@ -5,7 +5,7 @@
  * Date: 06.04.2016
  * Time: 21:52
  */
-declare(strict_types=1);
+
 include "./config/db.php";
 class MysqliClass{
 
@@ -43,8 +43,8 @@ class MysqliClass{
     }
 
 
-
-    function getAssocArray(string $query){
+    function getAssocArray($query)
+    {
         //echo $query."<br>";
         $resultArr=array();
         $result= mysqli_query($this->link,$query);

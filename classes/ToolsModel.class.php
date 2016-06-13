@@ -97,7 +97,7 @@ class ToolsModel extends Model
 
     }
 
-    function startNmap(int $tid, $option = null, int $sid = 0)
+    function startNmap($tid, $option = null, $sid = 0)
     {
 
         switch ($option) {

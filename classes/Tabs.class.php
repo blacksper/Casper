@@ -178,7 +178,7 @@ class Tabs
         return $result;
     }
 
-    function getStatusByCode(int $code)
+    function getStatusByCode($code)
     {
         $result = array();
 
@@ -269,7 +269,7 @@ class Tabs
         return $result;
     }
 
-    function getSubInfoScans(int $cid)
+    function getSubInfoScans($cid)
     {
 
         $thead = '<div class="row scan-row">
@@ -302,7 +302,7 @@ class Tabs
         return $result;
     }
 
-    function getSubInfoHashes(int $tid)
+    function getSubInfoHashes($tid)
     {
 
         $thead = '<div class="row scan-row">
@@ -335,7 +335,7 @@ class Tabs
         return $result;
     }
 
-    function getSubInfoChilds(int $tid)
+    function getSubInfoChilds($tid)
     {
 
         $thead = '          <ul style="width: 300px" class="qwe nav nav-pills" >
