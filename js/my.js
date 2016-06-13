@@ -318,6 +318,24 @@ $(document).ready(function () {
             });
         }
     });
+    $("body").on('click', '.deleteHash', function () {
+        var row = $(this).parents('.hashRow');
+        var hid = row.data('hid');
+        console.log(hid);
+        if (hid !== undefined) {
+            $.ajax({
+                url: "./ajax.php",
+                type: "POST",
+                data: "page=main&hashId=" + hid + "&action=delete",
+                success: function (data) {
+                    console.log(data);
+                    if (data == 1) {
+                        row.fadeOut(500);
+                    }
+                }
+            });
+        }
+    });
 
     $("body").on('click', '#saveNote', function () {
         var note = $("#noteText").val();

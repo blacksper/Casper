@@ -53,6 +53,9 @@ switch ($_POST['page']) {
                     } elseif (isset($_POST['scanId'])) {
                         $scid = $_POST['scanId'];
                         $result = $Controller->setDelete($scid, "scan");
+                    } elseif (isset($_POST['hashId'])) {
+                        $hid = $_POST['hashId'];
+                        $result = $Controller->setDelete($hid, "hash");
                     }
                     $result = intval($result);
                     //var_dump($result);

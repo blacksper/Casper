@@ -164,6 +164,10 @@ class Controller {
             } elseif ($type == "scan") {
                 $query = "UPDATE scans set deleted=1 WHERE scid=$id";
                 $result = $this->Model->MysqliClass->query($query);
+            } elseif ($type == "hash") {
+                // echo 123123;
+                $query = "UPDATE hashes set deleted=1 WHERE hid=$id";
+                $result = $this->Model->MysqliClass->query($query);
             }
 
         return $result;

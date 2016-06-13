@@ -318,11 +318,11 @@ class CampaignTabs
     function getHashContentTableRow($row)
     {
         $result = "";
-        $result .= "<tr class='hashRow'>
+        $result .= "<tr class='hashRow' data-hid='{$row['hid']}'>
             <td>{$row['hash']}</td>
             <td>{$row['source']}</td>
             <td>{$row['type']}</td>
-            <td><button type='button' class='btn btn-danger btn-sm deleteScn'>
+            <td><button type='button' class='btn btn-danger btn-sm deleteHash'>
                 <span  class='glyphicon glyphicon-remove' aria-hidden='true'></span>
             </button></td></tr>";
         return $result;
@@ -445,37 +445,6 @@ class CampaignTabs
                 </div>';
         $this->tabsHtml .= $tab;
     }
-
-//    function getDleBruteTab($targetList, $servers, $files)
-//    {
-//
-//        $tab = '<div class="tab-pane fade" id="dleBrute">
-//                                    <h1>DLE</h1>
-//                                    <form method="post" action="../scan.php" id="fileselect" class="navbar-form navbar-left">
-//                                        <div class="form-group">
-//                                           ' . $targetList . '
-//
-//                                            <select class="form-control" name="loginfile">
-//                                            <option selected="selected">loginfile</option>
-//                                            ' . $files . '
-//                                            </select>
-//
-//                                            <select class="form-control" name="passwordfile">
-//                                            <option selected="selected">passwordfile</option>
-//                                            ' . $files . '
-//                                            </select>
-//
-//
-//
-//                                            ' . $servers . '
-//
-//                                            <input type="submit" name="sub" class="btn btn-default">
-//                                            <input type="hidden" name="action" value="dleBrute" class="btn btn-default">
-//                                        </div>
-//                                    </form>
-//                                </div>';
-//        $this->tabsHtml .= $tab;
-//    }
 
     function getScansTab($scanArr)
     {
