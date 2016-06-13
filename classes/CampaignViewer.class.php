@@ -7,7 +7,7 @@
  * Time: 17:28
  */
 include("CampaignTabs.class.php");
-require($_SERVER['DOCUMENT_ROOT'] . "/config.php");
+require($_SERVER['DOCUMENT_ROOT'] . "/config/config.php");
 class CampaignViewer
 {
 

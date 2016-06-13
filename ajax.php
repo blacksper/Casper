@@ -177,13 +177,15 @@ switch ($_POST['page']) {
         (isset($_POST['sid'])) ? $sid = (array)$_POST['sid'] : $sid = 0;
         include "./classes/ToolsController.class.php";
         $Tools = new ToolsController();
-        $tid = (int)$_POST['tid'];
-        if (!$tid)
-            return 0;
-
         if (!isset($_POST['action']))
             return 0;
         $action = $_POST['action'];
+
+        @$tid = (int)$_POST['tid'];
+        if (!$tid && ($action !== "downloadSrc"))
+            return 0;
+
+
         switch ($action) {
             case "gitDump":
                 $scid = $Tools->doGitDump($tid);
@@ -197,8 +199,6 @@ switch ($_POST['page']) {
                 if (isset($_POST['filename'])) {
                     $filename = $_POST['filename'];
                     $result = $Tools->doScanPath($type, $filename, $tid, $sid);
-                    //$CampaignsController->Model->MysqliClass->getAssocArray("select * from scans where scid=$scid");
-                    //$CampaignsController->Viewer->Tabs->getScansTableRow();
                 }
                 break;
             case "wpBrute":
@@ -220,6 +220,21 @@ switch ($_POST['page']) {
             case "nmapScan":
                 $option = $_POST['option'];
                 $Tools->doNmapScan($tid, $option);
+                break;
+            case "downloadSrc":
+                if (isset($_POST['filename'], $_POST['filepath'])) {
+
+                    $f1 = pathinfo($_POST['filename']);
+                    $f2 = pathinfo($_POST['filepath']);
+                    if (!isset($f1['filename'], $f2['filename']))
+                        return 0;
+                    $filename = $_POST['filename'];
+                    $filepath = $_POST['filepath'];
+
+                    if (($filename != "") && ($filepath != ""))
+                        $result = $Tools->doDownloadFile($filepath, $filename);
+                }
+
                 break;
 
         }

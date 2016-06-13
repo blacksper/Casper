@@ -8,7 +8,7 @@
  */
 //session_start();
 include "Model.class.php";
-require($_SERVER['DOCUMENT_ROOT'] . "/config.php");
+require($_SERVER['DOCUMENT_ROOT'] . "/config/config.php");
 class Tools
 {
 

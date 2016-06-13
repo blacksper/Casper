@@ -6,14 +6,12 @@
  * Time: 2:04
  */
 
-//include("ViewerServer.class.php");
-//include("Mysql.class.php");
+
 include("Mysqli.class.php");
 
-//include("config.php");
 class Model{
 
-   // var $Model;
+
     public $MysqliClass;
 
     function __construct(){

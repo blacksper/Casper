@@ -6,19 +6,20 @@
  * Time: 21:52
  */
 declare(strict_types=1);
+include "./config/db.php";
 class MysqliClass{
 
     var $link;
 
     function __construct(){
 
-        $this->link=mysqli_connect("localhost","root","");
+        $this->link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
         if (mysqli_connect_errno()) {
             printf("Connect failed: %s\n", mysqli_connect_error());
             exit();
         }
 
-        mysqli_select_db($this->link,"casperdb_new");
+        mysqli_select_db($this->link, DB_NAME);
 
     }
 

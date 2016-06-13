@@ -480,6 +480,7 @@ $(document).ready(function () {
         }
 
         var type = "gitdump";
+        console.log("before getgit");
         $.ajax({
             url: "ajax.php",
             type: "POST",
@@ -671,11 +672,12 @@ $(document).ready(function () {
 
         if (filepath !== undefined) {
             $.ajax({
-                url: "./scan.php",
+                url: "./ajax.php",
                 type: "POST",
-                data: "filename=" + filename + "&action=downloadSrc&filepath=" + filepath,
+                data: "page=scan&filename=" + filename + "&action=downloadSrc&filepath=" + filepath,
                 success: function (data) {
                     console.log(data);
+                    data = JSON.parse(data);
                     if ((data !== undefined) && (data == 1)) {
                         row.removeClassWild(" *");
                         row.addClass("success");

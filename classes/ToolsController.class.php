@@ -75,5 +75,11 @@ class ToolsController
         return $scid;
     }
 
+    function doDownloadFile($url, $filename)
+    {
+        $result = $this->Model->downloadFile($url, $filename);
+        return $result;
+    }
+
 
 }

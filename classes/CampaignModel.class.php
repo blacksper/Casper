@@ -114,7 +114,7 @@ class CampaignModel
 
     function getGitdumpFiles($scid, $like = "", $offset = 0, $limit = 10)
     {
-        $query = "select * from gitdump where scid=$scid and filename like '%$like%' ORDER BY exist desc,dateAdd desc limit $offset,$limit";
+        $query = "select * from gitdump where scid=$scid and filename like '%$like%' and older=0 ORDER BY exist desc,dateAdd desc limit $offset,$limit";
         //echo $query;
         $filesArr = $this->MysqliClass->getAssocArray($query);
         return $filesArr;
