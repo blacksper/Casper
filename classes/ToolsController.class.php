@@ -11,6 +11,8 @@
 session_start();
 include "ToolsModel.class.php";
 include "ToolsViewer.class.php";
+ignore_user_abort(1);
+set_time_limit(0);
 
 //require($_SERVER['DOCUMENT_ROOT'] . "/config.php");
 class ToolsController
