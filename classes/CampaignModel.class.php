@@ -16,7 +16,7 @@ class CampaignModel
 
     function __construct()
     {
-        $this->MysqliClass = new MysqliClass();
+        $this->MysqliClass = new MysqliClass();//1
     }
 
     function getUserId($username)
