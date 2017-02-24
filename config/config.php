@@ -12,4 +12,4 @@ define('PATH_TXTP', PATH_TXT . '/paths');
 define('PATH_BSRC', PATH_TXT . '/src');
 define('PATH_GIT', PATH_ROOT . '/gitdumper');
 define('PATH_GITD', '/gitdumper');
-define('PATH_NMAP', 'D:\Program Files (x86)\Nmap\nmap');
+define('PATH_NMAP', 'D:\nmap-7.12\nmap');

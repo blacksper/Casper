@@ -51,6 +51,7 @@ class CampaignsController
     function addTargets($urls, $cid)
     {
         $query = "select cid from campaigns where cid=$cid and deleted=0";
+        //print_r($urls);
         $cid = $this->Model->MysqliClass->firstResult($query)['cid']; // проверка на существование кампании с таким cid
         if (!isset($cid))
             exit;
@@ -64,24 +65,22 @@ class CampaignsController
             $res .= $this->addTarget($url, $cid);
 
         return $res;
-
-
     }
 
     function addTarget($targeturl, $cid)
     {    //добавление сервера
 
 
-        preg_match("#^((http[s]?:\/\/)?([A-z0-9.-_]*)\/.+)#", $targeturl, $clurl);
-
-        if (!isset($clurl[1])) {
+        preg_match("#^(http[s]?:\/\/)?([A-z0-9.\-_]*)(\/.*)?#", $targeturl, $clurl);
+        $clearUrl=$clurl[2];
+        if (!isset($clearUrl)) {
             preg_match("#^((\d{1,3}\.){3}\d{1,3})#", $targeturl, $ip);
             if (isset($ip[1]))
                 $targeturl = $ip[1];
             else
                 $targeturl = null;
         } else {
-            $targeturl = $clurl[1];
+            $targeturl = $clearUrl;
         }
 
         //var_dump($clurl);
@@ -92,20 +91,22 @@ class CampaignsController
             //$targeturl = $clurl[1];
 
             ####проверка есть ли уже в бд этот сервер
-            $query = "SELECT tid from targets where url = '$targeturl' and deleted=0 and cid=$cid";//тут инъекция
+            $query = "SELECT tid from targets where domain = '$targeturl' and deleted=0 and cid=$cid";//тут инъекция
             //echo $query;
             $tid = $this->Model->MysqliClass->firstResult($query)['tid'];
 
-            if (isset($tid))
-                exit;
+            if (isset($tid)) {
+                //echo $tid;
+                return '';
+            }
 
             $uid = $this->Model->getUserId($_SESSION['username']);
 
             if ($uid) {
-                $query = "INSERT INTO targets(uid,url,cid,dateAdd) values($uid,'$targeturl',$cid,now())";
+                $query = "INSERT INTO targets(uid,domain,cid,dateAdd) values($uid,'$targeturl',$cid,now())";
                 $result = $this->Model->MysqliClass->query($query);
                 //echo $query;
-                $query = "SELECT * from targets where url='$targeturl' and cid=$cid and deleted=0";
+                $query = "SELECT * from targets where domain='$targeturl' and cid=$cid and deleted=0";
                 $resultArr = $this->Model->MysqliClass->firstResult($query);
                 //echo $query;
                 //var_dump($resultArr);

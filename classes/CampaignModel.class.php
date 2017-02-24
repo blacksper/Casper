@@ -45,7 +45,28 @@ class CampaignModel
     {
         $query = "select * from targets where cid=$cid and deleted=0 order by dateAdd desc";
         $targetsArr = $this->MysqliClass->getAssocArray($query);
-        return $targetsArr;
+
+        $newarr=array();
+        //$link=&$targetsArr;
+
+        foreach($targetsArr as $i=>$value ){
+         //$newarr[$i['tid']]
+            //$newarr
+            $newarr[$value['tid']]=$value;
+            $newarr[$value['tid']]['childs']=array();
+
+        }
+        //print_r($newarr)
+        foreach($newarr as $tid=>$val){
+            //$newarr[$val['pid']]['childs']=array();
+            if($val['pid']){
+                array_push($newarr[$val['pid']]['childs'],$val);
+                //array_push($newarr[],array('child'=>$val));
+                unset($newarr[$tid]);
+            }
+        }
+        //print_r($newarr);
+        return $newarr;
     }
 
     /**

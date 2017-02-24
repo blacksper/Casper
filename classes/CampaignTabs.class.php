@@ -30,17 +30,28 @@ class CampaignTabs
         if (!isset($targetsArr))
             exit;
 
-        $f = "<div class='row'><div class='col-md-8'>";
-        $f .= "";
+        $f = "<div class='col-md-12'>";
         $f .= $this->getMainTable($targetsArr);
-
         $f .= "</div>";
 
-        $f .= "<div class='col-md-4'> <textarea placeholder='Список целей(url/ip-адреса)' id='targetsArea' class='form-control custom-control'></textarea><button id='addTargets' style='float: right;margin-top: 10px;' class='btn btn-success'>Добавить цели</button></div></div>";
+
+        $addField = "
+            <div class='col-md-12' xmlns=\"http://www.w3.org/1999/html\">
+                <div class='form-inline' style='margin:0 0 30px 20px;'>
+                    <textarea placeholder='Список целей(url/ip-адреса)' id='targetsArea' class='form-control custom-control'></textarea>
+                    <button id='addTargets'  class='btn btn-success'>Добавить цели</button>
+                </div>
+            </div>
+            ";
+        $trow="
+            <div class='row'>
+                $addField
+                $f
+            </div>";
 
         $tmpHtml = '<div class="tab-pane fade in active" id="mainCampaign-tab">
-                                    ' . $f . '
-                                </div>';
+                                ' . $trow . '
+                    </div>';
 
         //var_dump($tmpHtml);
         $this->allHtml .= $tmpHtml;
@@ -51,8 +62,11 @@ class CampaignTabs
         $result = "<table id='targetsContent' class='table table-hover'>
             <thead>
             <tr>
-            <th>Url</th>
-            <th>CMS</th>
+            <th>host</th>
+            <th>ip</th>
+            <th>rdns</th>
+            <th>scans</th>
+            <th>ports</th>
             <th></th>
             </tr>
             </thead>
@@ -67,6 +81,7 @@ class CampaignTabs
 
     function getMainTableRow($row)
     {
+        $result='';
         $btns = '<div class="btn-group btns">
                             <button type="button" class="btn btn-warning btn-sm editNote">
                             <span  class="glyphicon glyphicon-pencil" aria-hidden="true">
@@ -75,8 +90,31 @@ class CampaignTabs
                             <span  class="glyphicon glyphicon-remove" aria-hidden="true">
                             </span></button>
                  </div>';
+        $result1='';
+        $childCount=1;
+        if(isset($row['childs'])) {
+            foreach ($row['childs'] as $child) {
+                //print_r($child);
+                $result1 .= "<tr id='child' class='targetRow' data-tid='{$child['tid']}'>
+                        <td class=' col-md-3'>{$child['ip']}</td>
 
-        $result = "<tr class='targetRow' data-tid='{$row['tid']}'><td class=' col-md-6'>{$row['url']}</td><td>{$row['cms']}</td><td class='text-right'>$btns</td></tr>";
+
+                        <td>{$child['rdns']}</td>
+                        <td>{$child['cms']}child</td>
+                        <td class='text-right'>$btns</td>
+                        </tr>";
+            }
+        $childCount+=count($row['childs']);
+        }
+        //print_r($row);
+        $result = "<tr class='targetRow' data-tid='{$row['tid']}'>
+                    <td id='parent' rowspan='".$childCount."' class='col-md-3'>{$row['domain']}</td>
+                    <td class='col-md-1'>qwe</td>
+
+                    <td>{$row['rdns']}</td>
+                    <td>{$row['cms']}</td>
+                    <td class='text-right'>$btns</td>
+                    </tr>".$result1;
         return $result;
     }
 
@@ -454,8 +492,8 @@ class CampaignTabs
         foreach ($scanArr as $row)
             $tbody .= $this->getScansTableRow($row);
 
-
         $tbody .= "</tbody>";
+
         $this->allHtml .= '<div class="tab-pane fade" id="scansCampaign-tab">
                                       <div class="nav pol" id="scansCampaign">
                                           <table id="scansCampaignContent" class="table table-hover">
@@ -491,7 +529,7 @@ class CampaignTabs
                     </td>
                      <td class='col-md-2'>{$row['type']}</td>
                     <td class='scanUrl col-md-3'>
-                    <div class='cc1'><div class='cc2'>{$row['url']}</div></div>
+                    <div class='cc1'><div class='cc2'>{$row['domain']}</div></div>
                     </td>
 
                     <td class='filename col-md-2'><div class='filenameS'><div class='cc2'>{$row['filename']}</div></div></td>

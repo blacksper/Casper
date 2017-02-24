@@ -127,6 +127,7 @@ class ToolsModel extends Model
             return 0;
 
         $cmd = '"' . PATH_NMAP . '" ' . escapeshellcmd($param . ' ' . $targeturl);
+        echo $cmd;
         //$cmd =  '"'.PATH_NMAP.'" '.escapeshellarg($param . ' ' . $targeturl);
         $content = shell_exec($cmd);
         //$content = ob_get_clean();
