@@ -43,7 +43,7 @@ class CampaignModel
      */
     public function getTargetsByCid($cid)
     {
-        $query = "select * from targets where cid=$cid and deleted=0 order by dateAdd desc";
+        $query = "select * from targets where cid=$cid and deleted=0 order by dateAdd desc";//
         $targetsArr = $this->MysqliClass->getAssocArray($query);
 
         $newarr=array();
